@@ -98,3 +98,69 @@ def cross_sectional_reversal(
     rank = past.rank(axis=1, method="first")
     weights = (rank <= holdings).astype(float) / holdings
     return weights[enough]
+
+
+def inverse_vol_trend(
+    prices: pd.DataFrame, lookback: int = 252, vol_window: int = 60
+) -> pd.DataFrame:
+    """Time-series momentum with inverse-volatility sizing.
+
+    Each symbol with enough history gets a slice proportional to 1 / its
+    `vol_window`-day volatility; the slice is held only while the symbol's
+    `lookback`-day return is positive, otherwise it stays in cash.
+    """
+    volatility = prices.pct_change(fill_method=None).rolling(vol_window).std()
+    momentum = prices / prices.shift(lookback) - 1.0
+    eligible = momentum.notna() & (volatility > 0)
+    inverse = (1.0 / volatility).where(eligible)
+    share = inverse.div(inverse.sum(axis=1), axis=0)
+    weights = share.where(momentum > 0, 0.0).fillna(0.0)
+    return weights[eligible.any(axis=1)]
+
+
+def volatility_cap(
+    weights: pd.DataFrame, prices: pd.DataFrame, target_vol: float = 0.10, window: int = 60
+) -> pd.DataFrame:
+    """Scale each day's weights down so the portfolio's expected volatility is at most
+    `target_vol` a year, using the covariance of the last `window` daily returns.
+
+    Never scales up (no leverage); the freed weight stays in cash.
+    """
+    returns = prices.pct_change(fill_method=None)
+    scaled = weights.copy()
+    for date, row in weights.iterrows():
+        held = row[row > 0]
+        if held.empty:
+            continue
+        history = returns.loc[:date, held.index].tail(window).dropna()
+        if len(history) < window // 2:
+            continue
+        variance = float(held.to_numpy() @ history.cov().to_numpy() @ held.to_numpy())
+        expected = np.sqrt(max(variance, 0.0) * 252)
+        if expected > target_vol:
+            scaled.loc[date] = row * (target_vol / expected)
+    return scaled
+
+
+def turn_of_month(
+    prices: pd.DataFrame,
+    sessions: pd.DatetimeIndex,
+    symbol: str = "SPY",
+    days_before: int = 1,
+    days_after: int = 3,
+) -> pd.DataFrame:
+    """Hold `symbol` over the last `days_before` and first `days_after` sessions of each month.
+
+    `sessions` is the exchange calendar, which must extend past the last price date:
+    it is known in advance, so deciding on day t whether day t+1 is in the window is
+    not look-ahead. The row for t is the position to hold during t+1.
+    """
+    month = sessions.to_period("M")
+    position = pd.Series(np.arange(len(sessions)), index=sessions)
+    from_start = position.groupby(month).rank()
+    from_end = position.groupby(month).rank(ascending=False)
+    in_window = (from_end <= days_before) | (from_start <= days_after)
+    next_in_window = in_window.shift(-1)
+    weights = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
+    weights[symbol] = next_in_window.reindex(prices.index).astype(float)
+    return weights[prices[symbol].notna() & weights[symbol].notna()]

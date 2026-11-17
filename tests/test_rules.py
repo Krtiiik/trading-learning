@@ -126,3 +126,74 @@ def test_cross_sectional_reversal_holds_the_worst_recent_performers():
     weights = rules.cross_sectional_reversal(prices, lookback=1, holdings=2)
 
     assert weights.iloc[-1].to_dict() == {"A": 0.0, "B": 0.5, "C": 0.0, "D": 0.5}
+
+
+def test_inverse_vol_trend_gives_the_calmer_symbol_the_larger_slice():
+    index = pd.bdate_range("2020-01-01", periods=40, name="date")
+    wiggle = np.where(np.arange(40) % 2 == 0, 1.0, -1.0)
+    prices = pd.DataFrame(
+        {
+            "CALM": 100 + np.arange(40) + 0.5 * wiggle,
+            "WILD": 100 + np.arange(40) + 2.0 * wiggle,
+            "FALLING": 200 - np.arange(40) + 0.5 * wiggle,
+        },
+        index=index,
+    )
+
+    weights = rules.inverse_vol_trend(prices, lookback=20, vol_window=10)
+    last = weights.iloc[-1]
+
+    assert last["CALM"] > last["WILD"] > 0
+    assert last["FALLING"] == 0.0
+    assert last.sum() < 1.0  # the falling symbol's slice is left in cash
+
+
+def test_inverse_vol_trend_uses_no_data_after_the_decision_date():
+    prices = random_prices()
+    full = rules.inverse_vol_trend(prices, lookback=60, vol_window=20)
+
+    for cut in (120, 250, 333):
+        truncated = rules.inverse_vol_trend(prices.iloc[: cut + 1], lookback=60, vol_window=20)
+        pd.testing.assert_series_equal(truncated.iloc[-1], full.loc[prices.index[cut]])
+
+
+def test_volatility_cap_scales_down_a_volatile_portfolio_and_never_up():
+    prices = random_prices(seed=1)  # about 16% annual volatility per symbol
+    weights = rules.fixed_mix(prices, {"A": 1.0})
+
+    capped = rules.volatility_cap(weights, prices, target_vol=0.08, window=20)
+    loose = rules.volatility_cap(weights, prices, target_vol=5.0, window=20)
+
+    assert (capped["A"].iloc[30:] < 1.0).all()
+    assert (capped["A"] > 0).all()
+    pd.testing.assert_frame_equal(loose, weights)
+    realized = prices["A"].pct_change().rolling(20).std().iloc[-1] * np.sqrt(252)
+    assert capped["A"].iloc[-1] == pytest.approx(0.08 / realized)
+
+
+def test_volatility_cap_uses_no_data_after_the_decision_date():
+    prices = random_prices(seed=1)
+    weights = rules.equal_weight(prices)
+    full = rules.volatility_cap(weights, prices, target_vol=0.05, window=20)
+
+    cut = 250
+    truncated = rules.volatility_cap(
+        weights.iloc[: cut + 1], prices.iloc[: cut + 1], target_vol=0.05, window=20
+    )
+    pd.testing.assert_series_equal(truncated.iloc[-1], full.iloc[cut])
+
+
+def test_turn_of_month_holds_the_last_day_and_first_three_days():
+    sessions = pd.bdate_range("2024-01-01", "2024-03-29", name="date")
+    prices = pd.DataFrame({"A": 100.0}, index=sessions[sessions <= "2024-02-29"])
+
+    weights = rules.turn_of_month(prices, sessions, symbol="A", days_before=1, days_after=3)
+    held_on = weights["A"].shift(1)  # row t is the position held during t+1
+
+    january_end = pd.Timestamp("2024-01-31")
+    assert held_on.loc[january_end] == 1.0
+    assert held_on.loc["2024-02-01":"2024-02-05"].tolist() == [1.0, 1.0, 1.0]
+    assert held_on.loc["2024-02-06"] == 0.0
+    assert held_on.loc["2024-01-30"] == 0.0
+    # The last price date still gets a row, because the calendar knows the next session.
+    assert weights["A"].loc["2024-02-29"] == 1.0

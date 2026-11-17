@@ -120,8 +120,105 @@ Sub-agent's picks: (1) trend-filtered inverse-vol asset-class core with a no-tra
 
 ---
 
+## E03 — Rule candidates from the literature
+
+**Hypothesis.** (a) Inverse-vol sizing and a no-trade band improve plain TSMOM; (b) a
+volatility cap improves equity-heavy passive mixes after costs (Harvey et al. 2018);
+(c) turn-of-month on SPY survives 5 bps.
+
+**Setup.** `research/e03_candidates.py`. Seven configurations written down before running:
+12-month lookback, 60-day vol for sizing, 5% no-trade band (skip the day's rebalance if it
+would move ≤5% of equity one way), caps of 12% on SPY (20-day), 10% on 1/N (60-day), 8% on
+60/40 (20-day), turn-of-month holding the last session and first three of each month.
+
+**Result (5 bps, fill at next open).**
+
+| strategy | net P&L $ | $/yr | CAGR | vol | Sharpe | maxDD | turnover/yr | costs $ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| TSMOM 12m, 1/N + band | 23,519 | 1,185 | 6.3% | 8.8% | 0.73 | -15.8% | 1.5x | 599 |
+| InvVol trend | 19,114 | 963 | 5.5% | 7.1% | 0.79 | -14.3% | 3.8x | 1,389 |
+| InvVol trend + band | 18,610 | 937 | 5.4% | 7.2% | 0.78 | -15.0% | 2.1x | 786 |
+| SPY vol cap 12% + band | 43,106 | 2,171 | 8.8% | 11.5% | 0.79 | -28.7% | 0.9x | 388 |
+| 1/N vol cap 10% + band | 26,932 | 1,357 | 6.8% | 9.7% | 0.73 | -21.1% | 0.3x | 120 |
+| 60/40 vol cap 8% + band | 28,290 | 1,425 | 7.0% | 7.3% | 0.97 | -17.3% | 0.8x | 302 |
+| Turn of month SPY (-1,+3) | 1,289 | 65 | 0.6% | 8.0% | 0.12 | -24.6% | 12.0x | 2,313 |
+
+**Observations.**
+
+- (a) Inverse-vol sizing lifts TSMOM from Sharpe 0.73 to 0.79, mostly by lowering vol. The
+  band halves turnover and cost but does not change Sharpe: costs were never the problem for
+  slow trend. About a quarter of the account sits in cash at 0%. Its latest sub-period is
+  its weakest (0.44–0.54 in 2020-24).
+- (b) The cap helps every mix it was put on: SPY 0.61 → 0.79, 1/N 0.64 → 0.73, 60/40
+  0.75 → 0.97. It works by cutting exposure in 2008, 2020 and 2022; it gives up return in
+  calm bull years. It lowers dollars earned and lowers drawdown more.
+- (c) Turn-of-month fails: Sharpe 0.12 at 5 bps, 0.21 at 2 bps. Twelve round trips a year
+  cost 1.2% against an edge of about 1.8%. Two of four sub-periods are negative.
+- Next-close fills change nothing for the slow rules (Sharpe within 0.02).
+
+**Verdict.** Volatility-capped 60/40 is the first candidate that clearly beats the passive
+bar on Sharpe and drawdown. Turn-of-month is dropped. Trend stays as a diversifier candidate.
+
+---
+
+## E04 — Is the capped 60/40 a plateau or a lucky setting?
+
+**Hypothesis.** If the effect is real, neighbouring targets, windows, bands and other mixes
+show it too. This is a sensitivity check, not a search: the E03 setting (8%, 20-day, 5% band)
+stays the candidate whatever the neighbours score.
+
+**Setup.** `research/e04_volcap_sensitivity.py`. 6 target×window cells, 4 bands, close fill,
+10 bps, and the same cap on four other passive mixes.
+
+**Result (5 bps).**
+
+| 60/40 cap | Sharpe | CAGR | maxDD | turnover |
+|---|---:|---:|---:|---:|
+| 6%, 20d | 0.95 | 5.8% | -14.4% | 1.1x |
+| 6%, 60d | 0.89 | 5.6% | -12.8% | 0.4x |
+| **8%, 20d** | **0.97** | 7.0% | -17.3% | 0.8x |
+| 8%, 60d | 0.88 | 6.6% | -16.5% | 0.3x |
+| 10%, 20d | 0.91 | 7.3% | -19.6% | 0.5x |
+| 10%, 60d | 0.86 | 7.1% | -20.1% | 0.2x |
+| uncapped | 0.75 | 7.9% | -31.6% | 0.5x |
+
+Band 0 / 2 / 5 / 10%: Sharpe 0.96 / 0.96 / 0.97 / 0.93. Close fill 0.95. At 10 bps 0.96.
+
+Same cap on other mixes (uncapped → capped Sharpe; maxDD):
+
+| mix | Sharpe | maxDD |
+|---|---|---|
+| 60/40 SPY/TLT | 0.78 → 0.95 | -30.2% → -18.0% |
+| 40/60 SPY/IEF | 0.87 → 0.99 | -19.7% → -15.9% |
+| SPY/IEF/GLD thirds | 0.92 → 0.98 | -20.8% → -15.1% |
+| six-asset 1/N (SPY EFA IEF LQD GLD VNQ) | 0.66 → 0.79 | -33.4% → -17.1% |
+
+Yearly, 60/40 vs capped: 2008 -16.8% vs -10.0%; 2020 +16.4% vs +9.0%; 2022 -16.5% vs -11.7%;
+2019 +21.7% vs +18.2%; 2023 +16.9% vs +13.3%.
+
+**Observations.**
+
+- A plateau: every cell beats the uncapped mix (0.86–0.97 vs 0.75) and every mix improves.
+  The E03 setting happens to be the best cell, so expect something nearer 0.9 than 0.97.
+- The whole gain is in the crisis sub-periods (2005-09: 0.28 → 0.52; 2020-24: 0.70 → 0.86);
+  in 2010-19 capped and uncapped are the same. It is crash insurance, not alpha, and it
+  cost about 0.9 points of CAGR over the window. It missed part of the 2020 rebound.
+- The base mix matters as much as the cap: 60/40 itself rode a 2005-2020 bond bull market
+  with stocks and bonds negatively correlated. 2022 shows what happens when that breaks
+  (-16.5% uncapped, -11.7% capped).
+- Costs are irrelevant at this turnover (0.8x): doubling to 10 bps moves Sharpe by 0.01.
+
+**Verdict.** Robust to its own parameters; regime-dependent through its base mix. Strong
+finalist candidate. The dollars: about $1,400/yr on $10k (7.0% CAGR), less than uncapped
+60/40 ($1,770/yr) or SPY ($3,015/yr), at about half the drawdown.
+
+---
+
 ## Trial count
 
 Configurations evaluated on the walk-forward window so far (every one, including failures):
 
 - E01: 8 baselines (no tuning).
+- E03: 7 rule candidates, pre-specified.
+- E04: 20 sensitivity runs around one E03 candidate (5 extra target×window cells, 3 extra bands,
+  1 fill, 1 cost, 10 mix runs). Declared as sensitivity, not selection.

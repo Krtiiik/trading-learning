@@ -50,6 +50,7 @@ def run_backtest(
     initial_cash: float = 10_000.0,
     cost_bps: float = 5.0,
     fill: Fill = "open",
+    rebalance_band: float = 0.0,
     start: str | pd.Timestamp | None = None,
     end: str | pd.Timestamp | None = None,
 ) -> BacktestResult:
@@ -60,6 +61,10 @@ def run_backtest(
     day's raw open or close (`fill`), so a strategy cannot trade on the bar it used.
     Dates without a row (or with an all-NaN row) trade nothing and positions drift.
     Weights must be non-negative and sum to at most 1; the rest stays in cash.
+
+    `rebalance_band` skips a day's rebalance when it would move no more than that
+    fraction of equity one way (half the summed absolute weight differences), so small
+    drifts and small target changes are not traded.
 
     The account exists from `start` to `end` (default: the whole market). Rows decided
     before `start` are still honoured if their trade date falls inside the window.
@@ -123,8 +128,12 @@ def run_backtest(
                 )
             safe_price = np.where(tradable, price, 1.0)
             values = shares * safe_price
-            new_values, cash, traded[row], costs[row] = rebalance(values, cash, target, cost_bps)
-            shares = new_values / safe_price
+            held = values / (cash + values.sum())
+            if rebalance_band <= 0 or 0.5 * np.abs(target - held).sum() > rebalance_band:
+                new_values, cash, traded[row], costs[row] = rebalance(
+                    values, cash, target, cost_bps
+                )
+                shares = new_values / safe_price
 
         values = np.where(shares > 0, shares * last_close[day], 0.0)
         equity[row] = cash + values.sum()

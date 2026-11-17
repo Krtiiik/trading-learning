@@ -177,6 +177,28 @@ def test_daily_rebalancing_trades_back_to_target_and_charges_for_it():
     assert result.traded.iloc[3] == pytest.approx(0.0, abs=1e-9)
 
 
+def test_rebalance_band_skips_small_trades_and_allows_large_ones():
+    # A drifts up 2% (inside a 5% band), then doubles (outside it).
+    market = make_market({"A": [10, 10, 10.2, 20.4, 20.4], "B": [10, 10, 10, 10, 10]})
+    targets = weights(market, {day: {"A": 0.5, "B": 0.5} for day in range(4)})
+
+    result = run_backtest(market, targets, cost_bps=0.0, rebalance_band=0.05)
+
+    assert result.traded.iloc[1] == pytest.approx(10_000.0)  # initial purchase
+    assert result.traded.iloc[2] == 0.0  # drift of 0.5 points of weight: skipped
+    assert result.traded.iloc[3] > 0.0  # A is now two thirds of the account: traded
+    assert result.weights.iloc[3].tolist() == pytest.approx([0.5, 0.5])
+
+
+def test_rebalance_band_of_zero_trades_every_target():
+    market = make_market({"A": [10, 10, 10.2, 10.2], "B": [10, 10, 10, 10]})
+    targets = weights(market, {day: {"A": 0.5, "B": 0.5} for day in range(3)})
+
+    result = run_backtest(market, targets, cost_bps=0.0)
+
+    assert result.traded.iloc[2] > 0.0
+
+
 def test_unallocated_weight_stays_in_cash():
     market = make_market({"A": [10, 10, 20]}, closes={"A": [10, 10, 20]})
 

@@ -35,6 +35,7 @@ def evaluate(
     *,
     cost_bps: float = COST_BPS,
     fill: str = "open",
+    rebalance_band: float = 0.0,
     start: str = EVAL_START,
     end: str | None = None,
 ) -> BacktestResult:
@@ -44,6 +45,7 @@ def evaluate(
         initial_cash=INITIAL_CASH,
         cost_bps=cost_bps,
         fill=fill,  # type: ignore[arg-type]
+        rebalance_band=rebalance_band,
         start=start,
         end=end,
     )
