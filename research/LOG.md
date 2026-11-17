@@ -377,6 +377,72 @@ Ensemble Sharpe by sub-period: linear 0.39 / 0.14 / 1.14 / 0.37; MLP 0.44 / −0
 
 ---
 
+## E10 — What holding the leading candidate would have felt like
+
+No new configurations. `research/e10_finalist_diagnostics.py`, walk-forward window, 5 bps.
+
+| | SPY | 60/40 | Capped 60/40 |
+|---|---:|---:|---:|
+| worst rolling 12 months | -47.4% | -27.4% | -13.8% |
+| median rolling 12 months | +14.1% | +10.0% | +8.5% |
+| best rolling 12 months | +77.5% | +39.4% | +23.9% |
+| 12-month windows that lost money | 18% | 14% | 14% |
+| losing calendar years (of 20) | 3 | 3 | 3 |
+| longest time under water (trading days) | 1,223 | 699 | 611 |
+| deepest drawdown in dollars | -13,398 | -8,571 | -4,699 |
+| lowest equity from a $10k start | 6,050 | 8,551 | 9,691 |
+
+- Rolling 3-year Sharpe: the capped mix is ahead of plain 60/40 on 77% of days, but the
+  median gap is only +0.08; ahead of SPY on 90% of days (median +0.30).
+- The cap is binding most of the time: fully invested on 31% of days, 86% invested on
+  average, under 50% invested on 8% of days.
+- Calendar-year P&L of the capped mix on the compounding account ranges from −$4,002
+  (2022, on about $34k) to +$4,254 (2019). In the first five years, on about $10–11k, it
+  made +337, +1,052, +677, −1,212, +1,093.
+
+**Verdict.** A smoother ride, not a richer one: same number of losing years as 60/40, about
+half the worst loss, about 85% of the median gain.
+
+---
+
+## E11 — How much of each rule's profit is more than stock and bond exposure?
+
+**Question.** Every rule made money because markets went up. How many dollars a year did
+each earn beyond a static SPY/IEF mix with the same average exposure?
+
+**Setup.** `research/e11_alpha.py`. No new configurations. Daily net returns (5 bps)
+regressed on buy-and-hold SPY and IEF returns; the intercept is alpha. Newey-West t (20 lags).
+
+| rule | β SPY | β IEF | alpha %/yr | alpha $/yr on $10k | t | R² |
+|---|---:|---:|---:|---:|---:|---:|
+| Equal weight (1/N) | 0.77 | 0.23 | -0.2% | -20 | -0.24 | 0.93 |
+| 60/40 SPY/IEF | 0.60 | 0.40 | -0.1% | -9 | -2.75 | 1.00 |
+| TSMOM 12m, 1/N | 0.33 | 0.09 | 2.3% | 225 | 1.63 | 0.49 |
+| SPY>SMA200 else IEF | 0.34 | 0.30 | 2.8% | 279 | 1.17 | 0.25 |
+| RSI2 pullback SPY | 0.11 | -0.04 | 1.4% | 139 | 1.22 | 0.11 |
+| XS 5d reversal, 5 worst | 0.88 | 0.30 | -3.7% | -371 | -1.44 | 0.65 |
+| Turn of month SPY | 0.18 | -0.02 | -1.1% | -110 | -0.74 | 0.19 |
+| InvVol trend + band | 0.27 | 0.18 | 1.8% | 180 | 1.55 | 0.47 |
+| Capped 60/40 | 0.36 | 0.27 | 2.0% | 202 | 2.71 | 0.79 |
+| Blend trend + capped | 0.31 | 0.23 | 1.9% | 189 | 2.26 | 0.68 |
+
+**Observations.**
+
+- This is the sharpest answer to the brief. The timing rules (trend, cap) each earned
+  roughly $140–280 a year on $10k beyond their market exposure: "a few hundred dollars",
+  as asked. Only the capped mix and the blend have t above 2, and those t-values are in
+  sample, uncorrected for ~25 configurations tried, and E09 showed the cap's alpha was
+  about zero in 1994-2004.
+- The rest of each rule's profit (the larger part) is plain exposure to stocks and bonds,
+  which a static mix gives for free. 60/40 daily rebalanced has alpha −$9: that is its
+  trading cost.
+- The fast rules have negative alpha after costs (reversal −$371, turn-of-month −$110).
+
+**Verdict.** There may be a small timing edge of the order of $200 a year on $10k in slow
+risk-management rules. It cannot be distinguished from luck with confidence on 20 years.
+
+---
+
 ## Trial count
 
 Configurations evaluated on the walk-forward window so far (every one, including failures):
@@ -389,3 +455,4 @@ Configurations evaluated on the walk-forward window so far (every one, including
 - E06: 2 models, one specification (plus 0 and 2 bps reruns of the same targets).
 - E09: 1 pre-registered out-of-window check of the E03 candidate (plus its proxy check).
 - E07: 2 policies x 5 seeds, one specification (plus a diagnostic that re-scores, no new configuration).
+- E10, E11: analyses of existing configurations only.
