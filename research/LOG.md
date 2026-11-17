@@ -31,6 +31,10 @@ Conventions for every experiment unless stated otherwise:
   gap is reinvesting at the next open instead of the ex-date close). Price-only is 3.869 and
   dividends-kept-as-cash 4.543, so dividends are accounted for correctly.
 
+- 60/40 SPY/IEF rebalanced at every close with no costs: engine $46,339 vs compounding
+  0.6·r_SPY + 0.4·r_IEF on adjusted closes by hand $46,323 (0.03% apart; added later in
+  the night as an independent cross-check of rebalancing).
+
 **Verdict.** Engine is trustworthy. 30 unit tests cover the accounting, the cost model, the
 t+1 lag, dividends and late listings; each rule has a truncation test proving no look-ahead.
 

@@ -40,3 +40,15 @@ print(f"  price-only return:                            "
 daily = pd.DataFrame({"SPY": 1.0}, index=market.dates[market.dates >= targets.index[0]])
 reinvested = evaluate(market, daily, cost_bps=0.0, fill="close", start=str(targets.index[0].date()))
 print(f"  engine, dividends reinvested daily:           {reinvested.equity.iloc[-1] / 10_000 - 1:.3f}")
+
+# Independent cross-check of a rebalanced portfolio: 60/40 SPY/IEF rebalanced at every
+# close with no costs must equal compounding 0.6 * r_SPY + 0.4 * r_IEF on adjusted closes.
+from trading.strategies import rules  # noqa: E402
+
+mix = rules.fixed_mix(prices, {"SPY": 0.6, "IEF": 0.4})
+engine = evaluate(market, mix, cost_bps=0.0, fill="close", start="2005-01-03")
+daily = prices[["SPY", "IEF"]].pct_change(fill_method=None).loc[engine.equity.index[1] :]
+by_hand = 10_000 * (1 + 0.6 * daily["SPY"] + 0.4 * daily["IEF"]).prod()
+print("\n60/40 rebalanced daily at the close, no costs, 2005 to seal")
+print(f"  engine final equity:           {engine.equity.iloc[-1]:,.0f}")
+print(f"  compounding adjusted returns:  {by_hand:,.0f}")
