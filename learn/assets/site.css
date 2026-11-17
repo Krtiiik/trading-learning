@@ -645,6 +645,9 @@ table:has(td[style*="text-align: right"]) tbody td:first-child { white-space: no
 .choice .mark .icon { width: 0.875rem; height: 0.875rem; stroke-width: 2.5; }
 .feedback .icon { width: 1rem; height: 1rem; stroke-width: 2.25; }
 
+/* Inline TOC: only the trailing chevron is pushed right and flips (the design CSS hit the list icon too). */
+.toc-inline > summary .icon:first-child { margin-left: 0; transform: none; }
+
 /* Header on plain Markdown pages (Mission, Resources) */
 .page-head h1 + .subtitle { margin-top: 0; }
 
