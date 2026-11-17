@@ -59,7 +59,7 @@
 <p>Why multiply instead of subtracting the dividend? Multiplying keeps every daily <em>percentage</em> change intact, which is what returns are made of. Subtracting would distort old returns and could even make very old prices negative.</p>
 
 <div class="key">
-<p><b>The adjusted close rewrites the past.</b> Each new dividend or split multiplies the entire history before it by another factor. The most recent price is always unadjusted, and the further back you go the more factors stack up. SPY's first bar (January 1993) traded at 43.94 but has an adjusted close of 24.05: 33 years of dividends compounded into a factor of 0.547.</p>
+<p><b>The adjusted close rewrites the past.</b> Each new dividend or split multiplies the entire history before it by another factor. The most recent price is always unadjusted, and the further back you go the more factors stack up. SPY's first bar (January 1993) traded at 43.94 but has an adjusted close of 24.05: 33 years of dividends compounded into a factor of 0.547. <a href="0003-adjusted-close-rewrites-the-past.html">Lesson 3</a> takes this apart.</p>
 </div>
 
 <p>This is why the project tracks the <b>adjustment factor</b>, <code>adj_close / close</code>. In the table it is 0.997523 on 17 September and exactly 1 from 18 September on, because no dividend has happened since. When the next dividend arrives, Yahoo multiplies all of history again and the factor on already-stored bars changes. <code>trading fetch</code> notices that change and re-downloads the symbol in full, since your stored adjusted closes would otherwise be stale.</p>

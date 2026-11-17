@@ -12,7 +12,7 @@
 <header class="lesson-head">
   <div class="kicker">Reference</div>
   <h1>Bars, adjustment and performance statistics</h1>
-  <p class="subtitle">Terms follow the project glossary (<code>.claude/CONTEXT.md</code>). Taught in <a href="../lessons/0001-bars-and-adjusted-close.html">lesson 1</a> and <a href="../lessons/0002-the-stats-table.html">lesson 2</a>.</p>
+  <p class="subtitle">Terms follow the project glossary (<code>.claude/CONTEXT.md</code>). Taught in lessons <a href="../lessons/0001-bars-and-adjusted-close.html">1</a>, <a href="../lessons/0002-the-stats-table.html">2</a> and <a href="../lessons/0003-adjusted-close-rewrites-the-past.html">3</a>.</p>
 </header>
 
 <h2>Bar columns</h2>
@@ -38,6 +38,17 @@
 <p><b>Adjustment factor</b> = <code>adj_close / close</code>. It is 1 after the latest dividend and steps down going back in time. A change on an already stored bar means history was re-adjusted.</p>
 <p><b>Total return on a day</b> = (close + dividend) / previous close − 1 = <code>adj_close.pct_change()</code>.</p>
 <p class="source">Source: <a href="https://help.yahoo.com/kb/SLN28256.html">Yahoo, “What is the adjusted close?”</a></p>
+</div>
+
+<div class="card">
+<h2>Levels vs returns</h2>
+<p>A bar's factor is the product of all later multipliers, so it shrinks with every new event (SPY 1993: 0.547 ≈ 1.8% a year of dividends).</p>
+<p>New events rescale all earlier prices uniformly: <b>ratios survive, dollar levels do not.</b></p>
+<ul>
+  <li>Safe on <code>adj_close</code>: returns, CAGR, volatility, Sharpe, drawdown, moving-average crossovers, momentum.</li>
+  <li>Unsafe: fixed price thresholds, stops, dollar indicators (ATR, MACD), share counts. Use raw prices.</li>
+  <li>A stored copy is stale after the next ex-date: re-download, don't append.</li>
+</ul>
 </div>
 
 <div class="card">

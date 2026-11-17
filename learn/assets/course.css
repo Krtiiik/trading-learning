@@ -176,6 +176,10 @@ section.practice { border-top: 1px solid var(--rule); margin-top: 3rem; }
 .feedback.right { color: var(--good); }
 .feedback.wrong { color: var(--bad); }
 
+/* A range slider driving a small table (explore a value over time). */
+.numeric-slider { margin: 1.4rem 0; }
+.numeric-slider input[type="range"] { width: 100%; accent-color: var(--accent); }
+
 details.reveal { margin: 1rem 0; }
 details.reveal summary { cursor: pointer; color: var(--accent); }
 
