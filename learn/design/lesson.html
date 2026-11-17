@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>The stats table</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<link rel="stylesheet" href="design.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"></script>
+<script defer src="design.js"></script>
+</head>
+<body>
+<div class="site" data-page="lesson" data-current="l2" data-thread="1">
+<div class="mock-bar" data-mock-bar></div>
+<div class="page-wrap">
+<header class="site-nav" data-nav></header>
+<div class="layout layout-course">
+<nav class="sidebar" data-sidebar></nav>
+<main class="content">
+<article class="prose">
+
+<header class="page-head">
+  <p class="kicker"><span class="num">Lesson 2</span> · Measuring performance</p>
+  <h1>Five numbers: CAGR, volatility, Sharpe, drawdown, worst day</h1>
+  <p class="subtitle">After this lesson you can compute every number in the notebook's “Annualized statistics” table by hand, and say what each one hides.</p>
+</header>
+
+<details class="toc-inline" data-toc-inline></details>
+
+<p>All five come from the same two series in <code>notebooks/explore_bars.py</code>:</p>
+
+<pre><code>prices  = load_panel(picker.value).dropna()   # adj_close, one column per symbol
+returns = prices.pct_change().dropna()        # daily total returns</code></pre>
+
+<p>Two details matter before any formula:</p>
+<ul>
+  <li><b><code>.dropna()</code> keeps only dates where every picked symbol has data.</b> GLD starts in November 2004, so picking SPY together with GLD cuts SPY's 1993–2004 history away. The same symbol gets different statistics depending on its neighbours in the picker.</li>
+  <li><b>A year is 252 sessions</b>, the usual count of US trading days. The notebook converts sessions into years with <code>len(returns) / 252</code>.</li>
+</ul>
+
+<p>The worked numbers below are from your store: SPY, TLT and GLD from 2004-11-18 to 2026-11-16, 5,533 sessions.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th></th><th class="num">CAGR</th><th class="num">Volatility</th><th class="num">Sharpe (rf=0)</th><th class="num">Max drawdown</th><th class="num">Worst day</th></tr></thead>
+<tbody>
+<tr class="hl"><td>SPY</td><td class="num">10.69%</td><td class="num">18.84%</td><td class="num">0.63</td><td class="num">−55.19%</td><td class="num">−10.94%</td></tr>
+<tr><td>TLT</td><td class="num">2.82%</td><td class="num">14.50%</td><td class="num">0.26</td><td class="num">−48.35%</td><td class="num">−6.67%</td></tr>
+<tr><td>GLD</td><td class="num">9.91%</td><td class="num">18.31%</td><td class="num">0.61</td><td class="num">−45.56%</td><td class="num">−10.27%</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>1 · CAGR: how fast did it grow?</h2>
+
+<p><b>Compound annual growth rate</b>: the single constant yearly rate that would turn the starting price into the ending price over the same number of years.</p>
+
+<p>\[ \text{CAGR} = \left(\frac{P_\text{end}}{P_\text{start}}\right)^{1/\text{years}} - 1 \]</p>
+
+<p>It looks only at the two endpoints. A path that crashed 50% and recovered and a perfectly smooth path get the same CAGR. That is what the next numbers are for.</p>
+
+<h2>2 · Volatility: how bumpy was the ride?</h2>
+
+<p>The standard deviation of daily returns, scaled to a year:</p>
+
+<p>\[ \sigma_\text{annual} = \operatorname{std}(r_\text{daily}) \times \sqrt{252} \]</p>
+
+<p>Why \(\sqrt{252}\) and not 252? If daily returns are independent, their <em>variances</em> add up over a year: 252 days give 252× the variance, so the standard deviation grows by \(\sqrt{252} \approx 15.9\). SPY's daily standard deviation is about 1.19%, so its annual volatility is about 18.8%.</p>
+
+<p class="note">The √252 rule assumes days are independent. When returns are autocorrelated it is wrong, sometimes badly; see <a href="https://traders.studentorg.berkeley.edu/papers/The-Statistics-of-Sharpe-Ratios.pdf">Lo, “The Statistics of Sharpe Ratios” (2002)</a>. For liquid ETFs it is a fine approximation.</p>
+
+<p>Volatility counts upside moves as “risk” exactly like downside ones. It measures bumpiness, not loss.</p>
+
+<h2>3 · Sharpe ratio: return per unit of bumpiness</h2>
+
+<p>\[ \text{Sharpe} = \frac{\operatorname{mean}(r_\text{daily})}{\operatorname{std}(r_\text{daily})} \times \sqrt{252} \]</p>
+
+<p>This equals annualized mean return (mean × 252) divided by annualized volatility (std × √252). SPY: 11.94% / 18.84% ≈ 0.63. It lets you compare a calm asset with a wild one on one scale.</p>
+
+<p>Sharpe's own definition, in <a href="https://web.stanford.edu/~wfsharpe/art/sr/sr.htm">his 1994 paper</a>, uses the return <em>in excess of a benchmark</em>, normally the risk-free rate (T-bills). The notebook sets that rate to zero (“rf=0”), which flatters every asset when cash pays something. Even a modest 2% cash rate pulls SPY's to (11.9 − 2) / 18.8 ≈ 0.53.</p>
+
+<p class="note"><b>Why is the 11.94% mean higher than the 10.69% CAGR?</b> Bumpiness costs compounding: lose 10% then gain 10% and you are at 0.99, not 1. The drag is about half the variance, 0.188² / 2 ≈ 1.8%, exact when CAGR is written as a log rate: ln(1.1069) = 10.2% = 11.9% − 1.8%. That is why Sharpe uses the arithmetic mean but you should quote CAGR as “what you earned”.</p>
+
+<h2>4 · Max drawdown: the worst fall from a peak</h2>
+
+<p>The <b>drawdown</b> on any day is how far the price sits below the highest price seen so far:</p>
+
+<p>\[ \text{drawdown}_t = \frac{P_t}{\max_{s \le t} P_s} - 1 \qquad \text{max drawdown} = \min_t \, \text{drawdown}_t \]</p>
+
+<p>In pandas that is <code>prices / prices.cummax() - 1</code>, and the table shows <code>.min()</code>. It is 0 at every new high and negative in between; the notebook's “Drawdown from previous peak” chart plots the whole series. SPY's −55.19% is the trough of 9 March 2009, measured from the October 2007 peak.</p>
+
+<div class="key">
+<p><b>Drawdowns are asymmetric.</b> After falling 55% you need +123% to get back to the peak (1 / 0.45 − 1). This is the number that tells you whether you could have stomached holding something.</p>
+</div>
+
+<p>Two limits: it uses daily closes, so the intraday lows were deeper; and it uses <code>adj_close</code>, so dividends received during the fall cushion it.</p>
+
+<h2>5 · Worst day</h2>
+
+<p>Simply <code>returns.min()</code>: the single largest one-session loss. SPY: −10.94% on 16 March 2020. GLD: −10.27% on 30 January 2026, the precious-metals crash the architecture notes mention. It is one observation, so it says little about what is likely, but a lot about what is possible.</p>
+
+<section class="practice">
+<h2>Practice</h2>
+<p class="practice-intro">Do these without scrolling up. A calculator is fine; looking up the formula is not.</p>
+
+<div class="numeric" data-answer="0.0718" data-tol="0.0006" data-percent>
+  <p class="q"><span class="qn">Question 1</span>A fund goes from 100 to 200 in exactly 10 years. What is its CAGR? (percent, one decimal)</p>
+  <p class="explain">(200 / 100)<sup>1/10</sup> − 1 = 2<sup>0.1</sup> − 1 ≈ <b>7.2%</b>. Not 10%: that would be the simple average, which ignores compounding.</p>
+</div>
+
+<div class="numeric" data-answer="0.1587" data-tol="0.0015" data-percent>
+  <p class="q"><span class="qn">Question 2</span>Daily returns have a standard deviation of 1.0%. What is the annualized volatility? (percent)</p>
+  <p class="explain">1.0% × √252 ≈ 1.0% × 15.87 = <b>15.9%</b>. Variances add over independent days, so the standard deviation scales with the square root of time.</p>
+</div>
+
+<div class="numeric" data-answer="-0.25" data-tol="0.002" data-percent>
+  <p class="q"><span class="qn">Question 3</span>Closing prices over five sessions: 100, 120, 90, 130, 104. What is the max drawdown? (percent, negative)</p>
+  <p class="explain">Running maximum: 100, 120, 120, 130, 130. Drawdowns: 0, 0, −25%, 0, −20%. The minimum is <b>−25%</b> (120 → 90). The later fall from 130 to 104 is smaller.</p>
+</div>
+
+<div class="quiz" data-answer="a">
+  <p class="q"><span class="qn">Question 4</span>You add GLD to a picker that held only SPY. SPY's CAGR in the table changes. Why?</p>
+  <div class="choices">
+    <button class="choice" type="button" data-choice="a"><span class="mark">A</span>The common history now starts in late 2004</button>
+    <button class="choice" type="button" data-choice="b"><span class="mark">B</span>Volatility of the panel is shared across symbols</button>
+    <button class="choice" type="button" data-choice="c"><span class="mark">C</span>Prices are rescaled to the first common close</button>
+    <button class="choice" type="button" data-choice="d"><span class="mark">D</span>Annualization switches to a different day count</button>
+  </div>
+  <p class="explain"><code>.dropna()</code> keeps only dates where every picked symbol has a price. GLD's first bar is 2004-11-18, so SPY loses 1993–2004 and its endpoints move.</p>
+</div>
+
+<div class="quiz" data-answer="c">
+  <p class="q"><span class="qn">Question 5</span>Two funds have the same CAGR. Fund A has twice the volatility of fund B. What follows?</p>
+  <div class="choices">
+    <button class="choice" type="button" data-choice="a"><span class="mark">A</span>Fund A had the deeper max drawdown, guaranteed</button>
+    <button class="choice" type="button" data-choice="b"><span class="mark">B</span>Fund A earned more money over the same period</button>
+    <button class="choice" type="button" data-choice="c"><span class="mark">C</span>Fund A has the lower Sharpe ratio, most likely</button>
+    <button class="choice" type="button" data-choice="d"><span class="mark">D</span>Fund A had the worse single day, guaranteed</button>
+  </div>
+  <p class="explain">Same growth with more bumpiness means less return per unit of volatility. (Strictly, Sharpe uses the arithmetic mean, which is a bit higher for the bumpier fund, hence “most likely”.) Drawdown and worst day are path details that volatility does not pin down.</p>
+</div>
+
+<div class="numeric" data-answer="1.0" data-tol="0.002" data-percent>
+  <p class="q"><span class="qn">Question 6</span>A position falls 50% from its peak. What gain from the trough gets it back to the peak? (percent)</p>
+  <p class="explain">1 / 0.5 − 1 = <b>100%</b>. Losses and the gains needed to repair them are not symmetric.</p>
+</div>
+
+<details class="reveal">
+<summary><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>Try it on your own data</summary>
+<div class="reveal-body">
+<pre><code>import numpy as np
+from trading.data import load_panel
+prices = load_panel(["SPY"]).dropna()        # SPY alone: history from 1993
+r = prices.pct_change().dropna()
+years = len(r) / 252
+(prices.iloc[-1] / prices.iloc[0]) ** (1 / years) - 1   # CAGR, compare with the table above
+(prices / prices.cummax() - 1).idxmin()                  # date of the deepest drawdown</code></pre>
+<p>Before running it: predict whether SPY's CAGR since 1993 is higher or lower than the 10.69% it shows since 2004.</p>
+</div>
+</details>
+</section>
+
+<div class="ask-cta">
+  <p>Questions, or curious about the next measures (Sortino, Calmar, rolling statistics, a real risk-free rate)?</p>
+  <button class="btn btn-secondary" type="button" data-chat-open>Ask Claude</button>
+</div>
+
+</article>
+</main>
+<aside class="toc" data-toc aria-label="On this page"></aside>
+</div>
+</div>
+
+<!-- Returning thread: what a reader sees when this page already has a saved conversation. -->
+<template id="thread-seed">
+  <div class="divider">Tue 17 Nov</div>
+  <div class="msg msg-user">
+    <span class="quote-chip"><span class="where">From § 3 · Sharpe ratio</span><q>The notebook sets that rate to zero (“rf=0”), which flatters every asset when cash pays something.</q></span>
+    <div>Explain this</div>
+  </div>
+  <div class="msg msg-claude">
+    <p>Sharpe asks how much you earned <em>above doing nothing</em>, per unit of bumpiness. “Doing nothing” means holding T-bills, which pay the risk-free rate \(r_f\):</p>
+    <p>\[ \text{Sharpe} = \frac{\bar r - r_f}{\sigma} \]</p>
+    <p>Setting \(r_f = 0\) pretends cash earns nothing, so every asset gets credit for return that cash would have given you anyway.</p>
+  </div>
+  <div class="msg msg-user"><div>So with 4% T-bills, would TLT's Sharpe go negative?</div></div>
+  <div class="msg msg-claude">
+    <p>Almost exactly to zero. TLT's arithmetic mean is about 0.26 × 14.5% ≈ 3.8% a year, so (3.8 − 4) / 14.5 ≈ <b>−0.02</b>. Over this period, long bonds paid you roughly what cash would have, with a −48% drawdown on top.</p>
+  </div>
+  <div class="divider">Today</div>
+  <div class="msg msg-user">
+    <span class="quote-chip"><span class="where">From § 2 · Volatility</span><q>If daily returns are independent, their variances add up over a year</q></span>
+    <div>Why variances, and not standard deviations?</div>
+  </div>
+  <div class="msg msg-claude">
+    <p>For independent variables, variance is what adds: \(\operatorname{Var}(X + Y) = \operatorname{Var}X + \operatorname{Var}Y\). Standard deviations don't. Two days with 1% each give a variance of 2 (in %²), so the two-day standard deviation is \(\sqrt{2} \approx 1.41\%\), not 2%.</p>
+  </div>
+  <div class="divider topic">New topic</div>
+  <div class="msg msg-user"><div>Is max drawdown the same thing as the worst year?</div></div>
+  <div class="msg msg-claude"><p class="caret">No. A drawdown is measured from the highest point so far, whenever it was, and can span several calendar years. SPY's −55% ran from October 2007 to March 2009</p></div>
+</template>
+
+</div>
+</body>
+</html>
