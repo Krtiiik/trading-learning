@@ -34,6 +34,7 @@ def validate_daily(bars: pd.DataFrame, calendar: str = "NYSE") -> list[Issue]:
         _inconsistent_ohlc(bars),
         *_calendar_gaps(bars, calendar),
         _unexplained_jumps(bars),
+        _unadjusted_splits(bars),
     ]
     return [issue for issue in issues if issue is not None]
 
@@ -80,3 +81,11 @@ def _unexplained_jumps(bars: pd.DataFrame) -> Issue | None:
     move = bars["close"].pct_change().abs()
     jumps = (move > JUMP_THRESHOLD) & (bars["splits"] == 0)
     return _issue("jumps", f"close moves over {JUMP_THRESHOLD:.0%} without a split", jumps)
+
+
+def _unadjusted_splits(bars: pd.DataFrame) -> Issue | None:
+    # Close is split-adjusted, so a genuine split never moves it; a jump on the split
+    # day means the bars before it were stored before the split was applied.
+    move = bars["close"].pct_change().abs()
+    stale = (move > JUMP_THRESHOLD) & (bars["splits"] != 0)
+    return _issue("split", "splits with unadjusted history before them (re-fetch --full)", stale)

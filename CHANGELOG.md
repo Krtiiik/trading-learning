@@ -20,3 +20,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - `trading fetch` re-downloads a symbol in full after a new split, instead of appending post-split prices to pre-split history.
+- Sanity checks report a large close move on a split day as history stored before the split, instead of treating the split as explaining it.

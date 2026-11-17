@@ -58,11 +58,21 @@ def test_missing_sessions_and_bars_on_holidays_are_reported():
     assert found["extra"] == ["2024-01-15"]
 
 
-def test_big_move_without_split_is_reported_but_split_explains_it():
+def test_big_move_without_split_is_reported():
     bars = nyse_bars()
     bars.loc["2024-01-09":, ["open", "high", "low", "close"]] /= 2
 
     assert checks(bars)["jumps"] == ["2024-01-09"]
 
+
+def test_big_move_on_split_day_is_reported_as_unadjusted_history():
+    # Prices are split-adjusted, so a real split never moves the close. A jump on the
+    # split day means the bars before it were stored before the split was applied.
+    bars = nyse_bars()
+    bars.loc["2024-01-09":, ["open", "high", "low", "close"]] /= 2
     bars.loc["2024-01-09", "splits"] = 2.0
-    assert "jumps" not in checks(bars)
+
+    found = checks(bars)
+
+    assert found["split"] == ["2024-01-09"]
+    assert "jumps" not in found
