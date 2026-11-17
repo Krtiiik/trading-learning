@@ -476,6 +476,52 @@ one or three equity funds keeps equity-size drawdowns. Dual momentum switched la
 
 ---
 
+## E08 — PPO allocation agent (stable-baselines3)
+
+**Hypothesis.** A standard RL agent allocating daily between SPY, IEF, GLD and cash beats
+the fixed mixes of the same assets out of sample after costs.
+
+**Setup.** `research/e08_ppo.py`, specification fixed before the first run (docstring):
+observation = 9 features × 3 assets + current weights; action → softmax weights; reward =
+100·log(1 + net return) with 5 bps on weight changes; 252-day episodes from random starts;
+PPO defaults, MLP 2×32, 150,000 steps per fold; four expanding walk-forward folds testing
+2012-14, 2015-17, 2018-20, 2021-24; 5 seeds. New dependencies: gymnasium, stable-baselines3.
+CPU only: 5 seeds in parallel took 5.4 minutes in total.
+
+**Result (2012-01-03 .. seal, 5 bps, next-open fill, 5% band).**
+
+| strategy | net P&L $ | $/yr | CAGR | vol | Sharpe | maxDD | turnover/yr | costs $ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| PPO seed 0 | -3,926 | -305 | -3.8% | 13.2% | -0.23 | -56.5% | 32.7x | 2,914 |
+| PPO seed 1 | -2,771 | -215 | -2.5% | 13.1% | -0.13 | -49.2% | 41.7x | 3,816 |
+| PPO seed 2 | 2,403 | 187 | 1.7% | 11.4% | 0.20 | -30.1% | 44.8x | 5,768 |
+| PPO seed 3 | -976 | -76 | -0.8% | 12.4% | -0.00 | -40.9% | 43.1x | 4,603 |
+| PPO seed 4 | -1,840 | -143 | -1.6% | 12.1% | -0.07 | -45.7% | 50.5x | 5,203 |
+| PPO ensemble | -50 | -4 | -0.0% | 11.2% | 0.05 | -36.5% | 29.8x | 3,279 |
+| PPO ensemble, 0 bps | 4,622 | 360 | 3.0% | 11.2% | 0.32 | -22.1% | 29.6x | 0 |
+| SPY/IEF/GLD thirds | 12,978 | 1,009 | 6.7% | 8.1% | 0.84 | -16.8% | 0.6x | 112 |
+| 60/40 SPY/IEF | 21,602 | 1,680 | 9.4% | 9.7% | 0.97 | -21.1% | 0.5x | 123 |
+| Capped 60/40 | 17,380 | 1,352 | 8.1% | 7.1% | 1.14 | -13.7% | 0.7x | 170 |
+| SPY buy & hold | 47,786 | 3,717 | 14.6% | 16.5% | 0.91 | -33.7% | 0.0x | 8 |
+
+**Observations.**
+
+- Four of five seeds lost money over thirteen years in which all three assets rose. The
+  seed-averaged agent broke even. Holding the same three assets in fixed thirds made
+  $12,978 with a Sharpe of 0.84.
+- Costs are not the reason: at zero cost the ensemble's Sharpe is 0.32.
+- The agent learned the recent past. Its first fold, trained on 2005-2011 (gold's bull
+  market), held 67% gold in 2012 and 53% in 2013, the year gold fell 28%. It then moved to
+  65% SPY for 2015 and back down to 24% by 2018.
+- It trades 30–50x a year despite the cost term in its reward and the 5% band.
+- Seed spread −0.23 to +0.20: no single run means anything.
+
+**Verdict.** Fails clearly, and in the way the literature warned: about 1,500 training days
+per fold of three noisy return series is far too little for an agent to learn anything but
+the last regime. RL is not the right tool for this problem at this data scale.
+
+---
+
 ## Trial count
 
 Configurations evaluated on the walk-forward window so far (every one, including failures):
@@ -490,3 +536,8 @@ Configurations evaluated on the walk-forward window so far (every one, including
 - E07: 2 policies x 5 seeds, one specification (plus a diagnostic that re-scores, no new configuration).
 - E10, E11: analyses of existing configurations only.
 - E12: 2 relative-momentum configurations, pre-specified.
+- E08: 1 PPO specification x 5 seeds.
+
+Total distinct strategy configurations evaluated on the walk-forward window: 27 (8 baselines,
+7 + 3 + 2 rule candidates, 2 supervised, 2 direct-policy, 1 PPO, plus the two close relatives
+in E05), not counting the 20 declared sensitivity runs of E04.
