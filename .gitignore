@@ -14,3 +14,6 @@ __marimo__/
 /learn/_site/
 /learn/.jekyll-cache/
 /learn/_publish/
+
+# Research experiment artefacts (trained policy weights), reproducible from research/ scripts
+/research/out/

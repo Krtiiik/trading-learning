@@ -260,6 +260,85 @@ Bootstrap of Sharpe differences (observed, 90% interval, share of draws ≤ 0):
 
 ---
 
+## E06 — Supervised return prediction (ridge, gradient boosting)
+
+**Hypothesis.** A model that sees nine per-ETF features (four momentum horizons, 5-day
+reversal, distance from the 200-day average, vol ratio, vol level, IBS) predicts 5-day
+returns well enough to pick ETFs after costs.
+
+**Setup.** `research/e06_supervised.py`, specification fixed before the first run and in the
+file's docstring. 135,588 samples; 20 yearly folds with an expanding window and a 5-session
+embargo; Ridge(alpha=100) and HistGradientBoosting (depth 3, 200 trees), no tuning. Portfolio:
+top 5 predictions at 20% each if positive, averaged over the last 5 days' picks, 5% band.
+New dependencies: scikit-learn, torch (dev group).
+
+**Result.**
+
+| strategy | net P&L $ | $/yr | CAGR | vol | Sharpe | maxDD | turnover/yr | costs $ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Ridge top-5, 5 bps | 17,034 | 858 | 5.1% | 12.8% | 0.46 | -30.8% | 33.6x | 12,239 |
+| GBM top-5, 5 bps | 16,009 | 806 | 4.9% | 14.5% | 0.40 | -38.2% | 29.9x | 10,756 |
+| Ridge top-5, 0 bps | 42,053 | 2,118 | 8.7% | 12.8% | 0.71 | -30.4% | 34.0x | 0 |
+| GBM top-5, 0 bps | 36,764 | 1,852 | 8.1% | 14.5% | 0.61 | -37.3% | 30.0x | 0 |
+
+Out-of-sample daily rank IC: ridge +0.014 (t ≈ 1.3), GBM +0.021 (t ≈ 2.2); positive in all
+four 5-year blocks for both. Ridge's largest coefficients are short-term reversal (rev_5
+−0.035, IBS −0.019): the model mostly rediscovered mean reversion.
+
+**Observations.**
+
+- There is a small, real, persistent signal (IC ≈ 0.02), and it is the short-term reversal
+  effect E01 already showed. It is not big enough: even at zero cost the portfolio only
+  matches 1/N (Sharpe 0.61–0.71 vs 0.64), and at 5 bps the 30x turnover takes $11–12k.
+- Both models are weakest in 2020-24 (Sharpe 0.15–0.26).
+
+**Verdict.** Fails. Not pursued further: making it trade less would mean tuning the
+portfolio rule on the same data, and the zero-cost ceiling is not worth reaching for.
+
+---
+
+## E09 — The capped 60/40 on 1994-2004, a period nothing here had touched
+
+(Run while E07 trained; numbered by start time.)
+
+**Hypothesis.** Written down before running: on a decade outside the walk-forward window,
+the cap again raises Sharpe and cuts drawdown versus the uncapped mix.
+
+**Setup.** `research/e09_pre2005_check.py`. IEF starts in 2002, so the bond leg is VFITX
+(Vanguard Intermediate-Term Treasury fund; daily NAV from Yahoo via
+`uv run trading fetch --symbols VFITX --data-dir data/extra`, fetched 2026-11-17). Mutual
+funds trade at closing NAV, so fills are at the next close. Same parameters as E03.
+
+**Result (5 bps, next-close fill).**
+
+| 1994-2004 | net P&L $ | CAGR | vol | Sharpe | maxDD |
+|---|---:|---:|---:|---:|---:|
+| SPY buy & hold | 21,182 | 10.9% | 18.4% | 0.65 | -47.5% |
+| 60/40 SPY/VFITX | 17,435 | 9.6% | 11.2% | 0.88 | -24.4% |
+| Capped 60/40 SPY/VFITX | 10,567 | 6.8% | 8.0% | 0.86 | -22.1% |
+
+Capped − uncapped Sharpe: −0.02, 90% interval [−0.14, +0.10].
+
+Proxy check on 2005 → seal with VFITX in place of IEF: 60/40 0.74, capped 0.91
+(difference +0.17, interval [+0.02, +0.32]). That matches the IEF version (0.75 → 0.97
+with next-open fills), so the proxy is sound and the 1994-2004 result is not a proxy artefact.
+
+Yearly: the cap gave up 1997 (+14.3% vs +23.6%), 1998 (+13.8% vs +21.9%) and 1999 (+7.5%
+vs +10.5%), when volatility was high in a rising market, and saved almost nothing in the
+slow 2000-02 bear market (2001: −7.9% vs −3.9%; 2002: −7.9% vs −8.0%).
+
+**Verdict.** The hypothesis failed. Outside the window the cap bought no Sharpe, a
+2-point smaller drawdown, and cost 2.8 points of CAGR. Its 2005-2024 edge comes from two
+fast crashes (2008, 2020) where volatility rose before most of the loss. In a slow bear
+market or a volatile bull market it is a drag. Over the two periods together the cap is a
+risk dial, not a source of return: Sharpe roughly equal to or better than uncapped,
+never clearly worse, at lower volatility and lower dollars.
+
+This is the most important check of the night: the leading candidate's advantage over
+plain 60/40 is regime-dependent and should not be expected to persist at its 2005-2024 size.
+
+---
+
 ## Trial count
 
 Configurations evaluated on the walk-forward window so far (every one, including failures):
@@ -269,3 +348,5 @@ Configurations evaluated on the walk-forward window so far (every one, including
 - E04: 20 sensitivity runs around one E03 candidate (5 extra target×window cells, 3 extra bands,
   1 fill, 1 cost, 10 mix runs). Declared as sensitivity, not selection.
 - E05: 3 new configurations (blend, idle cash in IEF, that plus cap).
+- E06: 2 models, one specification (plus 0 and 2 bps reruns of the same targets).
+- E09: 1 pre-registered out-of-window check of the E03 candidate (plus its proxy check).
