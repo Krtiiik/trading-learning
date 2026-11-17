@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "course-site",
+      "runtimeExecutable": "bundle",
+      "runtimeArgs": ["exec", "jekyll", "serve", "--port", "4000"],
+      "cwd": "learn",
+      "port": 4000
+    }
+  ]
+}

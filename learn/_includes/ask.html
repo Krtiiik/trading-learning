@@ -1,0 +1,9 @@
+{%- comment -%}
+End-of-lesson invitation to ask Claude, placed after Practice. Shown only where the
+Ask Claude feature runs (the published artifact); absent under jekyll serve.
+{% include ask.html text="Something unclear, or want to go deeper (…)?" %}
+{%- endcomment -%}
+<div class="ask-cta" hidden data-ask-cta>
+  <p>{{ include.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+  <button class="btn btn-secondary" type="button" data-chat-open>Ask Claude</button>
+</div>

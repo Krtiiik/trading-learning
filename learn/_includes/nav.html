@@ -1,0 +1,14 @@
+{%- capture base %}{% include base.html %}{% endcapture -%}
+{%- assign first_sheet = site.reference | sort: "title" | first -%}
+<header class="site-nav">
+  <div class="inner">
+    <button class="icon-btn menu-btn" type="button" aria-label="Open course menu" aria-expanded="false" data-drawer-open>{% include icon.html name="menu" %}</button>
+    <a class="brand" href="{{ base }}index.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M6 7h4M10 13h4"/></svg>{{ site.title }}</a>
+    <nav class="nav-links" aria-label="Site">
+      {%- if first_sheet %}<a href="{{ base }}{{ first_sheet.url | remove_first: '/' }}"{% if page.collection == "reference" %} aria-current="page"{% endif %}>Reference</a>{% endif -%}
+      <a href="{{ base }}resources.html"{% if page.url == "/resources.html" %} aria-current="page"{% endif %}>Resources</a>
+      <a href="{{ base }}mission.html"{% if page.url == "/mission.html" %} aria-current="page"{% endif %}>Mission</a>
+    </nav>
+    <button class="icon-btn theme-btn" type="button" aria-label="Switch light or dark theme">{% include icon.html name="sun" class="icon sun" %}{% include icon.html name="moon" class="icon moon" %}</button>
+  </div>
+</header>

@@ -1,0 +1,26 @@
+{%- comment -%}
+Data table that scrolls sideways on its own when wider than the column.
+{% capture rows %}
+| date | close | splits |
+|---|---:|---:|
+| 2000-03-17 | 110.81 | 0 |
+| 2000-03-20 | 107.69 | 2.0 |
+{% endcapture %}{% include table.html content=rows hl="2" %}
+Right-aligned columns (---:) are numeric: tabular figures, no wrapping. hl = body rows to highlight,
+1-based, comma-separated.
+{%- endcomment -%}
+{%- assign html = include.content | markdownify -%}
+{%- if include.hl -%}
+  {%- assign marked = include.hl | split: "," -%}
+  {%- assign rows = html | split: "<tr>" -%}
+  {%- capture html -%}
+    {%- for row in rows -%}
+      {%- unless forloop.first -%}
+        {%- assign body_index = forloop.index0 | minus: 1 | append: "" -%}
+        {%- if marked contains body_index %}<tr class="hl">{% else %}<tr>{% endif -%}
+      {%- endunless -%}
+      {{- row -}}
+    {%- endfor -%}
+  {%- endcapture -%}
+{%- endif -%}
+<div class="table-wrap">{{ html }}</div>

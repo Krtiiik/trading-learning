@@ -36,6 +36,21 @@ _Avoid_: watchlist, tickers.
 
 **Issue**: A sanity-check finding on stored bars (gap, duplicate, bad price, unexplained jump); reported as a warning, never blocks storing.
 
+### Course (`learn/`)
+
+**Lesson**: One numbered page of the course that teaches a single objective and ends with Practice questions. Numbers run across the whole course.
+
+**Part**: A named group of lessons in teaching order; a part with no lessons yet is shown as planned.
+_Avoid_: module, chapter, unit.
+
+**Reference sheet**: A dense one-page summary of taught material, for looking things up rather than learning them.
+_Avoid_: cheat sheet.
+
+**Course brief**: The mission and glossary sent to Claude with every Ask Claude request, so answers use the course's terms.
+
+**Thread**: The saved Ask Claude conversation of one page, including "New topic" breaks; there is one per page.
+_Avoid_: chat log, history.
+
 ## Relationships
 
 - A **Provider** delivers **Bars** at a **Granularity**; the **Store** keeps them per symbol.

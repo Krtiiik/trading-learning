@@ -1,0 +1,22 @@
+---
+layout: default
+kind: lesson
+---
+{%- assign part = site.data.parts | where: "id", page.part | first -%}
+<div class="layout layout-course">
+{% include sidebar.html %}
+<main class="content">
+<article class="prose">
+<header class="page-head">
+  <p class="kicker"><span class="num">Lesson {{ page.number }}</span>{% if part %} · {{ part.title }}{% endif %}</p>
+  <h1>{{ page.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}</h1>
+  {%- if page.subtitle %}
+  <p class="subtitle">{{ page.subtitle | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+  {%- endif %}
+</header>
+{% include toc.html html=content mode="inline" %}
+{{ content }}
+</article>
+</main>
+{% include toc.html html=content mode="rail" %}
+</div>

@@ -1,3 +1,9 @@
+---
+title: Resources
+description: Primary sources behind the lessons, and the gaps still to fill.
+permalink: /resources.html
+---
+
 # Algorithmic Trading Resources
 
 ## Knowledge
@@ -12,6 +18,7 @@
   The author's own definition: excess return over a benchmark per unit of its volatility, ex ante vs ex post. Use for: Sharpe ratio, choosing a benchmark.
 - [Andrew Lo, "The Statistics of Sharpe Ratios" (2002)](https://traders.studentorg.berkeley.edu/papers/The-Statistics-of-Sharpe-Ratios.pdf)
   Shows when √time annualization fails (serial correlation) and how to estimate Sharpe's error. Use for: annualizing, significance of backtest Sharpe ratios.
+{: .links}
 
 ## Wisdom (Communities)
 

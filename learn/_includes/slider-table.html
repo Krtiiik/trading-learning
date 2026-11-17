@@ -1,0 +1,29 @@
+{%- comment -%}
+A range slider that steps through the rows of a small table, showing one row at a time.
+Data lives in the page's front matter:
+  asof:
+    caption: SPY's first bar, as downloaded on
+    columns: [downloaded on, adj_close of 1993-01-29, factor]
+    numeric: [2, 3]            # 1-based columns to right-align
+    ticks: ["1993", "2000"]   # one label per row
+    rows:
+      - ["1993-12-31", "42.86", "0.9755"]
+    start: 5                   # 0-based row shown first (default: last)
+{% include slider-table.html id="asof" data=page.asof %}
+{%- endcomment -%}
+{%- assign d = include.data -%}
+{%- assign last = d.rows.size | minus: 1 -%}
+{%- assign start = d.start | default: last -%}
+<div class="numeric-slider" id="{{ include.id }}" data-rows="{{ d.rows | jsonify | escape }}">
+  <div class="slider-head"><span>{{ d.caption }}</span><output>{{ d.rows[start][0] }}</output></div>
+  <input id="{{ include.id }}-range" type="range" min="0" max="{{ last }}" step="1" value="{{ start }}" aria-label="{{ d.caption }}">
+  {%- if d.ticks %}
+  <div class="ticks">{% for t in d.ticks %}<span>{{ t }}</span>{% endfor %}</div>
+  {%- endif %}
+  <div class="table-wrap">
+  <table>
+  <thead><tr>{% for c in d.columns %}{% assign n = forloop.index %}<th{% if d.numeric contains n %} class="num"{% endif %}>{{ c }}</th>{% endfor %}</tr></thead>
+  <tbody><tr class="hl">{% for cell in d.rows[start] %}{% assign n = forloop.index %}<td{% if d.numeric contains n %} class="num"{% endif %}>{{ cell }}</td>{% endfor %}</tr></tbody>
+  </table>
+  </div>
+</div>
