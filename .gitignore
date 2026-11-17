@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# marimo
+__marimo__/
+
+# Downloaded market data, reproducible with `uv run trading fetch`
+data/

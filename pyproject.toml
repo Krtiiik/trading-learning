@@ -1,0 +1,32 @@
+[project]
+name = "trading"
+version = "0.1.0"
+description = "Learning and researching algorithmic trading strategies"
+authors = [
+    { name = "Lukáš Nedbálek", email = "lukas.nedbalek@email.cz" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pandas>=3.1.1",
+    "pandas-market-calendars>=5.6.1",
+    "pyarrow>=26.0.1",
+    "yfinance>=1.8.0",
+]
+
+[project.scripts]
+trading = "trading:main"
+
+[build-system]
+requires = ["uv_build>=0.12.18,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "marimo>=0.25.2",
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not network'"
+markers = ["network: hits real data providers over the internet (run with -m network)"]
