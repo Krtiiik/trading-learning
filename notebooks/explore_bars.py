@@ -106,8 +106,8 @@ def _(load_bars, mo, picker, plt):
                 f"""
                 ## Raw vs adjusted
 
-                The raw close is the price that actually traded. The adjusted close scales
-                history down by every later dividend and split, so the gap between them is
+                The raw close is the traded price, adjusted only for splits. The adjusted close
+                also scales history down by every later dividend, so the gap between them is
                 {_symbol}'s reinvested distributions. Backtest returns on `adj_close`;
                 size orders and fills on the raw prices.
                 """

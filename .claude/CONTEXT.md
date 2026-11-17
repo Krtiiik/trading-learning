@@ -15,13 +15,13 @@ _Avoid_: candle, tick, row.
 **Granularity**: The length of a bar, written like `1d`. Only `1d` exists so far; intraday values (`1h`, `1m`) are planned.
 _Avoid_: interval, timeframe, resolution.
 
-**Raw price**: The price that actually traded on that day, never revised.
+**Raw price**: The traded price adjusted for splits only, never for dividends. Equal to what actually traded since the last split; earlier bars are divided by each later split ratio, so a split rewrites raw history too (that is how Yahoo serves it).
 _Avoid_: unadjusted price, nominal price.
 
 **Adjusted close**: The close scaled so its changes equal total return (dividends reinvested, splits removed). The provider rewrites its whole history whenever a new dividend or split occurs.
 _Avoid_: adj price, total-return price.
 
-**Adjustment factor**: Adjusted close divided by raw close for a bar; a change in it on an already stored bar signals the history was re-adjusted.
+**Adjustment factor**: Adjusted close divided by raw close for a bar; a change in it on an already stored bar signals a new dividend re-adjusted the history. Splits leave it unchanged, since they scale raw and adjusted prices alike.
 
 **Provider**: An external source of bars behind a common interface (Yahoo Finance today).
 _Avoid_: feed, vendor, source.

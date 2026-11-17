@@ -54,6 +54,31 @@ def test_changed_adjustment_factor_triggers_full_download(store):
     pd.testing.assert_frame_equal(store.read("SPY", "1d"), readjusted, check_freq=False)
 
 
+def test_new_split_triggers_full_download(store):
+    # Yahoo split-adjusts close as well as adj_close, so a split leaves the adjustment
+    # factor unchanged; only the splits column reveals that stored prices are now stale.
+    store.write("SPY", "1d", make_bars("2024-01-01", 6, close=200.0))
+    split_adjusted = make_bars("2024-01-01", 10, close=100.0)
+    split_adjusted.loc[split_adjusted.index[7], "splits"] = 2.0
+    provider = FakeProvider({"SPY": split_adjusted})
+
+    result = update_symbol(provider, store, "SPY")
+
+    assert (result.mode, result.reason) == ("full", "new split")
+    assert provider.requests[-1] == ("SPY", None, None)
+    pd.testing.assert_frame_equal(store.read("SPY", "1d"), split_adjusted, check_freq=False)
+
+
+def test_split_already_stored_does_not_trigger_full_download(store):
+    history = make_bars("2024-01-01", 10)
+    history.loc[history.index[3], "splits"] = 2.0
+    store.write("SPY", "1d", history.iloc[:6])
+
+    result = update_symbol(FakeProvider({"SPY": history}), store, "SPY")
+
+    assert result.mode == "incremental"
+
+
 def test_full_flag_downloads_everything_again(store):
     history = make_bars("2024-01-01", 10)
     store.write("SPY", "1d", history)

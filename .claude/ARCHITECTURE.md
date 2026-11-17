@@ -21,9 +21,9 @@ Research code never talks to a provider: it reads the store through `load_bars` 
 
 **Provider behind a protocol.** yfinance is an unofficial scraper that can break or be rate-limited; keeping it behind a small interface lets Stooq, Alpaca or a paid source replace it without touching storage or research code. Providers normalize to one bar shape so nothing downstream knows where data came from.
 
-**Raw prices plus adjusted close, not fully adjusted OHLC.** Raw prices are the truth and never change; the adjusted close gives total returns. Fully adjusted OHLC can be derived when needed. Storing only adjusted data would lose the real traded prices.
+**Raw prices plus adjusted close, not fully adjusted OHLC.** Raw prices (split-adjusted only, as Yahoo serves them) equal what traded since the last split and are never touched by dividends; the adjusted close gives total returns. Fully adjusted OHLC can be derived when needed. Storing only adjusted data would lose the traded prices.
 
-**Incremental updates re-fetch the last stored bar.** A bar stored while its session was open gets replaced by final values. Comparing that bar's adjustment factor with the provider's tells whether a new dividend or split re-adjusted history; if so the symbol is downloaded in full, since the stored adjusted closes are stale.
+**Incremental updates re-fetch the last stored bar.** A bar stored while its session was open gets replaced by final values. Comparing that bar's adjustment factor with the provider's tells whether a new dividend re-adjusted history. A split does not change the factor (it scales raw and adjusted prices alike), so a split not yet stored is checked separately. Either way the symbol is downloaded in full, since the stored prices are stale; appending would mix pre- and post-split prices.
 
 **Parquet per symbol, data not in git.** Typed, compressed, fast with pandas, trivially inspectable per symbol, and appending one symbol never rewrites others. Data is reproducible from `trading fetch` and redistributing Yahoo data would break its terms, so `data/` is gitignored.
 

@@ -31,9 +31,11 @@ def update_symbol(
     """Fetch new bars for `symbol` and store them.
 
     Incrementally, this re-fetches from the last stored bar onward, so a bar stored while
-    its session was still open gets replaced by its final values. If the provider's
-    adjustment factor (adj_close / close) for that overlapping bar has changed, a new
-    dividend or split has re-adjusted the whole history, so everything is downloaded again.
+    its session was still open gets replaced by its final values. Everything is downloaded
+    again when the provider has re-adjusted history since the last update: a changed
+    adjustment factor (adj_close / close) on the overlapping bar signals a new dividend, and
+    a split not yet stored signals a split, which leaves the factor unchanged because the
+    provider split-adjusts close as well.
     """
     symbol = symbol.upper()
     stored = store.read(symbol, granularity)
@@ -48,6 +50,8 @@ def update_symbol(
         return UpdateResult(symbol, "incremental", 0, len(stored))
     if last in fetched.index and _factor_changed(stored.loc[last], fetched.loc[last]):
         return _full(provider, store, symbol, granularity, len(stored), "adjustments changed")
+    if _has_new_split(stored, fetched):
+        return _full(provider, store, symbol, granularity, len(stored), "new split")
 
     merged = pd.concat([stored.drop(fetched.index, errors="ignore"), fetched]).sort_index()
     store.write(symbol, granularity, merged)
@@ -73,3 +77,9 @@ def _factor_changed(stored: pd.Series, fetched: pd.Series) -> bool:
     stored_factor = stored["adj_close"] / stored["close"]
     fetched_factor = fetched["adj_close"] / fetched["close"]
     return not np.isclose(stored_factor, fetched_factor, rtol=1e-6)
+
+
+def _has_new_split(stored: pd.DataFrame, fetched: pd.DataFrame) -> bool:
+    splits = fetched["splits"][fetched["splits"] != 0]
+    already_stored = stored["splits"].reindex(splits.index).fillna(0) != 0
+    return not already_stored.all()
