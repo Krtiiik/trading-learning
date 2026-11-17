@@ -1,0 +1,72 @@
+"""The sealed holdout: run ONCE, at the very end, for the one chosen finalist.
+
+This is the only file that reads bars from 2024-11-17 onward. It refuses to run a second
+time: the result is written to `research/holdout_result.txt` and that file's existence
+blocks a rerun, so the number cannot be quietly improved.
+
+The account starts with $10,000 on the first holdout session. Signals use all history up
+to each decision date (the row decided on 2024-11-15 is the first one traded). Baselines
+are run on the same days for comparison only; the finalist was fixed before this ran.
+
+Run: uv run python research/holdout.py
+"""
+
+import sys
+from pathlib import Path
+
+import pandas as pd
+
+from common import COST_BPS, HOLDOUT_START, INITIAL_CASH, SYMBOLS, format_table, results_table
+from trading.backtest import Market, run_backtest
+from trading.data import load_panel
+from trading.strategies import rules
+
+RESULT = Path(__file__).parent / "holdout_result.txt"
+
+# The finalist, fixed from the walk-forward results (see REPORT.md) before running.
+FINALIST = "Capped 60/40 (8% cap, 20d, 5% band)"
+
+if __name__ == "__main__":
+    if RESULT.exists():
+        sys.exit(f"{RESULT.name} already exists: the holdout has been run. Read it; do not rerun.")
+
+    market = Market.from_store(SYMBOLS)
+    prices = load_panel(SYMBOLS, "adj_close")
+    mix = rules.fixed_mix(prices, {"SPY": 0.6, "IEF": 0.4})
+
+    strategies = {
+        FINALIST: (rules.volatility_cap(mix, prices, 0.08, 20), 0.05),
+        "SPY buy & hold": (rules.fixed_mix(prices, {"SPY": 1.0}), 0.0),
+        "Equal weight (1/N)": (rules.equal_weight(prices), 0.0),
+        "60/40 SPY/IEF": (mix, 0.0),
+        "TSMOM 12m, 1/N": (rules.time_series_momentum(prices, 252), 0.0),
+        "SPY>SMA200 else IEF": (rules.trend_filter(prices, "SPY", "IEF", 200), 0.0),
+    }
+
+    lines = [
+        f"Holdout run at {pd.Timestamp.now():%Y-%m-%d %H:%M}",
+        f"Finalist: {FINALIST}",
+        f"Window: {HOLDOUT_START} .. {market.dates.max().date()}, "
+        f"${INITIAL_CASH:,.0f}, next-open fill",
+    ]
+    for cost in (COST_BPS, 2.0):
+        results = {
+            name: run_backtest(
+                market, targets, initial_cash=INITIAL_CASH, cost_bps=cost,
+                rebalance_band=band, start=HOLDOUT_START,
+            )
+            for name, (targets, band) in strategies.items()
+        }
+        lines += ["", f"### {cost:g} bps per side", "", format_table(results_table(results))]
+        if cost == COST_BPS:
+            finalist = results[FINALIST]
+            lines += [
+                "",
+                f"Finalist sessions: {len(finalist.equity)}  "
+                f"final equity ${finalist.equity.iloc[-1]:,.2f}  "
+                f"average invested {finalist.weights.sum(axis=1).mean():.0%}",
+            ]
+
+    text = "\n".join(lines) + "\n"
+    RESULT.write_text(text, encoding="utf-8")
+    print(text)

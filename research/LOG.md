@@ -339,6 +339,44 @@ plain 60/40 is regime-dependent and should not be expected to persist at its 200
 
 ---
 
+## E07 — Direct policy optimisation (the simplest "RL")
+
+**Hypothesis.** A small policy that maps each ETF's nine features to a score, with softmax
+weights over the listed ETFs plus cash, trained by gradient ascent on net-of-cost Sharpe,
+finds an allocation rule that beats the hand-written ones out of sample.
+
+**Setup.** `research/e07_direct_policy.py`, specification fixed before the first run (in the
+docstring): linear and MLP (9→8→1) policies, Adam lr 0.01, 300 epochs, 20 yearly folds
+with an expanding window from 2000, 5 seeds each, evaluated in the real engine with a 5%
+band. CPU only (each training takes about a second; the GPU was not needed all night).
+
+**Result (5 bps).**
+
+| policy | Sharpe by seed | ensemble Sharpe | ensemble CAGR | maxDD | turnover | ensemble Sharpe at 0 bps |
+|---|---|---:|---:|---:|---:|---:|
+| linear | 0.28, 0.32, 0.24, 0.22, 0.29 | 0.30 | 2.7% | -29.0% | 26.8x | 0.59 |
+| MLP | −0.15, −0.12, 0.02, 0.23, 0.12 | 0.15 | 1.1% | -30.7% | 59.2x | 0.71 |
+
+Ensemble Sharpe by sub-period: linear 0.39 / 0.14 / 1.14 / 0.37; MLP 0.44 / −0.18 / 0.39 / −0.20.
+
+**Why it fails** (`research/e07_diagnostic.py` and a per-year look at linear seed 0):
+
+- Overfitting, visible directly. Trained on 2000-2019, the MLP scores net Sharpe 1.9–2.2
+  in sample and −0.36 to +0.08 on 2020-24. The linear policy scores 0.90 in sample and
+  0.33 out.
+- Two regimes of failure for the linear policy. With training windows up to 2014 it
+  learns a concentrated, twitchy rule: 58–136x turnover a year, largest weight 30–48%.
+  From the 2015 fold on it collapses to a diffuse rule: 60–75% cash, largest weight 5%,
+  about 1x turnover, earning −4% to +8% a year. Maximising Sharpe with a cash slot rewards
+  doing very little.
+- Seed variance for the MLP spans −0.15 to +0.23: the seed matters more than the model.
+- The learned average holdings are bonds and defensive sectors (IEF, LQD, TLT, HYG, GLD,
+  XLP, XLV): the policy learned "low volatility had high Sharpe in the training window".
+
+**Verdict.** Fails, for the reasons the literature predicted. Not tuned further.
+
+---
+
 ## Trial count
 
 Configurations evaluated on the walk-forward window so far (every one, including failures):
@@ -350,3 +388,4 @@ Configurations evaluated on the walk-forward window so far (every one, including
 - E05: 3 new configurations (blend, idle cash in IEF, that plus cap).
 - E06: 2 models, one specification (plus 0 and 2 bps reruns of the same targets).
 - E09: 1 pre-registered out-of-window check of the E03 candidate (plus its proxy check).
+- E07: 2 policies x 5 seeds, one specification (plus a diagnostic that re-scores, no new configuration).
