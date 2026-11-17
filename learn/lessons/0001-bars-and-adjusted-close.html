@@ -66,7 +66,7 @@
 
 <h2>A caveat: Yahoo's “close” is not quite raw</h2>
 
-<p>The project glossary calls <code>close</code> the <b>raw price</b>, “never revised”. Your own data says otherwise for splits. QQQ split 2-for-1 on 20 March 2000. A truly raw close would halve that day. In your store:</p>
+<p>The project calls <code>close</code> the <b>raw price</b>, and it is easy to read that as “exactly what traded”. Your own data says otherwise for splits. QQQ split 2-for-1 on 20 March 2000. A truly raw close would halve that day. In your store:</p>
 
 <div class="table-wrap">
 <table>
@@ -79,6 +79,8 @@
 </div>
 
 <p>No halving: the pre-split closes have already been divided by 2. XLK (2-for-1, December 2025) and SLV (10-for-1, July 2008) show the same thing. Yahoo's <code>close</code> is <em>split-adjusted but not dividend-adjusted</em>; only <code>adj_close</code> adjusts for both. <a href="https://iangow.github.io/notes/published/yahoo-returns.pdf">Ian Gow's note on Yahoo returns</a> describes the two series the same way. In practice: returns from <code>adj_close</code> are right, but a pre-split <code>close</code> is not the price you would have paid.</p>
+
+<p>One consequence: a split scales <code>close</code> and <code>adj_close</code> alike, so the adjustment factor does not change. <code>trading fetch</code> therefore also watches the <code>splits</code> column and re-downloads in full when a new split appears; finding that gap is how this lesson was written.</p>
 
 <p class="note">Read the <a href="https://help.yahoo.com/kb/SLN28256.html">Yahoo help page</a> worked example: a 2:1 split and a $0.08 dividend, with every multiplier shown. It is short and it is the primary source for this lesson.</p>
 
