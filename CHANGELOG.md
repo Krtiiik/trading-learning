@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - marimo notebook `notebooks/explore_bars.py` comparing growth, statistics, drawdowns and raw vs adjusted prices of stored symbols.
 - Course site in `learn/`, built with Jekyll: a course dashboard, lesson and reference layouts with a course sidebar and on-page contents, and light and dark themes.
 - Jekyll includes for the course's content components: multiple-choice and numeric questions, notes, key ideas, tables, reveals and slider tables, with formulas typeset by KaTeX.
+- Ask Claude on every page of the published course: a side chat about the page, and "Explain this" or your own question on text selected in a lesson. Chats are saved per page for the course owner.
 
 ### Fixed
 
