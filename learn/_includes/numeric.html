@@ -1,0 +1,10 @@
+{%- comment -%}
+Numeric-answer question, checked within an absolute tolerance.
+{% include numeric.html answer="0.9976" tol="0.00006" q="Compute …" explain="Worked solution." %}
+percent=true: the reader types a percentage; "10.7" and "10.7%" both mean 0.107, so `answer` and
+`tol` are fractions. Text parameters are Markdown. The label "Question n" is numbered automatically.
+{%- endcomment -%}
+<div class="numeric" data-answer="{{ include.answer }}" data-tol="{{ include.tol | default: 0 }}"{% if include.percent %} data-percent{% endif %}>
+  <p class="q"><span class="qn">Question</span>{{ include.q | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+  <div class="explain">{{ include.explain | markdownify }}</div>
+</div>
