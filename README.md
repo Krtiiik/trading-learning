@@ -1,3 +1,55 @@
 # Trading
 
 My personal collection of learning how to trade.
+
+## Setup
+
+Requires [uv](https://docs.astral.sh/uv/) (it installs Python 3.14 if needed).
+
+```bash
+uv sync
+```
+
+## Market data
+
+Download daily bars for the ETF universe in `universe.toml` into `data/`:
+
+```bash
+uv run trading fetch
+```
+
+Run it again any time to add only the new bars. Other options:
+
+```bash
+uv run trading fetch --symbols AAPL MSFT   # specific symbols instead of the universe
+uv run trading fetch --full                # re-download whole histories
+```
+
+Data comes from Yahoo Finance via yfinance, for personal research use only. Each fetch prints warnings for suspicious data (missing sessions, bad prices, large moves without a split).
+
+Load stored bars in Python:
+
+```python
+from trading.data import load_bars, load_panel
+
+spy = load_bars("SPY", start="2010-01-01")          # one symbol, all bar columns
+prices = load_panel(["SPY", "TLT", "GLD"])          # adjusted close, one column per symbol
+```
+
+## Notebooks
+
+```bash
+uv run marimo edit notebooks/explore_bars.py
+```
+
+## Tests
+
+```bash
+uv run pytest
+```
+
+```bash
+uv run pytest -m network
+```
+
+The second runs the tests that talk to Yahoo.
