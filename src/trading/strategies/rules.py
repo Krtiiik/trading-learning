@@ -189,3 +189,23 @@ def relative_momentum(
         idle = 1.0 - weights.sum(axis=1)
         weights[fallback] = weights[fallback] + idle.where(prices[fallback].notna(), 0.0)
     return weights[enough]
+
+
+def trend_switched_mix(
+    prices: pd.DataFrame,
+    risky: str = "SPY",
+    safe: str = "IEF",
+    risky_weight: float = 0.6,
+    lookback: int = 252,
+) -> pd.DataFrame:
+    """A fixed risky/safe mix whose risky leg sits in cash while its trend is down.
+
+    `risky` gets `risky_weight` only while its `lookback`-day return is positive;
+    `safe` always gets the remainder. Rows start once the trend is known.
+    """
+    past = prices[risky].shift(lookback)
+    up = prices[risky] / past - 1.0 > 0
+    weights = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
+    weights[risky] = up.astype(float) * risky_weight
+    weights[safe] = 1.0 - risky_weight
+    return weights[past.notna() & prices[safe].notna()]

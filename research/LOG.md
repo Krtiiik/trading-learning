@@ -522,6 +522,99 @@ the last regime. RL is not the right tool for this problem at this data scale.
 
 ---
 
+## E13 — A trend switch on the stock leg, plus the cap
+
+**Hypothesis.** E09 showed the cap adds nothing in a slow bear market. Trend rules are
+meant for exactly that regime, and the cap for fast crashes, so the two together should be
+at least as good as the cap alone in the walk-forward window and better on 1994-2004.
+
+**Setup.** `research/e13_trend_switch_cap.py`. One configuration, written down before
+running: 60% SPY only while SPY's 12-month return is positive (else that 60% is cash), 40%
+IEF always, then the same 8% / 20-day cap and 5% band. The rule is
+`rules.trend_switched_mix` followed by `rules.volatility_cap`.
+
+**Result (5 bps).**
+
+| 2005 .. seal, next-open fill | net P&L $ | $/yr | CAGR | vol | Sharpe | maxDD | turnover/yr | costs $ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 60/40 SPY/IEF | 35,160 | 1,771 | 7.9% | 10.9% | 0.75 | -31.6% | 0.5x | 227 |
+| Capped 60/40 | 28,290 | 1,425 | 7.0% | 7.3% | 0.97 | -17.3% | 0.8x | 302 |
+| Trend-switched 60/40 | 26,437 | 1,332 | 6.7% | 7.9% | 0.86 | -17.7% | 1.1x | 450 |
+| Trend-switched + capped | 23,830 | 1,200 | 6.3% | 6.6% | 0.96 | -13.6% | 1.5x | 570 |
+
+Sharpe by sub-period:
+
+| | 2005-09 | 2010-14 | 2015-19 | 2020-24 |
+|---|---:|---:|---:|---:|
+| 60/40 | 0.28 | 1.38 | 1.09 | 0.70 |
+| Capped 60/40 | 0.52 | 1.44 | 1.12 | 0.86 |
+| Trend-switched + capped | 0.75 | 1.35 | 0.91 | 0.82 |
+
+| 1994-02 .. 2004, VFITX, next-close fill | net P&L $ | CAGR | vol | Sharpe | maxDD |
+|---|---:|---:|---:|---:|---:|
+| 60/40 SPY/VFITX | 16,748 | 9.4% | 11.2% | 0.86 | -24.4% |
+| Capped 60/40 | 10,050 | 6.6% | 8.0% | 0.83 | -22.1% |
+| Trend-switched 60/40 | 18,901 | 10.2% | 9.2% | 1.11 | -10.4% |
+| Trend-switched + capped | 13,986 | 8.3% | 7.0% | 1.18 | -7.8% |
+
+Further numbers for the combination in the walk-forward window:
+
+- Sharpe difference vs capped 60/40: −0.01, 90% interval [−0.17, +0.16]: a tie.
+- Sharpe difference vs plain 60/40: +0.21, 90% interval [−0.07, +0.48], P(≤0) = 0.11.
+  Vs SPY: +0.35, [+0.07, +0.64], P(≤0) = 0.02.
+- Alpha vs static SPY/IEF exposure: +2.5%/yr, about $250 a year on $10k, t = 2.3
+  (betas 0.24 SPY, 0.32 IEF).
+- Invested 82% on average; the SPY leg is on 81% of days.
+- Calendar years: four small or large losses (2011 −0.5%, 2015 −0.8%, 2018 −0.6%,
+  2022 −12.1%); 2008 was +2.6% and 2009 was 0.0% (it sat out both the crash and the rebound).
+  Worst rolling 12 months −12.5%.
+- Insensitive to execution: Sharpe 0.97 at 2 bps, 0.94 at 10 bps, 0.93 with next-close fills.
+
+**Observations.**
+
+- In the window the combination ties the cap alone on Sharpe, has the smallest drawdown of
+  any candidate except the 50/50 blend, and is the most even across sub-periods (worst 0.75
+  where the cap alone has 0.52).
+- On 1994-2004 it is clearly better than both the plain and the capped mix. **Caveat:** the
+  idea was formed after seeing the cap's yearly returns on 1994-2004 in E09, so that period
+  is not an untouched test of it. The window result is the clean one, and there it is a tie.
+- It does not protect against a bond sell-off: in 2022 it lost 12.1%, because the 40% IEF
+  leg is always on and bonds fell with stocks.
+- It earns the fewest dollars of the 60/40 family ($1,200/yr vs $1,771 plain).
+
+**Verdict.** The most consistent candidate across 31 years. Chosen as the finalist (see
+"Finalist choice" below).
+
+---
+
+## Finalist choice (written and committed before the holdout was run)
+
+**Finalist: Trend-switched + capped 60/40.** 60% SPY while SPY's 12-month return is
+positive (else cash), 40% IEF, scaled down so expected volatility (20-day covariance) is at
+most 8% a year, rebalances under 5% of equity skipped, signal at the close, trade at the
+next open.
+
+Why this one and not the capped 60/40, which has the highest walk-forward Sharpe (0.97 vs 0.96):
+
+- In the walk-forward window the two are a statistical tie; the combination has the smaller
+  drawdown (−13.6% vs −17.3%) and the steadier sub-periods.
+- The capped mix failed its own pre-registered out-of-window check (E09). Picking it anyway
+  would be following a ranking over evidence.
+- Each component has independent support in the literature (slow trend; volatility
+  management of equity exposure), and every parameter is a textbook value (12 months, 20
+  days) or was shown to sit on a plateau (E04).
+
+What could be wrong with this choice: the trend switch was added after seeing where the cap
+failed, which is how overfitting happens. The holdout is the check on that. The capped
+60/40 is reported on the holdout too, as a comparison row only.
+
+One more disclosure: I am a language model whose training data extends past November 2024,
+so I have vague general knowledge of how markets moved in 2025. I did not look at any
+holdout bar, and the choice above rests only on the numbers in this log, but that
+background knowledge cannot be fully ruled out as an influence.
+
+---
+
 ## Trial count
 
 Configurations evaluated on the walk-forward window so far (every one, including failures):
@@ -541,3 +634,5 @@ Configurations evaluated on the walk-forward window so far (every one, including
 Total distinct strategy configurations evaluated on the walk-forward window: 27 (8 baselines,
 7 + 3 + 2 rule candidates, 2 supervised, 2 direct-policy, 1 PPO, plus the two close relatives
 in E05), not counting the 20 declared sensitivity runs of E04.
+- E13: 2 new configurations (trend-switched 60/40, and that plus the cap), on two periods.
+  Total distinct configurations: 29.

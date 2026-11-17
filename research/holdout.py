@@ -24,7 +24,7 @@ from trading.strategies import rules
 RESULT = Path(__file__).parent / "holdout_result.txt"
 
 # The finalist, fixed from the walk-forward results (see REPORT.md) before running.
-FINALIST = "Capped 60/40 (8% cap, 20d, 5% band)"
+FINALIST = "Trend-switched + capped 60/40"
 
 if __name__ == "__main__":
     if RESULT.exists():
@@ -35,7 +35,11 @@ if __name__ == "__main__":
     mix = rules.fixed_mix(prices, {"SPY": 0.6, "IEF": 0.4})
 
     strategies = {
-        FINALIST: (rules.volatility_cap(mix, prices, 0.08, 20), 0.05),
+        FINALIST: (
+            rules.volatility_cap(rules.trend_switched_mix(prices), prices, 0.08, 20),
+            0.05,
+        ),
+        "Capped 60/40 (comparison only)": (rules.volatility_cap(mix, prices, 0.08, 20), 0.05),
         "SPY buy & hold": (rules.fixed_mix(prices, {"SPY": 1.0}), 0.0),
         "Equal weight (1/N)": (rules.equal_weight(prices), 0.0),
         "60/40 SPY/IEF": (mix, 0.0),

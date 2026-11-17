@@ -228,3 +228,25 @@ def test_relative_momentum_uses_no_data_after_the_decision_date():
         pd.testing.assert_series_equal(truncated.iloc[-1], full.loc[prices.index[cut]])
     assert (full.sum(axis=1) <= 1 + 1e-12).all()
     assert (full["D"][prices["D"].reindex(full.index).isna()] == 0).all()
+
+
+def test_trend_switched_mix_moves_the_risky_leg_to_cash_in_a_downtrend():
+    index = pd.bdate_range("2020-01-01", periods=5, name="date")
+    prices = pd.DataFrame(
+        {"RISKY": [10, 11, 12, 11, 9], "SAFE": [5.0] * 5}, index=index, dtype=float
+    )
+
+    weights = rules.trend_switched_mix(prices, "RISKY", "SAFE", risky_weight=0.6, lookback=2)
+
+    assert weights.index[0] == index[2]
+    assert weights["RISKY"].tolist() == pytest.approx([0.6, 0.0, 0.0])  # 12>10, 11=11, 9<12
+    assert weights["SAFE"].tolist() == pytest.approx([0.4, 0.4, 0.4])
+
+
+def test_trend_switched_mix_uses_no_data_after_the_decision_date():
+    prices = random_prices()
+    full = rules.trend_switched_mix(prices, "A", "C", lookback=60)
+
+    for cut in (120, 250, 333):
+        truncated = rules.trend_switched_mix(prices.iloc[: cut + 1], "A", "C", lookback=60)
+        pd.testing.assert_series_equal(truncated.iloc[-1], full.loc[prices.index[cut]])
