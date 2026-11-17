@@ -1,0 +1,16 @@
+# Symbols that `uv run trading fetch` downloads when no --symbols are given.
+# Liquid US-listed ETFs: no survivorship bias, long histories, broad asset-class coverage.
+
+[universe]
+symbols = [
+    # US equity indices
+    "SPY", "QQQ", "IWM", "DIA",
+    # International equities
+    "EFA", "EEM",
+    # Bonds
+    "TLT", "IEF", "LQD", "HYG",
+    # Commodities and real estate
+    "GLD", "SLV", "DBC", "VNQ",
+    # SPDR sector ETFs
+    "XLB", "XLC", "XLE", "XLF", "XLI", "XLK", "XLP", "XLRE", "XLU", "XLV", "XLY",
+]

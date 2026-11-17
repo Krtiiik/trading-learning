@@ -1,0 +1,68 @@
+import pandas as pd
+
+from trading.data.validation import validate_daily
+
+from conftest import make_bars
+
+
+def checks(bars: pd.DataFrame) -> dict[str, list[str]]:
+    return {
+        issue.check: [date.strftime("%Y-%m-%d") for date in issue.dates]
+        for issue in validate_daily(bars)
+    }
+
+
+def nyse_bars() -> pd.DataFrame:
+    """Bars for every NYSE session from 2024-01-02 to 2024-01-12 (2024-01-01 was a holiday)."""
+    return make_bars("2024-01-02", 9)
+
+
+def test_clean_bars_pass_every_check():
+    assert validate_daily(nyse_bars()) == []
+
+
+def test_empty_bars_are_reported():
+    assert checks(make_bars("2024-01-02", 0)) == {"empty": []}
+
+
+def test_duplicate_dates_are_reported():
+    bars = nyse_bars()
+    bars = pd.concat([bars, bars.iloc[[3]]]).sort_index()
+
+    assert checks(bars)["duplicates"] == ["2024-01-05"]
+
+
+def test_non_positive_and_missing_prices_are_reported():
+    bars = nyse_bars()
+    bars.loc["2024-01-04", "low"] = 0.0
+    bars.loc["2024-01-08", "adj_close"] = float("nan")
+
+    assert checks(bars)["prices"] == ["2024-01-04", "2024-01-08"]
+
+
+def test_close_outside_high_low_range_is_reported():
+    bars = nyse_bars()
+    bars.loc["2024-01-05", "close"] = bars.loc["2024-01-05", "high"] + 5
+
+    assert checks(bars)["ohlc"] == ["2024-01-05"]
+
+
+def test_missing_sessions_and_bars_on_holidays_are_reported():
+    bars = nyse_bars().drop(pd.Timestamp("2024-01-05"))
+    holiday = make_bars("2024-01-15", 1)  # Martin Luther King Jr. Day
+    bars = pd.concat([bars, holiday, make_bars("2024-01-16", 1)])
+
+    found = checks(bars)
+
+    assert found["missing"] == ["2024-01-05"]
+    assert found["extra"] == ["2024-01-15"]
+
+
+def test_big_move_without_split_is_reported_but_split_explains_it():
+    bars = nyse_bars()
+    bars.loc["2024-01-09":, ["open", "high", "low", "close"]] /= 2
+
+    assert checks(bars)["jumps"] == ["2024-01-09"]
+
+    bars.loc["2024-01-09", "splits"] = 2.0
+    assert "jumps" not in checks(bars)
