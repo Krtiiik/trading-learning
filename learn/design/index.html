@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Trading Course Design</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<link rel="stylesheet" href="design.css">
+<script defer src="design.js"></script>
+</head>
+<body>
+<div class="site" data-page="home">
+<div class="mock-bar" data-mock-bar></div>
+<div class="page-wrap">
+<header class="site-nav" data-nav></header>
+<nav class="sidebar drawer-only" data-sidebar></nav>
+
+<main class="home">
+  <header class="home-hero">
+    <p class="kicker">A course built alongside the trading workbench</p>
+    <h1>Algorithmic Trading</h1>
+    <p class="lead">Learn algorithmic trading well enough to design, backtest and judge strategies on real ETF data, instead of trusting numbers you don't understand.</p>
+    <a href="mission.html">Read the mission</a>
+    <ul class="facts">
+      <li><b>3</b> lessons</li>
+      <li><b>25</b> ETFs in your store</li>
+      <li>Daily bars from Yahoo, <b>1993</b> onwards</li>
+    </ul>
+  </header>
+
+  <div class="home-grid">
+    <div class="parts">
+
+      <section class="part-block">
+        <p class="label part-label">Part 1</p>
+        <h2>Market data</h2>
+        <p class="part-desc">What a bar is, how the adjusted close is built, and which numbers survive when the data provider rewrites history.</p>
+        <ol class="lesson-list">
+          <li><a href="#"><span class="n">1</span><span><span class="t">What is in a bar, and how the adjusted close is built</span><span class="s">Read every column <code>trading fetch</code> stores and compute an adjusted close by hand.</span></span><svg class="icon go" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#"><span class="n">3</span><span><span class="t">The adjusted close rewrites the past, and what survives</span><span class="s">Tell which backtest numbers stay the same when Yahoo rewrites its history.</span></span><svg class="icon go" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        </ol>
+      </section>
+
+      <section class="part-block">
+        <p class="label part-label">Part 2</p>
+        <h2>Measuring performance</h2>
+        <p class="part-desc">The five numbers in the notebook's statistics table, and what each one hides.</p>
+        <ol class="lesson-list">
+          <li><a href="lesson.html"><span class="n">2</span><span><span class="t">Five numbers: CAGR, volatility, Sharpe, drawdown, worst day</span><span class="s">Compute every number in the “Annualized statistics” table by hand.</span></span><svg class="icon go" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        </ol>
+      </section>
+
+      <section class="part-block planned">
+        <p class="label part-label">Part 3 · <span class="pill">Planned</span></p>
+        <h2>Backtesting without fooling yourself</h2>
+        <p class="part-desc">Look-ahead, survivorship and overfitting: how a backtest can look good for reasons that have nothing to do with an edge.</p>
+        <p class="planned-empty">Lessons appear here as they are written.</p>
+      </section>
+
+      <section class="part-block planned">
+        <p class="label part-label">Part 4 · <span class="pill">Planned</span></p>
+        <h2>A first strategy, end to end</h2>
+        <p class="part-desc">Implement a simple strategy on the stored universe, backtest it, and judge the result.</p>
+        <p class="planned-empty">Lessons appear here as they are written.</p>
+      </section>
+
+    </div>
+
+    <aside class="home-aside" aria-label="Reference and resources">
+      <div class="aside-group">
+        <span class="label">Reference sheets</span>
+        <ul><li><a href="reference.html"><b>Bars and stats</b><span>Bar columns, adjustment, performance statistics on one page.</span></a></li></ul>
+      </div>
+      <div class="aside-group">
+        <span class="label">Further reading</span>
+        <ul>
+          <li><a href="resources.html"><b>Resources</b><span>Primary sources behind the lessons: Yahoo, Sharpe, Lo.</span></a></li>
+          <li><a href="mission.html"><b>Mission</b><span>Why this course exists and what success looks like.</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+</div>
+</div>
+</body>
+</html>

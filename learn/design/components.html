@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Components and states</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<link rel="stylesheet" href="design.css">
+<style>
+  /* Gallery scaffolding only: frames that show fixed-position UI in place. */
+  .state-grid { display: grid; gap: var(--s5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); align-items: start; margin: var(--s5) 0; }
+  .state { display: grid; gap: var(--s2); min-width: 0; }
+  .state > .label { color: var(--faint); }
+  .state .quiz, .state .numeric { margin: 0; }
+  .swatches { display: grid; gap: var(--s2); grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); margin: var(--s5) 0;
+              font-family: var(--sans); font-size: var(--fs-ui-xs); }
+  .swatch { display: flex; align-items: center; gap: var(--s3); padding: var(--s2); border: 1px solid var(--rule); border-radius: var(--r-md); background: var(--raised); }
+  .swatch i { width: 2rem; height: 2rem; border-radius: var(--r-sm); border: 1px solid var(--rule); flex: none; }
+  .swatch b { display: block; font-weight: 600; color: var(--ink); }
+  .swatch code { background: none; padding: 0; color: var(--muted); font-size: var(--fs-label); }
+  .type-row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: var(--s4); align-items: baseline; padding: var(--s2) 0; border-bottom: 1px solid var(--rule); }
+  .type-row .label { color: var(--faint); }
+  .row-demo { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: center; margin: var(--s4) 0; }
+  .ask-fab.static { position: relative; right: auto; bottom: auto; }
+  .sel-pop.static { position: relative; }
+  .panel-demo { position: relative; display: flex; flex-direction: column; height: 26rem; background: var(--raised);
+                border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; font-family: var(--sans); }
+  .panel-demo .ask-body { justify-content: flex-end; }
+  .demo-text { font-size: var(--fs-body); }
+  .demo-text mark { background: color-mix(in srgb, var(--accent) 28%, transparent); color: inherit; }
+  @media (max-width: 839.98px) { .type-row { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"></script>
+<script defer src="design.js"></script>
+</head>
+<body>
+<div class="site" data-page="components">
+<div class="mock-bar" data-mock-bar></div>
+<div class="page-wrap">
+<header class="site-nav" data-nav></header>
+<nav class="sidebar drawer-only" data-sidebar></nav>
+<div class="layout layout-single">
+<main class="content wide">
+<article class="prose" style="max-width: var(--measure-wide)">
+
+<header class="page-head">
+  <p class="kicker"><span class="num">Design</span> · Mockup</p>
+  <h1>Components and states</h1>
+  <p class="subtitle">Every content component and Ask Claude state, frozen side by side. Toggle the theme in the nav bar to see the other palette. The spec is in <code>learn/DESIGN.md</code>.</p>
+</header>
+
+<h2>Colour tokens</h2>
+<div class="swatches" data-swatches></div>
+
+<h2>Type scale</h2>
+<div class="type-row"><span class="label">Display 44</span><span style="font-size:var(--fs-display);font-weight:600;line-height:1.1;letter-spacing:-0.02em">Algorithmic Trading</span></div>
+<div class="type-row"><span class="label">H1 38</span><span style="font-size:var(--fs-h1);font-weight:600;line-height:1.15;letter-spacing:-0.015em">Five numbers</span></div>
+<div class="type-row"><span class="label">H2 24</span><span style="font-size:var(--fs-h2);font-weight:600">3 · Sharpe ratio: return per unit of bumpiness</span></div>
+<div class="type-row"><span class="label">H3 19</span><span style="font-size:var(--fs-h3);font-weight:600">Rules of thumb</span></div>
+<div class="type-row"><span class="label">Lead 20 italic</span><span style="font-size:var(--fs-lead);font-style:italic;color:var(--ink-2)">After this lesson you can compute every number by hand.</span></div>
+<div class="type-row"><span class="label">Body 18</span><span>SPY's daily standard deviation is about 1.19%, so its annual volatility is about 18.8%.</span></div>
+<div class="type-row"><span class="label">Small 16</span><span style="font-size:var(--fs-small);color:var(--ink-2)">Notes, explanations and Claude's replies.</span></div>
+<div class="type-row"><span class="label">UI 15 / 14 / 13</span><span class="ui" style="font-size:var(--fs-ui)">Check · <span style="font-size:var(--fs-ui-sm)">Measuring performance</span> · <span style="font-size:var(--fs-ui-xs);color:var(--muted)">On this page</span></span></div>
+<div class="type-row"><span class="label">Label 12</span><span class="label" style="color:var(--muted)">Part 2 · Key idea · Question 4</span></div>
+<div class="type-row"><span class="label">Mono 15</span><span><code>prices / prices.cummax() - 1</code></span></div>
+<div class="type-row"><span class="label">Table 15 tnum</span><span class="ui" style="font-variant-numeric:tabular-nums">10.69% · −55.19% · 49,652,800</span></div>
+
+<h2>Buttons and fields</h2>
+<div class="row-demo">
+  <button class="btn btn-primary" type="button">Check</button>
+  <button class="btn btn-secondary" type="button">Ask Claude</button>
+  <button class="btn btn-ghost" type="button">Show solution</button>
+  <button class="btn btn-primary" type="button" disabled>Disabled</button>
+  <button class="icon-btn" type="button" aria-label="Icon button"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<div class="row-demo">
+  <input class="field" id="f-idle" type="text" placeholder="e.g. 12.3%" aria-label="Idle field">
+  <input class="field is-wrong" id="f-wrong" type="text" value="10%" aria-label="Wrong field">
+  <input class="field is-right" id="f-right" type="text" value="7.2%" aria-label="Right field" readonly>
+</div>
+
+<h2>Text components</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>date</th><th class="num">open</th><th class="num">high</th><th class="num">low</th><th class="num">close</th><th class="num">adj_close</th><th class="num">volume</th><th class="num">dividends</th></tr></thead>
+<tbody>
+<tr><td>2026-09-17</td><td class="num">763.15</td><td class="num">763.57</td><td class="num">759.96</td><td class="num">762.60</td><td class="num">760.71</td><td class="num">49,652,800</td><td class="num">0</td></tr>
+<tr class="hl"><td>2026-09-18</td><td class="num">761.31</td><td class="num">762.00</td><td class="num">757.97</td><td class="num">761.69</td><td class="num">761.69</td><td class="num">65,395,100</td><td class="num">1.889</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Display formula, then inline math \(\sqrt{252} \approx 15.87\) in running text:</p>
+<p>\[ \text{CAGR} = \left(\frac{P_\text{end}}{P_\text{start}}\right)^{1/\text{years}} - 1 \]</p>
+
+<p class="note">The √252 rule assumes days are independent. When returns are autocorrelated it is wrong, sometimes badly.</p>
+
+<div class="key"><p><b>Drawdowns are asymmetric.</b> After falling 55% you need +123% to get back to the peak (1 / 0.45 − 1).</p></div>
+
+<pre><code>returns = prices.pct_change().dropna()        # daily total returns</code></pre>
+
+<details class="reveal" open>
+<summary><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>Try it on your own data (open)</summary>
+<div class="reveal-body"><p>Before running it: predict whether SPY's CAGR since 1993 is higher or lower than the 10.69% it shows since 2004.</p></div>
+</details>
+<details class="reveal">
+<summary><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>Try it on your own data (closed)</summary>
+<div class="reveal-body"><p>Hidden content.</p></div>
+</details>
+
+<div class="numeric-slider" id="asof">
+  <div class="slider-head"><span>SPY's first bar, as downloaded on</span><output data-k="date">2026-11-16</output></div>
+  <input id="asof-range" type="range" min="0" max="5" step="1" value="5" aria-label="Download date">
+  <div class="ticks"><span>1993</span><span>2000</span><span>2008</span><span>2016</span><span>2025</span><span>2026</span></div>
+  <div class="table-wrap">
+  <table>
+  <thead><tr><th>downloaded on</th><th class="num">adj_close of 1993-01-29</th><th class="num">factor</th><th class="num">SPY total return in 2000</th></tr></thead>
+  <tbody><tr class="hl"><td data-k="date2"></td><td class="num" data-k="adj"></td><td class="num" data-k="factor"></td><td class="num" data-k="ret"></td></tr></tbody>
+  </table>
+  </div>
+</div>
+
+<h2>Multiple-choice quiz</h2>
+<div class="state-grid">
+  <div class="state"><span class="label">Idle (hover: orange border)</span>
+    <div class="quiz"><p class="q"><span class="qn">Question 4</span>Why does SPY's CAGR change when GLD is added?</p>
+      <div class="choices">
+        <button class="choice" type="button"><span class="mark">A</span>The common history now starts in late 2004</button>
+        <button class="choice" type="button"><span class="mark">B</span>Volatility is shared across symbols</button>
+        <button class="choice" type="button"><span class="mark">C</span>Prices are rescaled</button>
+      </div></div></div>
+  <div class="state"><span class="label">Wrong pick: that choice locks</span>
+    <div class="quiz"><p class="q"><span class="qn">Question 4</span>Why does SPY's CAGR change when GLD is added?</p>
+      <div class="choices">
+        <button class="choice" type="button"><span class="mark">A</span>The common history now starts in late 2004</button>
+        <button class="choice wrong" type="button" disabled><span class="mark"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span>Volatility is shared across symbols</button>
+        <button class="choice" type="button"><span class="mark">C</span>Prices are rescaled</button>
+      </div></div></div>
+  <div class="state"><span class="label">Right: all lock, explanation shows</span>
+    <div class="quiz"><p class="q"><span class="qn">Question 4</span>Why does SPY's CAGR change when GLD is added?</p>
+      <div class="choices">
+        <button class="choice right" type="button" disabled><span class="mark"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>The common history now starts in late 2004</button>
+        <button class="choice wrong" type="button" disabled><span class="mark"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span>Volatility is shared across symbols</button>
+        <button class="choice" type="button" disabled><span class="mark">C</span>Prices are rescaled</button>
+      </div>
+      <p class="explain shown"><code>.dropna()</code> keeps only dates where every picked symbol has a price, so SPY loses 1993–2004.</p></div></div>
+</div>
+
+<h2>Numeric-answer quiz</h2>
+<div class="state-grid">
+  <div class="state"><span class="label">Idle</span>
+    <div class="numeric"><p class="q"><span class="qn">Question 1</span>100 to 200 in 10 years. CAGR?</p>
+      <div class="row"><input class="field" id="n1" type="text" placeholder="e.g. 12.3%" aria-label="Answer"><button class="btn btn-primary" type="button">Check</button><button class="btn btn-ghost" type="button">Show solution</button></div></div></div>
+  <div class="state"><span class="label">Empty input</span>
+    <div class="numeric"><p class="q"><span class="qn">Question 1</span>100 to 200 in 10 years. CAGR?</p>
+      <div class="row"><input class="field is-wrong" id="n2" type="text" placeholder="e.g. 12.3%" aria-label="Answer"><button class="btn btn-primary" type="button">Check</button><button class="btn btn-ghost" type="button">Show solution</button></div>
+      <p class="feedback wrong"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg>Type a number first.</p></div></div>
+  <div class="state"><span class="label">Wrong, with direction</span>
+    <div class="numeric"><p class="q"><span class="qn">Question 1</span>100 to 200 in 10 years. CAGR?</p>
+      <div class="row"><input class="field is-wrong" id="n3" type="text" value="10%" aria-label="Answer"><button class="btn btn-primary" type="button">Check</button><button class="btn btn-ghost" type="button">Show solution</button></div>
+      <p class="feedback wrong"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg>Not quite: too high. Try again.</p></div></div>
+  <div class="state"><span class="label">Correct: input locks, solution shows</span>
+    <div class="numeric"><p class="q"><span class="qn">Question 1</span>100 to 200 in 10 years. CAGR?</p>
+      <div class="row"><input class="field is-right" id="n4" type="text" value="7.2%" aria-label="Answer" readonly><button class="btn btn-primary" type="button">Check</button><button class="btn btn-ghost" type="button">Show solution</button></div>
+      <p class="feedback right"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Correct.</p>
+      <p class="explain shown">2<sup>0.1</sup> − 1 ≈ <b>7.2%</b>. Not 10%: that ignores compounding.</p></div></div>
+  <div class="state"><span class="label">Gave up: solution only</span>
+    <div class="numeric"><p class="q"><span class="qn">Question 1</span>100 to 200 in 10 years. CAGR?</p>
+      <div class="row"><input class="field" id="n5" type="text" placeholder="e.g. 12.3%" aria-label="Answer"><button class="btn btn-primary" type="button">Check</button><button class="btn btn-ghost" type="button">Show solution</button></div>
+      <p class="explain shown">2<sup>0.1</sup> − 1 ≈ <b>7.2%</b>. Not 10%: that ignores compounding.</p></div></div>
+</div>
+
+<h2>Ask Claude</h2>
+<div class="state-grid">
+  <div class="state"><span class="label">Floating button</span><div class="row-demo">
+    <button class="ask-fab static" type="button"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 10.5h6M9 13.5h4"/></svg><span class="fab-label">Ask Claude</span></button>
+    <button class="ask-fab static" type="button"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 10.5h6M9 13.5h4"/></svg><span class="fab-label">Ask Claude</span><span class="dot"></span></button>
+  </div><p class="source" style="margin:0">Green dot: this page already has a saved conversation. Phone: icon only, 52px circle.</p></div>
+  <div class="state"><span class="label">Selection: icon beside the selection</span>
+    <p class="demo-text" style="margin:0">The notebook sets that rate to zero (“rf=0”), <mark>which flatters every asset when cash pays something</mark>.
+      <span class="sel-pop static" style="display:inline-block;vertical-align:-0.4rem"><button class="sel-btn" type="button" aria-label="Ask Claude about the selection"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9.5l-4.7 1.9L12 16l-1.8-4.6L5.5 9.5l4.7-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg></button></span></p></div>
+  <div class="state"><span class="label">Selection: after clicking the icon</span>
+    <div class="sel-pop static"><div class="sel-menu">
+      <button class="sel-explain" type="button"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9.5l-4.7 1.9L12 16l-1.8-4.6L5.5 9.5l4.7-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg>Explain this</button>
+      <form onsubmit="return false"><input id="sel-demo" type="text" placeholder="Ask something else…" aria-label="Your question"><button class="send-btn" type="submit" aria-label="Ask"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></form>
+    </div></div></div>
+</div>
+
+<div class="state-grid">
+  <div class="state"><span class="label">Panel: empty (first visit)</span>
+    <div class="panel-demo">
+      <div class="ask-head"><div class="title"><b>Ask Claude</b><span>About: Five numbers: CAGR, volatility, Sharpe…</span></div></div>
+      <div class="ask-body"><div class="ask-empty"><h3>Ask about “Five numbers”</h3><p>Claude reads this page with you. Select a passage in the lesson to ask about it, or start here.</p>
+        <div class="suggestions"><button type="button">Quiz me on this lesson</button><button type="button">Explain the √252 rule more simply</button></div></div></div>
+      <div class="ask-foot"><div class="composer"><textarea rows="1" placeholder="Ask about this page…" aria-label="Message" id="c1"></textarea><button class="send-btn" type="button" disabled aria-label="Send"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div></div>
+    </div></div>
+  <div class="state"><span class="label">Panel: sent from a selection, waiting</span>
+    <div class="panel-demo">
+      <div class="ask-head"><div class="title"><b>Ask Claude</b><span>About: Five numbers: CAGR, volatility, Sharpe…</span></div></div>
+      <div class="ask-body">
+        <div class="msg msg-user"><span class="quote-chip"><span class="where">From § 3 · Sharpe ratio</span><q>which flatters every asset when cash pays something</q></span><div>Explain this</div></div>
+        <div class="msg msg-claude"><span class="typing" aria-label="Claude is thinking"><i></i><i></i><i></i></span></div>
+      </div>
+      <div class="ask-foot"><div class="composer"><textarea rows="1" placeholder="Ask about this page…" aria-label="Message" id="c2"></textarea><button class="send-btn" type="button" disabled aria-label="Send"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div></div>
+    </div></div>
+  <div class="state"><span class="label">Panel: streaming, then error</span>
+    <div class="panel-demo">
+      <div class="ask-head"><div class="title"><b>Ask Claude</b><span>About: Five numbers: CAGR, volatility, Sharpe…</span></div></div>
+      <div class="ask-body">
+        <div class="msg msg-user"><div>Is max drawdown the same as the worst year?</div></div>
+        <div class="msg msg-claude"><p class="caret">No. A drawdown is measured from the highest point so far, whenever it was</p></div>
+        <div class="msg msg-user"><div>And the worst day?</div></div>
+        <div class="msg-error">Claude didn't answer. Your question is kept. <button class="btn btn-secondary" type="button">Retry</button></div>
+      </div>
+      <div class="ask-foot"><div class="composer"><textarea rows="1" placeholder="Ask about this page…" aria-label="Message" id="c3"></textarea><button class="send-btn" type="button" disabled aria-label="Send"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div></div>
+    </div></div>
+</div>
+<p class="source">The returning-thread state (date dividers, “New topic”) is live on the <a href="lesson.html#ask">lesson with Ask Claude</a>.</p>
+
+</article>
+</main>
+</div>
+</div>
+</div>
+<script>
+(function () {
+  // Token swatches read the live values, so the theme toggle updates them.
+  const names = ["bg", "raised", "surface", "ink", "ink-2", "muted", "faint", "rule", "rule-strong", "accent", "accent-text", "accent-fill", "on-accent", "tint", "good", "good-bg", "bad", "bad-bg"];
+  const box = document.querySelector("[data-swatches]");
+  function draw() {
+    const cs = getComputedStyle(document.documentElement);
+    box.innerHTML = names.map((n) => `<div class="swatch"><i style="background:var(--${n})"></i><span><b>--${n}</b><code>${cs.getPropertyValue("--" + n).trim()}</code></span></div>`).join("");
+  }
+  draw();
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+
+  // Slider demo, values from lesson 3.
+  const rows = [["1993-12-31", "42.86", "0.9755"], ["2000-12-31", "38.08", "0.8667"], ["2008-12-31", "33.06", "0.7524"],
+                ["2016-12-31", "28.00", "0.6373"], ["2025-12-31", "24.24", "0.5517"], ["2026-11-16", "24.05", "0.5474"]];
+  const s = document.getElementById("asof"), r = s.querySelector("input"), k = (x) => s.querySelector(`[data-k="${x}"]`);
+  function show() { const [d, a, f] = rows[r.value]; k("date").textContent = d; k("date2").textContent = d; k("adj").textContent = a; k("factor").textContent = f; k("ret").textContent = d < "2000-12-31" ? "not yet known" : "−8.85%"; }
+  r.addEventListener("input", show); show();
+})();
+</script>
+</body>
+</html>
