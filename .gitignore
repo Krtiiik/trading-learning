@@ -13,3 +13,4 @@ __marimo__/
 # Jekyll course site build output
 /learn/_site/
 /learn/.jekyll-cache/
+/learn/_publish/
