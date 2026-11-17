@@ -1,0 +1,42 @@
+# Course site for learn/. Build from this folder: bundle exec jekyll build | serve
+# Authoring rules: .claude/agents/lesson-writer.md. Visual design: DESIGN.md.
+title: Algorithmic Trading
+kicker: A course built alongside the trading workbench
+
+# Facts shown on the dashboard. The ETF count is read from ../universe.toml at build time.
+data_source: Yahoo
+data_since: 1993
+
+collections:
+  lessons:
+    output: true
+    permalink: /lessons/:name.html
+  reference:
+    output: true
+    permalink: /reference/:name.html
+
+defaults:
+  - scope: { path: "", type: lessons }
+    values: { layout: lesson }
+  - scope: { path: "", type: reference }
+    values: { layout: reference }
+  - scope: { path: "", type: pages }
+    values: { layout: page }
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax   # emits \( \) and \[ \]; KaTeX auto-render draws them in the browser
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
+
+# Authoring docs, design references and build files are not part of the site.
+exclude:
+  - NOTES.md
+  - DESIGN.md
+  - design/
+  - Gemfile
+  - Gemfile.lock
+  - publish.rb
+  - .jekyll-cache/

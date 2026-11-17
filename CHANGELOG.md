@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sanity checks on daily bars: duplicate dates, bad prices, inconsistent OHLC, missing or extra NYSE sessions, and large moves without a split.
 - `trading fetch` command to download the universe or given symbols, with `--full` to re-download and validation warnings per symbol.
 - marimo notebook `notebooks/explore_bars.py` comparing growth, statistics, drawdowns and raw vs adjusted prices of stored symbols.
+- Course site in `learn/`, built with Jekyll: a course dashboard, lesson and reference layouts with a course sidebar and on-page contents, and light and dark themes.
 
 ### Fixed
 

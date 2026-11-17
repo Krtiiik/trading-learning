@@ -1,0 +1,37 @@
+{%- comment -%}
+Course sidebar: parts from _data/parts.yml with their lessons, then the reference sheets.
+drawer_only=true on pages that show it only as the phone drawer (dashboard, Mission, Resources).
+{%- endcomment -%}
+{%- capture base %}{% include base.html %}{% endcapture -%}
+{%- assign lessons = site.lessons | sort: "number" -%}
+{%- assign sheets = site.reference | sort: "title" -%}
+<nav class="sidebar{% if include.drawer_only %} drawer-only{% endif %}" aria-label="Course" id="course-sidebar">
+  <div class="drawer-links">
+    <a href="{{ base }}index.html"{% if page.url == "/index.html" %} aria-current="page"{% endif %}>Course home</a>
+    {%- if sheets.size > 0 %}<a href="{{ base }}{{ sheets.first.url | remove_first: '/' }}"{% if page.collection == "reference" %} aria-current="page"{% endif %}>Reference</a>{% endif %}
+    <a href="{{ base }}resources.html"{% if page.url == "/resources.html" %} aria-current="page"{% endif %}>Resources</a>
+    <a href="{{ base }}mission.html"{% if page.url == "/mission.html" %} aria-current="page"{% endif %}>Mission</a>
+  </div>
+  <ol class="course-tree">
+    {%- for part in site.data.parts %}
+    {%- assign in_part = lessons | where: "part", part.id %}
+    <li class="part{% if in_part.size == 0 %} planned{% endif %}">
+      <div class="part-head"><span class="label">Part {{ forloop.index }}{% if in_part.size == 0 %} · <span class="pill">Planned</span>{% endif %}</span><span class="part-title">{{ part.title }}</span></div>
+      {%- if in_part.size > 0 %}
+      <ol>
+        {%- for lesson in in_part %}
+        <li><a href="{{ base }}{{ lesson.url | remove_first: '/' }}"{% if lesson.url == page.url %} aria-current="page"{% endif %}><span class="n">{{ lesson.number }}</span><span>{{ lesson.short }}</span></a></li>
+        {%- endfor %}
+      </ol>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+  {%- if sheets.size > 0 %}
+  <div class="sidebar-section"><span class="label">Reference</span>
+    {%- for sheet in sheets %}
+    <a href="{{ base }}{{ sheet.url | remove_first: '/' }}"{% if sheet.url == page.url %} aria-current="page"{% endif %}>{{ sheet.short | default: sheet.title }}</a>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+</nav>

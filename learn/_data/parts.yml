@@ -1,0 +1,14 @@
+# Course parts in teaching order. A lesson names its part by `id` in its front matter.
+# A part with no lessons yet is shown as planned.
+- id: market-data
+  title: Market data
+  description: What a bar is, how the adjusted close is built, and which numbers survive when the data provider rewrites history.
+- id: performance
+  title: Measuring performance
+  description: The five numbers in the notebook's statistics table, and what each one hides.
+- id: backtesting
+  title: Backtesting without fooling yourself
+  description: Look-ahead, survivorship and overfitting, the ways a backtest result can be an artefact of the data rather than a real edge.
+- id: first-strategy
+  title: A first strategy, end to end
+  description: Implement a simple strategy on the stored universe, backtest it, and judge the result.
