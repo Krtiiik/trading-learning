@@ -615,6 +615,33 @@ background knowledge cannot be fully ruled out as an influence.
 
 ---
 
+## Holdout — run once, 2026-11-17 23:08
+
+**Setup.** `research/holdout.py`, after the finalist was committed (c482992) and the script
+rehearsed on sealed data (`--rehearsal`, 2022-11-17 .. 2024-11-15; a first rehearsal wrote
+its output to `holdout_result.txt` by mistake because one edit had not applied; that file
+held sealed-data numbers only, was deleted, and the rehearsal was repeated before the real
+run). Window 2024-11-17 .. 2026-11-17, 501 sessions, fresh $10,000, 5 bps, next-open fill.
+
+**Result.**
+
+| strategy | net P&L $ | $/yr | CAGR | vol | Sharpe | maxDD | turnover/yr | costs $ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Finalist: trend-switched + capped 60/40 | 777 | 391 | 3.8% | 7.9% | 0.51 | -9.9% | 1.3x | 26 |
+| Capped 60/40 (comparison only) | 1,087 | 547 | 5.3% | 8.1% | 0.68 | -8.5% | 1.1x | 24 |
+| SPY buy & hold | 2,776 | 1,396 | 13.1% | 16.9% | 0.81 | -18.8% | 0.2x | 5 |
+| Equal weight (1/N) | 2,610 | 1,313 | 12.4% | 11.8% | 1.05 | -12.2% | 1.1x | 25 |
+| 60/40 SPY/IEF | 1,879 | 945 | 9.0% | 10.5% | 0.88 | -10.5% | 0.7x | 15 |
+| TSMOM 12m, 1/N | 1,846 | 929 | 8.9% | 9.9% | 0.91 | -11.1% | 3.1x | 68 |
+| SPY>SMA200 else IEF | 1,706 | 858 | 8.2% | 12.4% | 0.70 | -11.4% | 3.0x | 64 |
+
+**Verdict.** Profitable (+$777, about $390 a year) and the worst row in the table. The
+walk-forward Sharpe of 0.96 became 0.51. The risk management cost return and saved almost
+no drawdown versus plain 60/40 on these days. The late-added trend switch did worse than
+the cap alone. Reported as-is; no further analysis of the holdout days.
+
+---
+
 ## Trial count
 
 Configurations evaluated on the walk-forward window so far (every one, including failures):
