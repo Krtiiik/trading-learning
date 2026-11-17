@@ -214,6 +214,52 @@ finalist candidate. The dollars: about $1,400/yr on $10k (7.0% CAGR), less than 
 
 ---
 
+## E05 — Blend, idle cash, and a significance check
+
+**Hypothesis.** (a) Blending trend with the capped mix diversifies; (b) parking trend's idle
+cash in IEF (while IEF's own 12-month return is positive) removes the 0% cash drag;
+(c) the Sharpe gains over 60/40 are larger than resampling noise.
+
+**Setup.** `research/e05_blend_and_significance.py`. Three new configurations, pre-specified.
+Paired circular block bootstrap of daily returns (20-day blocks, 2000 draws).
+
+**Result (5 bps).**
+
+| strategy | net P&L $ | $/yr | CAGR | vol | Sharpe | maxDD | turnover/yr | costs $ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 60/40 SPY/IEF | 35,160 | 1,771 | 7.9% | 10.9% | 0.75 | -31.6% | 0.5x | 227 |
+| InvVol trend + band | 18,610 | 937 | 5.4% | 7.2% | 0.78 | -15.0% | 2.1x | 786 |
+| Capped 60/40 | 28,290 | 1,425 | 7.0% | 7.3% | 0.97 | -17.3% | 0.8x | 302 |
+| Blend 50/50 trend + capped | 23,325 | 1,175 | 6.3% | 6.9% | 0.91 | -12.6% | 1.1x | 417 |
+| Trend, idle cash in IEF | 22,026 | 1,109 | 6.0% | 7.6% | 0.81 | -15.8% | 3.5x | 1,412 |
+| Trend-parked, cap 8% | 19,037 | 959 | 5.5% | 6.8% | 0.83 | -14.7% | 3.9x | 1,469 |
+
+Bootstrap of Sharpe differences (observed, 90% interval, share of draws ≤ 0):
+
+| pair | diff | 90% interval | P(≤0) |
+|---|---:|---|---:|
+| Capped 60/40 − 60/40 | +0.22 | [+0.05, +0.37] | 0.01 |
+| Capped 60/40 − SPY | +0.36 | [+0.18, +0.54] | 0.00 |
+| InvVol trend − 60/40 | +0.03 | [−0.24, +0.28] | 0.44 |
+| Blend − 60/40 | +0.16 | [−0.03, +0.35] | 0.09 |
+| Blend − Capped 60/40 | −0.06 | [−0.16, +0.05] | 0.80 |
+| Trend, idle in IEF − 60/40 | +0.06 | [−0.22, +0.33] | 0.36 |
+
+**Observations.**
+
+- (a) The blend does not diversify much: trend and the capped mix correlate 0.84 (both are
+  long risk assets when calm). Sharpe 0.91, but the smallest drawdown so far (-12.6%).
+- (b) Parking idle cash in IEF adds 0.6 points of CAGR and 0.03 Sharpe: marginal.
+- (c) Trend is statistically indistinguishable from 60/40. The capped mix's edge over its
+  own uncapped base is the only difference whose 90% interval excludes zero. That p-value
+  is not corrected for it being the best of ~10 rule candidates, so read it as "probably
+  real, size uncertain" (the interval runs from +0.05 to +0.37).
+- All trend variants are weakest in 2020-24 (Sharpe ≈ 0.45).
+
+**Verdict.** Capped 60/40 remains the leading candidate. Trend and the blend are not better.
+
+---
+
 ## Trial count
 
 Configurations evaluated on the walk-forward window so far (every one, including failures):
@@ -222,3 +268,4 @@ Configurations evaluated on the walk-forward window so far (every one, including
 - E03: 7 rule candidates, pre-specified.
 - E04: 20 sensitivity runs around one E03 candidate (5 extra target×window cells, 3 extra bands,
   1 fill, 1 cost, 10 mix runs). Declared as sensitivity, not selection.
+- E05: 3 new configurations (blend, idle cash in IEF, that plus cap).

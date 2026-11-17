@@ -90,3 +90,45 @@ def sub_periods(result: BacktestResult, edges: list[str]) -> pd.DataFrame:
             "sharpe": part.mean() / part.std() * 252**0.5,
         }
     return pd.DataFrame(rows).T
+
+
+def blend(parts: list[tuple[float, pd.DataFrame]]) -> pd.DataFrame:
+    """Weighted sum of target-weight frames on the dates all of them cover."""
+    index = parts[0][1].index
+    for _, frame in parts[1:]:
+        index = index.intersection(frame.index)
+    return sum(share * frame.loc[index] for share, frame in parts)  # type: ignore[return-value]
+
+
+def sharpe_difference_bootstrap(
+    a: pd.Series, b: pd.Series, *, block: int = 20, draws: int = 2000, seed: int = 0
+) -> dict[str, float]:
+    """Paired circular block bootstrap of Sharpe(a) - Sharpe(b) on daily returns.
+
+    Blocks keep volatility clustering; pairing keeps the two strategies' correlation.
+    Returns the observed difference, a 90% interval and the share of draws at or below 0.
+    """
+    import numpy as np
+
+    both = pd.concat([a, b], axis=1).dropna().to_numpy()
+    n = len(both)
+    rng = np.random.default_rng(seed)
+    blocks = int(np.ceil(n / block))
+    offsets = np.arange(block)
+
+    def sharpe_of(x: "np.ndarray") -> "np.ndarray":
+        return x.mean(axis=0) / x.std(axis=0, ddof=1) * np.sqrt(252)
+
+    observed = sharpe_of(both)
+    differences = np.empty(draws)
+    for draw in range(draws):
+        starts = rng.integers(0, n, size=blocks)
+        rows = ((starts[:, None] + offsets[None, :]) % n).ravel()[:n]
+        s = sharpe_of(both[rows])
+        differences[draw] = s[0] - s[1]
+    return {
+        "difference": float(observed[0] - observed[1]),
+        "p05": float(np.quantile(differences, 0.05)),
+        "p95": float(np.quantile(differences, 0.95)),
+        "share_not_better": float((differences <= 0).mean()),
+    }
