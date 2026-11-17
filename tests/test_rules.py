@@ -197,3 +197,34 @@ def test_turn_of_month_holds_the_last_day_and_first_three_days():
     assert held_on.loc["2024-01-30"] == 0.0
     # The last price date still gets a row, because the calendar knows the next session.
     assert weights["A"].loc["2024-02-29"] == 1.0
+
+
+def test_relative_momentum_holds_the_strongest_candidates_with_positive_returns():
+    index = pd.bdate_range("2020-01-01", periods=4, name="date")
+    prices = pd.DataFrame(
+        {"A": [10, 10, 10, 13], "B": [10, 10, 10, 12], "C": [10, 10, 10, 9], "SAFE": [5.0] * 4},
+        index=index,
+    )
+
+    top_two = rules.relative_momentum(prices, ["A", "B", "C"], lookback=1, holdings=2)
+    assert top_two.iloc[-1].to_dict() == {"A": 0.5, "B": 0.5, "C": 0.0, "SAFE": 0.0}
+
+    # Only one candidate is rising: the second slot falls back to SAFE, or to cash.
+    prices.loc[index[-1], "B"] = 8
+    with_fallback = rules.relative_momentum(prices, ["A", "B", "C"], 1, 2, fallback="SAFE")
+    assert with_fallback.iloc[-1].to_dict() == {"A": 0.5, "B": 0.0, "C": 0.0, "SAFE": 0.5}
+    in_cash = rules.relative_momentum(prices, ["A", "B", "C"], 1, 2)
+    assert in_cash.iloc[-1].sum() == 0.5
+
+
+def test_relative_momentum_uses_no_data_after_the_decision_date():
+    prices = random_prices()
+    full = rules.relative_momentum(prices, ["A", "B", "C"], lookback=60, holdings=2, fallback="D")
+
+    for cut in (120, 250, 333):
+        truncated = rules.relative_momentum(
+            prices.iloc[: cut + 1], ["A", "B", "C"], lookback=60, holdings=2, fallback="D"
+        )
+        pd.testing.assert_series_equal(truncated.iloc[-1], full.loc[prices.index[cut]])
+    assert (full.sum(axis=1) <= 1 + 1e-12).all()
+    assert (full["D"][prices["D"].reindex(full.index).isna()] == 0).all()

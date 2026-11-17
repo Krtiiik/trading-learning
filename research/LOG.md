@@ -447,6 +447,35 @@ risk-management rules. It cannot be distinguished from luck with confidence on 2
 
 ---
 
+## E12 — Relative momentum (sector rotation, dual momentum)
+
+(Run while E08 trained.)
+
+**Hypothesis.** The two textbook relative-momentum rules beat the passive bar. The
+literature review expected them not to (post-publication decay, equity-like drawdowns).
+
+**Setup.** `research/e12_relative_momentum.py`. Two configurations, each run once: the top 3
+SPDR sectors by 12-month return (a slot only while its own return is positive, else cash);
+SPY or EFA by 12-month return if positive, else IEF. Checked daily, 5% band.
+
+**Result (5 bps).**
+
+| strategy | net P&L $ | $/yr | CAGR | vol | Sharpe | maxDD | turnover/yr | costs $ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Sector top-3, 12m | 36,425 | 1,835 | 8.0% | 16.2% | 0.56 | -28.0% | 13.1x | 5,685 |
+| Dual momentum SPY/EFA else IEF | 17,841 | 899 | 5.3% | 15.0% | 0.42 | -40.4% | 8.1x | 2,637 |
+
+Sharpe by sub-period: sectors 0.34 / 0.86 / 0.38 / 0.61; dual momentum 0.25 / 0.56 / 0.45 / 0.42.
+
+**Observations.** Both are worse than holding SPY (0.61) on Sharpe. Checking a ranking
+daily makes it flip between near-tied candidates (8–13x turnover), and concentrating in
+one or three equity funds keeps equity-size drawdowns. Dual momentum switched late in
+2008 and was whipsawed afterwards.
+
+**Verdict.** Fails, as the review predicted. Dropped.
+
+---
+
 ## Trial count
 
 Configurations evaluated on the walk-forward window so far (every one, including failures):
@@ -460,3 +489,4 @@ Configurations evaluated on the walk-forward window so far (every one, including
 - E09: 1 pre-registered out-of-window check of the E03 candidate (plus its proxy check).
 - E07: 2 policies x 5 seeds, one specification (plus a diagnostic that re-scores, no new configuration).
 - E10, E11: analyses of existing configurations only.
+- E12: 2 relative-momentum configurations, pre-specified.

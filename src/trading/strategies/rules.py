@@ -164,3 +164,28 @@ def turn_of_month(
     weights = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
     weights[symbol] = next_in_window.reindex(prices.index).astype(float)
     return weights[prices[symbol].notna() & weights[symbol].notna()]
+
+
+def relative_momentum(
+    prices: pd.DataFrame,
+    candidates: list[str],
+    lookback: int = 252,
+    holdings: int = 1,
+    fallback: str | None = None,
+) -> pd.DataFrame:
+    """Hold the `holdings` candidates with the highest `lookback`-day return, equally.
+
+    A slot is only filled while its candidate's own return is positive (dual momentum);
+    otherwise the slot goes to `fallback`, or stays in cash when there is none or the
+    fallback has no bar yet.
+    """
+    momentum = (prices[candidates] / prices[candidates].shift(lookback) - 1.0)
+    enough = momentum.notna().sum(axis=1) >= holdings
+    rank = momentum.rank(axis=1, ascending=False, method="first")
+    chosen = (rank <= holdings) & (momentum > 0)
+    weights = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
+    weights[candidates] = chosen.astype(float) / holdings
+    if fallback is not None:
+        idle = 1.0 - weights.sum(axis=1)
+        weights[fallback] = weights[fallback] + idle.where(prices[fallback].notna(), 0.0)
+    return weights[enough]
