@@ -1,3 +1,9 @@
+---
+title: Mission
+description: Why this course exists, what success looks like, and its constraints.
+permalink: /mission.html
+---
+
 # Mission: Algorithmic trading research
 
 > Draft inferred from the repository (README, ARCHITECTURE). Not yet confirmed by the learner.

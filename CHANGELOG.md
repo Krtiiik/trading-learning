@@ -20,6 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Jekyll includes for the course's content components: multiple-choice and numeric questions, notes, key ideas, tables, reveals and slider tables, with formulas typeset by KaTeX.
 - Ask Claude on every page of the published course: a side chat about the page, and "Explain this" or your own question on text selected in a lesson. Chats are saved per page for the course owner.
 
+### Changed
+
+- The three course lessons and the bars-and-stats reference sheet are now Markdown pages of the course site, with formulas in LaTeX; the standalone HTML pages and their stylesheet are gone.
+
 ### Fixed
 
 - `trading fetch` re-downloads a symbol in full after a new split, instead of appending post-split prices to pre-split history.
