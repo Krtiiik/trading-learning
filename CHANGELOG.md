@@ -14,3 +14,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `load_bars()` and `load_panel()` to read stored bars into pandas for research.
 - `universe.toml` listing the starter ETF universe (index, bond, commodity and sector ETFs).
 - Sanity checks on daily bars: duplicate dates, bad prices, inconsistent OHLC, missing or extra NYSE sessions, and large moves without a split.
+- `trading fetch` command to download the universe or given symbols, with `--full` to re-download and validation warnings per symbol.
