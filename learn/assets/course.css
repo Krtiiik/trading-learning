@@ -1,0 +1,216 @@
+/* Shared stylesheet for every lesson and reference sheet in this course.
+   Tufte-inspired: one readable column, wide margin notes, quiet colour. */
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;600&display=swap");
+
+:root {
+  --bg: #fffff8;
+  --fg: #1d1d1b;
+  --muted: #6b6b66;
+  --rule: #d9d6c8;
+  --accent: #8a3b12;
+  --code-bg: #f3f1e6;
+  --good: #2d6a3e;
+  --good-bg: #e6f2e8;
+  --bad: #9b2226;
+  --bad-bg: #f8e3e3;
+  --note-bg: #f6f3e3;
+  --measure: 40rem;
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1a17;
+    --fg: #e9e6da;
+    --muted: #a19d90;
+    --rule: #3a3832;
+    --accent: #e39a66;
+    --code-bg: #26251f;
+    --good: #8fd19e;
+    --good-bg: #1f3325;
+    --bad: #f09a9d;
+    --bad-bg: #3a2022;
+    --note-bg: #24231d;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 1rem 5rem;
+}
+
+header.lesson-head { margin-bottom: 2.5rem; }
+.kicker {
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-size: 1rem;
+}
+h1 { font-weight: 400; font-size: 2.3rem; line-height: 1.15; margin: 0.2rem 0 0.6rem; }
+h2 { font-weight: 400; font-style: italic; font-size: 1.55rem; margin: 2.8rem 0 0.6rem; }
+h3 { font-weight: 600; font-size: 1.1rem; margin: 1.8rem 0 0.4rem; }
+.subtitle { font-style: italic; color: var(--muted); margin: 0; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+code, pre, .mono { font-family: var(--mono); font-size: 0.85em; }
+code { background: var(--code-bg); padding: 0.05em 0.3em; border-radius: 3px; }
+pre {
+  background: var(--code-bg);
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  border-radius: 4px;
+  line-height: 1.45;
+}
+pre code { background: none; padding: 0; }
+
+/* A formula set apart from the text. */
+.formula {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 0.8rem 0.5rem;
+  margin: 1.2rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  overflow-x: auto;
+}
+
+/* Margin note: sits in the margin on wide screens, inline on narrow ones. */
+.note {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--muted);
+  border-left: 2px solid var(--rule);
+  padding-left: 0.8rem;
+  margin: 1rem 0;
+}
+@media (min-width: 1100px) {
+  .note {
+    float: right;
+    clear: right;
+    width: 15rem;
+    margin: 0.3rem -18rem 1rem 0;
+  }
+}
+
+/* Key idea box: the one thing to remember from a section. */
+.key {
+  background: var(--note-bg);
+  border-left: 3px solid var(--accent);
+  padding: 0.8rem 1rem;
+  margin: 1.4rem 0;
+}
+.key > :first-child { margin-top: 0; }
+.key > :last-child { margin-bottom: 0; }
+
+/* Tables: booktabs style. */
+.table-wrap { overflow-x: auto; margin: 1.2rem 0; }
+table { border-collapse: collapse; font-size: 0.95rem; width: 100%; }
+th, td { padding: 0.35rem 0.7rem; text-align: left; vertical-align: top; }
+thead th { border-bottom: 1px solid var(--fg); font-weight: 600; }
+tbody tr:last-child td { border-bottom: 1px solid var(--fg); }
+table { border-top: 1px solid var(--fg); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.table-wrap td:first-child { white-space: nowrap; }
+tr.hl td { background: var(--note-bg); }
+
+.source { font-size: 0.9rem; color: var(--muted); }
+
+/* Practice section. */
+section.practice { border-top: 1px solid var(--rule); margin-top: 3rem; }
+
+.quiz, .numeric {
+  margin: 1.6rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+.quiz .q, .numeric .q { margin: 0 0 0.7rem; font-weight: 600; }
+.quiz .choices { display: grid; gap: 0.45rem; }
+.quiz button, .numeric button {
+  font: inherit;
+  font-size: 1rem;
+  text-align: left;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+}
+.quiz button:hover:not(:disabled), .numeric button:hover { border-color: var(--accent); }
+.quiz button.right { background: var(--good-bg); border-color: var(--good); }
+.quiz button.wrong { background: var(--bad-bg); border-color: var(--bad); }
+.quiz button:disabled { cursor: default; }
+.explain { display: none; margin: 0.8rem 0 0; font-size: 0.98rem; }
+.explain.shown { display: block; }
+
+.numeric .row { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.numeric input {
+  font: inherit;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  width: 10rem;
+  padding: 0.4rem 0.5rem;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.feedback { margin: 0.6rem 0 0; font-size: 0.98rem; min-height: 1.2em; }
+.feedback.right { color: var(--good); }
+.feedback.wrong { color: var(--bad); }
+
+details.reveal { margin: 1rem 0; }
+details.reveal summary { cursor: pointer; color: var(--accent); }
+
+nav.course {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--rule);
+  margin-top: 3rem;
+  padding-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.ask {
+  font-style: italic;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  margin-top: 2.5rem;
+}
+
+/* Reference sheets: denser, two columns when printed or wide. */
+body.reference main { max-width: 56rem; }
+body.reference h2 { margin-top: 1.8rem; }
+.cards { display: grid; gap: 1rem 2rem; grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); }
+.card { break-inside: avoid; }
+.card h3 { margin-top: 0.6rem; }
+
+@media print {
+  :root { --bg: #fff; --fg: #000; --note-bg: #f4f4f4; --code-bg: #f4f4f4; }
+  body { font-size: 10.5pt; }
+  main { padding: 0; max-width: none; }
+  .note { float: none; width: auto; margin: 0.5rem 0; }
+  section.practice, nav.course, .ask { display: none; }
+  a { color: inherit; text-decoration: none; }
+  h2 { break-after: avoid; }
+}

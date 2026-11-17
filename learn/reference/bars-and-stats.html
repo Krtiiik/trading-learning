@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bars and stats reference</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body class="reference">
+<main>
+
+<header class="lesson-head">
+  <div class="kicker">Reference</div>
+  <h1>Bars, adjustment and performance statistics</h1>
+  <p class="subtitle">Terms follow the project glossary (<code>.claude/CONTEXT.md</code>). Taught in <a href="../lessons/0001-bars-and-adjusted-close.html">lesson 1</a> and <a href="../lessons/0002-the-stats-table.html">lesson 2</a>.</p>
+</header>
+
+<h2>Bar columns</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>column</th><th>meaning</th><th>adjusted for</th></tr></thead>
+<tbody>
+<tr><td><code>open</code> <code>high</code> <code>low</code> <code>close</code></td><td>First, highest, lowest and closing trade of the session</td><td>splits only (Yahoo)</td></tr>
+<tr><td><code>adj_close</code></td><td>Close scaled so its changes are total returns</td><td>splits and dividends</td></tr>
+<tr><td><code>volume</code></td><td>Shares traded in the session</td><td>not yet verified</td></tr>
+<tr><td><code>dividends</code></td><td>Cash per share, on the ex-dividend date; 0 otherwise</td><td>—</td></tr>
+<tr><td><code>splits</code></td><td>Split ratio on the split date (2.0 = 2-for-1); <b>0</b> otherwise</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h2>Adjustment (CRSP method)</h2>
+<p>Each event multiplies every price <em>before</em> it; prices on and after are untouched.</p>
+<div class="formula">dividend: × (1 − D / previous close)<br>split: × 1 / ratio</div>
+<p><b>Adjustment factor</b> = <code>adj_close / close</code>. It is 1 after the latest dividend and steps down going back in time. A change on an already stored bar means history was re-adjusted.</p>
+<p><b>Total return on a day</b> = (close + dividend) / previous close − 1 = <code>adj_close.pct_change()</code>.</p>
+<p class="source">Source: <a href="https://help.yahoo.com/kb/SLN28256.html">Yahoo, “What is the adjusted close?”</a></p>
+</div>
+
+<div class="card">
+<h2>Notebook setup</h2>
+<pre><code>prices  = load_panel(symbols).dropna()
+returns = prices.pct_change().dropna()
+years   = len(returns) / 252</code></pre>
+<p><code>.dropna()</code> trims every symbol to the <b>common history</b>: statistics change with which symbols are picked.</p>
+<p>252 = trading sessions per year.</p>
+</div>
+
+</div>
+
+<h2>Performance statistics</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>name</th><th>formula (pandas)</th><th>answers</th><th>blind to</th></tr></thead>
+<tbody>
+<tr><td><b>CAGR</b></td><td><code>(P[-1] / P[0]) ** (1/years) - 1</code></td><td>Constant yearly rate from start to end</td><td>the path in between</td></tr>
+<tr><td><b>Volatility</b></td><td><code>r.std() * sqrt(252)</code></td><td>How bumpy, per year</td><td>direction; up and down count alike</td></tr>
+<tr><td><b>Sharpe (rf=0)</b></td><td><code>r.mean() / r.std() * sqrt(252)</code></td><td>Return per unit of volatility</td><td>cash rate (set to 0); fat tails</td></tr>
+<tr><td><b>Max drawdown</b></td><td><code>(P / P.cummax() - 1).min()</code></td><td>Worst fall from a running peak</td><td>how long it lasted; intraday lows</td></tr>
+<tr><td><b>Worst day</b></td><td><code>r.min()</code></td><td>Largest one-session loss</td><td>everything else: one observation</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="cards">
+<div class="card">
+<h3>Rules of thumb</h3>
+<ul>
+  <li>Volatility scales with √time if days are independent (√252 ≈ 15.87).</li>
+  <li>Mean return ≈ ln(1 + CAGR) + volatility² / 2: bumpiness drags compounding.</li>
+  <li>Recovering from a drawdown <i>d</i> needs a gain of 1 / (1 + <i>d</i>) − 1: −50% needs +100%.</li>
+  <li>Textbook Sharpe subtracts the risk-free rate from the mean; rf=0 overstates it.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Your data, 2004-11-18 to 2026-11-16</h3>
+<table>
+<thead><tr><th></th><th class="num">CAGR</th><th class="num">Vol</th><th class="num">Sharpe</th><th class="num">MDD</th></tr></thead>
+<tbody>
+<tr><td>SPY</td><td class="num">10.7%</td><td class="num">18.8%</td><td class="num">0.63</td><td class="num">−55%</td></tr>
+<tr><td>TLT</td><td class="num">2.8%</td><td class="num">14.5%</td><td class="num">0.26</td><td class="num">−48%</td></tr>
+<tr><td>GLD</td><td class="num">9.9%</td><td class="num">18.3%</td><td class="num">0.61</td><td class="num">−46%</td></tr>
+</tbody>
+</table>
+<p class="source">Sources: <a href="https://web.stanford.edu/~wfsharpe/art/sr/sr.htm">Sharpe (1994)</a>, <a href="https://traders.studentorg.berkeley.edu/papers/The-Statistics-of-Sharpe-Ratios.pdf">Lo (2002)</a> on √time.</p>
+</div>
+</div>
+
+</main>
+</body>
+</html>
