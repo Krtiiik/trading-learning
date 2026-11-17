@@ -8,4 +8,4 @@ __pycache__/
 __marimo__/
 
 # Downloaded market data, reproducible with `uv run trading fetch`
-data/
+/data/

@@ -1,0 +1,82 @@
+"""Sanity checks on stored daily bars. Free data has gaps and glitches; these surface them."""
+
+from dataclasses import dataclass
+
+import pandas as pd
+import pandas_market_calendars as mcal
+
+PRICE_COLUMNS = ("open", "high", "low", "close", "adj_close")
+JUMP_THRESHOLD = 0.25
+"""A close-to-close move larger than this (25%) without a split on that bar is suspicious."""
+
+
+@dataclass(frozen=True)
+class Issue:
+    check: str
+    message: str
+    dates: tuple[pd.Timestamp, ...] = ()
+
+    def __str__(self) -> str:
+        if not self.dates:
+            return f"{self.check}: {self.message}"
+        shown = ", ".join(date.strftime("%Y-%m-%d") for date in self.dates[:5])
+        more = f" (+{len(self.dates) - 5} more)" if len(self.dates) > 5 else ""
+        return f"{self.check}: {self.message} [{shown}{more}]"
+
+
+def validate_daily(bars: pd.DataFrame, calendar: str = "NYSE") -> list[Issue]:
+    """Issues found in daily bars; an empty list means every check passed."""
+    if bars.empty:
+        return [Issue("empty", "no bars")]
+    issues = [
+        _duplicate_dates(bars),
+        _non_positive_prices(bars),
+        _inconsistent_ohlc(bars),
+        *_calendar_gaps(bars, calendar),
+        _unexplained_jumps(bars),
+    ]
+    return [issue for issue in issues if issue is not None]
+
+
+def _issue(check: str, message: str, mask: pd.Series | pd.Index) -> Issue | None:
+    dates = tuple(mask[mask].index) if isinstance(mask, pd.Series) else tuple(mask)
+    return Issue(check, f"{len(dates)} {message}", dates) if dates else None
+
+
+def _duplicate_dates(bars: pd.DataFrame) -> Issue | None:
+    duplicated = pd.Series(bars.index.duplicated(), index=bars.index)
+    return _issue("duplicates", "duplicate dates", duplicated)
+
+
+def _non_positive_prices(bars: pd.DataFrame) -> Issue | None:
+    prices = bars[list(PRICE_COLUMNS)]
+    bad = (prices.isna() | (prices <= 0)).any(axis=1)
+    return _issue("prices", "bars with missing or non-positive prices", bad)
+
+
+def _inconsistent_ohlc(bars: pd.DataFrame) -> Issue | None:
+    high, low = bars["high"], bars["low"]
+    bad = (
+        (high < low)
+        | (bars["open"] > high)
+        | (bars["open"] < low)
+        | (bars["close"] > high)
+        | (bars["close"] < low)
+    )
+    return _issue("ohlc", "bars with open/close outside the high-low range", bad)
+
+
+def _calendar_gaps(bars: pd.DataFrame, calendar: str) -> list[Issue | None]:
+    sessions = mcal.get_calendar(calendar).valid_days(bars.index.min(), bars.index.max())
+    sessions = pd.DatetimeIndex(sessions.tz_localize(None).astype("datetime64[ns]"))
+    stored = pd.DatetimeIndex(bars.index.unique())
+    return [
+        _issue("missing", f"{calendar} sessions without a bar", sessions.difference(stored)),
+        _issue("extra", f"bars on days {calendar} was closed", stored.difference(sessions)),
+    ]
+
+
+def _unexplained_jumps(bars: pd.DataFrame) -> Issue | None:
+    move = bars["close"].pct_change().abs()
+    jumps = (move > JUMP_THRESHOLD) & (bars["splits"] == 0)
+    return _issue("jumps", f"close moves over {JUMP_THRESHOLD:.0%} without a split", jumps)
