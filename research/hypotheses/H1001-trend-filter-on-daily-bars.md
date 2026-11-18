@@ -142,11 +142,86 @@ If any of these happens the run is not evidence. A mistake in the experiment mod
 
 ## Results
 
-Not run yet.
+Added on 2026-11-18 by the Researcher. Every number is quoted from the run records `research/runs/2026-11-18/H1001-r01.json` (train) and `H1001-r02.json` (dev) unless marked "(my arithmetic)". Both runs used binance/spot/1d id 2d6763395242 and binance/universe id 88f9a7cf72c7, and both passed the harness's look-ahead check at three cuts.
+
+### The primary test
+
+| | Train, H1001-r01 | Dev, H1001-r02 |
+|---|---:|---:|
+| Window | 2019-07-01 to 2022-12-31, 1,280 bars | 2023-01-01 to 2024-12-31, 731 bars |
+| Estimate (difference in net Sharpe ratio) | +0.661 | +0.124 |
+| One-sided p | 0.0440 | 0.4158 |
+| q (Benjamini-Hochberg, one literature hypothesis registered) | 0.0440 | not used on dev |
+| Bootstrap standard error; 90% interval | 0.381; +0.03 to +1.29 | 0.485; -0.64 to +0.92 |
+| Estimate at double cost (one-sided p) | +0.482 (0.0990) | -0.089 (0.5792) |
+| Minimum detectable effect, registered | 1.03 | 1.36 |
+| Predicted | about +0.25 | about +0.25 |
+| Required on dev: the larger of half the train estimate and 0.2 | | +0.331 |
+
+### Strategy and benchmark inside the window
+
+| | Train: strategy | Train: benchmark | Dev: strategy | Dev: benchmark |
+|---|---:|---:|---:|---:|
+| Net Sharpe ratio | 0.990 | 0.329 | 0.938 | 0.814 |
+| Net Sharpe ratio at double cost | 0.776 | 0.294 (my arithmetic) | 0.677 | 0.766 (my arithmetic) |
+| Compound annual growth | +41.6% | -16.4% | +34.1% | +38.6% |
+| Volatility a year | 45.9% | 97.5% | 39.8% | 72.6% |
+| Maximum drawdown | -53.0% | -91.5% | -46.9% | -59.6% |
+| Maximum drawdown at double cost | -58.5% | not in the record | -50.7% | not in the record |
+| One-way turnover, times the portfolio a year | 22.4 | 7.5 | 23.5 | 7.5 |
+| Cost a year | 9.9% | 3.5% | 10.4% | 3.5% |
+| Average weight invested | 0.434 | | 0.465 | |
+
+The benchmark's Sharpe ratio at double cost is the strategy's at double cost minus the double-cost estimate.
+
+### The three reference benchmarks (they decide nothing)
+
+| Net Sharpe ratio (compound annual growth, maximum drawdown) | Train window | Dev window |
+|---|---:|---:|
+| Buy-and-hold BTC | 0.540 (+12.8%, -76.6%) | 2.018 (+137.6%, -26.2%) |
+| Equal-weight universe, rebalanced monthly | 0.465 (-4.2%, -89.9%) | 0.834 (+40.7%, -60.2%) |
+| Cash | 0 | 0 |
+| Strategy minus buy-and-hold BTC (my arithmetic, no test) | +0.450 | -1.079 |
+| Strategy minus monthly equal weight (my arithmetic, no test) | +0.525 | +0.105 |
+
+### Checks against "what would count as the test having been done wrongly"
+
+- **Windows**: as registered in both runs (first and last bar above).
+- **Filter neither always on nor always off**: the average weight invested is 0.434 on train and 0.465 on dev.
+- **Look-ahead check and members only**: passed; `evaluate_strategy` refused nothing.
+- **Benchmark fully invested**: on train its invested weight averages 0.9999 and is never below 0.975 (measured with a scratch script on train data after the train run; the dev benchmark I cannot inspect, its volatility and turnover look like a fully invested portfolio).
+- **Dropped weight: at the edge of what I registered, and I have to say so.** The train record has `dropped_weight` 0.075 and the dev record 0.125. I had written "more than a few percent of one day's portfolio in total" as a sign of a wrong test without giving a number. After the train run and before the dev run I looked at train data to find the cause (the only time I loaded train data; a scratch script that recomputed the panel and the engine's dropped targets, nothing recorded). The 0.075 is three single slots of 1/40, one day each: ERDUSDT on 2020-09-01, NPXSUSDT on 2021-04-06 and BTTUSDT on 2022-01-18. Each is the day after the pair's last bar: the signal was on at the pair's final close, the target could not be bought the next day, and the engine closed the position at that final close. That is the case the registered design describes under "A NaN signal means flat", not a rule buying what cannot be bought, so I judged the run sound and went on to dev. A strict reader may hold that 7.5% is "more than a few percent" and that by my own wording the runs are not evidence; the criterion was badly worded and I am not the one to settle it. The dev record's number is cumulative from the first bar of the data, so 0.05 was added in 2023 and 2024 (my arithmetic), presumably two more such slots; I cannot check that, because dev data cannot be loaded.
+- **Short history**: the same script counted eligible member-days without a full 20-bar lookback on train. There is one, BCCUSDT on 2018-11-20, before the window. Inside the train window the condition removed nothing, as inferred at registration.
+
+### What else the records show
+
+- **Costs were higher than I worked out before running.** I expected about 6% a year from the filter's switches; the record shows 9.9% on train and 10.4% on dev, with the benchmark's own daily re-equalising at 3.5%. Doubling costs lowers the estimate by 0.18 on train and by 0.21 on dev (my arithmetic).
+- **The correlation assumed for the minimum detectable effect was about right.** The bootstrap standard errors (0.381 and 0.485) are a little below the 0.41 and 0.55 computed from a correlation of 0.7; put back into the same formula they imply about 0.75 on both segments (my arithmetic).
+- **The benchmark with daily re-equalising is weaker on train than the monthly one** (Sharpe 0.329 against 0.465, growth -16.4% against -4.2% a year), and about equal on dev (0.814 against 0.834). The registered comparison is against the daily one, for the reason given in the design. Measured against the monthly equal-weight reference the train difference would be 0.525 instead of 0.661.
 
 ## Verdict
 
-Not run yet.
+**Status: `not replicated`**, as printed by `uv run trading research status H1001` on 2026-11-18:
+
+```
+H1001  not replicated  ...
+       train p = 0.0440, q = 0.0440 (passes false-discovery control at 10%)
+       dev estimate +0.1244 against a required +0.3306 (train +0.6611)
+```
+
+What happened. On train the filter raised the net Sharpe ratio from 0.33 to 0.99, an estimate of +0.66 with a one-sided p of 0.044, and it kept most of that at double cost (+0.48, p 0.099). With one literature hypothesis registered, q equals p and the hypothesis became a candidate. On dev the estimate was +0.12 (p 0.42): the predicted sign, but 19% of the train estimate where the rule registered beforehand asks for 50%, and below the registered minimum of 0.2. At double cost the dev estimate is negative (-0.09). The hypothesis did not replicate.
+
+What it means.
+
+- **The train estimate was probably too large.** I predicted about 0.25 and wrote at registration that a train estimate big enough to pass would probably overstate the effect. Train gave 0.66 and dev 0.12. The dev number is the less selected of the two.
+- **On dev the rule did what the literature says such rules do, and no more.** It cut volatility (40% against 73% a year) and drawdown (-47% against -60%) and gave up return (34% against 39% a year), for a Sharpe ratio 0.12 higher at normal cost and 0.09 lower at double cost. Following what I registered about thin coins and costs, I do not call that an effect that survives costs.
+- **Dev cannot tell a small effect from none.** Its standard error is 0.49, so +0.12 is compatible with zero, with the 0.25 I predicted, and (at 1.1 standard errors, my arithmetic) not far from the train estimate either. "Not replicated" here means the replication rule set before the run was not met. It does not show that the effect is absent, and the minimum detectable effect on dev (1.36) says no dev result of plausible size could have shown that it is present.
+- **It is not a way to beat holding BTC.** In the dev window buy-and-hold BTC has a Sharpe ratio of 2.02 against the strategy's 0.94. The hypothesis never claimed otherwise (its benchmark is the same coins without the filter), but a reader looking for a strategy should see that line.
+- **The size of the train result depends on the benchmark's schedule.** 0.14 of the 0.66 is the gap between daily and monthly re-equalising of the equal-weight universe on train (my arithmetic from the reference benchmark).
+
+How sure. The train result is one test at p 0.044 with a 90% interval from +0.03 to +1.29: weak evidence of a positive effect of unknown size in 2019 to 2022, in a sample where the benchmark lost 91% at its worst. Its q-value will rise when more literature hypotheses are registered, and the status may then read `rejected` instead of `not replicated`. The dev result is one look at two years. Both rest on a cost model that is at its most optimistic for the low-ranked coins of 2019 and 2020, and on the open question about dropped weight above. I have not re-derived either number by a second route, varied any parameter, or split the result by year or by coin; that is a Skeptic's work, and nothing here was reviewed.
+
+What this does not test, and will not be added here: another lookback (the one-week window of Wei et al.), weekly evaluation, the rule on BTC alone, or another benchmark. Each would be a new hypothesis with a new id, counted in the false-discovery total, and one prompted by these results would have origin `exploration`.
 
 ## Skeptic review
 
