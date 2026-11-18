@@ -48,6 +48,19 @@ def test_timestamps_switch_from_milliseconds_to_microseconds_without_a_seam():
     assert len(bars) == 4 * 24
 
 
+def test_hourly_bars_that_do_not_open_on_the_hour_are_dropped():
+    frame = make_klines("2018-02-08", "2018-02-09", "1h")
+    shifted = frame.index[30:40] + pd.Timedelta(minutes=28, seconds=14, milliseconds=789)
+    frame.index = frame.index[:30].append(shifted).append(frame.index[40:])
+    transport = FakeArchive()
+    transport.add_klines(SPOT, "BTCUSDT", "1h", frame)
+
+    bars = BinanceArchive(transport=transport).fetch("BTCUSDT", "1h")
+
+    assert len(bars) == 38
+    assert (bars.index == bars.index.floor("1h")).all()
+
+
 def test_files_with_and_without_a_header_row_parse_alike():
     plain = BinanceArchive(transport=archive_with("BTCUSDT", "1d", "2024-01-01", "2024-01-31"))
     headed = BinanceArchive(

@@ -433,6 +433,11 @@ def _redenominate(bars: pd.DataFrame, symbol: str) -> pd.DataFrame:
 
 
 def _tidy(frame: pd.DataFrame) -> pd.DataFrame:
+    # After the outage of February 2018 the archive holds two days of hourly bars that open
+    # 28 minutes past the hour. Their contents are not knowable at label + 1h on the hourly
+    # grid, so they are dropped rather than relabelled; the daily files are unaffected.
+    if frame.index.tz is not None and frame.index.name == INDEX_NAME:
+        frame = frame[frame.index == frame.index.floor("1h")]
     return frame[~frame.index.duplicated(keep="last")].sort_index()
 
 
