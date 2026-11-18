@@ -222,6 +222,18 @@ def test_a_run_is_reproducible(lab):
     assert (first["estimate"], first["p_value"]) == (second["estimate"], second["p_value"])
 
 
+def test_replay_repeats_the_train_run_without_recording_and_takes_other_parameters(lab):
+    lab.hypothesis()
+    recorded = lab.run("H1001", "train")
+
+    same = harness.replay("H1001", lab.records, lab.data_root)
+    fixed = harness.replay("H1001", lab.records, lab.data_root, p_value=0.2, estimate=9.0)
+
+    assert same.estimate == recorded["estimate"] and same.p_value == recorded["p_value"]
+    assert (fixed.estimate, fixed.p_value) == (9.0, 0.2)
+    assert len(load_runs(lab.records)) == 1
+
+
 def test_the_harness_refuses_an_unregistered_hypothesis(lab):
     lab.hypothesis(commit=False)
 

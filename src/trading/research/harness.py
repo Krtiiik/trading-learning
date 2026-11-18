@@ -121,6 +121,26 @@ def run(
     return record | {"path": path}
 
 
+def replay(
+    hypothesis_id: str,
+    records: Path | None = None,
+    data_root: Path | None = None,
+    **overrides: Any,
+) -> Result:
+    """Re-run a hypothesis's experiment on train, optionally with changed parameters.
+
+    For Skeptic reviews and debugging: nothing is recorded and the result is not evidence.
+    Train only, on purpose; the dev result of a hypothesis exists once, in its run record.
+    """
+    records = records or records_dir()
+    hypothesis = registry.load(records, hypothesis_id)
+    module = _load_experiment(hypothesis)
+    data = ResearchData(TRAIN_END, **({"root": data_root} if data_root else {}), records=records)
+    params = hypothesis.params | overrides
+    ctx = Context(hypothesis, "train", window("train"), data, params, int(hypothesis.id[1:]))
+    return module.test(ctx, module.panel(data, params))
+
+
 def _check_allowed(
     hypothesis: Hypothesis,
     segment: Segment,
