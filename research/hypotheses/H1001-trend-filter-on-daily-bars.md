@@ -81,7 +81,7 @@ power:
 data:
   - binance/spot/1d
   - binance/universe
-status: candidate
+status: not replicated
 ---
 
 # H1001: holding a coin only while its close is above its 20-day average beats holding every universe member
