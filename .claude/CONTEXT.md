@@ -55,6 +55,52 @@ _Avoid_: the universe (for crypto), top 40.
 
 **Issue**: A sanity-check finding on stored bars (gap, duplicate, bad price, unexplained jump); reported as a warning, never blocks storing.
 
+### Research (`research/`, `trading.research`)
+
+**Hypothesis**: One falsifiable claim about the crypto market, with a predicted direction and rough size, a single primary test and a decision rule, all written down before anything is run. One file each in `research/hypotheses/`. A variant is a new hypothesis.
+_Avoid_: idea, strategy (a strategy is what a trading claim tests).
+
+**Registration**: Committing a hypothesis file before its first run. Git history proves the order; the fields that define the hypothesis are frozen from that commit on.
+
+**Family**: The approach a hypothesis belongs to: `time-series`, `cross-sectional`, `derivatives` or `cross-market`. Families get equal effort.
+
+**Origin**: Where a hypothesis came from: `literature` (published evidence) or `exploration` (looking at train data). It decides which data may test it.
+
+**Claim**: What kind of statement a hypothesis makes: `predictive` (a signal ranks or forecasts returns) or `trading` (a long-or-flat rule beats a benchmark after costs). Also, loosely, a finding that has climbed the claim ladder.
+
+**Primary test**: The one statistical test that decides a hypothesis, giving an estimate and a one-sided p-value in the predicted direction.
+
+**Experiment**: The code that carries out a hypothesis's primary test: a module with a `panel` function (target weights or a predictor) and a `test` function.
+
+**Run**: One execution of an experiment on one segment, by the harness. Its **run record** (hypothesis, parameters, dataset ids, commit, segment, estimate, p-value, seed, duration) is written by the harness, never by hand.
+
+**Harness**: The only way a hypothesis is tested. It refuses unregistered or altered hypotheses and uncommitted code, checks the experiment for look-ahead, and writes the run record.
+
+**Split**: The fixed division of time into three **segments**: train (up to 2022), dev (2023-2024), test (2025 on). Earlier data may be lookback history for a later segment; nothing is fitted, tuned or chosen on a later one.
+_Avoid_: in-sample/out-of-sample, validation set, holdout.
+
+**Seal**: The lock on the test segment. Research cannot load test-period data until the seal is opened, once and on record, for at most five finalists.
+
+**Claim ladder**: The statuses a hypothesis moves through: registered, then rejected or candidate (train), then not replicated or supported (dev), then refuted or confirmed (Skeptic review). Computed from the records, never set by hand.
+
+**Candidate**: A literature hypothesis whose train p-value passes Benjamini-Hochberg at 10% across the train tests of all registered literature hypotheses.
+
+**Supported**: A candidate whose dev estimate has the predicted sign and at least the pre-declared size. For an exploration hypothesis: its dev p-value passes false-discovery control across all exploration hypotheses.
+
+**Skeptic review**: An independent attempt to break a supported finding, starting from the hypothesis file and run records. It ends in confirmed or refuted, written into the hypothesis file.
+
+**Finalist**: A confirmed hypothesis chosen, before the seal opens, for the single test run.
+
+**Catalogue**: The generated index of every hypothesis and its status, negatives included (`research/CATALOGUE.md`).
+
+**Know-how**: A note stating one lesson, pitfall or how-to, where it came from and how far to trust it (`research/knowhow/`). How agents and the owner share what was learned.
+
+**Benchmark**: What a trading claim is compared with, run through the same engine and costs: buy-and-hold BTC, the equal-weight point-in-time universe, or cash.
+
+**Double cost**: The same test with every trading cost doubled; reported for every trading claim.
+
+**Minimum detectable effect**: The smallest true effect a test on a given segment would find with 80% power. Computed before a hypothesis is run, to judge whether it is testable at all.
+
 ### Course (`learn/`)
 
 **Lesson**: One numbered page of the course that teaches a single objective and ends with Practice questions. Numbers run across the whole course.
@@ -76,10 +122,16 @@ _Avoid_: chat log, history.
 - The **Universe** names which ETF symbols to fetch; a **Panel** is built from the **Store**.
 - The **Point-in-time universe** is ranked from the daily crypto bars at each **Reconstitution**, which also sets every coin's **Liquidity tier**.
 - **Issues** are computed from stored **Bars** after each fetch.
+- A **Hypothesis** has one **Primary test**, carried out by its **Experiment**; each **Run** of it on a **Segment** leaves a **Run record**.
+- The **Claim ladder** status of every hypothesis follows from its file and its run records; the **Catalogue** lists them.
+- The **Seal** guards the test **Segment** of the **Split**; only **Finalists** ever run on it.
 
 ## Ambiguities
 
 - "Price" alone is ambiguous: say **raw price** or **adjusted close**. Returns are computed on adjusted close; orders and fills use raw prices.
 - "Splits" column: the split ratio on that bar, `0` meaning no split (Yahoo's convention), not `1`.
 - "Universe" alone means the ETF list. For crypto always say **point-in-time universe**.
+- "Test" has two meanings: the test segment of the split, and a statistical test. Say **test segment** or **primary test**.
+- "Rejected" (failed on train), "not replicated" (failed on dev) and "refuted" (broken by the Skeptic) are different statuses; do not use one for another.
+- A p-value in a run record is one-sided in the predicted direction; a result in the wrong direction has p above 0.5.
 - "Volume" is in shares or coins; rank and size crypto by **quote volume**, which is in USDT.

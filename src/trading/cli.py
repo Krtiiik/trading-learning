@@ -78,6 +78,9 @@ def _parser() -> argparse.ArgumentParser:
     verify.add_argument("--data-dir", type=Path, help="store root (default: data/)")
     verify.set_defaults(command=_verify)
 
+    from trading.research.cli import add_research_commands
+
+    add_research_commands(commands)
     return parser
 
 

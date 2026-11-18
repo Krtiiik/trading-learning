@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `trading rebuild` rebuilds the crypto datasets from nothing in one command, and `trading verify` checks every dataset against its manifest.
 - Point-in-time universe: the top 40 USDT spot pairs by trailing 30-day quote volume at each monthly reconstitution, with stablecoins, wrapped, pegged and leveraged tokens excluded, delisted coins kept, and a liquidity tier per coin.
 - Dataset manifests with content hashes, so the data behind a result can be identified; `trading fetch` now writes one for the ETF bars too.
+- Research process in `trading.research` with `trading research` commands: a chronological split (train to 2022, dev 2023-2024, test from 2025) whose test segment is sealed in code and opened once for at most five finalists; hypothesis files registered by committing them; a harness that refuses unregistered or altered hypotheses and uncommitted code, checks every experiment for look-ahead and writes the run record itself; a claim ladder with false-discovery control computed from the records; and a generated catalogue.
 - Statistics toolkit in `trading.stats`: predictive regressions and mean tests with Newey-West errors, rank information coefficients, Fama-MacBeth slopes, a paired block bootstrap for differences between strategies, placebo tests (time shift, asset permutation), Benjamini-Hochberg and Holm corrections, and minimum-detectable-effect calculations. Every tool is validated on synthetic data with a known answer.
 
 ### Changed

@@ -93,6 +93,8 @@ def mean_test(
     """Is the mean of an autocorrelated series different from zero? (Newey-West t-test.)"""
     values = np.asarray(values, dtype="float64")
     values = values[np.isfinite(values)]
+    if len(values) < 3:
+        raise ValueError(f"too few observations to test a mean: {len(values)}")
     lags = newey_west_lags(len(values), overlap)
     fit = sm.OLS(values, np.ones(len(values))).fit(
         cov_type="HAC", cov_kwds={"maxlags": lags, "use_correction": True}
@@ -197,7 +199,9 @@ def circular_block_indices(
 def default_block_length(series: np.ndarray) -> int:
     """Politis-White automatic block length for the circular bootstrap, kept within sane bounds."""
     series = np.asarray(series, dtype="float64")
-    suggested = float(optimal_block_length(series)["circular"].iloc[0])
+    suggested = float("nan")
+    if series.std() > 0:
+        suggested = float(optimal_block_length(series)["circular"].iloc[0])
     if not np.isfinite(suggested):
         suggested = len(series) ** (1 / 3)
     return int(np.clip(np.ceil(suggested), 2, max(2, len(series) // 10)))

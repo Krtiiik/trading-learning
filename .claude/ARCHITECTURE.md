@@ -47,6 +47,28 @@ Research code never talks to a provider: it reads the store through `load_bars` 
 
 **The universe excludes by a curated list, with a volatility net under it.** Names alone cannot tell a coin from a leveraged token or a tokenised stock (JUP is a coin, BTCUP is not), so the exclusions are listed by hand. A stablecoin nobody has listed yet is still caught, because a pair whose price barely moved for 30 days is treated as pegged.
 
+## Research process
+
+Hypothesis file committed (registration) → `trading research run` → the harness checks the registration and the code, loads market data that ends with the segment, checks the experiment's panel for look-ahead, runs the primary test, writes the run record → `trading research catalogue` recomputes every status from the records and regenerates the catalogue.
+
+Three packages do the work: `trading.backtest` (engine, costs, metrics), `trading.stats` (the validated tests), `trading.research` (split and seal, market panels, registry, harness, ladder, catalogue). The records themselves live in `research/` and are plain files in git.
+
+**The process is enforced in code, not asked of agents.** Many agents work here and none of them can be relied on to remember a rule. So the harness refuses what must not happen (an unregistered hypothesis, a changed prediction, uncommitted code, a dev run for a non-candidate, a second dev run, any test run before the seal opens) and does itself what must not be forgotten (the run record, the look-ahead check). Skills cover only what code cannot check.
+
+**Registration is proven by git history.** The harness reads the first committed version of a hypothesis file and compares its frozen fields with the current file. There is no "registered" flag to set, and so none to set falsely.
+
+**Statuses are derived, never stored as truth.** Whether a hypothesis is a candidate depends on the p-values of all the others, so a status written by hand would go stale as soon as another hypothesis is registered. The ladder is recomputed from the records each time; the `status` line in a hypothesis file is a copy for readers.
+
+**Experiments get their data handed to them.** An experiment receives a `ResearchData` that stops at the end of its segment and never imports the Store (the harness refuses modules that do). That is what makes the seal hold: later data is not filtered out by the experiment's good behaviour, it is not there. The same object notes every dataset it loaded, which is how the run record knows.
+
+**A market panel has no column for a coin that is not yet a member.** A column for a coin that joins the universe next year would reveal that it will matter. Panels for a segment carry only coins that had been members by its end.
+
+**The look-ahead check is mechanical.** The harness recomputes an experiment's panel three times with later bars removed and requires the earlier rows to be identical. It is cheap because the engine is fast, and it has already caught a helper that decided "this is the week's last bar" from the bar after it.
+
+**The engine is vectorised with hold rows.** A panel of target weights against open prices, as array operations: about 0.15 s for 40 coins of hourly bars over five years and 3 ms for daily bars (measured 2026-11-18, see `research/knowhow/`), so nobody is tempted to skip a check. A row of NaN means "do not trade", which lets a strategy rebalance weekly on daily bars and lets holdings drift between rebalances, still without a loop over bars. A plain loop in the tests proves the two agree.
+
+**Two false-discovery controls, by origin.** A hypothesis found by looking at train data would pass a train test by construction, so exploration hypotheses skip train and are judged on dev, with Benjamini-Hochberg across their dev p-values; literature hypotheses are controlled across their train p-values. A hypothesis without a run counts as p = 1 in its control, so registering many and testing few does not help.
+
 ## Course site (`learn/`)
 
 The course that teaches with this workbench is a Jekyll site in `learn/`: Markdown lessons and reference sheets with Liquid includes for quizzes and asides, built locally and published as one private multi-file Claude artifact (republished after every change). There is no GitHub Pages and no server.
