@@ -44,7 +44,7 @@ Rebuild the crypto datasets from the Binance public archive (no account or key n
 uv run trading rebuild
 ```
 
-This downloads daily bars for every USDT spot pair, ranks the point-in-time universe (top 40 by volume, re-ranked monthly), then fetches hourly bars, funding rates and basis for coins that were ever members. The first run takes about half an hour and 2.5 GB; later runs reuse the verified downloads in `data/raw/`. Check the result at any time:
+This downloads daily bars for every USDT spot pair, ranks the point-in-time universe (top 40 by volume, re-ranked monthly), then fetches hourly bars, funding rates and basis for coins that were ever members. The first run takes about half an hour and 3.7 GB (including the panel cache built on first use); later runs reuse the verified downloads in `data/raw/`. Check the result at any time:
 
 ```bash
 uv run trading verify           # quick: names, sizes, modification times
