@@ -53,7 +53,8 @@ data = train_data()                 # everything up to 2022-12-31; later data ca
 market = data.market("1d")          # or "1h"
 close = market.frame("close")       # DataFrame: bar labels x coins
 members = market.frame(market.member)
-funding = data.series("funding", "1d")
+funding = data.series("funding", "1d")   # also "premium" (basis); bars x coins, knowable at each bar's close
+etf = data.etf("adj_close")              # the US ETF daily bars (run `uv run trading fetch` first)
 ```
 
 There is no loader for dev. If your idea came from looking at train data, its **origin** is `exploration` and only its dev run counts as evidence.
@@ -145,6 +146,7 @@ Fix the cause. Never work around a refusal.
 - **Costs.** 10 bps fee plus slippage per side by **liquidity tier**: 2 bps for BTC and ETH, 5 bps for the next ten coins, 15 bps for the rest.
 - **Universe.** Trade only **point-in-time universe** members (`market.member`, or `market.member_next` for a decision at a bar's close).
 - **Benchmarks.** Buy-and-hold BTC, the equal-weight universe (rebalanced monthly), and cash, all through the same engine and costs; `evaluate_strategy` reports all three.
+- **Evaluation start.** A test covers its whole segment unless the hypothesis declares a later first day in its parameters and passes it on (`evaluate_strategy(..., start=params["start"])`), for instance 2019-07-01, when the universe first has 40 members. Declare it at registration; it can only narrow the window.
 - **Annualisation.** `periods_per_year(granularity)`: a market that never closes has 365 days.
 - **Hindsight.** The models doing this research know markets up to mid-2026. A motivation cites literature or train-period evidence, never memory of later years.
 
