@@ -4,8 +4,6 @@ title: Holding a coin only while its close is above its 20-day average beats hol
 family: time-series
 origin: literature
 claim: trading
-status: registered
-
 motivation: >
   Time-series momentum (trend): a coin's return is higher after its price closed above its own
   moving average than after it closed below, so holding it only in the first state gives a
@@ -83,6 +81,7 @@ power:
 data:
   - binance/spot/1d
   - binance/universe
+status: candidate
 ---
 
 # H1001: holding a coin only while its close is above its 20-day average beats holding every universe member
