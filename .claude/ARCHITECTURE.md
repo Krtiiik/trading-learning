@@ -9,7 +9,7 @@ why a design was chosen over the obvious alternative, and the constraints that s
 
 ## Overview
 
-A personal research workbench for learning algorithmic trading. So far it covers market data: download daily bars for a universe of US ETFs from a free provider, keep them locally, sanity-check them, and load them into pandas for research in marimo notebooks. A course site in `learn/` teaches with it (see the last section).
+A personal research workbench for learning algorithmic trading. It covers market data for two markets (daily bars for a universe of US ETFs from Yahoo; daily and hourly crypto bars plus perpetual-futures series from the Binance public archive), kept locally and sanity-checked, and a research process for crypto built on top of it. A course site in `learn/` teaches with it (see the last section).
 
 ## Components and flow
 
@@ -29,7 +29,23 @@ Research code never talks to a provider: it reads the store through `load_bars` 
 
 **Sanity checks warn, never block.** Free data regularly has gaps and real extreme moves (e.g. silver on 2026-01-30); refusing to store it would leave no data. Issues are surfaced so research can decide.
 
-**Daily index is tz-naive trading dates.** A daily bar belongs to a session date, not an instant. Intraday bars, once added, should use tz-aware UTC timestamps.
+**Daily index is tz-naive dates, hourly index is tz-aware UTC.** A daily bar belongs to a date, not an instant: the session date for an ETF, the UTC day for a coin. That keeps ETF and crypto daily panels joinable by date. Hourly bars are instants and carry their time zone.
+
+## Crypto data
+
+`trading rebuild` → list every USDT spot pair in the Binance archive → daily bars for all of them → the point-in-time universe is ranked from those → hourly bars, funding and basis only for pairs that were ever members → a manifest per dataset.
+
+**The archive, not the API.** Bulk monthly files need no key, keep delisted pairs, and every file can be verified, so a rebuild months later gives the same Store. The price is freshness: the Store ends with the last complete month.
+
+**Daily bars for every pair, the rest for members only.** Ranking needs the volume of all ~780 pairs, which is 50 MB as daily bars. Hourly bars for all of them would be several times the download and never used, since research trades only universe members.
+
+**Downloads are verified and cached.** Each file is checked against the checksum in the bucket listing and kept under `data/raw/`, so a rebuild after a code change re-parses without re-downloading, and "from nothing" still works by deleting `data/`.
+
+**A dataset's identity is a hash of its content, not of its files.** Parquet bytes change with library versions; the values do not. The manifest hashes values, index and column types, so the same data rebuilt later has the same id, and a run record that names the id names the data.
+
+**Archive quirks stay in the provider.** Timestamps that switch from milliseconds to microseconds, files with and without headers, symbols reused for another coin, token swaps that change the unit, perpetual contracts quoted per 1000 coins: all handled in the Binance provider, so everything after it sees normalized bars. The curated tables there (symbol reuse, redenominations) came from looking at gaps and jumps in the data and are the first place to look when a new oddity appears.
+
+**The universe excludes by a curated list, with a volatility net under it.** Names alone cannot tell a coin from a leveraged token or a tokenised stock (JUP is a coin, BTCUP is not), so the exclusions are listed by hand. A stablecoin nobody has listed yet is still caught, because a pair whose price barely moved for 30 days is treated as pegged.
 
 ## Course site (`learn/`)
 

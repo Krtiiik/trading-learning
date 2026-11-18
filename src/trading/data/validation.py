@@ -1,13 +1,18 @@
-"""Sanity checks on stored daily bars. Free data has gaps and glitches; these surface them."""
+"""Sanity checks on stored bars. Free data has gaps and glitches; these surface them."""
 
 from dataclasses import dataclass
 
 import pandas as pd
 import pandas_market_calendars as mcal
 
+from trading.data.bars import Granularity, bar_length
+
 PRICE_COLUMNS = ("open", "high", "low", "close", "adj_close")
 JUMP_THRESHOLD = 0.25
 """A close-to-close move larger than this (25%) without a split on that bar is suspicious."""
+CRYPTO_JUMP_THRESHOLD = 3.0
+"""For a coin, only a close that quadruples or falls by three quarters in one bar is flagged:
+it is how an unrecorded redenomination or a reused symbol shows up."""
 
 
 @dataclass(frozen=True)
@@ -35,6 +40,25 @@ def validate_daily(bars: pd.DataFrame, calendar: str = "NYSE") -> list[Issue]:
         *_calendar_gaps(bars, calendar),
         _unexplained_jumps(bars),
         _unadjusted_splits(bars),
+    ]
+    return [issue for issue in issues if issue is not None]
+
+
+def validate_crypto(bars: pd.DataFrame, granularity: Granularity = "1d") -> list[Issue]:
+    """Issues found in bars of a market that never closes: every bar label should be present."""
+    if bars.empty:
+        return [Issue("empty", "no bars")]
+    expected = pd.date_range(bars.index.min(), bars.index.max(), freq=bar_length(granularity))
+    ratio = bars["close"] / bars["close"].shift()
+    extreme = ((ratio > 1 + CRYPTO_JUMP_THRESHOLD) | (ratio < 1 / (1 + CRYPTO_JUMP_THRESHOLD))) & (
+        bars["splits"] == 0
+    )
+    issues = [
+        _duplicate_dates(bars),
+        _non_positive_prices(bars),
+        _inconsistent_ohlc(bars),
+        _issue("missing", f"{granularity} bars missing inside the history", expected.difference(bars.index)),
+        _issue("jumps", "closes that quadrupled or fell by three quarters in one bar", extreme),
     ]
     return [issue for issue in issues if issue is not None]
 

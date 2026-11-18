@@ -76,3 +76,20 @@ def test_big_move_on_split_day_is_reported_as_unadjusted_history():
 
     assert found["split"] == ["2024-01-09"]
     assert "jumps" not in found
+
+
+def test_crypto_bars_are_checked_against_a_market_that_never_closes():
+    from trading.data.validation import validate_crypto
+
+    from conftest import make_klines
+
+    bars = make_klines("2024-01-01", "2024-01-20").assign(splits=0.0)
+    bars["adj_close"] = bars["close"]
+    assert validate_crypto(bars) == []
+
+    gappy = bars.drop(bars.index[[5, 6]])
+    gappy.loc["2024-01-15":, ["open", "high", "low", "close", "adj_close"]] *= 0.001  # an unrecorded redenomination
+
+    found = {issue.check: issue for issue in validate_crypto(gappy)}
+    assert str(found["missing"]) == "missing: 2 1d bars missing inside the history [2024-01-06, 2024-01-07]"
+    assert [date.strftime("%Y-%m-%d") for date in found["jumps"].dates] == ["2024-01-15"]

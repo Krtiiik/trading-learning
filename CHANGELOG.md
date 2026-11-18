@@ -20,6 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Jekyll includes for the course's content components: multiple-choice and numeric questions, notes, key ideas, tables, reveals and slider tables, with formulas typeset by KaTeX.
 - Ask Claude on every page of the published course: a side chat about the page, and "Explain this" or your own question on text selected in a lesson. Chats are saved per page for the course owner.
 - Vectorised backtest engine in `trading.backtest`: target weights against open and close prices, signal at a bar's close and trade at the next open, long or flat, with rows that hold instead of rebalancing, a per-side cost model (10 bps fee plus slippage by liquidity tier) and a double-cost multiplier. Annualisation follows from granularity and calendar.
+- Hourly granularity (`1h`) and crypto market data from the Binance public archive: spot bars with quote volume, plus funding rate, basis and open interest of perpetual contracts as series. Downloads are checksum-verified and cached.
+- `trading rebuild` rebuilds the crypto datasets from nothing in one command, and `trading verify` checks every dataset against its manifest.
+- Point-in-time universe: the top 40 USDT spot pairs by trailing 30-day quote volume at each monthly reconstitution, with stablecoins, wrapped, pegged and leveraged tokens excluded, delisted coins kept, and a liquidity tier per coin.
+- Dataset manifests with content hashes, so the data behind a result can be identified; `trading fetch` now writes one for the ETF bars too.
 - Statistics toolkit in `trading.stats`: predictive regressions and mean tests with Newey-West errors, rank information coefficients, Fama-MacBeth slopes, a paired block bootstrap for differences between strategies, placebo tests (time shift, asset permutation), Benjamini-Hochberg and Holm corrections, and minimum-detectable-effect calculations. Every tool is validated on synthetic data with a known answer.
 
 ### Changed
