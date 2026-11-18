@@ -15,6 +15,7 @@ measured or tested here, `medium` was seen once or is well sourced elsewhere, `l
 ## Process
 
 - [A rule added after seeing where the previous one failed did not hold out of sample](rules-added-after-seeing-results.md) (medium)
+- [A date in a hypothesis's parameters must be quoted, or the run cannot be recorded](quote-dates-in-hypothesis-parameters.md) (medium)
 
 ## Data
 
@@ -35,17 +36,24 @@ measured or tested here, `medium` was seen once or is well sourced elsewhere, `l
 
 - [A backtest of 40 coins of hourly bars over five years takes about 0.15 seconds](engine-speed.md) (high)
 - [Deciding that a bar is the last of its week from the bar after it is look-ahead](calendar-helpers-must-not-peek-at-the-next-bar.md) (high)
+- [A rule that decides every day drops one slot at each member's last bar, and `dropped_weight` adds these up from the first bar of the data](dropped-weight-counts-targets-at-a-last-bar.md) (high)
 
 ## Statistics
 
 - [Two years of data cannot separate a Sharpe ratio of 0.5 from 1.0](two-years-cannot-separate-sharpe-ratios.md) (high)
 - [Every statistical tool is validated on synthetic data; these are the conditions it was validated under](statistics-toolkit-validation.md) (high)
+- [A trading claim whose true Sharpe difference is 0.25 becomes a candidate one time in four and supported one time in nine, and a candidate's train estimate averages 0.7](small-sharpe-differences-rarely-climb-the-ladder.md) (medium)
 
 ## Market (descriptive facts, train data only)
 
-Nothing yet.
+- [From 2019-07 to 2022-12 the equal-weight universe re-equalised every day did worse than re-equalised monthly, so a benchmark's schedule is part of a trading claim](equal-weight-daily-against-monthly-on-train.md) (medium)
 
 ## Families
 
 Notes specific to one family (time-series, cross-sectional, derivatives, cross-market) go under
-a heading of that name here. Nothing yet.
+a heading of that name here.
+
+### Time-series
+
+- [A 20-day trend filter evaluated every day across the 40 members turns the portfolio over 22 to 24 times a year and pays about 10% a year in costs](daily-trend-filter-turnover-and-cost.md) (high)
+- [For the minimum detectable effect of a per-coin long-or-flat filter against its equal-weight benchmark, a correlation of 0.75 matches what was measured](trend-filter-correlation-with-its-benchmark.md) (medium)

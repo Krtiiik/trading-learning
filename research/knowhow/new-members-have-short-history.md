@@ -18,4 +18,6 @@ In its first month as a member a coin has a median of 53 days of history; 103 of
 
 What to do: a hypothesis with a lookback must say, before it runs, what the rule does when the lookback is not full (flat is the natural choice for a long-or-flat rule) and should count the member-months that removes, because the equal-weight benchmark holds those coins anyway. The market panels carry a coin's bars from before it was a member, so a lookback may reach back past the month it joined.
 
+Added by the Researcher of H1001 on 2026-11-18 (a scratch count on train data, same dataset ids): a lookback no longer than the 30 days membership requires is always full. With 20 daily closes, 1 of the 60,209 train bars of a member (by the membership in force at the bar's close) lacks a full lookback: BCCUSDT on 2018-11-20, its last bar, after four days without bars. From 2019-07-01 there is none. So a hypothesis with a lookback of 30 days or less loses nothing to short histories, and the table above matters only beyond that.
+
 Not established: anything about returns of newly listed coins; this is a count of available bars.
