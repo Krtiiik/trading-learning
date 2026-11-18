@@ -23,6 +23,9 @@ from trading.research.split import check_end
 
 FIELDS = ("open", "high", "low", "close", "volume", "quote_volume")
 PANELS = ("member", "tier", "member_next")
+ETF_DATASET = "1d"
+"""The Yahoo ETF daily bars: the Store's original, unnamed dataset."""
+_NAIVE = pd.DatetimeIndex([])
 SERIES = {"funding": FUNDING, "premium": PREMIUM, "open_interest": OPEN_INTEREST}
 
 
@@ -112,6 +115,20 @@ class ResearchData:
                 values = store.read(symbol)[column]
                 panel[:, number] = _align(values, market, how="sum" if name == "funding" else "last")
         return panel
+
+    def etf(self, field: str = "adj_close") -> pd.DataFrame:
+        """One field of the stored ETF daily bars up to this data's end: session dates x symbols.
+
+        A session's bar is final at the US close, a few hours before the crypto bar of the same
+        date closes, so the value dated D may be used for a decision at the close of crypto bar
+        D. The adjusted close is rewritten by Yahoo after every later dividend: its returns are
+        point-in-time, its levels are not.
+        """
+        self.used[ETF_DATASET] = dataset_id(self.root, ETF_DATASET)
+        store = BarStore(self.root)
+        last = self.end if self.last_label is None else min(self.end, _like(self.last_label, _NAIVE).normalize())
+        panel = pd.DataFrame({symbol: store.read(symbol, "1d")[field] for symbol in store.symbols("1d")})
+        return panel.sort_index().loc[:last]
 
     def truncated(self, last_label: pd.Timestamp) -> "ResearchData":
         """A copy that additionally ends at the bar labelled `last_label`."""

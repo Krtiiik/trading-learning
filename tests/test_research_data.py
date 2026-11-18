@@ -252,6 +252,40 @@ def test_a_strategy_equal_to_its_benchmark_shows_no_difference(dev):
     assert result.metrics["window"]["first"].startswith("2023-01-01")
 
 
+def test_a_declared_start_narrows_the_evaluation_window_and_never_widens_it(dev):
+    market = dev.market("1d")
+    weights = evaluate.equal_weight(market)
+
+    late = evaluate.evaluate_strategy(context(dev), weights, "1d", draws=50, start="2024-01-01")
+    early = evaluate.evaluate_strategy(context(dev), weights, "1d", draws=50, start="2020-01-01")
+
+    assert late.n == 366 and late.metrics["window"]["first"].startswith("2024-01-01")
+    assert early.n == 731  # a start before the segment changes nothing
+    with pytest.raises(ValueError, match="no bars to evaluate"):
+        evaluate.evaluate_strategy(context(dev), weights, "1d", draws=50, start="2030-01-01")
+
+
+def test_etf_bars_reach_research_only_up_to_the_segment_end(crypto_root, tmp_path):
+    import shutil
+
+    from trading.data.manifest import build_manifest
+    from trading.data.storage import BarStore
+
+    from conftest import make_bars
+
+    root = tmp_path / "store"
+    shutil.copytree(crypto_root / "binance", root / "binance", ignore=shutil.ignore_patterns("raw"))
+    BarStore(root).write("SPY", "1d", make_bars("2022-11-01", 700))
+    build_manifest(root, "1d", "fake")
+    data = ResearchData(TRAIN_END, root, records=tmp_path)
+
+    panel = data.etf("close")
+
+    assert list(panel.columns) == ["SPY"] and panel.index[-1] == pd.Timestamp("2022-12-30")
+    assert data.truncated(pd.Timestamp("2022-12-01")).etf("close").index[-1] == pd.Timestamp("2022-12-01")
+    assert "1d" in data.used
+
+
 def test_a_strategy_that_peeks_beats_the_benchmark_and_costs_show_up(dev):
     market = dev.market("1d")
     tomorrow = np.roll(market.open, -2, axis=0) / np.roll(market.open, -1, axis=0) - 1

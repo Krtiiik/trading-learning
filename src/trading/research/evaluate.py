@@ -52,6 +52,19 @@ class Context:
     def alternative(self) -> stats.Alternative:
         return "greater" if self.hypothesis.direction == "positive" else "less"
 
+    def inside(self, index: pd.DatetimeIndex, start: str | None = None) -> np.ndarray:
+        """Which bar labels the test evaluates: the segment's window, optionally from `start` on.
+
+        `start` (a day, declared in the hypothesis's parameters) can only narrow the window,
+        for instance to begin when the universe first has 40 members.
+        """
+        inside = self.window.mask(index).to_numpy()
+        if start is not None:
+            inside = inside & Window(pd.Timestamp(start), None).mask(index).to_numpy()
+        if not inside.any():
+            raise ValueError(f"no bars to evaluate on {self.segment} from {start}")
+        return inside
+
 
 # Weights
 
@@ -139,17 +152,18 @@ def evaluate_strategy(
     benchmark: pd.DataFrame | Literal["btc", "equal_weight", "cash"] = "equal_weight",
     statistic: Literal["sharpe", "mean"] = "sharpe",
     draws: int = 2000,
+    start: str | None = None,
 ) -> Result:
     """Is the strategy's net Sharpe ratio (or mean return) above the benchmark's, inside the window?
 
     Both run through the same engine and costs from the first bar of the data, so positions
     carried into the window are the ones the rule would really hold; only the window's bars are
-    compared. The estimate is strategy minus benchmark, annualised, at normal cost; the same
+    compared (from `start` on, if the hypothesis declares a later first day). The estimate is strategy minus benchmark, annualised, at normal cost; the same
     difference at double cost is reported alongside. The p-value comes from a paired block bootstrap.
     """
     market = ctx.data.market(granularity)  # type: ignore[arg-type]
     periods = periods_per_year(market.granularity)
-    inside = ctx.window.mask(market.index).to_numpy()
+    inside = ctx.inside(market.index, start)
     named = {"btc": buy_and_hold, "equal_weight": equal_weight, "cash": cash}
     benchmark_weights = named[benchmark](market) if isinstance(benchmark, str) else benchmark
 
@@ -199,6 +213,7 @@ def evaluate_predictor(
     horizon: int,
     method: Literal["rank_ic", "fama_macbeth"] = "rank_ic",
     min_assets: int = 5,
+    start: str | None = None,
 ) -> Result:
     """Does the signal at a bar's close rank (or scale with) the coins' returns over the next bars?
 
@@ -208,7 +223,7 @@ def evaluate_predictor(
     """
     market = ctx.data.market(granularity)  # type: ignore[arg-type]
     values = signal.reindex(index=market.index, columns=list(market.symbols)).to_numpy("float64")
-    inside = ctx.window.mask(market.index).to_numpy()
+    inside = ctx.inside(market.index, start)
     values = np.where(market.member & inside[:, None], values, np.nan)
     forward = forward_returns(market, horizon)
     tool = stats.rank_ic if method == "rank_ic" else stats.fama_macbeth
