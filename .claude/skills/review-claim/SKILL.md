@@ -47,7 +47,7 @@ For a negative result (rejected or not replicated) the same checks apply in mirr
    uv run trading research skeptic <id> --verdict confirmed --reason "..."
    uv run trading research catalogue
    ```
-   `confirmed` only when every check passed. Anything that would make you hesitate to bet on it is `refuted`, with the reason. The verdict changes the status only of a `supported` hypothesis; on any other it is kept as a note.
+   For a `supported` hypothesis the verdict is `confirmed` or `refuted`: `confirmed` only when every check passed; anything that would make you hesitate to bet on it is `refuted`, with the reason. For any other status (an audit of a rejected or not replicated hypothesis) the verdict is `audited`: it records that the review happened and changes no status, and its reason says whether the recorded status is sound. The command refuses the wrong kind of verdict for the status.
 3. Commit the hypothesis file and the catalogue, by path.
 
 Your variations are attacks. None of them is registered or reported as a better version, and none of their numbers leaves the review section.

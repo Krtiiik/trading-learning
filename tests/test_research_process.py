@@ -165,6 +165,9 @@ def test_status_and_skeptic_verdict_may_change_without_touching_the_registration
 
     assert after.spec_hash == before.spec_hash
     assert after.meta["status"] == "candidate" and after.skeptic["verdict"] == "refuted"
+    keys = list(after.meta)
+    assert keys.index("status") == list(before.meta).index("status")  # rewritten in place
+    assert keys[-1] == "skeptic"  # a new field goes to the end
     assert after.body == before.body and after.meta["decision"] == before.meta["decision"]
     assert registry.check_registered(after)
     with pytest.raises(RegistryError, match="frozen"):
@@ -211,6 +214,14 @@ def test_a_run_writes_its_own_record(lab):
     assert stored["lookahead_check"]["passed"] and len(stored["lookahead_check"]["cuts"]) == 3
     assert stored["metrics"]["window"]["last"].startswith("2022-12-31")
     assert stored["duration_seconds"] > 0 and stored["rerun_reason"] is None
+
+
+def test_a_date_among_the_parameters_does_not_break_the_run_record(lab):
+    lab.hypothesis(params="{since: 2019-07-01}")  # unquoted: YAML reads it as a date
+
+    record = lab.run()
+
+    assert json.loads(record["path"].read_text())["params"] == {"since": "2019-07-01"}
 
 
 def test_a_run_is_reproducible(lab):
@@ -485,6 +496,29 @@ def test_research_commands_walk_a_hypothesis_up_the_ladder(lab, capsys):
     assert main(["research", "status"]) == 0
     assert "H1001  confirmed" in capsys.readouterr().out
     assert registry.load(lab.records, "H1001").meta["status"] == "confirmed"
+
+
+def test_a_review_of_an_unsupported_hypothesis_is_recorded_as_audited(lab, capsys):
+    lab.fixed("H1001", p_value=0.70)
+    lab.run("H1001", "train")
+
+    assert main(["research", "skeptic", "H1001", "--verdict", "refuted", "--reason", "no"]) == 1
+    assert "its review ends in audited" in capsys.readouterr().err
+    assert main(["research", "skeptic", "H1001", "--verdict", "audited", "--reason", "the rejection is sound"]) == 0
+    main(["research", "catalogue"])
+
+    hypothesis = registry.load(lab.records, "H1001")
+    assert hypothesis.skeptic["verdict"] == "audited" and hypothesis.meta["status"] == "rejected"
+    assert "| audited |" in (lab.records / "CATALOGUE.md").read_text(encoding="utf-8")
+
+
+def test_a_supported_finding_cannot_be_merely_audited(lab, capsys):
+    lab.fixed("H1001", p_value=0.01)
+    lab.run("H1001", "train")
+    lab.run("H1001", "dev")
+
+    assert main(["research", "skeptic", "H1001", "--verdict", "audited", "--reason", "looked"]) == 1
+    assert "its review ends in confirmed or refuted" in capsys.readouterr().err
 
 
 def test_run_command_explains_a_refusal(lab, capsys):

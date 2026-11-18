@@ -248,6 +248,8 @@ def test_a_strategy_equal_to_its_benchmark_shows_no_difference(dev):
 
     assert result.estimate == 0 and result.double_cost_estimate == 0
     assert result.p_value > 0.5
+    # DEAD stops trading on 2023-03-20: nothing is dropped, because April's membership excludes it.
+    assert result.metrics["dropped_weight"] == 0 and result.metrics["dropped_weight_before_window"] == 0
     assert result.n == 731  # the dev window only: 2023 and 2024
     assert result.metrics["window"]["first"].startswith("2023-01-01")
 
@@ -313,6 +315,8 @@ def test_a_strategy_that_peeks_beats_the_benchmark_and_costs_show_up(dev):
     assert strategy["sharpe"] == pytest.approx(result.estimate + result.metrics["benchmark"]["sharpe"])
     assert strategy["turnover_per_year"] > 100
     assert set(result.metrics) >= {"reference_btc", "reference_equal_weight", "reference_cash"}
+    doubled = result.metrics["strategy_double_cost"]["sharpe"] - result.metrics["benchmark_double_cost"]["sharpe"]
+    assert doubled == pytest.approx(result.double_cost_estimate)
     assert result.metrics["reference_cash"]["sharpe"] == 0
 
 

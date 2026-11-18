@@ -24,8 +24,13 @@ class BacktestResult:
     """Sum of absolute weight changes traded at each bar's open (buys plus sells)."""
     held: np.ndarray
     """Weights held at each bar's open, after any trade there."""
-    dropped_weight: float
-    """Target weight that could not be bought because the asset had no bar to trade on."""
+    dropped: np.ndarray
+    """Target weight at each bar's open that could not be bought: the asset had no bar there."""
+
+    @property
+    def dropped_weight(self) -> float:
+        """Total dropped weight over all bars."""
+        return float(self.dropped.sum())
 
 
 def run_backtest(
@@ -68,7 +73,7 @@ def run_backtest(
     target = np.zeros((bars, assets))
     target[1:] = decided[:-1]
     untradable = ~np.isfinite(open_)
-    dropped_weight = float(target[untradable & trade[:, None]].sum())
+    dropped = np.where(untradable & trade[:, None], target, 0.0).sum(axis=1)
     target[untradable] = 0.0
 
     anchor = np.maximum.accumulate(np.where(trade, np.arange(bars), -1))
@@ -91,7 +96,7 @@ def run_backtest(
     traded = np.where(trade[:, None], np.abs(target - before_trade), 0.0)
     cost_paid = (traded * np.asarray(cost, dtype="float64") * cost_multiplier).sum(axis=1)
     returns = (1.0 + gross) * (1.0 - cost_paid) - 1.0
-    return BacktestResult(returns, gross, cost_paid, traded.sum(axis=1), held, dropped_weight)
+    return BacktestResult(returns, gross, cost_paid, traded.sum(axis=1), held, dropped)
 
 
 def _forward_fill(values: np.ndarray) -> np.ndarray:

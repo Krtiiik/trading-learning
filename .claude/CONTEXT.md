@@ -87,7 +87,7 @@ _Avoid_: in-sample/out-of-sample, validation set, holdout.
 
 **Supported**: A candidate whose dev estimate has the predicted sign and at least the pre-declared size. For an exploration hypothesis: its dev p-value passes false-discovery control across all exploration hypotheses.
 
-**Skeptic review**: An independent attempt to break a supported finding, starting from the hypothesis file and run records. It ends in confirmed or refuted, written into the hypothesis file.
+**Skeptic review**: An independent attempt to break a supported finding, starting from the hypothesis file and run records. It ends in confirmed or refuted, written into the hypothesis file. A review of a hypothesis with any other status is an audit: it ends in `audited` and changes no status.
 
 **Finalist**: A confirmed hypothesis chosen, before the seal opens, for the single test run.
 

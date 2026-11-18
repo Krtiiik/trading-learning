@@ -59,7 +59,13 @@ def add_research_commands(commands) -> None:
         "skeptic", help="write the Skeptic's verdict into a hypothesis file"
     )
     skeptic.add_argument("hypothesis")
-    skeptic.add_argument("--verdict", choices=("confirmed", "refuted"), required=True)
+    skeptic.add_argument(
+        "--verdict",
+        choices=("confirmed", "refuted", "audited"),
+        required=True,
+        help="confirmed or refuted for a supported finding; audited for a review of any other "
+        "status (it records that the review happened and changes no status)",
+    )
     skeptic.add_argument("--reason", required=True, help="one or two sentences; details go in the file body")
     skeptic.set_defaults(command=_skeptic)
 
@@ -163,7 +169,15 @@ def _mde(args: argparse.Namespace, provider=None) -> int:
 def _skeptic(args: argparse.Namespace, provider=None) -> int:
     from trading.research import registry
 
+    from trading.research import ladder
+
     hypothesis = registry.load(_records(), args.hypothesis)
+    status = ladder.load_standings(_records())[hypothesis.id].status
+    decided = status in (ladder.SUPPORTED, ladder.CONFIRMED, ladder.REFUTED)
+    if decided == (args.verdict == "audited"):
+        wanted = "confirmed or refuted" if decided else "audited"
+        print(f"Refused: {hypothesis.id} is '{status}'; its review ends in {wanted}", file=sys.stderr)
+        return 1
     verdict = {"verdict": args.verdict, "date": date.today().isoformat(), "reason": args.reason}
     registry.set_field(hypothesis, "skeptic", verdict)
     print(f"{hypothesis.id}: Skeptic verdict '{args.verdict}' written to {hypothesis.path.name}")

@@ -201,15 +201,17 @@ def evaluate_strategy(
         return test, ours, theirs
 
     normal, ours, theirs = compare(1.0)
-    doubled, ours_doubled, _ = compare(DOUBLE_COST)
+    doubled, ours_doubled, theirs_doubled = compare(DOUBLE_COST)
     metrics: dict[str, Any] = {
         "statistic": f"difference in annualised net {statistic}",
         "bootstrap": normal.detail,
         "strategy": summarize(ours.returns[inside], periods, ours.turnover[inside], ours.cost[inside]),
         "benchmark": summarize(theirs.returns[inside], periods, theirs.turnover[inside], theirs.cost[inside]),
         "strategy_double_cost": summarize(ours_doubled.returns[inside], periods),
+        "benchmark_double_cost": summarize(theirs_doubled.returns[inside], periods),
         "average_weight_invested": float(ours.held[inside].sum(axis=1).mean()),
-        "dropped_weight": ours.dropped_weight,
+        "dropped_weight": float(ours.dropped[inside].sum()),
+        "dropped_weight_before_window": float(ours.dropped[~inside].sum()),
         "window": {"first": str(market.index[inside][0]), "last": str(market.index[inside][-1])},
     }
     for name, build in named.items():

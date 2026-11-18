@@ -81,6 +81,7 @@ def test_coin_that_stops_trading_is_sold_at_its_last_close():
     assert result.returns[2] == pytest.approx(-0.002)
     assert result.returns[3] == 0
     assert result.dropped_weight == pytest.approx(2.0)
+    assert list(result.dropped) == pytest.approx([0, 0, 1, 1])
 
 
 def test_double_cost_doubles_what_is_paid():
