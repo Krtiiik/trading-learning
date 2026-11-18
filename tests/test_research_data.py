@@ -252,6 +252,17 @@ def test_a_strategy_equal_to_its_benchmark_shows_no_difference(dev):
     assert result.metrics["window"]["first"].startswith("2023-01-01")
 
 
+def test_a_strategy_may_not_buy_a_coin_outside_the_point_in_time_universe(dev):
+    market = dev.market("1d")
+    early = pd.DataFrame({"LATEUSDT": [1.0]}, index=[pd.Timestamp("2024-07-10")])  # a member from August
+    allowed = pd.DataFrame({"LATEUSDT": [1.0]}, index=[pd.Timestamp("2024-07-31")])  # decided at July's last close
+
+    with pytest.raises(ValueError, match="outside the point-in-time universe, first LATEUSDT"):
+        evaluate.evaluate_strategy(context(dev), early, "1d", draws=50)
+
+    assert evaluate.evaluate_strategy(context(dev), allowed, "1d", draws=50).n == 731
+
+
 def test_a_declared_start_narrows_the_evaluation_window_and_never_widens_it(dev):
     market = dev.market("1d")
     weights = evaluate.equal_weight(market)
@@ -289,9 +300,9 @@ def test_etf_bars_reach_research_only_up_to_the_segment_end(crypto_root, tmp_pat
 def test_a_strategy_that_peeks_beats_the_benchmark_and_costs_show_up(dev):
     market = dev.market("1d")
     tomorrow = np.roll(market.open, -2, axis=0) / np.roll(market.open, -1, axis=0) - 1
-    best = np.nanargmax(np.where(market.member, tomorrow, -np.inf)[:-2], axis=1)
+    best = np.nanargmax(np.where(market.member_next, tomorrow, -np.inf)[:-2], axis=1)
     weights = np.zeros((len(best), len(market.symbols)))
-    weights[np.arange(len(best)), best] = 1.0
+    weights[np.arange(len(best)), best] = market.member_next[:-2].any(axis=1)  # cash while no members
     peeking = pd.DataFrame(weights, index=market.index[:-2], columns=list(market.symbols))
 
     result = evaluate.evaluate_strategy(context(dev), peeking, "1d", benchmark="btc", draws=200)

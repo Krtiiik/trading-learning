@@ -84,6 +84,23 @@ def to_weights(market: Market, frame: pd.DataFrame) -> np.ndarray:
     return listed.reindex(market.index).to_numpy("float64")
 
 
+def check_members_only(market: Market, weights: pd.DataFrame) -> None:
+    """Raise if a decision puts weight on a coin outside the point-in-time universe.
+
+    Judged against the membership in force when the decision's bar closes. A coin that has
+    left the universe may still be held until the next rebalance; it may not be bought.
+    """
+    decided = to_weights(market, weights)
+    outside = (np.nan_to_num(decided) > 0) & ~market.member_next
+    if outside.any():
+        bar, coin = np.argwhere(outside)[0]
+        raise ValueError(
+            f"weights on {int(outside.sum())} coin-bars outside the point-in-time universe, "
+            f"first {market.symbols[coin]} at {market.index[bar]}; mask the weights with "
+            "market.member_next"
+        )
+
+
 def backtest(market: Market, weights: pd.DataFrame, cost_multiplier: float = 1.0) -> BacktestResult:
     return run_backtest(to_weights(market, weights), market.open, market.close, market.cost, cost_multiplier)
 
@@ -158,10 +175,12 @@ def evaluate_strategy(
 
     Both run through the same engine and costs from the first bar of the data, so positions
     carried into the window are the ones the rule would really hold; only the window's bars are
-    compared (from `start` on, if the hypothesis declares a later first day). The estimate is strategy minus benchmark, annualised, at normal cost; the same
+    compared (from `start` on, if the hypothesis declares a later first day). The strategy may
+    only buy coins that are universe members when it decides; a benchmark is not held to that. The estimate is strategy minus benchmark, annualised, at normal cost; the same
     difference at double cost is reported alongside. The p-value comes from a paired block bootstrap.
     """
     market = ctx.data.market(granularity)  # type: ignore[arg-type]
+    check_members_only(market, weights)
     periods = periods_per_year(market.granularity)
     inside = ctx.inside(market.index, start)
     named = {"btc": buy_and_hold, "equal_weight": equal_weight, "cash": cash}
