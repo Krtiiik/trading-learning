@@ -184,14 +184,16 @@ def set_field(hypothesis: Hypothesis, name: str, value: Any) -> Hypothesis:
     match = _FRONT_MATTER.match(text)
     assert match is not None
     lines = match.group(1).splitlines()
-    start = next((i for i, line in enumerate(lines) if re.match(rf"^{name}\s*:", line)), None)
-    if start is not None:
-        stop = start + 1
-        while stop < len(lines) and (lines[stop].startswith((" ", "\t")) or not lines[stop].strip()):
-            stop += 1
-        del lines[start:stop]
     dumped = yaml.safe_dump({name: value}, sort_keys=False, allow_unicode=True, width=88)
-    lines += dumped.rstrip("\n").splitlines()
+    replacement = dumped.rstrip("\n").splitlines()
+    start = next((i for i, line in enumerate(lines) if re.match(rf"^{name}\s*:", line)), None)
+    if start is None:
+        lines += replacement
+    else:
+        stop = start + 1
+        while stop < len(lines) and lines[stop].startswith((" ", "\t")):
+            stop += 1
+        lines[start:stop] = replacement
     hypothesis.path.write_text(
         "---\n" + "\n".join(lines) + "\n---\n" + match.group(2), encoding="utf-8", newline="\n"
     )

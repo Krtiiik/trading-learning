@@ -18,7 +18,7 @@ import math
 import platform
 import sys
 import time
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from pathlib import Path
 from types import ModuleType
 from typing import Any
@@ -275,6 +275,6 @@ def _plain(value: Any) -> Any:
         value = value.item()
     if isinstance(value, float) and not math.isfinite(value):
         return None
-    if isinstance(value, pd.Timestamp | Path):
+    if isinstance(value, pd.Timestamp | Path | date):
         return str(value)
     return value
