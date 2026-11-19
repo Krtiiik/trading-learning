@@ -7,9 +7,11 @@ How to read an entry:
 - Numbers are the paper's own, in its units, with the table or section they come from. Arithmetic of mine is marked "(my arithmetic)".
 - "Opened" says which version I read. Where the published version was behind a paywall or a bot check I read the working paper and say so; the published numbers may differ.
 - "Sample end" is checked against the split: a sample ending by 2022-12-31 is clean evidence for the train segment; anything later is flagged.
-- Every source in the numbered sections ends by 2022-03-05, so none overlaps the dev or test segment. The flagged ones are all under "Unverified leads".
+- Every source in sections 1 to 3 ends by 2022-03-05, so none overlaps the dev or test segment. The flagged ones are all under "Unverified leads".
 
-Sections are ordered by how strong the evidence is for a long-or-flat rule on daily bars.
+Sections 1 to 3 are ordered by how strong the evidence is for a long-or-flat rule on daily bars.
+
+A second run on 2026-11-19 added sections 4 to 7 on the family's other sub-angles (reversal, volatility, calendar effects, intraday momentum and volume), with their own leads and gaps at the end of the file. Read "How the second run differs" at the top of section 4 before using them: far fewer of its sources could be opened in full.
 
 ## 1. Price above its moving average: long, otherwise cash (5 to 100 days)
 
@@ -174,3 +176,205 @@ Sources I could not open in full. Nothing here should be cited as evidence until
 - No source I could open tests a per-coin trend rule on a broad, liquidity-ranked universe with changing membership (our point-in-time universe).
 - No source compares rebalancing frequencies for a fixed signal.
 - No source tests a 12-month time-series lookback on crypto.
+
+---
+
+# Second run (2026-11-19): reversal, volatility, calendar effects, intraday momentum and volume
+
+Question of this run: what is published on the time-series family's sub-angles other than trend, so that about seven more hypotheses can be registered across them and across daily and hourly bars?
+
+**How the second run differs.** Most journal articles on these sub-angles are behind publisher paywalls or bot checks, and every PDF link I tried answered with a binary file instead of readable text, which I did not retry. What I could read in full are seven open sources, six of them arXiv papers and one a practitioner research article. They carry sections 4 to 7. Everything of which I read only an abstract is under "Unverified leads (second run)", grouped by sub-angle, with what the abstract states. Three consequences:
+
+- The numbered entries lean on arXiv preprints, several not peer reviewed. The better-known journal results (intraday momentum, overreaction, volume causality) are leads, not entries.
+- Numbers in sections 4 to 7 were read through a text extraction of the HTML version of each paper, not from the typeset tables. Where the extraction itself looked inconsistent I say so. Check a number against the paper's table before quoting it in a hypothesis file.
+- Almost all intraday evidence is Bitcoin, sometimes Ethereum. Nothing below is a test on some 40 coins.
+
+Sample end dates: every source in sections 4 to 7 ends by 2022-10 and is clean for the train segment. Flagged sources are all in the leads.
+
+## 4. Short-horizon reversal in a coin's own returns
+
+### 4a. Hourly and sub-hourly Bitcoin returns are negatively autocorrelated
+
+**Claim.** A Bitcoin return over the last 10 minutes to one hour is followed, on average, by a return of the opposite sign over the next such period.
+
+- **Reference (hourly).** Tartakovsky, E., Plesovskikh, K., Sarmakeeva, A. and Bibik, A. (2020). "Autocorrelation of returns in major cryptocurrency markets." arXiv:2003.13517. <https://arxiv.org/abs/2003.13517>. Not peer reviewed; the first author is at a trading firm.
+- **Opened.** The full paper in its HTML rendering.
+- **Sample.** Bitfinex BTC/USD 2014-07-01 to 2019-07-01; Bitfinex ETH/USD and ETH/BTC 2016-03-09 to 2019-07-01; Bitmex XBT/USD perpetual swap 2017-10-12 to 2019-07-01. Bars of 5 minutes, 1 hour, 1 day and 1 week (Section 5).
+- **Method.** Pearson autocorrelation at several lags, Ljung-Box test up to 30 lags, and the lag-1 autocorrelation in a rolling one-year window (Sections 4 and 5).
+- **Direction and size.** At 5 minutes and 1 hour, autocorrelation is significant on all four markets (Ljung-Box p-values of zero at every lag, Section 5.2). For BTC/USD and the Bitcoin swap the low-order autocorrelations are negative (Section 5.1). For ETH/USD and ETH/BTC the first-order coefficient is positive and the second-order negative (Section 5.1). The rolling lag-1 coefficient on hourly bars is described as negative on every market over time (Section 5.3), which does not agree with the positive first-order result for the Ethereum pairs two sections earlier. All four markets show a significant positive autocorrelation at lag 16 on hourly bars (Section 5.1), which the paper does not explain. Coefficient sizes are shown only in charts; the text gives no numbers.
+- **Costs.** None. The authors say the findings alone are not enough to extract profit.
+- **Sample end.** 2019-07-01. Clean.
+
+Second source, shorter horizon:
+
+- **Reference.** Tang, Y., Arias-Calluari, K., Harré, M. S. and Alonso-Marroquin, F. (2024). "Stylized Facts of High-Frequency Bitcoin Time Series." arXiv:2402.11930. <https://arxiv.org/abs/2402.11930>.
+- **Opened.** The full paper in its HTML rendering.
+- **Sample.** BTC/USD from Reuters Datascope, 10-minute returns, analysed in two periods: 2019-04-02 to 2020-12-31 and 2021-01-01 to 2022-05-09 (Section V; the abstract and introduction give looser ranges).
+- **Direction and size.** The autocorrelation of 10-minute returns is negative at short lags in both periods, then oscillates around zero from about 30 to 200 minutes, and beyond that is about 0.002 in absolute value (Section V.2). No lag-by-lag table.
+- **Costs.** None.
+- **Sample end.** 2022-05-09. Clean.
+
+- **Corroboration at abstract level only** (see leads): De Nicola 2021 reports negative first-order autocorrelation at one, two and four hours on Bitcoin, stronger after larger moves.
+- **Transfer.** Testable here as a predictive claim on hourly bars: the return of bar t against the return of bar t+1, per coin or pooled over the point-in-time universe, predicted sign negative. Two warnings for registration. The evidence is Bitcoin; the one paper that looks at Ethereum finds the opposite sign at lag 1, so a pooled test over 40 coins is an extension the literature does not cover. And no source reports a size, so the predicted size has to be declared without a published number. As a trading claim (long for one hour after a down hour, otherwise flat) it is testable but starts with a handicap: a round trip costs 24 to 50 bps (my arithmetic from 12 to 25 bps per side), against an average hourly move that is itself a fraction of a percent, and no source claims a profit after costs.
+
+### 4b. Daily returns: no stable autocorrelation of either sign
+
+**Claim (a null).** A coin's daily return does not reliably predict its next daily return, in either direction.
+
+- **Source.** Tartakovsky et al. (2020), as in 4a.
+- **Result.** On daily bars no autocorrelation of any order clearly exceeds its confidence band (Section 5.1); the Ljung-Box results differ by market (never significant for the Bitcoin swap, unstable for BTC/USD, mostly significant for ETH/BTC; Section 5.2); the rolling lag-1 coefficient behaves differently on every market (Section 5.3). On weekly bars the rolling lag-1 coefficient is positive most of the time on all markets, which agrees with section 2.
+- **Fits with what is already on file.** Liu and Tsyvinski's daily coefficient for Bitcoin is positive (0.06) and loses significance under bootstrap (section 2a).
+- **Sample end.** 2019-07-01. Clean.
+- **Transfer.** Testable here as published: a pooled daily regression of the next day's return on today's. The literature's prior is "nothing or weakly positive in large coins", not reversal. Abstract-level leads point the same way for our universe: daily reversal is reported as an effect of small, illiquid coins, with the largest coins showing daily momentum instead (Zaremba et al. 2021; Bianchi, Babiak and Dickerson 2022), and a contrarian rule after one-day overreactions is reported as unprofitable (Caporale and Plastun 2019). A daily reversal hypothesis on the point-in-time universe would be registered against the published direction.
+
+## 5. Volatility
+
+### 5a. The leverage effect is inverted: volatility rises more after gains than after losses
+
+**Claim.** In crypto, next-period volatility is higher after positive returns than after negative returns of the same size, the opposite of equities.
+
+- **Reference.** Brini, A. and Lenz, J. (2024). "A Comparison of Cryptocurrency Volatility-benchmarking New and Mature Asset Classes." arXiv:2404.04962. <https://arxiv.org/abs/2404.04962>.
+- **Opened.** The HTML version, the first 100,000 of about 144,000 characters (through the per-coin results; I did not read the end).
+- **Sample.** 87 coins (the 100 largest by capitalisation less stablecoins) from the Binance API, 5-minute prices, 2020 to October 2022; 42 Nasdaq technology stocks for comparison (Sections 1 and 3.2). No exact start and end day is given.
+- **Method.** Daily realised variance from 5-minute returns, split into the part from positive and the part from negative returns; panel heterogeneous-autoregressive models forecasting realised variance 1, 5, 22 and 66 days ahead, with a term for "yesterday's return was negative" (Section 3). In sample only.
+- **Direction and size.** The variance from positive returns dominates the forecast for crypto: coefficient 1.262 (t about 10.2) one day ahead, against -0.142 (t about -1.7) for the variance from negative returns (Table 3). The negative-day term is negative for crypto, -0.261 (t about -2.8) one day ahead and -0.076 (t about -3.9) at 22 days, where equities have a positive one (0.115 one day ahead) (Table 4). Per coin, the negative-day term is significant for most coins at 22 and 66 days and almost always negative (Section 4.5). The effect is described as stronger in 2020-21 than in 2021-22 (Section 4.4). Jumps go the conventional way: negative jumps raise later volatility, positive jumps lower it (Table 5). The extraction showed two oddities in the tables (a 66-day row repeating the 1-day values in Table 4, and an implausible t-statistic in Table 3), so check the numbers against the paper.
+- **A weaker result on Bitcoin alone.** Kunimoto and Kakamu (reference in 6b), daily Bitcoin 2013-01-01 to 2019-08-31, estimate the correlation between return shocks and volatility shocks at 0.048 with a 95 percent interval of -0.047 to 0.141 (Table 4): positive, as the inverted effect predicts, but not distinguishable from zero.
+- **Costs.** Not relevant; nothing is traded.
+- **Sample end.** October 2022 (Brini and Lenz); 2019-08-31 (Kunimoto and Kakamu). Both clean.
+- **Transfer.** Testable only in part. These are claims about volatility, not about returns: neither paper tests whether the asymmetry forecasts a coin's return. What can be tested here is the volatility claim itself, on realised variance built from hourly bars (24 returns a day instead of 288, so noisier than the paper's measure): next-day realised variance is higher after an up day than after a down day with the same realised variance. Our glossary defines a predictive claim as a signal that forecasts returns, so a Researcher has to decide whether this is a hypothesis or a know-how note. The sample matches our universe unusually well (Binance, large coins). The original result, Baur and Dimpfl 2018, is a lead (abstract only).
+
+### 5b. Volatility is persistent and follows the clock, which is the precondition for volatility-managed exposure
+
+**Claim.** A coin's volatility tomorrow is well predicted by its recent volatility and by the calendar (weekday, hour), so exposure can be scaled against it in advance.
+
+- **Sources.** Hansen, Kim and Kimbrough (reference in 6a) and Kunimoto and Kakamu (reference in 6b).
+- **Size.** Persistence of log-volatility for daily Bitcoin 2013 to 2019: 0.918, 95 percent interval 0.890 to 0.942 (Kunimoto and Kakamu, Table 4). Adding weekday effects to a volatility model for 2017-01-01 to 2021-07-31 improves its log-likelihood in and out of sample for both Bitcoin and Ether (Hansen et al., Section 6, Table 2). The calendar pattern itself is in section 6.
+- **What is missing.** Volatility-managed exposure pays only if expected return does not rise in step with volatility. That is the finding of the parent paper for equity factors and currency carry (Moreira and Muir 2017, a lead: I read its abstract only), and I found no source I could open that tests it on crypto, for a long-only position or otherwise. A paper on the cross-section (Lee and Wang, a lead with an unknown sample end) states that coins with higher realised variance have lower returns in the following weeks, which would favour scaling down in high volatility if it also holds through time; nobody I could read tests that.
+- **Sample end.** 2021-07-31 and 2019-08-31. Clean.
+- **Transfer.** Testable only in part, and as our own extension rather than a replication. Long or flat without leverage means exposure can be scaled down but not up: weight = min(1, target volatility / recent realised volatility). The published design (Moreira and Muir) scales in both directions and compares Sharpe ratios and alpha; ours would compare the capped rule with buy-and-hold of the same coin or universe. A predictive version is also possible and has more power: does a coin's recent realised volatility predict its next day's or week's return, sign negative? Origin `literature` is defensible only for the persistence half; the return half has no opened crypto source behind it, so say so in the hypothesis file.
+
+## 6. Calendar effects
+
+### 6a. Weekends are quiet: lower volatility and lower volume on Saturday and Sunday
+
+**Claim.** Volatility and trading volume are lower at weekends than on weekdays, most of all on Saturday.
+
+- **Reference.** Hansen, P. R., Kim, C. and Kimbrough, W. (2021). "Periodicity in Cryptocurrency Volatility and Liquidity." arXiv:2109.12142. <https://arxiv.org/abs/2109.12142>. From memory, not confirmed: later published in the *Journal of Financial Econometrics*.
+- **Opened.** The full paper in its HTML rendering.
+- **Sample.** BTC and ETH against USD on Coinbase Pro and against USDT on Binance, plus WETH/USDC on Uniswap V2; 1-minute bars, realised variance from 5-minute returns; main sample 2020-10-01 to 2021-06-01, an extended one from 2019-01-01, and 2017-01-01 to 2021-07-31 on Coinbase Pro for the volatility models (Sections 3 and 6).
+- **Direction and size.** Volatility and volume are lower at weekends, most markedly on Saturdays; volume varies more than volatility on the centralised exchanges; the pattern is described as stable over time; the confidence bands are wide because the main sample has about 35 weeks (Section 5.1, Figure 3). The paper studies volatility, volume and illiquidity only: it does not examine mean returns by day or hour, and its volatility models keep the mean constant.
+- **Agreeing sources.** Kunimoto and Kakamu (6b), daily Bitcoin 2013 to 2019: log-volatility coefficient relative to Wednesday -0.332 on Saturday (95 percent interval -0.598 to -0.074) and -0.394 on Sunday (-0.660 to -0.126); Thursday is higher at 0.289 (0.028 to 0.544) (Table 4). Petukhina, Reule and Härdle (2021), "Rise of the Machines? Intraday High-Frequency Trading Patterns of Cryptocurrencies", *European Journal of Finance*, arXiv:2009.04200 <https://arxiv.org/abs/2009.04200>, opened in full: 11 coins at 5 minutes, but only 2018-07-01 to 2018-08-31; absolute returns peak from about Tuesday to Thursday and drop steeply at weekends, volume and volatility are low at weekends (Figures 8 to 10); no test on mean returns, no numbers in the text.
+- **Abstract-level agreement** (leads): Baur, Cahill, Godfrey and Liu 2019 report lower volume at weekends on all seven exchanges they study.
+- **Costs.** Not relevant.
+- **Sample end.** 2021-07-31 at the latest. Clean.
+- **Transfer.** Testable here as a claim about volatility or quote volume on daily or hourly bars (Saturday and Sunday bars against weekday bars, pooled over the point-in-time universe); it is a volatility claim, not a return claim, so the same caveat as in 5a applies. It is the best-supported calendar fact in this file, with three independent samples from 2013 to 2021. Its use for a hypothesis is indirect: it predicts when a volatility-scaled position (5b) would be larger.
+
+### 6b. Day of the week in returns: three sources, three answers
+
+**Claim.** Bitcoin's mean daily return differs by weekday.
+
+- **Reference.** Kunimoto, N. and Kakamu, K. (2021). "Is Bitcoin really a currency? A viewpoint of a stochastic volatility model." arXiv:2111.15351. <https://arxiv.org/abs/2111.15351>.
+- **Opened.** The full paper in its HTML rendering.
+- **Sample.** Coin Metrics Bitcoin price in dollars, daily closes at 00:00 UTC, 2013-01-01 to 2019-08-31, 2,434 observations; returns are 100 times the log price change (Section 5).
+- **Method.** A stochastic volatility model with weekday and holiday dummies in both the return and the volatility equation, Wednesday as the base day, Bayesian estimation; in sample only (Sections 3 and 4).
+- **Direction and size (Table 3, percentage points a day relative to Wednesday, posterior mean and 95 percent interval).** Friday 0.415 (0.107 to 0.728), the only day whose interval excludes zero. Tuesday 0.303 (-0.031 to 0.641), Saturday 0.216 (-0.073 to 0.504), Thursday 0.161 (-0.172 to 0.491), Sunday 0.076 (-0.218 to 0.371), Monday 0.063 (-0.261 to 0.389). Wednesday itself: -0.021 (-0.245 to 0.201). The day after a US holiday: 0.784 (0.015 to 1.606); the day before: 0.302 (-0.402 to 1.018).
+- **Conflicting abstract-level evidence** (leads). Caporale and Plastun 2019 report that Bitcoin's Monday returns are significantly higher than other days', with no effect in Litecoin, Ripple or Dash; this paper's Monday estimate, on a longer sample, is the smallest of the six. Aharon and Qadan 2019 report a day-of-the-week effect in Bitcoin returns and volatility for 2010 to 2017 (the abstract does not name the day). Baur et al. 2019, on seven exchanges, report that return anomalies by time of day, weekday and month exist but do not persist over time.
+- **Costs.** None.
+- **Sample end.** 2019-08-31. Clean.
+- **Transfer.** Testable here as a predictive claim on daily bars, with a low prior: one coin, one in-sample model, seven weekdays looked at and one found, and the two best-known journal results name a different day or deny persistence. Before registering, fix which bar "Friday" means: the paper dates a return by a 00:00 UTC close, and I could not tell whether its Friday return covers the UTC day Friday (our bar labelled Friday) or ends at Friday 00:00 (our bar labelled Thursday). As a trading claim it is marginal on its own numbers: about 0.4 percentage points for a one-day hold against a round trip of 24 to 50 bps (my arithmetic).
+
+### 6c. Hour of the day in returns: the two hours before midnight UTC
+
+**Claim.** Bitcoin's mean hourly return is highest late in the UTC evening, when no major stock market is open.
+
+- **Reference.** Padyšák, M. and Vojtko, R. (2022). "Are There Seasonal Intraday or Overnight Anomalies in Bitcoin?" Quantpedia research article, 2022-02-18. <https://quantpedia.com/are-there-seasonal-intraday-or-overnight-anomalies-in-bitcoin/>. Practitioner research, not peer reviewed. A companion working paper by the same authors ("Seasonality, Trend-following, and Mean reversion in Bitcoin") is a lead: I could not open it.
+- **Opened.** The article.
+- **Sample.** Bitcoin on Gemini, hourly, 2015-10-09 to 2022-02-03, hours in UTC.
+- **Direction and size.** The hours named 22:00 and 23:00 have the highest and most economically significant mean returns; 03:00 and 04:00 the weakest; no hour has a significantly negative mean; several positive hourly means are significant at 5 percent. The article shows these in charts and gives no hourly numbers. The rule "buy at 21:00 UTC, sell at 23:00 UTC" earns 33 percent a year with 20.93 percent volatility and a maximum drawdown of -22.45 percent.
+- **Costs.** Not mentioned.
+- **Sample end.** 2022-02-03. Clean. A later follow-up by the same publisher exists; I did not open it and it would overlap the dev segment.
+- **Transfer.** Testable here as a predictive claim on hourly bars: the mean return of the two bars covering 21:00 to 23:00 UTC against the mean of the other bars, per coin or pooled. Use the holding window of the trading rule to define the bars (our bars labelled 21:00 and 22:00), because the article does not say whether an hour's name is its start or its end. Not testable as a trading claim with any chance: 33 percent a year from one round trip a day is roughly 9 bps a trade before costs (my arithmetic), against 24 to 50 bps for the round trip. The evidence is one coin on one exchange we do not use, from a practitioner source, and Baur et al. (lead) report that time-of-day return anomalies in Bitcoin do not persist.
+
+### 6d. Hour of the day in volatility and volume: 00:00, 08:00 and 16:00 UTC, and the first minute of every hour
+
+**Claim.** Volatility and volume spike at fixed clock times: at 00:00 and 16:00 UTC, less at 08:00, and in the first minute of each hour.
+
+- **Source.** Hansen, Kim and Kimbrough (2021), as in 6a.
+- **Direction and size.** Volatility is high around 16 UTC and lowest near 5 UTC; volume and volatility spike at 0h and 16h with smaller spikes at 8h, on every exchange and both assets (Section 5.2, Figure 4). For BTC/USDT on Binance the first hour of the UTC day and the hour after 16:00 have the highest volatility, and the first hour is especially volatile on Mondays (Figure 6). Binance is about 30 percent less liquid than its average during the East Asian night (Section 5.2.1, Figure 5). Within the hour, volatility peaks in the first minute, with smaller bursts after minutes 15, 30 and 45 and every five minutes; on Binance this is strongest every fourth hour (Section 5.3, Figures 7 and 8). The authors attribute the within-hour pattern to algorithmic trading and conjecture a link to perpetual-futures funding, which Binance settles at 00, 08 and 16 UTC.
+- **Agreeing source.** Petukhina, Reule and Härdle (reference in 6a): absolute returns are low at night, rise through the European day and peak in the late afternoon, about 16:00 to 19:00 UTC if the paper's clock is GMT+1 (Figure 7); two months of 2018 only.
+- **Costs.** Not relevant.
+- **Sample end.** 2021-07-31. Clean.
+- **Transfer.** Testable here on hourly bars as a claim about the absolute return or quote volume of the bars labelled 00:00, 08:00 and 16:00 UTC against other bars. The within-hour part is not testable: we have no bars shorter than an hour. No source says these hours have different mean returns, so a return hypothesis built on funding times would be `exploration`, not `literature`. For any rule that trades at a bar's open it is a warning as much as a lead: 00:00 UTC, where every daily rule of ours trades, is one of the most volatile moments of the day.
+
+## 7. Intraday momentum, and volume as a predictor of a coin's own return
+
+I could open no full text on either topic beyond the hourly autocorrelation evidence in 4a. What 4a adds here:
+
+- **Sign differs by coin.** At lag 1 on hourly bars Bitcoin reverses while the two Ethereum pairs continue, in the one paper that reports both (Tartakovsky et al., Section 5.1, sample to 2019-07-01). "Hourly momentum" and "hourly reversal" are therefore both published for large coins, on different coins, and the paper contradicts itself on Ethereum in its rolling analysis.
+- **A lag-16 effect.** All four markets show a significant positive autocorrelation at lag 16 on hourly bars (same section). Unexplained and unreplicated; testable here on hourly bars as a predictive claim, but treat it as one chance finding among 30 lags tested until someone finds a second source.
+
+The published patterns for this sub-angle are all abstract-level and are listed in the leads: the first half-hour of the day predicting the last (Shen, Urquhart and Wang 2022), intraday momentum together with reversal (Wen, Bouri, Xu and Zhao 2022), volume predicting returns outside bull and bear regimes (Balcilar et al. 2017), volume predicting extreme returns (Bouri et al. 2019), and the interaction of lagged return and volume (Bianchi, Babiak and Dickerson 2022).
+
+## What transfers to our setup (second run)
+
+Setup as before, plus hourly bars labelled in UTC, signal at a bar's close, trade at the next open.
+
+- **Costs rule out most intraday trading claims before they are run.** A round trip is 24 to 50 bps. The one intraday rule with a published return (6c) earns about 9 bps a trade gross (my arithmetic). No opened source reports an hourly effect that is profitable after costs. Hourly hypotheses from this file should be predictive claims.
+- **Half of what is well supported is about volatility, not returns.** Weekend calm (6a), clock-time spikes (6d), the inverted leverage effect (5a) and persistence (5b) are solid as descriptions. Turning them into return hypotheses is our own step, and the origin should say so.
+- **Signal at the close, trade at the next open** is harmless for calendar rules (the clock is known in advance) and for daily autocorrelation (the next daily bar opens when the signal bar closes). For hourly autocorrelation it is exactly the published lag-1 design.
+- **Day and hour labels need care.** Papers name a day or an hour without saying whether the name is the start or the end of the period (6b, 6c). Our bar label is the opening time. Fix the mapping in the hypothesis file before any run.
+- **Long or flat.** Nothing in sections 4 to 7 depends on a short leg; the constraint that binds here is "no leverage" in 5b.
+- **The universe is wider than the evidence** again: Bitcoin and sometimes Ether for every intraday and calendar entry; only 5a covers a broad set of Binance coins.
+
+## Unverified leads (second run)
+
+Abstract or listing only unless stated. Nothing here is evidence until someone reads the paper. Grouped by sub-angle; the access problem is given once per group where it is the same.
+
+**Reversal.** Publisher paywalls; the working-paper PDFs answered with an unreadable binary.
+
+- **De Nicola, G. (2021). "On the Intraday Behavior of Bitcoin." *Ledger* 6, 58-80. DOI 10.5195/ledger.2021.213.** Abstract ([journal page](https://ledger.pitt.edu/ojs/ledger/article/view/213)): significant negative first-order autocorrelation of Bitcoin returns at one, two and four hours; larger moves are followed by stronger reversals; a simple trading strategy illustrates it; explanations offered are overreaction and cascading liquidations. The abstract gives no sample dates (a search summary says 2015 to 2018) and nothing on costs. Open access but PDF only. Read this first: it is the direct source for an hourly reversal hypothesis and for "after large moves".
+- **Caporale, G. M. and Plastun, A. (2019). "Price overreactions in the cryptocurrency market." *Journal of Economic Studies* (journal inferred from the listing); CESifo Working Paper 6861 (2018).** Abstract ([listing](https://econpapers.repec.org/RePEc:ces:ceswps:_6861)): Bitcoin, Litecoin, Ripple and Dash; after a one-day overreaction the next day's move is larger than after normal days in both directions; a contrarian trading rule is unprofitable; a continuation rule makes money but not significantly more than random trading; the authors see no exploitable opportunity. Sample dates not in the abstract (before 2018). A published null for daily reversal after large moves.
+- **Zaremba, A., Bilgin, M. H., Long, H., Mercik, A. and Szczygielski, J. J. (2021). "Up or down? Short-term reversal, momentum, and liquidity effects in cryptocurrency markets." *International Review of Financial Analysis* 78, 101908. DOI 10.1016/j.irfa.2021.101908.** Abstract ([listing](https://ideas.repec.org/a/eee/finana/v78y2021ics1057521921002349.html)): across more than 3,600 coins, coins with a low return on the last day outperform those with a high one; the reversal comes from illiquidity, and the few largest, most tradeable coins show daily momentum instead. Cross-sectional. Sample dates not in the abstract (before 2021).
+- **Bianchi, D., Babiak, M. and Dickerson, A. (2022). "Trading volume and liquidity provision in cryptocurrency markets." *Journal of Banking & Finance* 142, 106547. DOI 10.1016/j.jbankfin.2022.106547.** Abstract ([listing](https://econpapers.repec.org/RePEc:eee:jbfina:v:142:y:2022:i:c:s0378426622001418)): pairs against the dollar on several centralised exchanges, 2017-03-01 to 2022-03-01; profits of a short-term reversal strategy are concentrated in pairs with low trading activity and are larger in smaller, more volatile, less liquid pairs; in a panel regression the interaction of lagged return and volume predicts returns. Sample end 2022-03-01, clean. Also the main lead for volume as a predictor.
+- **Corbet, S. and Katsiampa, P. (2020). "Asymmetric mean reversion of Bitcoin price returns." *International Review of Financial Analysis*.** Search summary only: minute, hourly, daily and weekly Bitcoin returns 2010 to 2018, asymmetric reverting patterns. The repository page was behind a bot check.
+- **Fičura, M. (2023). "Impact of size and volume on cryptocurrency momentum and reversal." FFA Working Papers 5.003, Prague University of Economics and Business.** Abstract ([page](https://wp.ffu.vse.cz/artkey/wps-202301-0003_impact-of-size-and-volume-on-cryptocurrency-momentum-and-reversal.php)): weekly reversal only in small, illiquid coins and weekly momentum in large, liquid ones. **Hindsight flag: the abstract gives no sample dates and the paper is from 2023; treat it as overlapping the dev segment until checked.** Claim only.
+- **Kitron, N. A. and Wengrowicz, J. M. (2026). "Short-horizon mean reversion in cryptocurrency markets: a matched cross-market measurement." arXiv:2608.21888.** Abstract: 15-minute reversal in the sign of returns on 183 Binance pairs, much stronger than in US stocks, strongest after moves driven by aggressive orders, and by the authors' own account too small to cover spot trading costs. **Hindsight flag: the sample runs from 2021 into the dev or test segment.** Claim only.
+
+**Volatility.**
+
+- **Baur, D. G. and Dimpfl, T. (2018). "Asymmetric volatility in cryptocurrencies." *Economics Letters* 173, 148-151. DOI 10.1016/j.econlet.2018.10.008.** Abstract ([listing](https://econpapers.repec.org/RePEc:eee:ecolet:v:173:y:2018:i:c:p:148-151)): in the 20 largest coins positive shocks raise volatility more than negative ones; explained by uninformed buying after gains. Paywalled. Sample ends by 2018, clean. The original of 5a.
+- **Moreira, A. and Muir, T. (2017). "Volatility-Managed Portfolios." *Journal of Finance* 72(4), 1611-1644. DOI 10.1111/jofi.12513.** Abstract ([NBER page](https://www.nber.org/papers/w22208)): portfolios that cut exposure when volatility is high earn large alphas and higher Sharpe ratios for the equity market, several equity factors and currency carry, because expected returns do not rise in proportion to volatility. No crypto. The parent of 5b; I did not open the full text.
+- **Lee, S. S. and Wang, M. (2025). "Variance Decomposition and Cryptocurrency Return Prediction." *Journal of Financial and Quantitative Analysis* 60(4), 1859-1890. DOI 10.1017/S002210902400022X.** Abstract ([publisher page](https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis/article/variance-decomposition-and-cryptocurrency-return-prediction/9995E58095453CB44A3BC3C9C111969F)): from intraday data, coins with higher realised variance have lower returns in the following weeks, driven by the positive-jump and jump-robust parts, more so in small, illiquid coins. Cross-sectional. Open access, but the page served only the abstract. **Hindsight flag: sample dates not in the abstract; unknown until checked.** Claim only.
+- **Yang, A. (2025). "Cryptocurrency market risk-managed momentum strategies." *Finance Research Letters* 85, 107879;** and an article on volatility-managed crypto momentum in *Financial Markets and Portfolio Management* (2025, DOI 10.1007/s11408-025-00474-9). Seen only in search results and a reference list; not opened. **Hindsight flag: both from 2025, samples unknown.** They concern momentum portfolios, not a long-only position.
+
+**Calendar effects.** All paywalled except where noted.
+
+- **Caporale, G. M. and Plastun, A. (2019). "The day of the week effect in the cryptocurrency market." *Finance Research Letters* 31 (journal from a secondary citation); CESifo Working Paper 6716 (2017).** Abstract ([listing](https://econpapers.repec.org/RePEc:ces:ceswps:_6716)): no weekday effect in Litecoin, Ripple or Dash; Bitcoin's Monday returns are significantly higher; a trading simulation suggests it could be exploited. Sample dates not in the abstract (before 2018).
+- **Aharon, D. Y. and Qadan, M. (2019). "Bitcoin and the day-of-the-week effect." *Finance Research Letters* 31, 415-424. DOI 10.1016/j.frl.2018.12.004.** Abstract ([university page](https://cris.haifa.ac.il/en/publications/bitcoin-and-the-day-of-the-week-effect/)): a day-of-the-week effect in Bitcoin returns and volatility, daily data 2010 to 2017, robust across subsamples. The abstract does not name the day; secondary sources say Monday.
+- **Baur, D. G., Cahill, D., Godfrey, K. and Liu, Z. (2019). "Bitcoin time-of-day, day-of-week and month-of-year effects in returns and trading volume." *Finance Research Letters* 31, 78-92. DOI 10.1016/j.frl.2019.04.023.** Abstract ([listing](https://econpapers.repec.org/RePEc:eee:finlet:v:31:y:2019:i:c:p:78-92)): more than 15 million observations from seven exchanges; return anomalies tied to the calendar exist but do not persist over time; volume is consistently lower in local evenings and at weekends. The main published null for calendar effects in returns. Sample ends before 2019.
+- **Miralles-Quirós, J. L. and Miralles-Quirós, M. M. (2022). "A new perspective of the day-of-the-week effect on Bitcoin returns: evidence from an event study hourly approach." *Oeconomia Copernicana* 13(3), 745-782. DOI 10.24136/oc.2022.022.** Abstract ([journal page](https://journals.economic-research.pl/oc/article/view/2091)): hourly closes on Kraken, January 2016 to December 2021; mean returns for each of the 24 hours of each weekday; some hourly means are significant, and rules that hold over certain windows after them beat buy-and-hold on the Sharpe ratio. The abstract does not name the hours. Open access but PDF only. Sample end 2021-12, clean. The only source found that crosses weekday with hour, which is exactly what hourly bars can test: read it before registering a weekday-by-hour hypothesis.
+- **Shanaev, S. and Ghimire, B. (2022). "A generalised seasonality test and applications for cryptocurrency and stock market seasonality." *Quarterly Review of Economics and Finance*.** Search summary only: argues that conventional seasonality tests are unreliable for crypto; cites a Kumar (2022) study reporting a positive turn-of-the-month effect in Bitcoin, Ethereum and Litecoin, which I could not find.
+- **Kaiser, L. (2019). "Seasonality in cryptocurrencies." *Finance Research Letters* 31.** Secondary summary only: ten coins, 2013 to 2018; volume, volatility and spreads lower in January; little in returns.
+- **"Turn-of-the-candle effect in bitcoin returns." *Heliyon* (2023).** Search summary only (the open-access page was behind a bot check): positive Bitcoin returns are concentrated in the minute at the turn of each 15-minute candle. **Hindsight flag: published 2023, sample end unknown.** Not testable on hourly bars in any case.
+- **Kim, C. and Hansen, P. R. (2026). "The Quarter-Hour Effect: Periodic Algorithmic Trading and Return Predictability in Cryptocurrency Futures." arXiv:2607.09426.** Abstract: on six Binance perpetual contracts, order imbalance at quarter-hour openings predicts returns over about four to twelve hours. Futures, trade-level data we do not hold. **Hindsight flag: sample dates not in the abstract; a 2026 paper.** Claim only.
+- **Padyšák, M. and Vojtko, R. (2022). "Seasonality, Trend-following, and Mean reversion in Bitcoin." SSRN working paper.** Not opened (the summary page returned an error). From memory, not confirmed: it also reports that Bitcoin continues after a multi-day high and rebounds after a multi-day low on daily data.
+
+**Intraday momentum and volume.** All paywalled.
+
+- **Shen, D., Urquhart, A. and Wang, P. (2022). "Bitcoin intraday time series momentum." *Financial Review* 57(2), 319-344. DOI 10.1111/fire.12290.** Abstract ([university page](https://research.birmingham.ac.uk/en/publications/bitcoin-intraday-time-series-momentum/)): the day's opening and closing are set by trading volume because Bitcoin has no close; the first half-hour's return positively predicts the last half-hour's; strongest when the first half-hour has high volume or volatility; timing on it gives economic gains, most in downturns; attributed to liquidity provision. Sample dates not in the abstract (before 2021). The accepted manuscript exists in a university repository, which was unreachable or behind a bot check. Read before registering "first hours predict last hours": the paper's day boundaries come from volume, not from 00:00 UTC, and half-hours are below our granularity.
+- **Wen, Z., Bouri, E., Xu, Y. and Zhao, Y. (2022). "Intraday return predictability in the cryptocurrency markets: Momentum, reversal, or both." *North American Journal of Economics and Finance* 62, 101733. DOI 10.1016/j.najef.2022.101733.** Abstract ([listing](https://ideas.repec.org/a/eee/ecofin/v62y2022ics1062940822000833.html)): Bitcoin 2013-03-03 to 2020-05-31, also Ethereum, Litecoin and Ripple; both intraday momentum and intraday reversal exist, and which one depends on jumps, announcement days, liquidity and the 2020 crisis; a timing strategy beats always-long and buy-and-hold. Nothing on costs in the abstract. Sample end 2020-05-31, clean.
+- **Balcilar, M., Bouri, E., Gupta, R. and Roubaud, D. (2017). "Can volume predict Bitcoin returns and volatility? A quantiles-based approach." *Economic Modelling* 64, 74-81. DOI 10.1016/j.econmod.2017.03.019.** Abstract ([listing](https://econpapers.repec.org/RePEc:eee:ecmode:v:64:y:2017:i:c:p:74-81)): daily Bitcoin 2011-12-19 to 2016-04-25; volume predicts returns except in bear and bull regimes (a search summary gives the quantile range 0.25 to 0.75); volume does not predict volatility at any quantile. A causality test: it says volume carries information, not in which direction. Clean.
+- **Bouri, E., Lau, C. K. M., Lucey, B. and Roubaud, D. (2019). "Trading volume and the predictability of return and volatility in the cryptocurrency market." *Finance Research Letters* 29, 340-346. DOI 10.1016/j.frl.2018.08.015.** Search summary only: seven coins, daily; volume Granger-causes extreme negative and positive returns in all of them, and volatility in three only. Again no direction. Sample ends by 2018, clean.
+- **Zhang, Y., Chan, S., Chu, J. and Sulieman, H. (2020). "On the Market Efficiency and Liquidity of High-Frequency Cryptocurrencies in a Bull and Bear Market." *Journal of Risk and Financial Management* 13(1), 8.** Search summary only (the open-access page refused the request): hourly Bitcoin, Ethereum and Litecoin, 2017-07-11 to 2018-09-19; hourly returns look efficient in the bull phase and less so in the bear phase. Clean.
+
+**Files the fetch tool saved.** Five PDF links (two working-paper copies of Bianchi et al., Balcilar et al., Caporale and Plastun on overreactions, and a file that a search listed for their day-of-the-week paper) answered with a binary that the tool stored in the session's tool-results folder. I did not open them and did not retry.
+
+## Where I found nothing (second run)
+
+- No source I could open tests volatility-managed exposure on crypto, for a long-only position or at all, and none tests whether a coin's own past realised volatility predicts its own next return.
+- No full text on volume as a time-series predictor of a coin's own return; the abstract-level results are causality tests without a direction.
+- No full text on intraday momentum (first hours predicting last hours).
+- No study of a turn-of-the-month effect that I could trace to a source.
+- No evidence that funding times (00:00, 08:00, 16:00 UTC) or the US or Asian session opens move mean spot returns; the evidence is on volatility and volume only.
+- No "overnight against intraday" analogue beyond the late-evening hours in 6c.
+- No intraday or calendar test on a broad, liquidity-ranked universe; outside 5a everything is Bitcoin, sometimes Ether.
