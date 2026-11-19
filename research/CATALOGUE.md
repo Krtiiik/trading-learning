@@ -12,7 +12,7 @@ Test seal: closed. No test-period data has been used.
 
 | id | hypothesis | origin | claim | status | train | train p | q | dev | dev p | dev at 2x cost | test | Skeptic | runs |
 |---|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|---:|
-| [H1001](hypotheses/H1001-trend-filter-on-daily-bars.md) | Holding a coin only while its close is above its 20-day average beats holding every universe member, on Sharpe ratio after costs | literature | trading | **not replicated** | 0.6611 | 0.0440 | 0.0440 | 0.1244 | 0.4158 | -0.0889 |  |  | 2 |
+| [H1001](hypotheses/H1001-trend-filter-on-daily-bars.md) | Holding a coin only while its close is above its 20-day average beats holding every universe member, on Sharpe ratio after costs | literature | trading | **not replicated** | 0.6611 | 0.0440 | 0.0440 | 0.1244 | 0.4158 | -0.0889 |  | audited | 2 |
 
 ## Cross-sectional
 
