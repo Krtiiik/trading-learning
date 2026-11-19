@@ -32,7 +32,7 @@ The harness is the only way a hypothesis is tested. It writes the run record its
    uv run trading research status <id>
    uv run trading research catalogue        # updates status lines and CATALOGUE.md; commit those too
    ```
-   Whether a hypothesis is a candidate depends on every other registered hypothesis, and can change when more are registered. Report the status the tools print.
+   Whether a hypothesis is a candidate depends on every other registered hypothesis, and can change when more are registered. Report the status the tools print. When several agents work in parallel under a coordinator, only the coordinator runs `catalogue` (it rewrites every hypothesis file's status line); use `status` and follow the coordination note in `research/briefs/`.
 7. **Write the verdict** in the hypothesis file's body: the estimate, the p-value and q-value, the double-cost result for a trading claim, and what it means. Quote numbers from the run record.
 
 **Re-running.** A train run can be repeated (each run is recorded; the latest counts). A dev run can be repeated only when the earlier one was invalid, for instance a bug in library code or a rebuilt dataset, with the reason on record:
