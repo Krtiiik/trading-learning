@@ -159,7 +159,17 @@ def forward_returns(market: Market, horizon: int) -> np.ndarray:
     return forward
 
 
-# The two standard primary tests
+def market_forward_return(market: Market, horizon: int, target: str = "equal_weight") -> np.ndarray:
+    """Forward return of the market per bar: the members' average, or one coin's (`BTCUSDT`)."""
+    forward = forward_returns(market, horizon)
+    if target != "equal_weight":
+        return forward[:, market.column(target)]
+    members = np.where(market.member_next, forward, np.nan)
+    count = np.isfinite(members).sum(axis=1)
+    return np.where(count > 0, np.nansum(members, axis=1) / np.maximum(count, 1), np.nan)
+
+
+# The standard primary tests
 
 
 def evaluate_strategy(
@@ -227,28 +237,74 @@ def evaluate_strategy(
     )
 
 
+def evaluate_market_predictor(
+    ctx: Context,
+    signal: pd.Series,
+    granularity: str,
+    horizon: int,
+    target: str = "equal_weight",
+    start: str | None = None,
+) -> Result:
+    """Does one market-wide signal at a bar's close forecast the market's return over the next bars?
+
+    `signal` is a single series indexed by bar labels (the previous US session's equity
+    return, Bitcoin's own past return, a breadth measure). The target is the average forward
+    return of the universe members, or of one coin when `target` names it. The estimate is the
+    regression slope (forward return per unit of signal) with a Newey-West p-value that allows
+    for overlapping horizons. One series gives far fewer independent observations than a
+    panel: check the minimum detectable effect before registering.
+    """
+    market = ctx.data.market(granularity)  # type: ignore[arg-type]
+    values = signal.reindex(market.index).to_numpy("float64")
+    inside = ctx.inside(market.index, start)
+    values = np.where(inside, values, np.nan)
+    forward = market_forward_return(market, horizon, target)
+    test = stats.predictive_regression(forward, values, overlap=horizon, alternative=ctx.alternative)
+    return Result(
+        estimate=test.estimate,
+        p_value=test.p_value,
+        n=test.n,
+        metrics={"statistic": "predictive_regression", "target": target, "horizon_bars": horizon,
+                 "t_statistic": test.statistic} | test.detail,
+    )
+
+
 def evaluate_predictor(
     ctx: Context,
     signal: pd.DataFrame,
     granularity: str,
     horizon: int,
-    method: Literal["rank_ic", "fama_macbeth"] = "rank_ic",
+    method: Literal["rank_ic", "fama_macbeth", "panel", "panel_time", "panel_entity"] = "rank_ic",
     min_assets: int = 5,
     start: str | None = None,
 ) -> Result:
     """Does the signal at a bar's close rank (or scale with) the coins' returns over the next bars?
 
     Only universe members count, only signal rows inside the window, only labels whose whole
-    horizon lies within the data, and only bars with at least `min_assets` scored coins. The estimate is the mean rank IC (or mean
-    cross-sectional slope) with a Newey-West p-value that allows for the overlapping horizons.
+    horizon lies within the data, and only bars with at least `min_assets` scored coins. The
+    estimate is the mean rank IC (or mean cross-sectional slope) with a Newey-West p-value
+    that allows for the overlapping horizons.
+
+    `rank_ic` and `fama_macbeth` ask a cross-sectional question: does the signal order the
+    coins? The `panel` methods ask whether a coin's return is higher when its signal is higher,
+    pooled over coins and time, with errors that allow coins to move together: `panel` for a
+    signal in comparable units across coins (a z-score, a dummy, a funding rate),
+    `panel_entity` to compare each coin with its own average, `panel_time` to remove each
+    bar's market-wide move. Their estimate is the slope: forward return per unit of signal.
     """
     market = ctx.data.market(granularity)  # type: ignore[arg-type]
     values = signal.reindex(index=market.index, columns=list(market.symbols)).to_numpy("float64")
     inside = ctx.inside(market.index, start)
     values = np.where(market.member & inside[:, None], values, np.nan)
     forward = forward_returns(market, horizon)
-    tool = stats.rank_ic if method == "rank_ic" else stats.fama_macbeth
-    test = tool(values, forward, overlap=horizon, alternative=ctx.alternative, min_assets=min_assets)
+    if method.startswith("panel"):
+        demean = {"panel": "none", "panel_time": "time", "panel_entity": "entity"}[method]
+        test = stats.panel_regression(
+            forward, values, overlap=horizon, alternative=ctx.alternative, demean=demean  # type: ignore[arg-type]
+        )
+    else:
+        tool = stats.rank_ic if method == "rank_ic" else stats.fama_macbeth
+        test = tool(values, forward, overlap=horizon, alternative=ctx.alternative, min_assets=min_assets)
     return Result(
         estimate=test.estimate,
         p_value=test.p_value,

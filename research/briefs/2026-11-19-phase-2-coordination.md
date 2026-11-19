@@ -42,6 +42,11 @@ Nobody but the coordinator edits the shared library (`src/trading/research/`, `s
 - Run records of trading claims hold the benchmark at double cost and the dropped weight of the evaluated window.
 - A strategy that puts weight on a coin outside the point-in-time universe is refused: mask weights with `market.member_next`.
 - A hypothesis can declare the first day of its evaluation: pass `start=params["start"]` to `evaluate_strategy` or `evaluate_predictor`. Quote dates in YAML parameters.
+- Three kinds of predictive test are ready, all in `trading.research.evaluate`:
+  - `evaluate_predictor(ctx, signal, granularity, horizon, method="rank_ic" | "fama_macbeth")`: does the signal order the coins against each other? (cross-sectional)
+  - `evaluate_predictor(..., method="panel" | "panel_entity" | "panel_time")`: is a coin's return higher when its own signal is higher, pooled over coins and time? For a coin's own funding rate, a calendar dummy, a volatility state. The estimate is the slope (forward return per unit of signal), so put the signal in comparable units across coins. Errors come from time blocks and allow coins to move together.
+  - `evaluate_market_predictor(ctx, series, granularity, horizon, target="equal_weight" | "BTCUSDT")`: does one market-wide series forecast the market's return? One series has few independent observations: check the minimum detectable effect.
+  Signals are DataFrames (bar labels by coins) or, for the market test, a Series by bar label; row t may use bars labelled t or earlier only. Forward returns run from the next bar's open, as the engine trades.
 - `data.etf(field)` gives the US ETF daily bars up to the segment's end; `data.series("funding" | "premium" | "open_interest", granularity)` the perpetual-futures series aligned to spot bars. Open interest is being downloaded as Phase 2 starts and may not be there yet: check with `uv run trading verify`.
 
 ## Practical

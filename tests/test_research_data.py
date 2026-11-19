@@ -343,6 +343,39 @@ def test_a_predictor_that_is_the_future_return_has_a_rank_ic_of_one(dev):
     assert result.n == 729  # dev days whose entry and exit opens both lie inside the data
 
 
+def test_panel_method_measures_the_return_per_unit_of_signal(dev):
+    market = dev.market("1d")
+    forward = evaluate.forward_returns(market, 1)
+    signal = pd.DataFrame(2.0 * forward, index=market.index, columns=list(market.symbols))
+
+    result = evaluate.evaluate_predictor(context(dev), signal, "1d", horizon=1, method="panel")
+    own = evaluate.evaluate_predictor(context(dev), signal, "1d", horizon=1, method="panel_entity")
+
+    assert result.estimate == pytest.approx(0.5) and own.estimate == pytest.approx(0.5, abs=1e-6)
+    assert result.p_value < 1e-6 and result.metrics["statistic"] == "panel"
+
+
+def test_a_market_wide_signal_is_tested_against_the_market_return(dev):
+    market = dev.market("1d")
+    members_average = evaluate.market_forward_return(market, 1)
+    bitcoin = evaluate.market_forward_return(market, 1, target="BTCUSDT")
+    row = market.index.get_loc(pd.Timestamp("2023-06-10"))
+    forward = evaluate.forward_returns(market, 1)[row]
+
+    perfect = evaluate.evaluate_market_predictor(
+        context(dev), pd.Series(members_average, index=market.index), "1d", horizon=1
+    )
+    noise = evaluate.evaluate_market_predictor(
+        context(dev), pd.Series(np.random.default_rng(0).normal(size=len(market.index)), index=market.index),
+        "1d", horizon=1, target="BTCUSDT",
+    )
+
+    assert members_average[row] == pytest.approx(forward[market.member_next[row]].mean())
+    assert bitcoin[row] == forward[market.column("BTCUSDT")]
+    assert perfect.estimate == pytest.approx(1.0) and perfect.n == 729
+    assert noise.p_value > 0.01 and noise.metrics["target"] == "BTCUSDT"
+
+
 def test_a_predictor_is_scored_on_universe_members_only(dev):
     market = dev.market("1d")
     signal = pd.DataFrame(1.0, index=market.index, columns=list(market.symbols))

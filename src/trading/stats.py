@@ -183,6 +183,67 @@ def fama_macbeth(
     return mean_test(slopes, overlap, alternative)
 
 
+def panel_regression(
+    y: np.ndarray,
+    x: np.ndarray,
+    overlap: int = 1,
+    alternative: Alternative = "two-sided",
+    demean: Literal["none", "time", "entity"] = "none",
+) -> TestResult:
+    """Pooled slope of `y` on `x` over a periods x assets panel, with errors from time blocks.
+
+    For a predictor that works in time rather than across assets (a coin's own funding rate
+    against its own next return, a calendar dummy, a market-wide state every coin shares).
+    Assets move together and overlapping returns are autocorrelated, so the cells are far from
+    independent. The history is therefore cut into 8 to 30 consecutive blocks, each at least
+    ten times the overlap long where the sample allows, and the slope is tested with a t-test
+    across the blocks' contributions (blocks minus one degrees of freedom). A Newey-West
+    version was tried first and rejected a true null 9 to 11 times in 100 at the 5% level.
+    `demean="time"` removes each period's mean (a purely cross-sectional question), `"entity"`
+    each asset's own mean (asset fixed effects), `"none"` only the overall means. The caller
+    aligns `x[t]` to be knowable before `y[t]`'s period.
+    """
+    y = np.asarray(y, dtype="float64")
+    x = np.asarray(x, dtype="float64")
+    usable = np.isfinite(y) & np.isfinite(x)
+    y = np.where(usable, y, np.nan)
+    x = np.where(usable, x, np.nan)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", RuntimeWarning)  # periods or assets with no usable cell
+        if demean == "time":
+            y = y - np.nanmean(y, axis=1, keepdims=True)
+            x = x - np.nanmean(x, axis=1, keepdims=True)
+        elif demean == "entity":
+            y = y - np.nanmean(y, axis=0, keepdims=True)
+            x = x - np.nanmean(x, axis=0, keepdims=True)
+        else:
+            y = y - np.nanmean(y)
+            x = x - np.nanmean(x)
+    periods = usable.any(axis=1)
+    y, x = np.nan_to_num(y[periods]), np.nan_to_num(x[periods])
+    count = int(len(y))
+    if count < 10:
+        raise ValueError(f"too few periods for a panel regression: {count}")
+    spread = float(np.sum(x * x))
+    if spread <= 0:
+        raise ValueError("the predictor does not vary")
+    slope = float(np.sum(x * y) / spread)
+    blocks = int(np.clip(count // (10 * overlap), 8, 30))
+    edges = np.linspace(0, count, blocks + 1).astype(int)
+    per_period = np.sum(x * y, axis=1)
+    per_block = np.array([per_period[a:b].sum() for a, b in zip(edges[:-1], edges[1:])])
+    error = float(per_block.std(ddof=1) * np.sqrt(blocks) / spread)
+    statistic = slope / error if error > 0 else 0.0
+    return TestResult(
+        estimate=slope,
+        p_value=_p_from_t(statistic, blocks - 1, alternative),
+        statistic=statistic,
+        alternative=alternative,
+        n=int(usable.sum()),
+        detail={"standard_error": error, "blocks": float(blocks), "periods": float(count)},
+    )
+
+
 # Bootstrap
 
 

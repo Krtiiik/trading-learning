@@ -159,6 +159,74 @@ def test_fama_macbeth_recovers_a_planted_slope():
     assert np.mean([result.p_value < 0.05 for result in results]) > 0.95
 
 
+# panel_regression
+
+
+def common_factor_panel(rng, periods: int, assets: int, horizon: int, slope: float = 0.0):
+    """Returns that share a market factor; predictors that share a market-wide component too."""
+    signal = 0.7 * ar1(rng, (periods, 1), 0.9) + 0.7 * ar1(rng, (periods, assets), 0.9)
+    one_period = 0.8 * rng.normal(size=(periods, 1)) + 0.6 * rng.normal(size=(periods, assets))
+    return signal, rolling_sum(one_period, horizon) + slope * signal
+
+
+@pytest.mark.parametrize(("periods", "horizon"), [(600, 1), (600, 5), (1300, 7), (3000, 24)])
+def test_panel_regression_is_uniform_when_coins_move_together_and_returns_overlap(periods, horizon):
+    def one(rng):
+        signal, forward = common_factor_panel(rng, periods, 20, horizon)
+        return stats.panel_regression(forward, signal, overlap=horizon).p_value
+
+    assert_uniform(simulate(SIMULATIONS, one))
+
+
+def test_plain_pooled_errors_would_reject_far_too_often_on_the_same_data():
+    """Why the tool exists: treating 12,000 cells as independent rejects a true null wildly."""
+
+    def one(rng):
+        signal, forward = common_factor_panel(rng, 600, 20, 5)
+        keep = np.isfinite(forward)
+        return scipy_stats.linregress(signal[keep], forward[keep]).pvalue
+
+    assert np.mean(np.array(simulate(200, one)) < 0.05) > 0.5
+
+
+def test_panel_regression_recovers_a_planted_slope_under_each_demeaning():
+    for demean in ("none", "time", "entity"):
+        def one(rng, demean=demean):
+            signal, forward = common_factor_panel(rng, 600, 20, 1, slope=0.08)
+            return stats.panel_regression(forward, signal, alternative="greater", demean=demean)
+
+        results = simulate(100, one)
+
+        assert np.mean([result.estimate for result in results]) == pytest.approx(0.08, abs=0.01)
+        assert np.mean([result.p_value < 0.05 for result in results]) > 0.9
+
+
+def test_panel_regression_tests_a_calendar_dummy_shared_by_every_asset():
+    def one(rng, effect):
+        weekend = np.tile((np.arange(700) % 7 >= 5)[:, None], (1, 15)).astype(float)
+        returns = 0.8 * rng.normal(size=(700, 1)) + 0.6 * rng.normal(size=(700, 15)) + effect * weekend
+        return stats.panel_regression(returns, weekend)
+
+    assert_uniform([one(rng, 0.0).p_value for rng in map(np.random.default_rng, range(2000, 2400))])
+    planted = [one(rng, 0.2) for rng in map(np.random.default_rng, range(3000, 3100))]
+    assert np.mean([result.estimate for result in planted]) == pytest.approx(0.2, abs=0.02)
+
+
+def test_panel_regression_handles_missing_cells_and_refuses_degenerate_input():
+    rng = np.random.default_rng(6)
+    signal, forward = common_factor_panel(rng, 300, 10, 1, slope=0.1)
+    signal[:50, :5] = np.nan
+    forward[-1] = np.nan
+
+    result = stats.panel_regression(forward, signal)
+
+    assert result.n == 300 * 10 - 50 * 5 - 10 and result.detail["periods"] == 299
+    with pytest.raises(ValueError, match="does not vary"):
+        stats.panel_regression(forward, np.ones_like(signal))
+    with pytest.raises(ValueError, match="too few periods"):
+        stats.panel_regression(forward[:5], signal[:5])
+
+
 # block_bootstrap_difference
 
 

@@ -12,6 +12,7 @@ Each tool in `trading.stats` gives uniform p-values under a true null (Kolmogoro
 - `predictive_regression`: a predictor with autocorrelation 0.9 against 5-period overlapping returns, 800 observations.
 - `mean_test`: a series with autocorrelation 0.5.
 - `rank_ic` and `fama_macbeth`: 25 assets, signals with autocorrelation 0.95, overlapping 3- to 5-period returns.
+- `panel_regression` (added 2026-11-19 for predictors that work in time rather than across coins): 20 assets sharing a market factor, predictors sharing a market-wide component with autocorrelation 0.9, horizons of 1, 5, 7 and 24 periods over 600 to 3,000 periods. Its errors come from 8 to 30 time blocks; a Newey-West (Driscoll-Kraay) version rejected a true null 9 to 11 times in 100 at the 5% level on the same data and was dropped, and plain pooled errors reject it more than half the time.
 - `block_bootstrap_difference`: two strategies with correlation 0.6 and clustered volatility, 500 observations; its 90% interval is required to cover a planted Sharpe difference of 2.0 in 84% to 96% of simulations, and does.
 - `circular_shift_test`, `asset_permutation_test`: independent series with autocorrelation 0.9; persistent per-asset traits.
 - `benjamini_hochberg`: false-discovery rate 0.08 with 80% true nulls at q = 0.10. `holm`: family-wise error 5%.
