@@ -53,7 +53,7 @@ Hypothesis file committed (registration) → `trading research run` → the harn
 
 Three packages do the work: `trading.backtest` (engine, costs, metrics), `trading.stats` (the validated tests), `trading.research` (split and seal, market panels, registry, harness, ladder, catalogue). The records themselves live in `research/` and are plain files in git.
 
-**The process is enforced in code, not asked of agents.** Many agents work here and none of them can be relied on to remember a rule. So the harness refuses what must not happen (an unregistered hypothesis, a changed prediction, uncommitted code, a dev run for a non-candidate, a second dev run, any test run before the seal opens) and does itself what must not be forgotten (the run record, the look-ahead check). Skills cover only what code cannot check.
+**The process is enforced in code, not asked of agents.** Many agents work here and none of them can be relied on to remember a rule. So the harness refuses what must not happen (an unregistered hypothesis, a changed prediction, uncommitted code, a dev run for a non-candidate, a second dev run, any test run before the seal opens, a strategy buying a coin that is not yet a universe member) and does itself what must not be forgotten (the run record, the look-ahead check). Skills cover only what code cannot check.
 
 **Registration is proven by git history.** The harness reads the first committed version of a hypothesis file and compares its frozen fields with the current file. There is no "registered" flag to set, and so none to set falsely.
 

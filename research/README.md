@@ -119,6 +119,7 @@ confirmed       eligible as a test-set finalist
 - An `exploration` hypothesis skips train: it runs on dev, and the dev p-values of all exploration hypotheses pass through their own Benjamini-Hochberg control at 10%.
 - "Meaningful size" on dev is declared per hypothesis before any run: `min_size` in the estimate's unit, and for literature hypotheses `min_ratio` of the train estimate (default 0.5).
 - A trading claim's estimate is net of costs, so "positive on dev" already means it survived them; the same test at **double cost** is in every run record.
+- A Skeptic may also audit a hypothesis that did not reach `supported` (is the negative result an artefact?). That review is recorded as `audited` and changes no status.
 - Status can change when other hypotheses are registered, because the false-discovery control is across all of them. Always read it from `trading research status`.
 
 ## What the harness refuses, and why
@@ -135,6 +136,8 @@ confirmed       eligible as a test-set finalist
 | any test run before the seal is opened, or for a non-finalist, or a second one | the test segment is used once, at the end |
 | a trading claim without double-cost numbers | every trading claim is reported at double cost |
 | a model whose predictors have not reached candidate | models are built only on predictors with evidence |
+| a strategy that buys a coin outside the point-in-time universe | a coin that is not yet a member is information from the future |
+| `confirmed` or `refuted` for a hypothesis that is not `supported` (and `audited` for one that is) | a review of anything else is an audit and changes no status |
 | a Store that does not match its manifests | the record must name the data that was really used |
 
 Fix the cause. Never work around a refusal.
