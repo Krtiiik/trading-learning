@@ -11,4 +11,6 @@ date: 2026-11-18
 
 So for a filter of this kind, invested a little under half the time, use `--correlation 0.75`: the minimum detectable effect is then 0.94 on train from 2019-07-01 and 1.24 on dev. A rule that is invested more of the time, or that moves in and out as one block, will differ; state the assumption and the reason in `power.note` as before.
 
-Not established: the correlation of the return series themselves (not computed), and anything for rules other than H1001's.
+Added by the Skeptic of H1001 on 2026-11-19: the correlation of the two daily return series themselves, measured on the train window (2019-07-01 to 2022-12-31, 1,280 bars, the registered strategy and benchmark), is 0.68. Put into the formula it gives a standard error of 0.43, above the 0.38 the block bootstrap recorded, so the bootstrap's blocks, not a higher correlation, are what brought the standard error down. Both numbers therefore have a use: 0.68 is the correlation, 0.75 is the value that makes the formula for independent days reproduce the bootstrap for this rule. The original assumption of 0.7 was right as a correlation.
+
+Not established: the correlation on dev (the series cannot be loaded), and anything for rules other than H1001's.

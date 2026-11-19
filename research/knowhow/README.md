@@ -36,13 +36,17 @@ measured or tested here, `medium` was seen once or is well sourced elsewhere, `l
 
 - [A backtest of 40 coins of hourly bars over five years takes about 0.15 seconds](engine-speed.md) (high)
 - [Deciding that a bar is the last of its week from the bar after it is look-ahead](calendar-helpers-must-not-peek-at-the-next-bar.md) (high)
-- [A rule that decides every day drops one slot at each member's last bar, and `dropped_weight` adds these up from the first bar of the data](dropped-weight-counts-targets-at-a-last-bar.md) (high)
+- [A rule that decides every day drops one slot at each member's last bar, and run records written before commit b74ae59 add these up from the first bar of the data](dropped-weight-counts-targets-at-a-last-bar.md) (high)
+- [The engine's net Sharpe ratios for a daily 40-coin rule equal those of an independent loop holding units and cash to 0.0003, and the gap is how costs are paid](engine-matches-an-independent-units-loop.md) (high)
 
 ## Statistics
 
 - [Two years of data cannot separate a Sharpe ratio of 0.5 from 1.0](two-years-cannot-separate-sharpe-ratios.md) (high)
 - [Every statistical tool is validated on synthetic data; these are the conditions it was validated under](statistics-toolkit-validation.md) (high)
 - [A trading claim whose true Sharpe difference is 0.25 becomes a candidate one time in four and supported one time in nine, and a candidate's train estimate averages 0.7](small-sharpe-differences-rarely-climb-the-ladder.md) (medium)
+- [The bootstrap p-value of a Sharpe difference moves with the block length and the seed, so a p-value near a threshold is a range, not a number](bootstrap-p-value-moves-with-block-length.md) (medium)
+- [On the point-in-time universe the asset-permutation placebo needs a fixed set of coins, and for a trend signal only the time-shift placebo should come out at nothing](placebo-tools-on-the-point-in-time-universe.md) (medium)
+- [Deleting the benchmark's worst days lowers the Sharpe difference of any half-invested rule, so judge a rule's dependence on crash days against a placebo's](deleting-crash-days-needs-a-placebo-yardstick.md) (medium)
 
 ## Market (descriptive facts, train data only)
 
