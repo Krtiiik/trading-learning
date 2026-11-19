@@ -69,3 +69,27 @@ Buy-and-hold BTC from 2017-08 to 2022-12 through the engine: Sharpe 0.72, maximu
 - **The three points the Researcher flagged.** The dropped weight of 0.075 does not void the train run: three last-bar slots that change no return, against a criterion no daily rule on this universe could be sure to meet (the registered benchmark drops 0.175 in the same window). The look at train data between the runs does not compromise the dev run, though the script was not kept and cannot be checked. The daily benchmark was a legitimate, registered choice that accounts for a fifth of the train estimate; against the monthly reference the hypothesis would still have been a candidate.
 - **Infrastructure, for whoever maintains it.** `dropped_weight` changed meaning in commit b74ae59 without a new `harness_version`, so the two H1001 records carry the old meaning unmarked. The bootstrap's automatic block length jumps between near-identical series and moves the p-value. The harness's look-ahead check truncates bars but not the universe table. The review skill's check 4 points at return series that run records do not hold. Nothing in `src/` was touched.
 - **Know-how added**: the bootstrap p-value as a range, placebo tools on the point-in-time universe, crash days judged against a placebo, the engine against an independent loop, and additions to the notes on dropped weight and on the correlation with the benchmark.
+
+### Phase 1 at the gate
+
+2026-11-19. Written by the coordinating session. Phase 1 stops here and waits for the owner; Phase 2 has not started.
+
+**What the example proved about the infrastructure.** One hypothesis went from published evidence to a reviewed verdict with four agents that each read only their definition, the skills and the records: the Literature scout supplied the motivation, the Data steward answered for the data, the Researcher registered, ran and wrote the verdict without asking anyone, the Skeptic re-derived the result with a loop that shares no code with the engine (+0.6612 against the recorded +0.6611). The ladder moved H1001 from registered to candidate to not replicated without anyone setting a status, and the seal stayed closed.
+
+**What the example changed in the infrastructure.** Each of these came from an agent's report and was fixed by the coordinating session with a test:
+
+- A date among a hypothesis's parameters would have broken the run record after the test had run.
+- Run records now hold the benchmark at double cost and the dropped weight of the evaluated window. `harness_version` is 2 from here on; the two H1001 records are version 1, where `dropped_weight` was summed from the first bar of the data.
+- A review of a hypothesis that is not supported is recorded as `audited`.
+- A strategy that buys a coin outside the point-in-time universe is refused.
+- A hypothesis can declare the first day of its evaluation, and research can read the ETF bars under the seal.
+- Hourly bars that do not open on the hour are dropped by the provider.
+
+**Left open on purpose, for the owner.** These would change how evidence is judged, so they were not changed after H1001 had run:
+
+1. The dev rule's `min_ratio` of 0.5. With H1001's standard errors a true Sharpe difference of 0.25 becomes supported about one time in nine, and a null one time in forty (`knowhow/small-sharpe-differences-rarely-climb-the-ladder.md`).
+2. The bootstrap's automatic block length. It jumps between near-identical series (9 or 22 bars) and moves the p-value by about a third (`knowhow/bootstrap-p-value-moves-with-block-length.md`). A block length fixed by rule or declared at registration would be steadier.
+3. Renamed coins restart as new pairs, and the universe's exclusions are a hand-made list.
+4. Open interest is not in the Store yet.
+
+**Not covered by any check.** The harness's look-ahead check recomputes an experiment's panel on truncated bars; it does not rebuild the universe table. That the universe uses no later data rests on the Data steward's recomputation of all 63 train reconstitutions and on the unit tests, not on the per-run check.
