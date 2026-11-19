@@ -197,14 +197,23 @@ def circular_block_indices(
 
 
 def default_block_length(series: np.ndarray) -> int:
-    """Politis-White automatic block length for the circular bootstrap, kept within sane bounds."""
+    """Block length for the circular bootstrap, from the sample size alone: its cube root.
+
+    A rule that depends only on the number of observations gives the same block for every
+    hypothesis tested on the same window. The data-driven choice (Politis-White) was used at
+    first and dropped: it jumped between 9 and 22 bars for near-identical series and moved the
+    p-value by about a third. `politis_white_block_length` still reports it for comparison.
+    """
+    n = len(series)
+    return int(np.clip(np.ceil(n ** (1 / 3)), 2, max(2, n // 10)))
+
+
+def politis_white_block_length(series: np.ndarray) -> float:
+    """The data-driven block length of Politis and White, for a sensitivity check only."""
     series = np.asarray(series, dtype="float64")
-    suggested = float("nan")
-    if series.std() > 0:
-        suggested = float(optimal_block_length(series)["circular"].iloc[0])
-    if not np.isfinite(suggested):
-        suggested = len(series) ** (1 / 3)
-    return int(np.clip(np.ceil(suggested), 2, max(2, len(series) // 10)))
+    if series.std() == 0:
+        return float("nan")
+    return float(optimal_block_length(series)["circular"].iloc[0])
 
 
 def block_bootstrap_difference(

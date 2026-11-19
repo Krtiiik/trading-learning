@@ -11,4 +11,6 @@ date: 2026-11-19
 
 What to do. Read a recorded p-value near a threshold as a range (the review's table shows how wide it was for H1001), and say so in the verdict. A Skeptic should re-run the test with several seeds and with blocks of 1, about 20 and about 60 bars and report the spread next to the recorded value; `block_bootstrap_difference` takes `block` and `seed`. Nothing here is a reason to change the registered test of a hypothesis that has run, and the claim ladder's 10% gate was never in doubt for H1001.
 
+Update 2026-11-19, before any Phase 2 run: the automatic choice was replaced by a rule. The block length is now the cube root of the number of observations (11 bars for H1001's 1,280 train days, 32 for 30,000 hourly bars), the same for every hypothesis on the same window; run records from `harness_version` 3 on use it. H1001's two records (version 1) used the automatic block and were not re-run. The p-value still moves with the seed and would move with another block: reading it as a range still applies.
+
 Not established: which block length is right (the simulations in `tests/test_stats.py` validate the tool at one setting, not the automatic choice on fat-tailed crypto returns), and whether longer blocks lower the p-value for other rules; this is one hypothesis on one window.

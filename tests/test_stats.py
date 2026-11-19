@@ -205,6 +205,16 @@ def test_block_bootstrap_mean_statistic_and_reproducibility():
     assert first.p_value == again.p_value < 0.01
 
 
+def test_block_length_follows_from_the_sample_size_alone():
+    rng = np.random.default_rng(0)
+    calm, wild = rng.normal(size=1280), ar1(rng, (1280,), 0.9)
+
+    assert stats.default_block_length(calm) == stats.default_block_length(wild) == 11
+    assert stats.default_block_length(np.zeros(30_000)) == 32
+    assert stats.default_block_length(np.zeros(12)) == 2
+    assert stats.politis_white_block_length(wild) > stats.politis_white_block_length(calm)
+
+
 def test_circular_block_indices_are_contiguous_and_wrap():
     indices = stats.circular_block_indices(10, 4, 50, np.random.default_rng(0))
 
