@@ -30,6 +30,8 @@ measured or tested here, `medium` was seen once or is well sourced elsewhere, `l
 - [A coin joins the point-in-time universe with a median of 53 days of history, so a long lookback has no signal for many member-months](new-members-have-short-history.md) (high)
 - [Before 2021 the lower ranks of the point-in-time universe traded a few million USDT a day or less](low-ranked-members-were-thin-before-2021.md) (high)
 - [Hourly bars are missing for every coin during exchange outages](hourly-bars-missing-during-outages.md) (high)
+- [Shifting an hourly panel by N rows is not N hours near an outage: compute lookbacks on the full hourly grid](n-hour-return-on-the-hourly-grid.md) (high)
+- [Hourly bars of all 183 train members aggregate to their daily bars, except single-trade stub hours in December 2021 and two days of differing volume](hourly-bars-aggregate-to-daily-except-stub-hours.md) (high)
 - [Rebuilding the Store takes about half an hour and 3.7 GB; open interest would add hours](rebuild-cost.md) (medium)
 
 ## Engine

@@ -18,4 +18,6 @@ Measured on the 183 coins that are universe members at some train reconstitution
 
 The two redenominations in these histories (BTCST 2021-03-19, COCOS 2021-01-23) fall outside member-months; a lookback of more than 7 months from BTCST's first membership (2021-11) or 10 from COCOS's return (2021-12) crosses one, and BTCST's ratio is of medium trust (see the archive quirks note).
 
-Not established: that the archive equals what traded on the exchange (only checksums and internal agreement were checked); hourly agreement for coins other than the four named; anything value-level after 2022-12-31.
+Not established: that the archive equals what traded on the exchange (only checksums and internal agreement were checked); anything value-level after 2022-12-31.
+
+Added by the Data steward on 2026-11-19: the hourly comparison was repeated for all 183 train members (167,464 coin-days). It holds, with exceptions that are all on the hourly side or in volume: see the note on hourly bars aggregating to daily bars.
