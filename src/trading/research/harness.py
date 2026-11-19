@@ -33,7 +33,10 @@ from trading.research.registry import Hypothesis, RegistryError
 from trading.research.runs import load_runs, next_number, of, runs_dir
 from trading.research.split import DEV_END, TRAIN_END, SealedError, Segment, records_dir, seal_record, window
 
-HARNESS_VERSION = 1
+HARNESS_VERSION = 2
+"""Bumped whenever a field of the run record changes meaning. Version 1: `dropped_weight` of a
+trading claim was summed from the first bar of the data. Version 2: it covers the evaluated
+window only, with `dropped_weight_before_window` and `benchmark_double_cost` added."""
 EVERYTHING = pd.Timestamp("2200-01-01")
 """The data end for a test run: no limit (allowed only once the seal is open)."""
 LOOKAHEAD_CUTS = (0.45, 0.75, 0.97)

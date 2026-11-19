@@ -30,7 +30,7 @@ It works on train only. There is no way to replay dev, by design: the dev number
 | 1 | Re-derivation | `replay(id)` against the train run record; then the headline number by a second route (a loop over bars, `scipy` by hand on a few dates) | the numbers do not match, or the second route disagrees |
 | 2 | Look-ahead and leakage | read `panel` line by line; ask of every input "knowable at this bar's close?"; check membership uses `member_next`; look for whole-sample statistics | any input is not knowable in time |
 | 3 | Neighbouring parameters | `replay` with each parameter at two or three neighbours on each side | the registered value is a spike among weak neighbours |
-| 4 | Sub-periods | the estimate per calendar year of train (slice the returns in `metrics`, or recompute per year) | one year carries most of the effect |
+| 4 | Sub-periods | the estimate per calendar year of train: run records hold no return series, so call the experiment's `panel` on `train_data()`, get per-bar returns from `evaluate.backtest(market, weights)` for the rule and its benchmark, and slice by year; also the estimate with each year left out | one year carries most of the effect |
 | 5 | Sub-universes | without BTC and ETH; top half and bottom half by liquidity tier | a handful of coins carries it |
 | 6 | Costs | the double-cost numbers in the records; a one-bar execution delay | the sign flips at double cost or with the delay |
 | 7 | Placebo | `stats.circular_shift_test`, `stats.asset_permutation_test`, or the same rule on a signal that should not work | the placebo "works" about as well |
