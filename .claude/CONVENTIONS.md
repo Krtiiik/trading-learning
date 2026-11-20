@@ -14,6 +14,11 @@ Skip anything tooling already checks. Prefer a rule plus a one-line reason over 
 - A concept must make sense on its own to a beginner: plain words, short paragraphs, one concrete example with numbers. Explain any term you need in passing instead of requiring the reader to click away. Links are for going deeper.
 - Link each concept the first time it is mentioned with `[[slug]]`. Use `[[slug|text]]` when the wording differs (plural, inflection, a proper noun that the default lowercasing would break). Default link text is the title with its first letter lowercased, except acronyms.
 - Advanced concepts and lessons may lean on basics, and should link them rather than re-explain them.
+- One page owns each definition (ohlc owns open/high/low/close, spread owns the spread cost, moving-average owns length). Other pages give a one-line version in passing and link the owner, so the wording can't drift.
+- Don't state market conventions as universal: candle colours are reversed in parts of East Asia, so say "usually" when a colour means up or down.
+- End a concept with a "Watch out" section and a linked "Next, see …" line.
+- Acronym titles need no link text: write `[[atr]]`, not `[[atr|ATR]]`.
+- Catalog titles and summaries that contain a comma must be quoted; the build rejects them otherwise.
 - Adding a concept starts in `catalog.yaml` (slug, title, summary). Writing it means adding `content/concepts/<group>/<slug>.md` (body only, no frontmatter) and `banners/<slug>.svg`.
 - Lessons need frontmatter `title`, `summary`, `added` (date) and `builds_on` (concept slugs).
 - Banners: `viewBox="0 0 1200 400"`, colours only through `--banner-bg/fg/up/down/accent` with fallbacks, no `id` attributes. Each one should show at a glance what the page explains.

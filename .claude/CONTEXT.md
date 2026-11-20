@@ -38,3 +38,7 @@ _Avoid_: guide, tutorial, article.
 ## Ambiguities
 
 <!-- Words used loosely or differently by different people, and which meaning wins. -->
+
+- **period / length** (learning site): a *period* is the time one bar or candle covers; an indicator's *length* is how many periods it looks back. Write "length" even though apps label that setting "period".
+- **trade** (learning site): on market-mechanics pages, one transaction (a buyer and a seller agreeing on a price); on strategy and risk pages, a position from entry to exit. Say "position" or "round trip" where the difference matters.
+- **mid price, round trip** (learning site): the names for the point halfway between bid and ask, and for buying then selling again. Use them instead of paraphrases.
