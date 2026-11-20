@@ -91,6 +91,15 @@ def test_unknown_link_fails_the_build(site_root):
         build.load_site(site_root)
 
 
+def test_unquoted_comma_in_catalog_summary_fails_the_build(site_root):
+    # In a YAML flow mapping, an unquoted comma ends the value and starts a new key,
+    # so the summary would be cut off silently.
+    catalog = CATALOG.replace("summary: The thin line.}", "summary: The thin line, above or below.}")
+    write(site_root, "catalog.yaml", catalog)
+    with pytest.raises(build.BuildError, match=r"wick: unknown catalog keys \['above or below.'\]"):
+        build.load_site(site_root)
+
+
 def test_written_page_needs_its_own_banner(site_root):
     (site_root / "banners/candle.svg").unlink()
     with pytest.raises(build.BuildError, match="no banner"):

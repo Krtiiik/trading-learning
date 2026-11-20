@@ -130,6 +130,11 @@ def load_site(root: Path) -> Site:
             if slug in pages:
                 problems.append(f"{slug}: listed twice in the catalog")
                 continue
+            extra = sorted(set(c) - {"slug", "title", "summary"})
+            if extra:
+                problems.append(
+                    f"{slug}: unknown catalog keys {extra} (quote a title or summary that contains a comma)"
+                )
             source = concepts_dir / group.slug / f"{slug}.md"
             written = source.exists()
             page = Page(

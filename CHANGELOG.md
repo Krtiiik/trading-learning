@@ -17,3 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `learning/serve.py --open` opens the local learning site in the default browser once the server listens.
 - Learning site content agents: a planner, a writer, a banner illustrator, a reviewer, a fact checker and a site-wide auditor, plus a `/write-page` skill that writes, checks and commits one page.
 - Learning site concept pages: trend, price chart, OHLC, bid and ask, spread.
+
+### Fixed
+
+- Learning site: 18 catalog summaries that contain a comma were cut off at the comma. They now show in full, and the build fails on an unquoted comma.
