@@ -25,9 +25,9 @@ A simple [[trend-following]] strategy:
 
 On a $10,000 account, 1% is $100. The stock closes above its average at $42, and you buy. The stop goes at $38, a risk of $4 per share, so you buy $100 / $4 = 25 shares. They cost $1,050, but the plan risks only about $100 of it.
 
-Months later it closes below the average at $64, and you sell: a gain of $22 per share, or $550 in total before fees and the [[spread]].
+Months later it closes below the average at $64, and you sell: a gain of $22 per share, or $550 in total before [[fees-and-commissions|fees]] and the [[spread]].
 
-Had it soon closed back below the average, say at $41, you would sell for a small $25 loss. The stop at $38 usually acts only on a sudden fall: then you lose about $100, or more if it jumps past the stop.
+Had it soon closed back below the average, say at $41, you would sell for a small $25 loss. The stop at $38 usually acts only on a sudden fall: then you lose about $100, or more if it [[gap|gaps]] past the stop.
 
 ## The main styles
 

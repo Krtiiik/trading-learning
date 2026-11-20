@@ -17,18 +17,18 @@ Wednesday's value is (10 + 11 + 12) / 3 = $11.00. On Thursday, drop Monday's $10
 ## On the price or under it
 
 - An **overlay** is drawn on top of the price, on the same price axis, because its values are price levels. A moving average and [[bollinger-bands|Bollinger bands]] are overlays.
-- A **panel** is a separate box under the chart, with its own scale. It is used when the number is not a price level: a score, such as the [[rsi|RSI]]'s 0 to 100, or the size of a move, such as the [[atr|ATR]].
+- A **panel** is a separate box under the chart, with its own scale. It is used when the number is not a price level: a score, such as the [[rsi]]'s 0 to 100, or the size of a move, such as the [[atr]].
 
 Volume bars under the [[candle|candles]] are not really an indicator (they are the raw volume, though many apps list them with the indicators), but they usually sit in a panel the same way.
 
 ## Settings
 
-An indicator's main setting is its **length** (also called its period): how many bars it looks back over. The example uses 3. A short length follows the price closely and reacts fast; a long length is smoother and slower, so always say which length you mean.
+An indicator's main setting is its **length**: how many bars it looks back over (many apps label this setting "period"). The example uses 3. A short length follows the price closely and reacts fast; a long length is smoother and slower, so always say which length you mean.
 
 ## The main families
 
 - **Trend**: shows the price's [[trend]]; the moving average is the basic one.
-- **Momentum**: shows how strong recent moves were. See RSI and [[macd|MACD]].
+- **Momentum**: shows how strong recent moves were. See RSI and [[macd]].
 - **Volatility**: shows the price's [[volatility]], how much it swings. See Bollinger bands and ATR.
 - **Volume**: shows how much was traded. [[volume-profile|Volume profile]], for example, shows it at each price, drawn sideways.
 

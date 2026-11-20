@@ -1,10 +1,10 @@
-A moving average is the average price over the last few periods, recalculated every period. Drawn as a line over the chart, it smooths out small zigzags so the bigger picture is easier to see. It is the simplest and most widely used [[indicator]].
+A moving average is the average price over the last few periods, recalculated every period. Drawn as a line over the [[price-chart|chart]], it smooths out small zigzags so the bigger picture is easier to see. It is the simplest and most widely used [[indicator]].
 
 ## How it is calculated
 
-Take the closing prices of the last N periods, add them up and divide by N. When a new period closes, drop the oldest price, add the newest and calculate again. The average "moves" along with the chart.
+Take the [[ohlc|closing prices]] of the last N periods, add them up and divide by N. When a new period closes, drop the oldest price, add the newest and calculate again. The average "moves" along with the chart.
 
-The N is called the **length** or **period**. A 20-day moving average uses the last 20 daily closes.
+The N is called the **length** (apps often label it "period"). A 20-day moving average uses the last 20 daily closes.
 
 ## Example
 
@@ -24,4 +24,6 @@ The last five daily closes are $10, $11, $12, $11 and $13. The 5-day moving aver
 
 A moving average is built from past prices, so it always lags. In a market that moves sideways it crosses back and forth and gives many false signals.
 
-A variant called the **exponential** moving average weighs recent prices more, so it lags a little less.
+This plain version is the **simple** moving average (SMA). A variant called the **exponential** moving average weighs recent prices more, so it lags a little less.
+
+Next, see [[trend-following]] for how traders build rules around moving averages.

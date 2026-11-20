@@ -10,7 +10,7 @@ A company can split its ownership into millions of equal pieces called **shares*
 
 Shares trade on an [[exchange]], such as the New York Stock Exchange. You do not go there yourself: you open an account with a [[broker]], and the broker sends your order to the exchange for you.
 
-The price changes all day while the exchange is open, as buyers and sellers agree on new prices. A [[price-chart]] shows those changes over time.
+The price changes all day while the exchange is open, as buyers and sellers agree on new prices (see [[bid-and-ask]]). A [[price-chart]] shows those changes over time.
 
 ## Example
 

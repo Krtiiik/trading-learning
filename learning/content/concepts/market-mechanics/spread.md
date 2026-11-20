@@ -21,7 +21,7 @@ You buy 100 shares with a market order and change your mind a second later.
 
 The price did not move, but you lost $4: the full spread. Each order cost $2 compared with the value at the mid price (100 × $50.00 = $5,000).
 
-After buying at $50.02, the bid must rise $0.04 before you can sell without loss. So a trade made with market orders starts with a small loss.
+After buying at $50.02, the bid must rise $0.04 before you can sell without loss. So a position opened with a market order starts with a small loss.
 
 ## Why the percentage matters
 

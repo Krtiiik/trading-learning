@@ -1,10 +1,10 @@
-A stop loss is a sell order placed below the price you paid. It waits, and if the price falls to that level, it sells automatically. It decides your maximum loss on a trade before you are in the middle of it and tempted to "wait and see".
+A stop loss is a sell order placed below the current price (usually below the price you paid). It waits, and if the price falls to that level, it sells automatically. It decides your maximum loss on a trade before you are in the middle of it and tempted to "wait and see".
 
 Technically it is a stop order (see [[order-types]]): once the price touches the stop level, it becomes a market order.
 
 ## Example
 
-You buy a stock at $50 and decide you will not lose more than $5 per share. You place a stop loss at $45.
+You buy a [[stock]] at $50 and decide you will not lose more than $5 per share. You place a stop loss at $45.
 
 - The price rises to $60: nothing happens; the stop just waits.
 - The price falls to $45: the stop triggers and sells around $45. You lose about $5 per share instead of an unknown amount.

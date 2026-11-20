@@ -43,7 +43,7 @@ A [[moving-average]] smooths out the zigzags, so the direction is easier to see.
 
 ## It depends on the timeframe
 
-The same stock can be in an uptrend on a weekly chart and a downtrend on an hourly chart at the same time; the [[timeframe]] (how much time each candle covers) changes what you see. A few bad hours can be just a short dip inside a rise that lasts months. So say which chart and which stretch of time you mean: "up on the daily chart over the last six months" is clearer than just "up".
+The same stock can be in an uptrend on a weekly chart and a downtrend on an hourly chart at the same time; the [[timeframe]] (how much time each [[candle]] covers) changes what you see. A few bad hours can be just a short dip inside a rise that lasts months. So say which chart and which stretch of time you mean: "up on the daily chart over the last six months" is clearer than just "up".
 
 ## Why it matters
 
@@ -53,4 +53,4 @@ Many traders prefer to trade with the trend: buy in an uptrend, and stay out or 
 
 You can only see a trend after it has started, and you only know it has ended after it has turned. A chart or average shows only what the price has done so far, not where it goes next.
 
-Next, read [[peak-and-trough|peaks and troughs]] to spot turning points, or trend following to trade with the trend.
+Next, read [[peak-and-trough|peaks and troughs]] to spot turning points, or [[trend-following|trend following]] to trade with the trend.

@@ -2,7 +2,7 @@ An **order** is the instruction you give your [[broker]]: what to trade, how muc
 
 ## Market order: "trade now"
 
-You buy or sell immediately at the best price available right now. It almost always fills, but you do not know the exact price in advance. When you buy, you pay the ask; when you sell, you get the bid (see [[bid-and-ask]]). The gap between those two prices is the [[spread]]. Each market order pays about half of it, compared with the price in the middle, so buying and then selling again loses about the whole gap.
+You buy or sell immediately at the best price available right now. It is almost always filled (carried out), but you do not know the exact price in advance. When you buy, you pay the ask; when you sell, you get the bid (see [[bid-and-ask]]). Each market order pays about half the [[spread]] compared with the mid price; a round trip (buy, then sell) pays about all of it.
 
 ## Limit order: "only at this price or better"
 
@@ -14,7 +14,7 @@ The order waits until the price touches a level you chose (the **stop price**), 
 
 ## Example
 
-A stock trades at $100.
+A [[stock]] trades at $100.
 
 | You want to…                  | Order          | What happens                                           |
 |-------------------------------|----------------|--------------------------------------------------------|
@@ -25,3 +25,5 @@ A stock trades at $100.
 ## Watch out
 
 A stop order becomes a market order, so in a fast fall it can fill well below the stop price. In assets with little [[liquidity]] a market order can also fill at a worse price than you expected.
+
+Next, see [[bid-and-ask]] and [[stop-loss]].

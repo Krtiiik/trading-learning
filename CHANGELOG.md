@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Learning site concept pages: trend, price chart, OHLC, bid and ask, spread, indicator, strategy.
 - Learning site favicon: a graduation cap with a bold rising trend line, in light and dark variants.
 
+### Changed
+
+- Learning site pages now agree with each other: candle colours are hedged everywhere, "length" is the look-back setting and "period" one bar, candle uses the OHLC definitions, and the first candle chart lesson builds on the price chart and OHLC pages.
+
 ### Fixed
 
 - Learning site: 18 catalog summaries that contain a comma were cut off at the comma. They now show in full, and the build fails on an unquoted comma.
