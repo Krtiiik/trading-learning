@@ -216,11 +216,19 @@ def load_site(root: Path) -> Site:
     return Site(groups, lessons, pages)
 
 
+def default_link_text(title: str) -> str:
+    """A title as it reads mid-sentence: 'Price chart' -> 'price chart', but 'OHLC' and 'RSI' stay."""
+    first = title.split()[0]
+    if len(first) > 1 and first[1].isupper():
+        return title
+    return title[:1].lower() + title[1:]
+
+
 def _link_html(site: Site, root_prefix: str):
     def replace(m: re.Match) -> str:
         slug = m.group(1).strip()
         page = site.pages[slug]
-        text = (m.group(2) or page.title).strip()
+        text = (m.group(2) or default_link_text(page.title)).strip()
         return (
             f'<a class="concept-link is-{page.status}" data-slug="{slug}" '
             f'href="{root_prefix}{page.url}">{text}</a>'
@@ -308,9 +316,20 @@ def build(root: Path = HERE, out: Path | None = None) -> Site:
     return site
 
 
+def publish_files(out: Path) -> list[dict]:
+    """Every built file except the home page, as the `files` list of an Artifact publish rooted at out."""
+    return [
+        {"path": p.relative_to(out).as_posix()}
+        for p in sorted(out.rglob("*"))
+        if p.is_file() and p != out / "index.html"
+    ]
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--out", type=Path, default=HERE / "dist")
+    parser.add_argument("--files-json", action="store_true",
+                        help="after building, print the Artifact `files` list as JSON on stdout")
     args = parser.parse_args(argv)
     try:
         site = build(HERE, args.out)
@@ -319,6 +338,9 @@ def main(argv: list[str] | None = None) -> int:
         for p in e.problems:
             print(f"  - {p}", file=sys.stderr)
         return 1
+    if args.files_json:
+        print(json.dumps(publish_files(args.out)))
+        return 0
     concepts = [p for p in site.pages.values() if p.kind == "concept"]
     print(
         f"Built {args.out}: {sum(p.written for p in concepts)}/{len(concepts)} concepts written, "

@@ -74,7 +74,15 @@ def test_links_resolve_with_custom_text_and_mark_planned_targets(site_root):
     site = build.load_site(site_root)
     html = build.render_body(site, site.pages["candle"], "../")
     assert '<a class="concept-link is-planned" data-slug="trend" href="../concepts/trend.html">trending</a>' in html
-    assert 'data-slug="wick" href="../concepts/wick.html">Wick</a>' in html
+    assert 'data-slug="wick" href="../concepts/wick.html">wick</a>' in html
+
+
+@pytest.mark.parametrize(
+    "title, text",
+    [("Price chart", "price chart"), ("OHLC", "OHLC"), ("RSI", "RSI"), ("ETF", "ETF"), ("Risk/reward", "risk/reward")],
+)
+def test_default_link_text_reads_mid_sentence(title, text):
+    assert build.default_link_text(title) == text
 
 
 def test_unknown_link_fails_the_build(site_root):
@@ -168,6 +176,14 @@ def test_cards_put_written_concepts_before_planned_ones(site_root):
     site = build.load_site(site_root)
     order = [p.slug for p in build._cards(site.groups[0].concepts)]
     assert order == ["candle", "wick", "trend"]
+
+
+def test_publish_files_lists_everything_but_the_home_page(site_root, tmp_path):
+    out = tmp_path / "dist"
+    build.build(site_root, out)
+    paths = [f["path"] for f in build.publish_files(out)]
+    assert "index.html" not in paths
+    assert {"concepts/candle.html", "lessons/index.html", "static/index.js"} <= set(paths)
 
 
 def test_real_site_builds(tmp_path):

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ title }} · Trading Learning</title>
+<title>{% block doc_title %}{{ title }} · Trading Learning{% endblock %}</title>
 <link rel="stylesheet" href="{{ root }}static/site.css">
 </head>
 <body class="page-{% block page_kind %}{% endblock %}">
