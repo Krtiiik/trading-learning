@@ -14,7 +14,7 @@ git cat-file -e "HEAD:learning/build.py" 2>/dev/null || exit 0
 
 published=$(cat learning/.published-commit 2>/dev/null)
 if [ -n "$published" ] && git cat-file -e "$published^{commit}" 2>/dev/null; then
-  git diff --quiet "$published" "$head" -- learning/ ':!learning/SPEC.md' && exit 0
+  git diff --quiet "$published" "$head" -- learning/ ':!learning/SPEC.md' ':!learning/serve.py' && exit 0
 fi
 
 url=$(head -n 1 learning/artifact-url.txt 2>/dev/null)

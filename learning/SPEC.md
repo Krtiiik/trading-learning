@@ -121,4 +121,4 @@ uv run python learning/build.py          # builds learning/dist/
 uv run pytest tests/learning             # structure tests; they also build the real site
 ```
 
-Preview locally with the `learning-site` entry in `.claude/launch.json` (serves `learning/dist` on port 8765). Don't publish the artifact from a branch: it is republished from `main` after merge.
+Preview locally with the `learning-site` entry in `.claude/launch.json`. It runs `learning/serve.py`, which serves `learning/dist` on `$PORT` (default 8765). Don't publish the artifact from a branch: it is republished from `main` after merge.

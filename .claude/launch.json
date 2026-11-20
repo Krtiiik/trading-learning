@@ -4,7 +4,7 @@
     {
       "name": "learning-site",
       "runtimeExecutable": "uv",
-      "runtimeArgs": ["run", "python", "-m", "http.server", "8765", "--directory", "learning/dist"],
+      "runtimeArgs": ["run", "python", "learning/serve.py"],
       "port": 8765
     }
   ]
