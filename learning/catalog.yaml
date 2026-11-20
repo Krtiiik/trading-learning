@@ -26,7 +26,7 @@ groups:
       - {slug: broker, title: Broker, summary: The company that passes your orders to the market and holds your account.}
       - {slug: order-types, title: Order types, summary: "The ways to ask for a trade: market, limit and stop orders."}
       - {slug: bid-and-ask, title: Bid and ask, summary: The best price buyers offer and the best price sellers want right now.}
-      - {slug: spread, title: Spread, summary: The gap between the bid and the ask, a hidden cost of every trade.}
+      - {slug: spread, title: Spread, summary: "The gap between the bid and the ask, a hidden cost of trading at the market price."}
       - {slug: liquidity, title: Liquidity, summary: How easily you can trade without moving the price.}
       - {slug: volume, title: Volume, summary: How much of an asset changed hands during a period.}
       - {slug: trading-hours, title: Trading hours, summary: When a market is open, and what happens around the open and close.}

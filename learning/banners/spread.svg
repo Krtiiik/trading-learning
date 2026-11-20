@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A horizontal price line with the bid at 49.98 and the ask at 50.02; the gap between them is shaded and marked as the spread, with the mid price of 50.00 in its centre">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the gap between bid and ask (120 px per cent) -->
+  <rect x="360" y="140" width="480" height="110" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .12"/>
+  <!-- bracket over the gap -->
+  <path d="M360 120 L360 100 L840 100 L840 120 M600 100 L600 86" fill="none" stroke-width="4" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="600" y="68" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" font-weight="700"
+        letter-spacing="4" style="fill: var(--banner-accent, #0b6bcb)">SPREAD</text>
+  <!-- mid price -->
+  <line x1="600" y1="150" x2="600" y2="250" stroke-width="2" stroke-dasharray="6 6"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .45"/>
+  <text x="600" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">MID</text>
+  <!-- price line with one tick per cent -->
+  <line x1="60" y1="250" x2="1140" y2="250" stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .55"/>
+  <g stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .4">
+    <line x1="120" y1="240" x2="120" y2="260"/><line x1="240" y1="240" x2="240" y2="260"/>
+    <line x1="480" y1="240" x2="480" y2="260"/><line x1="600" y1="240" x2="600" y2="260"/>
+    <line x1="720" y1="240" x2="720" y2="260"/><line x1="960" y1="240" x2="960" y2="260"/>
+    <line x1="1080" y1="240" x2="1080" y2="260"/>
+  </g>
+  <!-- the two best prices -->
+  <line x1="360" y1="140" x2="360" y2="250" stroke-width="6" style="stroke: var(--banner-up, #1a9b5b)"/>
+  <circle cx="360" cy="250" r="14" style="fill: var(--banner-up, #1a9b5b)"/>
+  <line x1="840" y1="140" x2="840" y2="250" stroke-width="6" style="stroke: var(--banner-down, #d0453a)"/>
+  <circle cx="840" cy="250" r="14" style="fill: var(--banner-down, #d0453a)"/>
+  <!-- prices -->
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" text-anchor="middle">
+    <text x="360" y="302" style="fill: var(--banner-up, #1a9b5b)">49.98</text>
+    <text x="600" y="302" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">50.00</text>
+    <text x="840" y="302" style="fill: var(--banner-down, #d0453a)">50.02</text>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="34" font-weight="700" letter-spacing="3" text-anchor="middle">
+    <text x="360" y="352" style="fill: var(--banner-up, #1a9b5b)">BID</text>
+    <text x="840" y="352" style="fill: var(--banner-down, #d0453a)">ASK</text>
+  </g>
+</svg>
