@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Entering after an uptrend starts and exiting after it ends">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the ridden part of the trend -->
+  <path d="M330 270 L410 230 L460 250 L540 190 L590 210 L670 140 L720 165 L800 100 L850 120 L880 150 L880 370 L330 370 Z"
+        style="fill: var(--banner-up, #1a9b5b); fill-opacity: .14"/>
+  <!-- price -->
+  <path d="M40 300 L100 285 L150 310 L210 290 L270 305 L330 270 L410 230 L460 250 L540 190 L590 210 L670 140 L720 165 L800 100 L850 120 L880 150 L940 200 L1000 230 L1060 260 L1160 280"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- entry and exit markers -->
+  <path d="M330 270 L310 310 L350 310 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <path d="M880 150 L860 110 L900 110 Z" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="330" y="350" text-anchor="middle" style="fill: var(--banner-up, #1a9b5b)">ENTER</text>
+    <text x="880" y="90" text-anchor="middle" style="fill: var(--banner-down, #d0453a)">EXIT</text>
+    <text x="605" y="330" text-anchor="middle" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">RIDE THE TREND</text>
+  </g>
+</svg>

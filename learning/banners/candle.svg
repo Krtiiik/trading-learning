@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Anatomy of a candle: open, high, low and close">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- a row of small candles -->
+  <g stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35">
+    <line x1="110" y1="190" x2="110" y2="300"/><line x1="170" y1="170" x2="170" y2="280"/>
+    <line x1="230" y1="200" x2="230" y2="310"/><line x1="290" y1="150" x2="290" y2="260"/>
+    <line x1="350" y1="120" x2="350" y2="230"/><line x1="410" y1="140" x2="410" y2="250"/>
+    <line x1="470" y1="100" x2="470" y2="210"/>
+  </g>
+  <g style="fill: var(--banner-up, #1a9b5b); fill-opacity: .55">
+    <rect x="96" y="215" width="28" height="60"/><rect x="276" y="170" width="28" height="70"/>
+    <rect x="336" y="140" width="28" height="70"/><rect x="456" y="120" width="28" height="70"/>
+  </g>
+  <g style="fill: var(--banner-down, #d0453a); fill-opacity: .55">
+    <rect x="156" y="190" width="28" height="60"/><rect x="216" y="225" width="28" height="55"/>
+    <rect x="396" y="160" width="28" height="60"/>
+  </g>
+  <!-- the zoomed candle -->
+  <path d="M520 110 L640 40 M520 230 L640 380" fill="none" stroke-width="2" stroke-dasharray="6 6"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3"/>
+  <line x1="800" y1="40" x2="800" y2="370" stroke-width="6" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <rect x="740" y="110" width="120" height="180" style="fill: var(--banner-up, #1a9b5b)"/>
+  <g stroke-width="2" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5">
+    <line x1="808" y1="40" x2="930" y2="40"/><line x1="868" y1="110" x2="930" y2="110"/>
+    <line x1="868" y1="290" x2="930" y2="290"/><line x1="808" y1="370" x2="930" y2="370"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="945" y="50">HIGH</text><text x="945" y="120">CLOSE</text>
+    <text x="945" y="300">OPEN</text><text x="945" y="380">LOW</text>
+  </g>
+</svg>

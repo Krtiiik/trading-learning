@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A company split into many shares, a few of them yours">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the company: a building outline -->
+  <path d="M120 340 L120 120 L260 60 L400 120 L400 340 Z" fill="none" stroke-width="6" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .25">
+    <rect x="160" y="150" width="40" height="40"/><rect x="240" y="150" width="40" height="40"/><rect x="320" y="150" width="40" height="40"/>
+    <rect x="160" y="220" width="40" height="40"/><rect x="240" y="220" width="40" height="40"/><rect x="320" y="220" width="40" height="40"/>
+    <rect x="235" y="285" width="50" height="55"/>
+  </g>
+  <!-- split arrow -->
+  <path d="M450 200 L540 200 M520 180 L540 200 L520 220" fill="none" stroke-width="6" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the shares: a grid of equal squares -->
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14">
+    <rect x="590" y="70" width="50" height="50"/><rect x="650" y="70" width="50" height="50"/><rect x="710" y="70" width="50" height="50"/><rect x="770" y="70" width="50" height="50"/><rect x="830" y="70" width="50" height="50"/><rect x="890" y="70" width="50" height="50"/><rect x="950" y="70" width="50" height="50"/><rect x="1010" y="70" width="50" height="50"/>
+    <rect x="590" y="130" width="50" height="50"/><rect x="650" y="130" width="50" height="50"/><rect x="710" y="130" width="50" height="50"/><rect x="770" y="130" width="50" height="50"/><rect x="830" y="130" width="50" height="50"/><rect x="890" y="130" width="50" height="50"/><rect x="950" y="130" width="50" height="50"/><rect x="1010" y="130" width="50" height="50"/>
+    <rect x="590" y="190" width="50" height="50"/><rect x="650" y="190" width="50" height="50"/><rect x="710" y="190" width="50" height="50"/><rect x="890" y="190" width="50" height="50"/><rect x="950" y="190" width="50" height="50"/><rect x="1010" y="190" width="50" height="50"/>
+    <rect x="590" y="250" width="50" height="50"/><rect x="650" y="250" width="50" height="50"/><rect x="710" y="250" width="50" height="50"/><rect x="770" y="250" width="50" height="50"/><rect x="830" y="250" width="50" height="50"/><rect x="890" y="250" width="50" height="50"/><rect x="950" y="250" width="50" height="50"/><rect x="1010" y="250" width="50" height="50"/>
+  </g>
+  <!-- your shares -->
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <rect x="770" y="190" width="50" height="50"/><rect x="830" y="190" width="50" height="50"/>
+  </g>
+  <text x="825" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">YOUR SHARES</text>
+  <path d="M825 320 L825 250" stroke-width="3" style="stroke: var(--banner-accent, #0b6bcb)"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Market, limit and stop orders placed around the current price">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- price path up to now -->
+  <path d="M60 230 L140 190 L210 215 L290 160 L360 185 L430 140 L500 170 L560 150" fill="none" stroke-width="5"
+        style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <circle cx="560" cy="150" r="10" style="fill: var(--banner-fg, #1a1a1a)"/>
+  <line x1="580" y1="40" x2="580" y2="370" stroke-width="2" stroke-dasharray="4 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <!-- market order: now -->
+  <path d="M600 150 L700 150 M680 132 L700 150 L680 168" fill="none" stroke-width="5" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- limit buy below -->
+  <line x1="600" y1="240" x2="1140" y2="240" stroke-width="4" stroke-dasharray="18 10" style="stroke: var(--banner-up, #1a9b5b)"/>
+  <!-- stop sell further below -->
+  <line x1="600" y1="320" x2="1140" y2="320" stroke-width="4" stroke-dasharray="18 10" style="stroke: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="2">
+    <text x="720" y="160" style="fill: var(--banner-accent, #0b6bcb)">MARKET · NOW</text>
+    <text x="1140" y="228" text-anchor="end" style="fill: var(--banner-up, #1a9b5b)">LIMIT BUY</text>
+    <text x="1140" y="308" text-anchor="end" style="fill: var(--banner-down, #d0453a)">STOP SELL</text>
+  </g>
+</svg>

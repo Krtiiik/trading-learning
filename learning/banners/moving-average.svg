@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A jagged price line with a smooth moving average following it">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the window being averaged -->
+  <rect x="780" y="40" width="220" height="320" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .08"/>
+  <line x1="780" y1="40" x2="780" y2="360" stroke-width="2" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .5"/>
+  <line x1="1000" y1="40" x2="1000" y2="360" stroke-width="2" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .5"/>
+  <!-- price: jagged -->
+  <path d="M40 300 L80 270 L110 310 L150 250 L180 280 L220 230 L250 270 L290 200 L320 240 L360 210 L390 250 L430 180 L460 220 L500 170 L530 210 L570 150 L600 190 L640 160 L670 210 L710 170 L740 230 L780 190 L810 240 L850 200 L880 250 L920 190 L950 220 L1000 140 L1030 180 L1070 120 L1100 160 L1160 100"
+        fill="none" stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .55"/>
+  <!-- average: smooth -->
+  <path d="M40 295 C200 270 300 245 420 220 C540 195 640 185 760 200 C860 212 940 200 1020 170 C1080 148 1120 135 1160 125"
+        fill="none" stroke-width="8" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="890" y="390" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-accent, #0b6bcb)">LAST N PERIODS</text>
+</svg>

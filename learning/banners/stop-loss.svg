@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A falling price hits the stop loss level and the position is sold">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- buy level and stop level -->
+  <line x1="40" y1="160" x2="1160" y2="160" stroke-width="2" stroke-dasharray="6 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .4"/>
+  <line x1="40" y1="260" x2="1160" y2="260" stroke-width="5" style="stroke: var(--banner-down, #d0453a)"/>
+  <!-- price after the stop (not taken) -->
+  <path d="M760 260 L820 320 L880 300 L940 350 L1000 330 L1060 370" fill="none" stroke-width="4" stroke-dasharray="10 10"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3"/>
+  <!-- price while holding -->
+  <path d="M120 160 L190 130 L250 150 L320 110 L380 140 L450 120 L520 170 L580 150 L650 210 L700 200 L760 260"
+        fill="none" stroke-width="6" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <circle cx="120" cy="160" r="10" style="fill: var(--banner-fg, #1a1a1a)"/>
+  <!-- the trigger -->
+  <rect x="742" y="242" width="36" height="36" transform="rotate(45 760 260)" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="60" y="145" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">BUY</text>
+    <text x="60" y="300" style="fill: var(--banner-down, #d0453a)">STOP LOSS</text>
+    <text x="800" y="230" style="fill: var(--banner-down, #d0453a)">SOLD</text>
+  </g>
+</svg>
