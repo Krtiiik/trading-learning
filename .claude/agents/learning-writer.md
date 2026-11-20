@@ -25,7 +25,7 @@ Note how these pages already explain shared ideas: the words, the example number
 
 ## Writing
 
-- Concept: `learning/content/concepts/<group>/<slug>.md`, body only, 300-500 words. The title and summary come from the catalog; do not repeat them as a heading. Start with one or two sentences that say what the thing is.
+- Concept: `learning/content/concepts/<group>/<slug>.md`, body only, at most 500 words and usually 300 or more. Do not pad a page that already explains its concept fully just to reach 300. The title and summary come from the catalog; do not repeat them as a heading. Start with one or two sentences that say what the thing is.
 - Lesson: `learning/content/lessons/<slug>.md` with frontmatter `title`, `summary`, `added` (today's date) and `builds_on`. Steps that each answer one question work well; see the existing lesson.
 - Link planned concepts as freely as written ones: a link to a planned concept is part of the roadmap.
 - Write a new concept into `catalog.yaml` only when the task names that concept. Put it in the right group at a sensible position.

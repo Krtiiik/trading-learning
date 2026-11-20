@@ -56,7 +56,7 @@ Banner → "Lesson" label → title → summary → **Before you start** (prereq
 
 ### Body content
 
-The body is Markdown rendered to HTML: `h2`/`h3`, paragraphs, `ul`/`ol`, `table`, `strong`/`em`, `code`/`pre`, and inline concept links. Style it under `.prose`. Concept bodies are short (300–500 words) and meant for beginners, so they should read comfortably.
+The body is Markdown rendered to HTML: `h2`/`h3`, paragraphs, `ul`/`ol`, `table`, `strong`/`em`, `code`/`pre`, and inline concept links. Style it under `.prose`. Concept bodies are short (usually 300–500 words, never more than 500) and meant for beginners, so they should read comfortably.
 
 ## Template data
 
