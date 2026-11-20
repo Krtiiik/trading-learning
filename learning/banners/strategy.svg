@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A card of fixed rules, IF a condition THEN BUY and IF a condition THEN SELL, applied to a price line that gets clear entry and exit markers">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the rule card -->
+  <rect x="40" y="60" width="420" height="280" rx="14" stroke-width="4"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .08; stroke: var(--banner-accent, #0b6bcb)"/>
+  <line x1="70" y1="138" x2="430" y2="138" stroke-width="2" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .5"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="70" y="118" font-size="32" style="fill: var(--banner-accent, #0b6bcb)">RULES</text>
+    <text x="70" y="212" font-size="28" style="fill: var(--banner-fg, #1a1a1a)">IF … THEN <tspan style="fill: var(--banner-up, #1a9b5b)">BUY</tspan></text>
+    <text x="70" y="292" font-size="28" style="fill: var(--banner-fg, #1a1a1a)">IF … THEN <tspan style="fill: var(--banner-down, #d0453a)">SELL</tspan></text>
+  </g>
+  <!-- rules applied to the chart -->
+  <path d="M478 200 L512 200 M498 186 L512 200 L498 214" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- price -->
+  <path d="M530 250 L570 280 L620 240 L660 258 L720 170 L770 190 L820 130 L870 182 L910 168 L960 262 L1000 300 L1050 242 L1090 252 L1130 170 L1160 190"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- entry and exit markers -->
+  <path d="M600 268 L580 304 L620 304 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <path d="M850 149 L830 113 L870 113 Z" style="fill: var(--banner-down, #d0453a)"/>
+  <path d="M1030 277 L1010 313 L1050 313 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <path d="M1150 171 L1130 135 L1170 135 Z" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" text-anchor="middle">
+    <text x="630" y="302" text-anchor="start" style="fill: var(--banner-up, #1a9b5b)">ENTRY</text>
+    <text x="850" y="97" style="fill: var(--banner-down, #d0453a)">EXIT</text>
+  </g>
+</svg>
