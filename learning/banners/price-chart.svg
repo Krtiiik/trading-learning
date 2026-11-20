@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price line moving across a chart, with price on the vertical axis and time on the horizontal axis">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- faint grid -->
+  <g stroke-width="2" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .12">
+    <line x1="130" y1="100" x2="1140" y2="100"/><line x1="130" y1="170" x2="1140" y2="170"/>
+    <line x1="130" y1="240" x2="1140" y2="240"/>
+    <line x1="380" y1="50" x2="380" y2="310"/><line x1="630" y1="50" x2="630" y2="310"/>
+    <line x1="880" y1="50" x2="880" y2="310"/>
+  </g>
+  <!-- axes -->
+  <g fill="none" stroke-width="5" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)">
+    <path d="M130 50 L130 310 L1150 310"/>
+    <path d="M114 70 L130 40 L146 70"/>
+    <path d="M1130 294 L1160 310 L1130 326"/>
+  </g>
+  <!-- price -->
+  <path d="M130 260 L190 235 L240 250 L300 205 L350 225 L410 190 L460 215 L520 245 L580 200 L630 210 L690 160 L740 180 L800 135 L850 155 L910 170 L960 120 L1010 140 L1070 95 L1110 110"
+        fill="none" stroke-width="7" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <circle cx="1110" cy="110" r="12" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="165" y="66">PRICE</text>
+    <text x="1160" y="370" text-anchor="end">TIME</text>
+  </g>
+</svg>
