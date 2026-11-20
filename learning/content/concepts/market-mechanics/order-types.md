@@ -2,7 +2,7 @@ An **order** is the instruction you give your [[broker]]: what to trade, how muc
 
 ## Market order: "trade now"
 
-You buy or sell immediately at the best price available right now. It almost always fills, but you do not know the exact price in advance. When you buy, you pay the asking price; when you sell, you get the bidding price (see [[bid-and-ask]]). The gap between those two prices, the [[spread]], is a cost you pay on every market order.
+You buy or sell immediately at the best price available right now. It almost always fills, but you do not know the exact price in advance. When you buy, you pay the ask; when you sell, you get the bid (see [[bid-and-ask]]). The gap between those two prices, the [[spread]], is a cost you pay on every market order.
 
 ## Limit order: "only at this price or better"
 

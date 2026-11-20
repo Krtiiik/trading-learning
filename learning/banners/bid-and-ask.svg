@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price ladder with sellers' offers above and buyers' offers below; the lowest sell price is the ask and the highest buy price is the bid">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- sell offers; bar length = shares waiting (0.8 px per share) -->
+  <rect x="680" y="77" width="160" height="46" style="fill: var(--banner-down, #d0453a); fill-opacity: .3"/>
+  <rect x="680" y="141" width="80" height="46" style="fill: var(--banner-down, #d0453a)"/>
+  <!-- buy offers; bar length = shares waiting (0.8 px per share) -->
+  <rect x="200" y="213" width="320" height="46" style="fill: var(--banner-up, #1a9b5b)"/>
+  <rect x="400" y="277" width="120" height="46" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .3"/>
+  <!-- prices -->
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" text-anchor="middle" style="fill: var(--banner-fg, #1a1a1a)">
+    <g style="fill-opacity: .45">
+      <text x="600" y="109">50.03</text><text x="600" y="309">49.97</text>
+    </g>
+    <text x="600" y="173">50.02</text><text x="600" y="245">49.98</text>
+  </g>
+  <!-- the two best prices -->
+  <g font-family="system-ui, sans-serif" font-size="34" font-weight="700" letter-spacing="3">
+    <text x="784" y="176" style="fill: var(--banner-down, #d0453a)">ASK</text>
+    <text x="176" y="248" text-anchor="end" style="fill: var(--banner-up, #1a9b5b)">BID</text>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="1170" y="110" text-anchor="end">SELLERS</text>
+    <text x="30" y="310">BUYERS</text>
+  </g>
+</svg>
