@@ -3,7 +3,7 @@
 {% block page_kind %}group{% endblock %}
 {% block main %}
 <header class="listing-header">
-  <span class="listing-header__kicker"><a href="{{ root }}index.html">Concept group</a></span>
+  <span class="listing-header__kicker">Concept group</span>
   <h1>{{ group.title }}</h1>
   <p>{{ group.blurb }}</p>
   <span class="listing-header__count">{{ meter(group.written_count, group.concepts|length) }}<span>{{ group.written_count }} of {{ group.concepts|length }} written</span></span>
