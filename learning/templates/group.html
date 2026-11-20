@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-{% from "_macros.html" import card %}
+{% from "_macros.html" import card, meter %}
 {% block page_kind %}group{% endblock %}
 {% block main %}
 <header class="listing-header">
+  <span class="listing-header__kicker"><a href="{{ root }}index.html">Concept group</a></span>
   <h1>{{ group.title }}</h1>
   <p>{{ group.blurb }}</p>
-  <span class="listing-header__count">{{ group.written_count }} of {{ group.concepts|length }} written</span>
+  <span class="listing-header__count">{{ meter(group.written_count, group.concepts|length) }}<span>{{ group.written_count }} of {{ group.concepts|length }} written</span></span>
 </header>
 <div class="grid">
   {% for p in cards(group.concepts) %}{{ card(p, root) }}{% endfor %}

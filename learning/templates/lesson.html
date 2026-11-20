@@ -2,7 +2,7 @@
 {% from "_macros.html" import page_list %}
 {% block page_kind %}lesson{% endblock %}
 {% block main %}
-<article class="article article--lesson">
+<article class="article article--lesson is-{{ page.status }}">
   <div class="article__banner banner">{{ page.banner_svg | safe }}</div>
   <a class="article__group" href="{{ root }}lessons/index.html">Lesson</a>
   <h1 class="article__title">{{ page.title }}</h1>

@@ -72,14 +72,39 @@
     });
   }
 
+  // "/" focuses search from anywhere outside a text field.
+  if (input) {
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      e.preventDefault();
+      input.focus();
+    });
+  }
+
   // Shelf arrows scroll the single card row by most of its visible width.
+  // Arrows disable at either end; a shelf whose cards all fit gets .is-static (arrows hidden).
+  document.documentElement.classList.add("js");
   document.querySelectorAll(".shelf").forEach(function (shelf) {
     var row = shelf.querySelector(".shelf__row");
+    var prev = shelf.querySelector(".shelf__arrow--prev");
+    var next = shelf.querySelector(".shelf__arrow--next");
+    if (!row) return;
+    function update() {
+      var max = row.scrollWidth - row.clientWidth;
+      if (prev) prev.disabled = row.scrollLeft <= 2;
+      if (next) next.disabled = row.scrollLeft >= max - 2;
+      shelf.classList.toggle("is-static", max <= 2);
+    }
     shelf.querySelectorAll(".shelf__arrow").forEach(function (btn) {
       var dir = btn.classList.contains("shelf__arrow--prev") ? -1 : 1;
       btn.addEventListener("click", function () {
         row.scrollBy({ left: dir * row.clientWidth * 0.9, behavior: "smooth" });
       });
     });
+    row.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
   });
 })();

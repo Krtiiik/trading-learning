@@ -2,27 +2,40 @@
 <html lang="en" data-root="{{ root }}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{% block doc_title %}{{ title }} · Trading Learning{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="{{ root }}static/site.css">
 </head>
 <body class="page-{% block page_kind %}{% endblock %}">
+{%- set ns = namespace(group_url="") -%}
+{%- if page is defined and page.group %}{% set ns.group_url = page.group.url %}{% endif -%}
+{%- if group is defined %}{% set ns.group_url = group.url %}{% endif %}
+<div class="frame">
 <header class="site-header">
   <a class="site-brand" href="{{ root }}index.html">Trading Learning</a>
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Concept groups">
     {% for g in site.groups %}
-    <a class="site-nav__link" href="{{ root }}{{ g.url }}">{{ g.title }}</a>
+    <a class="site-nav__link" href="{{ root }}{{ g.url }}"{% if g.url == ns.group_url %} aria-current="page"{% endif %}>{{ g.title }}</a>
     {% endfor %}
-    <a class="site-nav__link" href="{{ root }}lessons/index.html">Lessons</a>
+    <a class="site-nav__link" href="{{ root }}lessons/index.html"{% if current.startswith("lessons/") %} aria-current="page"{% endif %}>Lessons</a>
   </nav>
   <div class="search">
-    <input class="search__input" type="search" placeholder="Search concepts and lessons" aria-label="Search">
+    <input class="search__input" type="search" placeholder="Search  /" aria-label="Search concepts and lessons" autocomplete="off">
     <ol class="search__results" hidden></ol>
   </div>
 </header>
 <main class="site-main">
 {% block main %}{% endblock %}
 </main>
+{%- set fs = namespace(w=0, t=0) %}{% for g in site.groups %}{% set fs.w = fs.w + g.written_count %}{% set fs.t = fs.t + g.concepts|length %}{% endfor %}
+<footer class="site-footer">
+  <a href="{{ root }}index.html">Trading Learning</a>
+  <span>{{ fs.w }} of {{ fs.t }} concepts written · {{ site.lessons|length }} lesson{{ "" if site.lessons|length == 1 else "s" }}</span>
+</footer>
+</div>
 <div class="link-preview" hidden></div>
 <script src="{{ root }}static/index.js"></script>
 <script src="{{ root }}static/site.js"></script>

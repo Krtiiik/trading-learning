@@ -3,8 +3,10 @@
 {% block page_kind %}lessons{% endblock %}
 {% block main %}
 <header class="listing-header">
+  <span class="listing-header__kicker"><a href="{{ root }}index.html">Lessons</a></span>
   <h1>Lessons</h1>
   <p>Guided pages that put several concepts together.</p>
+  <span class="listing-header__count"><span>{{ site.lessons|length }} lesson{{ "" if site.lessons|length == 1 else "s" }}, newest first</span></span>
 </header>
 <div class="grid">
   {% for p in site.lessons %}{{ card(p, root) }}{% else %}<p class="empty">No lessons yet.</p>{% endfor %}

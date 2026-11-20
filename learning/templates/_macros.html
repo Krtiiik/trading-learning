@@ -1,8 +1,8 @@
 {% macro card(p, root) %}
-<a class="card card--{{ p.kind }} is-{{ p.status }}" href="{{ root }}{{ p.url }}" data-slug="{{ p.slug }}">
+<a class="card card--{{ p.kind }} is-{{ p.status }}" href="{{ root }}{{ p.url }}" data-slug="{{ p.slug }}" title="{{ p.title }}">
   <div class="card__banner banner">{{ p.banner_svg | safe }}</div>
   <div class="card__text">
-    {% if p.group %}<span class="card__group">{{ p.group.title }}</span>{% endif %}
+    {% if p.group %}<span class="card__group">{{ p.group.title }}</span>{% else %}<span class="card__group">Lesson</span>{% endif %}
     <h3 class="card__title">{{ p.title }}</h3>
     <p class="card__summary">{{ p.summary }}</p>
     {% if not p.written %}<span class="card__status">Not written yet</span>{% endif %}
@@ -10,15 +10,20 @@
 </a>
 {% endmacro %}
 
-{% macro shelf(title, url, blurb, pages, root, count) %}
+{# One square per concept, filled when written. #}
+{% macro meter(written, total) %}
+{% if total %}<span class="meter" aria-hidden="true">{% for i in range(total) %}<i{% if i < written %} class="on"{% endif %}></i>{% endfor %}</span>{% endif %}
+{% endmacro %}
+
+{% macro shelf(title, url, blurb, pages, root, count, written=0, total=0) %}
 <section class="shelf">
   <header class="shelf__header">
     <h2 class="shelf__title"><a href="{{ root }}{{ url }}">{{ title }}</a></h2>
     {% if blurb %}<p class="shelf__blurb">{{ blurb }}</p>{% endif %}
-    <span class="shelf__count">{{ count }}</span>
+    <span class="shelf__count">{{ meter(written, total) }}<span>{{ count }}</span></span>
     <div class="shelf__arrows">
-      <button class="shelf__arrow shelf__arrow--prev" type="button" aria-label="Scroll left">&larr;</button>
-      <button class="shelf__arrow shelf__arrow--next" type="button" aria-label="Scroll right">&rarr;</button>
+      <button class="shelf__arrow shelf__arrow--prev" type="button" aria-label="Scroll {{ title }} left">&larr;</button>
+      <button class="shelf__arrow shelf__arrow--next" type="button" aria-label="Scroll {{ title }} right">&rarr;</button>
     </div>
   </header>
   <div class="shelf__row">
