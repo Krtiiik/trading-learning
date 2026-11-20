@@ -1,0 +1,41 @@
+{% macro card(p, root) %}
+<a class="card card--{{ p.kind }} is-{{ p.status }}" href="{{ root }}{{ p.url }}" data-slug="{{ p.slug }}">
+  <div class="card__banner banner">{{ p.banner_svg | safe }}</div>
+  <div class="card__text">
+    {% if p.group %}<span class="card__group">{{ p.group.title }}</span>{% endif %}
+    <h3 class="card__title">{{ p.title }}</h3>
+    <p class="card__summary">{{ p.summary }}</p>
+    {% if not p.written %}<span class="card__status">Not written yet</span>{% endif %}
+  </div>
+</a>
+{% endmacro %}
+
+{% macro shelf(title, url, blurb, pages, root, count) %}
+<section class="shelf">
+  <header class="shelf__header">
+    <h2 class="shelf__title"><a href="{{ root }}{{ url }}">{{ title }}</a></h2>
+    {% if blurb %}<p class="shelf__blurb">{{ blurb }}</p>{% endif %}
+    <span class="shelf__count">{{ count }}</span>
+    <div class="shelf__arrows">
+      <button class="shelf__arrow shelf__arrow--prev" type="button" aria-label="Scroll left">&larr;</button>
+      <button class="shelf__arrow shelf__arrow--next" type="button" aria-label="Scroll right">&rarr;</button>
+    </div>
+  </header>
+  <div class="shelf__row">
+    {% for p in pages %}{{ card(p, root) }}{% endfor %}
+  </div>
+</section>
+{% endmacro %}
+
+{% macro page_list(title, slugs, site, root, cls) %}
+{% if slugs %}
+<section class="{{ cls }}">
+  <h2>{{ title }}</h2>
+  <ul class="page-list">
+    {% for s in slugs %}{% set p = site.pages[s] %}
+    <li><a class="concept-link is-{{ p.status }}" data-slug="{{ p.slug }}" href="{{ root }}{{ p.url }}">{{ p.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endmacro %}

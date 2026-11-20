@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from "_macros.html" import card %}
+{% block page_kind %}lessons{% endblock %}
+{% block main %}
+<header class="listing-header">
+  <h1>Lessons</h1>
+  <p>Guided pages that put several concepts together.</p>
+</header>
+<div class="grid">
+  {% for p in site.lessons %}{{ card(p, root) }}{% else %}<p class="empty">No lessons yet.</p>{% endfor %}
+</div>
+{% endblock %}

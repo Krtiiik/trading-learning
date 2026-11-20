@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Planned page">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <g fill="none" stroke-width="2" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .18">
+    <path d="M0 300 L200 260 L340 290 L520 180 L700 220 L880 120 L1040 160 L1200 90"/>
+    <path d="M0 340 L180 320 L360 330 L560 260 L760 280 L960 210 L1200 200" stroke-dasharray="10 10"/>
+  </g>
+  <text x="600" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="40" font-weight="600"
+        letter-spacing="6" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .45">COMING SOON</text>
+</svg>

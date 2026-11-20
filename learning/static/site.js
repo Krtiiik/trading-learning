@@ -1,0 +1,85 @@
+// Behaviour for the learning site: link hover previews, search, and shelf arrows.
+// Data comes from index.js (window.LEARNING_INDEX); URLs there are relative to the site root.
+(function () {
+  "use strict";
+  var data = window.LEARNING_INDEX || { pages: [], groups: [] };
+  var root = document.documentElement.getAttribute("data-root") || "";
+  var bySlug = {};
+  data.pages.forEach(function (p) { bySlug[p.slug] = p; });
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text) e.textContent = text;
+    return e;
+  }
+
+  // Hover preview on links to concepts and lessons (cards already show the summary).
+  var preview = document.querySelector(".link-preview");
+  function showPreview(link) {
+    var p = bySlug[link.getAttribute("data-slug")];
+    if (!p || !preview) return;
+    preview.innerHTML = "";
+    preview.appendChild(el("span", "link-preview__group", p.group || "Lesson"));
+    preview.appendChild(el("strong", "link-preview__title", p.title));
+    preview.appendChild(el("p", "link-preview__summary", p.summary));
+    if (p.status === "planned") preview.appendChild(el("span", "link-preview__status", "Not written yet"));
+    var r = link.getBoundingClientRect();
+    var maxLeft = window.scrollX + document.documentElement.clientWidth - preview.offsetWidth - 8;
+    preview.hidden = false;
+    preview.style.left = Math.max(8, Math.min(r.left + window.scrollX, maxLeft)) + "px";
+    preview.style.top = (r.bottom + window.scrollY + 6) + "px";
+  }
+  document.addEventListener("mouseover", function (e) {
+    var link = e.target.closest && e.target.closest("a.concept-link");
+    if (link) showPreview(link);
+  });
+  document.addEventListener("mouseout", function (e) {
+    var link = e.target.closest && e.target.closest("a.concept-link");
+    if (link && preview && !link.contains(e.relatedTarget)) preview.hidden = true;
+  });
+
+  // Search over titles, summaries and group names.
+  var input = document.querySelector(".search__input");
+  var results = document.querySelector(".search__results");
+  if (input && results) {
+    input.addEventListener("input", function () {
+      var q = input.value.trim().toLowerCase();
+      results.innerHTML = "";
+      if (!q) { results.hidden = true; return; }
+      var inTitle = function (p) { return p.title.toLowerCase().indexOf(q) !== -1 ? 1 : 0; };
+      var hits = data.pages.filter(function (p) {
+        return (p.title + " " + p.summary + " " + (p.group || "lesson")).toLowerCase().indexOf(q) !== -1;
+      }).sort(function (a, b) { return inTitle(b) - inTitle(a); }).slice(0, 12);
+      hits.forEach(function (p) {
+        var li = el("li", "search__result is-" + p.status);
+        var a = el("a", "search__link");
+        a.href = root + p.url;
+        a.appendChild(el("strong", "search__title", p.title));
+        a.appendChild(el("span", "search__meta", (p.group || "Lesson") + (p.status === "planned" ? " · not written yet" : "")));
+        li.appendChild(a);
+        results.appendChild(li);
+      });
+      if (!hits.length) results.appendChild(el("li", "search__empty", "No matches"));
+      results.hidden = false;
+    });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { input.value = ""; results.hidden = true; }
+      if (e.key === "Enter") { var a = results.querySelector("a"); if (a) location.href = a.href; }
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".search")) results.hidden = true;
+    });
+  }
+
+  // Shelf arrows scroll the single card row by most of its visible width.
+  document.querySelectorAll(".shelf").forEach(function (shelf) {
+    var row = shelf.querySelector(".shelf__row");
+    shelf.querySelectorAll(".shelf__arrow").forEach(function (btn) {
+      var dir = btn.classList.contains("shelf__arrow--prev") ? -1 : 1;
+      btn.addEventListener("click", function () {
+        row.scrollBy({ left: dir * row.clientWidth * 0.9, behavior: "smooth" });
+      });
+    });
+  });
+})();

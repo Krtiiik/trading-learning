@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_list %}
+{% block page_kind %}lesson{% endblock %}
+{% block main %}
+<article class="article article--lesson">
+  <div class="article__banner banner">{{ page.banner_svg | safe }}</div>
+  <a class="article__group" href="{{ root }}lessons/index.html">Lesson</a>
+  <h1 class="article__title">{{ page.title }}</h1>
+  <p class="article__summary">{{ page.summary }}</p>
+  {{ page_list("Before you start", page.builds_on, site, root, "builds-on") }}
+  <div class="article__body prose">{{ body | safe }}</div>
+  {{ page_list("Concepts used", page.links, site, root, "related") }}
+</article>
+{% endblock %}

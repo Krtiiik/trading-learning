@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" data-root="{{ root }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · Trading Learning</title>
+<link rel="stylesheet" href="{{ root }}static/site.css">
+</head>
+<body class="page-{% block page_kind %}{% endblock %}">
+<header class="site-header">
+  <a class="site-brand" href="{{ root }}index.html">Trading Learning</a>
+  <nav class="site-nav">
+    {% for g in site.groups %}
+    <a class="site-nav__link" href="{{ root }}{{ g.url }}">{{ g.title }}</a>
+    {% endfor %}
+    <a class="site-nav__link" href="{{ root }}lessons/index.html">Lessons</a>
+  </nav>
+  <div class="search">
+    <input class="search__input" type="search" placeholder="Search concepts and lessons" aria-label="Search">
+    <ol class="search__results" hidden></ol>
+  </div>
+</header>
+<main class="site-main">
+{% block main %}{% endblock %}
+</main>
+<div class="link-preview" hidden></div>
+<script src="{{ root }}static/index.js"></script>
+<script src="{{ root }}static/site.js"></script>
+</body>
+</html>

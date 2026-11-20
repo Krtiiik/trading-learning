@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% from "_macros.html" import shelf %}
+{% block page_kind %}home{% endblock %}
+{% block main %}
+<section class="intro">
+  <h1>Trading Learning</h1>
+  <p>Short, standalone explanations of trading concepts, grouped by topic, and lessons that connect them.</p>
+</section>
+{% for g in site.groups %}
+{{ shelf(g.title, g.url, g.blurb, cards(g.concepts), root, g.written_count ~ " of " ~ g.concepts|length ~ " written") }}
+{% endfor %}
+{{ shelf("Lessons", "lessons/index.html", "Guided pages that put several concepts together.", site.lessons, root, site.lessons|length ~ " lessons") }}
+{% endblock %}

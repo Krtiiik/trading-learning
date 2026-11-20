@@ -1,0 +1,92 @@
+# The catalog of concept groups and concepts, in display order.
+# A concept is written when content/concepts/<group>/<slug>.md exists; otherwise it is planned.
+# Title and summary live here only, so a planned concept already has a working link and hover preview.
+
+groups:
+  - slug: assets
+    title: Assets
+    blurb: The things you can buy and sell, and how they differ.
+    concepts:
+      - {slug: stock, title: Stock, summary: A small share of ownership in a company.}
+      - {slug: etf, title: ETF, summary: A fund that holds many assets and trades on an exchange like a single stock.}
+      - {slug: index, title: Index, summary: A number that tracks the combined price of a chosen basket of assets.}
+      - {slug: bond, title: Bond, summary: A loan you give to a government or company in return for interest.}
+      - {slug: commodity, title: Commodity, summary: A raw material such as oil, gold or wheat that is traded in bulk.}
+      - {slug: forex-pair, title: Forex pair, summary: The price of one currency expressed in another, like EUR/USD.}
+      - {slug: cryptocurrency, title: Cryptocurrency, summary: A digital currency recorded on a blockchain, like Bitcoin.}
+      - {slug: futures, title: Futures, summary: A contract to buy or sell something at a set price on a future date.}
+      - {slug: option, title: Option, summary: A contract giving the right, but not the duty, to buy or sell at a set price.}
+      - {slug: reit, title: REIT, summary: A company that owns property and pays most of its rental income to shareholders.}
+
+  - slug: market-mechanics
+    title: Market mechanics
+    blurb: How trading actually happens, from placing an order to paying fees.
+    concepts:
+      - {slug: exchange, title: Exchange, summary: The marketplace where buyers and sellers are matched.}
+      - {slug: broker, title: Broker, summary: The company that passes your orders to the market and holds your account.}
+      - {slug: order-types, title: Order types, summary: "The ways to ask for a trade: market, limit and stop orders."}
+      - {slug: bid-and-ask, title: Bid and ask, summary: The best price buyers offer and the best price sellers want right now.}
+      - {slug: spread, title: Spread, summary: The gap between the bid and the ask, a hidden cost of every trade.}
+      - {slug: liquidity, title: Liquidity, summary: How easily you can trade without moving the price.}
+      - {slug: volume, title: Volume, summary: How much of an asset changed hands during a period.}
+      - {slug: trading-hours, title: Trading hours, summary: When a market is open, and what happens around the open and close.}
+      - {slug: fees-and-commissions, title: Fees and commissions, summary: What you pay the broker and the market for each trade.}
+      - {slug: short-selling, title: Short selling, summary: Selling something you borrowed, hoping to buy it back cheaper.}
+      - {slug: leverage, title: Leverage, summary: Trading with borrowed money, which enlarges both gains and losses.}
+      - {slug: dividend, title: Dividend, summary: A share of company profit paid out to shareholders.}
+
+  - slug: charts
+    title: Charts
+    blurb: How to read a price chart and the shapes that appear on it.
+    concepts:
+      - {slug: price-chart, title: Price chart, summary: A picture of how a price moved over time.}
+      - {slug: timeframe, title: Timeframe, summary: The length of time each bar or candle on a chart covers.}
+      - {slug: candle, title: Candle, summary: "One bar of a chart showing four prices for one period: open, high, low and close."}
+      - {slug: ohlc, title: OHLC, summary: "Open, high, low, close: the four prices that summarise a period."}
+      - {slug: wick, title: Wick, summary: The thin line on a candle showing how far the price reached beyond the open and close.}
+      - {slug: line-vs-candle-chart, title: Line vs candle chart, summary: Two ways to draw the same prices, and what each shows best.}
+      - {slug: trend, title: Trend, summary: The general direction a price is moving in over time.}
+      - {slug: peak-and-trough, title: Peak and trough, summary: The local high points and low points of a price.}
+      - {slug: support-and-resistance, title: Support and resistance, summary: Price levels where falls or rises have repeatedly stopped.}
+      - {slug: breakout, title: Breakout, summary: A price moving decisively past a level it had been held by.}
+      - {slug: gap, title: Gap, summary: A jump between one period's close and the next period's open.}
+      - {slug: chart-pattern, title: Chart pattern, summary: A recurring shape formed by many candles, read as a hint of what comes next.}
+      - {slug: candlestick-pattern, title: Candlestick pattern, summary: A recurring shape of one to three candles, read as a short-term signal.}
+
+  - slug: indicators
+    title: Indicators
+    blurb: Calculations on price and volume that summarise what the chart is doing.
+    concepts:
+      - {slug: indicator, title: Indicator, summary: A number calculated from past prices or volume and drawn on or under the chart.}
+      - {slug: moving-average, title: Moving average, summary: The average price over the last few periods, which smooths out the noise.}
+      - {slug: rsi, title: RSI, summary: An indicator from 0 to 100 that measures how strong recent rises were compared with falls.}
+      - {slug: macd, title: MACD, summary: An indicator built from two moving averages that shows changes in momentum.}
+      - {slug: bollinger-bands, title: Bollinger bands, summary: Bands drawn around a moving average that widen when the price swings more.}
+      - {slug: atr, title: ATR, summary: Average true range, a measure of how much the price typically moves per period.}
+      - {slug: volume-profile, title: Volume profile, summary: How much trading happened at each price level, drawn sideways on the chart.}
+
+  - slug: strategies
+    title: Strategies
+    blurb: Rules for deciding when to buy, when to sell and how to test the idea.
+    concepts:
+      - {slug: strategy, title: Strategy, summary: A fixed set of rules that decides when to enter and exit trades.}
+      - {slug: trend-following, title: Trend following, summary: Buying what is rising and selling what is falling, staying in while the trend lasts.}
+      - {slug: mean-reversion, title: Mean reversion, summary: Betting that a price that moved far from its usual level will come back.}
+      - {slug: momentum, title: Momentum, summary: Picking assets that rose the most recently, expecting them to keep rising.}
+      - {slug: breakout-trading, title: Breakout trading, summary: Entering a trade when the price breaks past a support or resistance level.}
+      - {slug: buy-and-hold, title: Buy and hold, summary: Buying and keeping an asset for years, ignoring short-term moves.}
+      - {slug: rebalancing, title: Rebalancing, summary: Trading back to your target mix of assets after prices have shifted it.}
+      - {slug: backtest, title: Backtest, summary: Running a strategy's rules on past data to see how it would have done.}
+      - {slug: entry-and-exit-rules, title: Entry and exit rules, summary: The exact conditions that open and close a trade.}
+
+  - slug: risk-and-money
+    title: Risk and money
+    blurb: How much to put in each trade and how to survive the losing ones.
+    concepts:
+      - {slug: risk-reward, title: Risk/reward, summary: How much you could gain on a trade compared with how much you could lose.}
+      - {slug: position-sizing, title: Position sizing, summary: Deciding how much money to put into a single trade.}
+      - {slug: stop-loss, title: Stop loss, summary: An order that sells automatically once the price falls to a level you chose.}
+      - {slug: drawdown, title: Drawdown, summary: How far your account has fallen from its highest point.}
+      - {slug: diversification, title: Diversification, summary: Spreading money across different assets so one loss hurts less.}
+      - {slug: volatility, title: Volatility, summary: How much and how fast a price swings up and down.}
+      - {slug: win-rate-and-expectancy, title: Win rate and expectancy, summary: How often a strategy wins, and how much it makes on average per trade.}
