@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="The jagged price path of one period reduced to four prices: the first trade is the open, the highest the high, the lowest the low and the last the close">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- one period -->
+  <rect x="50" y="40" width="590" height="305" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .08"/>
+  <line x1="50" y1="40" x2="50" y2="345" stroke-width="2" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .5"/>
+  <line x1="640" y1="40" x2="640" y2="345" stroke-width="2" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .5"/>
+  <!-- every trade in the period -->
+  <path d="M80 250 L120 220 L150 260 L190 200 L220 235 L260 170 L290 210 L320 120 L350 160 L380 70 L410 130 L440 110 L470 200 L500 240 L530 330 L560 270 L590 190 L620 150"
+        fill="none" stroke-width="4" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .55"/>
+  <!-- the four prices carried out of the period -->
+  <g fill="none" stroke-width="2" stroke-dasharray="6 6" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35">
+    <line x1="80" y1="250" x2="860" y2="250"/><line x1="380" y1="70" x2="860" y2="70"/>
+    <line x1="530" y1="330" x2="860" y2="330"/><line x1="620" y1="150" x2="860" y2="150"/>
+  </g>
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <circle cx="80" cy="250" r="11"/><circle cx="380" cy="70" r="11"/>
+    <circle cx="530" cy="330" r="11"/><circle cx="620" cy="150" r="11"/>
+    <circle cx="870" cy="70" r="11"/><circle cx="870" cy="150" r="11"/>
+    <circle cx="870" cy="250" r="11"/><circle cx="870" cy="330" r="11"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="900" y="81">HIGH</text><text x="900" y="161">CLOSE</text>
+    <text x="900" y="261">OPEN</text><text x="900" y="341">LOW</text>
+  </g>
+  <text x="345" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-accent, #0b6bcb)">ONE PERIOD</text>
+</svg>
