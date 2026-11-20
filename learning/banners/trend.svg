@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A zigzag price rising as an uptrend, each peak higher than the last and each trough higher than the last">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- line through the peaks and line through the troughs -->
+  <g fill="none" stroke-width="3" stroke-dasharray="10 10">
+    <line x1="150" y1="254" x2="1010" y2="57" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .55"/>
+    <line x1="270" y1="304" x2="1130" y2="107" style="stroke: var(--banner-up, #1a9b5b); stroke-opacity: .55"/>
+  </g>
+  <!-- price -->
+  <path d="M60 350 L210 240 L330 290 L450 185 L570 235 L690 130 L810 180 L930 75 L1050 125 L1140 60"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- peaks -->
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <circle cx="210" cy="240" r="11"/><circle cx="450" cy="185" r="11"/>
+    <circle cx="690" cy="130" r="11"/><circle cx="930" cy="75" r="11"/>
+  </g>
+  <!-- troughs -->
+  <g style="fill: var(--banner-up, #1a9b5b)">
+    <circle cx="330" cy="290" r="11"/><circle cx="570" cy="235" r="11"/>
+    <circle cx="810" cy="180" r="11"/><circle cx="1050" cy="125" r="11"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="60" y="175" style="fill: var(--banner-accent, #0b6bcb)">HIGHER HIGHS</text>
+    <text x="1160" y="260" text-anchor="end" style="fill: var(--banner-up, #1a9b5b)">HIGHER LOWS</text>
+  </g>
+</svg>
