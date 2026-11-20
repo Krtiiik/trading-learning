@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price chart with an indicator band drawn on the price and a separate indicator line drawn in a panel under the chart">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the separate panel under the chart -->
+  <rect x="340" y="270" width="820" height="100" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .05"/>
+  <line x1="40" y1="252" x2="1160" y2="252" stroke-width="2" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .25"/>
+  <!-- indicator on the chart: a band around the price -->
+  <polygon points="340,157 422,147 504,140 586,127 668,122 750,112 832,102 914,90 996,77 1078,62 1160,50 1160,126 1078,138 996,153 914,166 832,178 750,188 668,198 586,203 504,216 422,223 340,233"
+           style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .1"/>
+  <g fill="none" stroke-width="4" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)">
+    <polyline points="340,157 422,147 504,140 586,127 668,122 750,112 832,102 914,90 996,77 1078,62 1160,50"/>
+    <polyline points="340,233 422,223 504,216 586,203 668,198 750,188 832,178 914,166 996,153 1078,138 1160,126"/>
+  </g>
+  <!-- price -->
+  <path d="M340 200 L381 180 L422 195 L463 170 L504 185 L545 160 L586 178 L627 150 L668 172 L709 145 L750 165 L791 130 L832 155 L873 120 L914 140 L955 110 L996 130 L1037 95 L1078 115 L1119 80 L1160 95"
+        fill="none" stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .55"/>
+  <!-- indicator under the chart: its own line around a middle level -->
+  <line x1="340" y1="320" x2="1160" y2="320" stroke-width="2" stroke-dasharray="8 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <path d="M340 340 C400 282 460 282 520 318 S640 362 700 320 S820 278 880 300 S1000 352 1060 312 S1130 286 1160 292"
+        fill="none" stroke-width="6" stroke-linecap="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2" style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="40" y="155">ON THE CHART</text>
+    <text x="40" y="330">UNDER THE CHART</text>
+  </g>
+</svg>
