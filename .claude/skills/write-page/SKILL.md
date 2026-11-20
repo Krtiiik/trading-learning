@@ -31,6 +31,8 @@ Dispatch in parallel, each with the slug and the file path:
 
 The page is **clean** when both end with `clean`. If not, send the blocker and major findings (minor ones too, if they are cheap) to `learning-writer`, and banner findings to `learning-illustrator`. Then check again.
 
+Once the page is clean, you may send the cheap minor findings to `learning-writer` in one last pass. Skip the re-check after that pass: minor fixes only change wording. Read the page yourself, and run the checkers again only if the writer changed a fact, a number or the page's structure.
+
 Repeat until clean. Stop and ask the user when the writer rejects a finding and the next round raises the same finding again: the agents disagree and the user decides.
 
 ## 4. Build and look
