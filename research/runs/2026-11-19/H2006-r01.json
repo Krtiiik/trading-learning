@@ -1,0 +1,49 @@
+{
+ "run": "H2006-r01",
+ "hypothesis": "H2006",
+ "number": 1,
+ "segment": "train",
+ "spec_hash": "26b83cd139d92f3dbd0ed14139bf86fcdd71fc95f7890cb958e217cbef49f30c",
+ "registered_in": "5e763972b0e1cdde0d8e3fc923a718ecb858f490",
+ "commit": "2749cfd88e1ec7df57c21c57d1d2f148215458f4",
+ "experiment": "trading.experiments.h2006",
+ "params": {
+  "shock_days": 30,
+  "horizon_days": 1,
+  "start": "2019-07-01"
+ },
+ "seed": 2006,
+ "direction": "negative",
+ "claim": "predictive",
+ "estimate": 0.03499426758685813,
+ "p_value": 0.9990511087013565,
+ "n": 1278,
+ "double_cost": null,
+ "metrics": {
+  "statistic": "rank_ic lowest third minus highest third",
+  "horizon_bars": 1,
+  "t_statistic": 3.112264660725179,
+  "ic_lowest_third": -0.023142040549450016,
+  "ic_highest_third": -0.058136308136308136,
+  "assets_per_third": 13.0,
+  "standard_error": 0.01124398834985461,
+  "lags": 7
+ },
+ "data": {
+  "binance/spot/1d": "2d67633952426cff4fb8d537d9ed5a47bffe8b359076e9586c394ff41d5ec195",
+  "binance/universe": "88f9a7cf72c7bcc0e4000cf467103f015e25d40ab20d91a611ebb6940d41e4a6"
+ },
+ "lookahead_check": {
+  "passed": true,
+  "cuts": [
+   "2020-01-17 00:00:00",
+   "2021-08-28 00:00:00",
+   "2022-11-03 00:00:00"
+  ]
+ },
+ "rerun_reason": null,
+ "started_at": "2026-11-19T13:39:35+00:00",
+ "duration_seconds": 8.782,
+ "harness_version": 3,
+ "python": "3.14.7"
+}
