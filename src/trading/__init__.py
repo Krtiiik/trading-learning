@@ -1,1 +1,2 @@
-"""Learning and researching algorithmic trading strategies."""
+def main() -> None:
+    print("Hello from trading!")

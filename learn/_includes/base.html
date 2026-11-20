@@ -1,7 +1,0 @@
-{%- comment -%}
-Relative path from the current page to the site root ("" or "../"), so every link is a
-relative .html file that works under jekyll serve, as plain files and inside the artifact.
-Use: {% capture base %}{% include base.html %}{% endcapture %}
-{%- endcomment -%}
-{%- assign depth = page.url | split: "/" | size | minus: 2 -%}
-{%- for i in (1..depth) -%}../{%- endfor -%}

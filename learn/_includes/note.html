@@ -1,5 +1,0 @@
-{%- comment -%}
-Inline aside, quieter than the text around it: {% include note.html content="Markdown text." %}
-For several paragraphs, {% capture text %}…{% endcapture %} first and pass content=text.
-{%- endcomment -%}
-<aside class="note">{{ include.content | markdownify }}</aside>

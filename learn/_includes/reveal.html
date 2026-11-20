@@ -1,9 +1,0 @@
-{%- comment -%}
-Collapsed extra (exercise on your own data, aside for the curious):
-{% capture body %}…Markdown, code blocks allowed…{% endcapture %}
-{% include reveal.html summary="Try it on your own data" content=body %}
-{%- endcomment -%}
-<details class="reveal">
-<summary>{% include icon.html name="chev" %}{{ include.summary }}</summary>
-<div class="reveal-body">{{ include.content | markdownify }}</div>
-</details>

@@ -8,12 +8,4 @@ __pycache__/
 __marimo__/
 
 # Downloaded market data, reproducible with `uv run trading fetch`
-/data/
-
-# Jekyll course site build output
-/learn/_site/
-/learn/.jekyll-cache/
-/learn/_publish/
-
-# Research experiment artefacts (trained policy weights), reproducible from research/ scripts
-/research/out/
+data/
