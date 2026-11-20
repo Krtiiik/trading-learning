@@ -28,9 +28,13 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "gymnasium>=1.4.0",
     "marimo>=0.25.2",
     "matplotlib>=3.11.2",
     "pytest>=9.2.0",
+    "scikit-learn>=1.9.1",
+    "stable-baselines3>=2.9.2",
+    "torch>=2.15.0",
 ]
 
 [tool.pytest.ini_options]
