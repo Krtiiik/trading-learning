@@ -14,3 +14,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First learning site pages: concepts stock, order types, candle, moving average, trend following and stop loss, and the lesson "Reading your first candle chart".
 - Learning site design: a hard-edged layout with hairline borders, light and dark themes, home page shelves with scroll arrows, per-group progress meters and colour kept for highlights.
 - The learning site is published as a private Claude artifact and republished after commits on `main` that change it.
+- Learning site content agents: a planner, a writer, a banner illustrator, a reviewer, a fact checker and a site-wide auditor, plus a `/write-page` skill that writes, checks and commits one page.
