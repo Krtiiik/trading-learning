@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Three stacked bars of stocks and bonds: the target mix is 60% stocks and 40% bonds; stocks rise and the mix drifts to 66/34; selling stocks and buying bonds brings it back to the 60/40 target">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- bars share a base at y = 320; 2.4 px per 1% of the starting value -->
+  <!-- target: 60 stocks / 40 bonds -->
+  <rect x="195" y="80" width="140" height="96" stroke-width="5"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)"/>
+  <rect x="195" y="176" width="140" height="144" stroke-width="5"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .15; stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- drift: stocks grow by about 29%, bonds stay; the mix is now 66 / 34 -->
+  <rect x="575" y="38" width="140" height="96" stroke-width="5"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)"/>
+  <rect x="575" y="134" width="140" height="186" stroke-width="5"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .15; stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the extra stocks above the target line, to be sold -->
+  <rect x="578" y="137" width="134" height="14" style="fill: var(--banner-down, #d0453a); fill-opacity: .4"/>
+  <!-- back to target: same total, 60 / 40 again -->
+  <rect x="955" y="38" width="140" height="113" stroke-width="5"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)"/>
+  <rect x="955" y="151" width="140" height="169" stroke-width="5"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .15; stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the target split line of the grown portfolio -->
+  <line x1="560" y1="151" x2="1110" y2="151" stroke-width="3" stroke-dasharray="10 8"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <!-- legend -->
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2" text-anchor="end">
+    <text x="175" y="137" style="fill: var(--banner-fg, #1a1a1a)">BONDS</text>
+    <text x="175" y="257" style="fill: var(--banner-accent, #0b6bcb)">STOCKS</text>
+  </g>
+  <!-- the shares of each bar -->
+  <g font-family="system-ui, sans-serif" font-size="34" font-weight="700" letter-spacing="2" text-anchor="middle">
+    <text x="265" y="140" style="fill: var(--banner-fg, #1a1a1a)">40%</text>
+    <text x="265" y="260" style="fill: var(--banner-accent, #0b6bcb)">60%</text>
+    <text x="645" y="98" style="fill: var(--banner-fg, #1a1a1a)">34%</text>
+    <text x="645" y="245" style="fill: var(--banner-accent, #0b6bcb)">66%</text>
+    <text x="1025" y="107" style="fill: var(--banner-fg, #1a1a1a)">40%</text>
+    <text x="1025" y="248" style="fill: var(--banner-accent, #0b6bcb)">60%</text>
+  </g>
+  <!-- stocks rise -->
+  <path d="M365 280 L405 252 L435 262 L480 214 L510 224 L545 172 M524 178 L545 172 L547 194" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-up, #1a9b5b)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2" text-anchor="middle"
+     style="fill: var(--banner-up, #1a9b5b)">
+    <text x="430" y="120">STOCKS</text>
+    <text x="430" y="154">RISE</text>
+  </g>
+  <!-- the trades that rebalance -->
+  <path d="M735 100 L935 100 M917 84 L935 100 L917 116" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-up, #1a9b5b)"/>
+  <path d="M735 245 L935 245 M917 229 L935 245 L917 261" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2" text-anchor="middle">
+    <text x="835" y="82" style="fill: var(--banner-up, #1a9b5b)">BUY BONDS</text>
+    <text x="835" y="227" style="fill: var(--banner-down, #d0453a)">SELL STOCKS</text>
+  </g>
+  <!-- the three steps -->
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" text-anchor="middle">
+    <text x="265" y="365" style="fill: var(--banner-fg, #1a1a1a)">TARGET</text>
+    <text x="645" y="365" style="fill: var(--banner-fg, #1a1a1a)">DRIFT</text>
+    <text x="1025" y="365" style="fill: var(--banner-accent, #0b6bcb)">BACK TO TARGET</text>
+  </g>
+</svg>
