@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-LEARNING = Path(__file__).resolve().parents[2] / "learning"
-_spec = importlib.util.spec_from_file_location("learning_serve", LEARNING / "serve.py")
+ROOT = Path(__file__).resolve().parents[1]
+_spec = importlib.util.spec_from_file_location("learning_serve", ROOT / "scripts" / "serve.py")
 serve = importlib.util.module_from_spec(_spec)
 sys.modules["learning_serve"] = serve
 _spec.loader.exec_module(serve)

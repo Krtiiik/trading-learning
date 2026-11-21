@@ -1,9 +1,9 @@
 """Build the learning site from Markdown sources into static HTML pages.
 
-Usage: uv run python learning/build.py [--out DIR]
-       uv run python learning/build.py --words [SLUG ...]   count body words, without building
+Usage: uv run python scripts/build.py [--out DIR]
+       uv run python scripts/build.py --words [SLUG ...]   count body words, without building
 
-Sources (all under learning/):
+Sources (all under the repository root):
   catalog.yaml                         concept groups and every concept's title and summary
   content/concepts/<group>/<slug>.md   body of a written concept (no frontmatter)
   content/lessons/<slug>.md            a lesson: YAML frontmatter, then the body
@@ -29,7 +29,7 @@ import markdown
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repository root
 LINK = re.compile(r"\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]")
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LESSON_KEYS = {"title", "summary", "added", "builds_on"}

@@ -1,6 +1,6 @@
-"""Serve the built learning site (learning/dist) for local preview.
+"""Serve the built learning site (dist/) for local preview.
 
-Usage: uv run python learning/serve.py [--open]
+Usage: uv run python scripts/serve.py [--open]
 
 The port comes from the PORT environment variable, so a preview tool can move it when 8765 is taken.
 --open opens the site in the default browser once the server listens, so the first request can't miss it.
@@ -13,7 +13,7 @@ import os
 import webbrowser
 from pathlib import Path
 
-DIST = Path(__file__).resolve().parent / "dist"
+DIST = Path(__file__).resolve().parents[1] / "dist"
 
 
 class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
@@ -25,7 +25,7 @@ class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
 
 
 def main(argv=None, open_browser=webbrowser.open):
-    parser = argparse.ArgumentParser(description="Serve learning/dist for local preview.")
+    parser = argparse.ArgumentParser(description="Serve dist/ for local preview.")
     parser.add_argument("--open", action="store_true", help="open the site in the default browser")
     args = parser.parse_args(argv)
 

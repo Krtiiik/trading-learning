@@ -1,3 +1,6 @@
+# Built site
+dist/
+
 # Python
 __pycache__/
 *.py[cod]

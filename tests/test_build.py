@@ -6,8 +6,8 @@ from pathlib import Path
 
 import pytest
 
-LEARNING = Path(__file__).resolve().parents[2] / "learning"
-_spec = importlib.util.spec_from_file_location("learning_build", LEARNING / "build.py")
+ROOT = Path(__file__).resolve().parents[1]
+_spec = importlib.util.spec_from_file_location("learning_build", ROOT / "scripts" / "build.py")
 build = importlib.util.module_from_spec(_spec)
 sys.modules["learning_build"] = build
 _spec.loader.exec_module(build)
@@ -216,4 +216,4 @@ def test_cards_put_written_concepts_before_planned_ones(site_root):
 
 
 def test_real_site_builds(tmp_path):
-    build.build(LEARNING, tmp_path / "dist")
+    build.build(ROOT, tmp_path / "dist")
