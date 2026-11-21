@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A portfolio basket holds four equal assets; one asset falls 40% while the other three stay level, so the portfolio line falls only 10% while the line of the one asset falls 40%">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the basket: four equal assets, one of them falls 40% (180 px to 108 px) -->
+  <g stroke-width="5" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)">
+    <rect x="70" y="120" width="90" height="180"/>
+    <rect x="180" y="120" width="90" height="180"/>
+    <rect x="400" y="120" width="90" height="180"/>
+  </g>
+  <rect x="290" y="120" width="90" height="180" fill="none" stroke-width="3" stroke-dasharray="10 8"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <rect x="290" y="192" width="90" height="108" stroke-width="5"
+        style="fill: var(--banner-down, #d0453a); fill-opacity: .3; stroke: var(--banner-down, #d0453a)"/>
+  <path d="M50 200 L50 310 L510 310 L510 200" fill="none" stroke-width="6" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3" text-anchor="middle">
+    <text x="335" y="100" font-size="30" style="fill: var(--banner-down, #d0453a)">−40%</text>
+    <text x="280" y="360" font-size="30" style="fill: var(--banner-fg, #1a1a1a)">4 ASSETS</text>
+  </g>
+  <!-- basket to its result -->
+  <path d="M535 210 L575 210 M561 196 L575 210 L561 224" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the start level: y = 110 - 5 px per 1% -->
+  <line x1="610" y1="110" x2="850" y2="110" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <!-- the one asset: falls 40% -->
+  <path d="M610 110 L650 122 L690 112 L730 175 L770 200 L810 270 L850 310" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-down, #d0453a)"/>
+  <!-- the portfolio: falls 10% -->
+  <path d="M610 110 L650 120 L690 116 L730 136 L770 140 L810 154 L850 160" fill="none" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <circle cx="610" cy="110" r="10" style="fill: var(--banner-fg, #1a1a1a)"/>
+  <circle cx="850" cy="160" r="10" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <circle cx="850" cy="310" r="10" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2">
+    <text x="880" y="152" style="fill: var(--banner-accent, #0b6bcb)">PORTFOLIO</text>
+    <text x="880" y="190" style="fill: var(--banner-accent, #0b6bcb)">−10%</text>
+    <text x="880" y="302" style="fill: var(--banner-down, #d0453a)">ONE ASSET</text>
+    <text x="880" y="340" style="fill: var(--banner-down, #d0453a)">−40%</text>
+  </g>
+</svg>

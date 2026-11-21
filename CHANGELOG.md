@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: diversification, company-specific and market-wide risk, correlation, and why correlated positions add up to one larger bet.
 - Concept page: support and resistance, levels where falls or rises stopped more than once, levels as zones, why they can work, role reversal, and placing a stop and a target around them.
 - Concept page: candlestick pattern, common one- to three-candle patterns (doji, hammer, shooting star, engulfing, morning star), why context and confirmation matter, and why a pattern alone is a weak signal.
 - Concept page: entry and exit rules, what makes a rule exact (condition, time, order), the kinds of exit, and turning a vague idea into exact rules.
