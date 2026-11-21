@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Many small asset tiles packed inside one fund box, and that fund is bought and sold on the exchange as one share with one price, 52.40">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the fund: one wrapper around many assets -->
+  <rect x="50" y="40" width="470" height="290" rx="18" stroke-width="6"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .1; stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="285" y="92" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="700"
+        letter-spacing="4" style="fill: var(--banner-accent, #0b6bcb)">FUND</text>
+  <!-- the assets inside: many equal small tiles -->
+  <g stroke-width="3" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6">
+    <rect x="94" y="118" width="52" height="52" rx="6"/><rect x="160" y="118" width="52" height="52" rx="6"/><rect x="226" y="118" width="52" height="52" rx="6"/><rect x="292" y="118" width="52" height="52" rx="6"/><rect x="358" y="118" width="52" height="52" rx="6"/><rect x="424" y="118" width="52" height="52" rx="6"/>
+    <rect x="94" y="184" width="52" height="52" rx="6"/><rect x="160" y="184" width="52" height="52" rx="6"/><rect x="226" y="184" width="52" height="52" rx="6"/><rect x="292" y="184" width="52" height="52" rx="6"/><rect x="358" y="184" width="52" height="52" rx="6"/><rect x="424" y="184" width="52" height="52" rx="6"/>
+    <rect x="94" y="250" width="52" height="52" rx="6"/><rect x="160" y="250" width="52" height="52" rx="6"/><rect x="226" y="250" width="52" height="52" rx="6"/><rect x="292" y="250" width="52" height="52" rx="6"/><rect x="358" y="250" width="52" height="52" rx="6"/><rect x="424" y="250" width="52" height="52" rx="6"/>
+  </g>
+  <text x="285" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">MANY ASSETS</text>
+  <!-- the fund goes to the exchange -->
+  <path d="M560 185 L650 185 M630 165 L650 185 L630 205" fill="none" stroke-width="6"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- on the exchange: one share, one price, buy or sell like a stock -->
+  <rect x="690" y="40" width="480" height="290" rx="18" stroke-width="5"
+        style="fill: none; stroke: var(--banner-fg, #1a1a1a)"/>
+  <text x="930" y="92" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">1 SHARE</text>
+  <text x="930" y="186" text-anchor="middle" font-family="system-ui, sans-serif" font-size="72" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-accent, #0b6bcb)">52.40</text>
+  <rect x="730" y="226" width="190" height="72" rx="12" stroke-width="5"
+        style="fill: var(--banner-up, #1a9b5b); fill-opacity: .15; stroke: var(--banner-up, #1a9b5b)"/>
+  <rect x="940" y="226" width="190" height="72" rx="12" stroke-width="5"
+        style="fill: var(--banner-down, #d0453a); fill-opacity: .15; stroke: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="3" text-anchor="middle">
+    <text x="825" y="273" style="fill: var(--banner-up, #1a9b5b)">BUY</text>
+    <text x="1035" y="273" style="fill: var(--banner-down, #d0453a)">SELL</text>
+  </g>
+  <text x="930" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">TRADES LIKE A STOCK</text>
+</svg>

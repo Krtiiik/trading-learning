@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: ETF, how an exchange-traded fund tracks an index, why its price stays close to its holdings, the expense ratio, kinds of ETF, which ETFs private traders in the EU and UK can buy, and leveraged and inverse ETFs.
 - Concept page: short selling, the steps (borrow, sell, buy back, return), the borrow fee and dividends, US rules, other ways to go short, and why the possible loss has no limit.
 - Concept page: Bollinger bands, the standard deviation bands around a moving average, the usual setting, the squeeze, and why a touch of a band is not a signal by itself.
 - Concept page: diversification, company-specific and market-wide risk, correlation, and why correlated positions add up to one larger bet.
