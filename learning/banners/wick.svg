@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Three candles with their wicks highlighted: one with a long upper wick, one with a long lower wick and one with no wick at all">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- bodies, muted so the wicks stand out -->
+  <rect x="195" y="230" width="110" height="70" style="fill: var(--banner-down, #d0453a); fill-opacity: .55"/>
+  <rect x="545" y="80" width="110" height="70" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .55"/>
+  <rect x="895" y="60" width="110" height="250" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .55"/>
+  <!-- the wicks -->
+  <g stroke-width="8" style="stroke: var(--banner-accent, #0b6bcb)">
+    <line x1="250" y1="40" x2="250" y2="230"/><line x1="250" y1="300" x2="250" y2="325"/>
+    <line x1="600" y1="55" x2="600" y2="80"/><line x1="600" y1="150" x2="600" y2="350"/>
+  </g>
+  <!-- where the third candle's wicks would start: nothing beyond the body -->
+  <g stroke-width="2" stroke-dasharray="6 6" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35">
+    <line x1="870" y1="60" x2="1030" y2="60"/><line x1="870" y1="310" x2="1030" y2="310"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="3" style="fill: var(--banner-accent, #0b6bcb)">
+    <text x="275" y="145">UPPER WICK</text>
+    <text x="625" y="260">LOWER WICK</text>
+  </g>
+  <text x="950" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">NO WICK</text>
+</svg>
