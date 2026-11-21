@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A zigzag price line moving sideways, with each turning point circled: the local high points are labelled peak and the local low points are labelled trough">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- price, moving sideways so the turning points, not a direction, carry the picture -->
+  <path d="M60 230 L230 110 L400 290 L590 95 L780 270 L930 125 L1080 300 L1140 245"
+        fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .8"/>
+  <!-- halo round each turning point -->
+  <g fill="none" stroke-width="3" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .4">
+    <circle cx="230" cy="110" r="24"/><circle cx="590" cy="95" r="24"/><circle cx="930" cy="125" r="24"/>
+    <circle cx="400" cy="290" r="24"/><circle cx="780" cy="270" r="24"/><circle cx="1080" cy="300" r="24"/>
+  </g>
+  <!-- the turning points -->
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <circle cx="230" cy="110" r="12"/><circle cx="590" cy="95" r="12"/><circle cx="930" cy="125" r="12"/>
+    <circle cx="400" cy="290" r="12"/><circle cx="780" cy="270" r="12"/><circle cx="1080" cy="300" r="12"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" text-anchor="middle"
+     style="fill: var(--banner-accent, #0b6bcb)">
+    <text x="230" y="70">PEAK</text>
+    <text x="590" y="55">PEAK</text>
+    <text x="930" y="85">PEAK</text>
+    <text x="400" y="352">TROUGH</text>
+    <text x="780" y="332">TROUGH</text>
+    <text x="1080" y="362">TROUGH</text>
+  </g>
+</svg>
