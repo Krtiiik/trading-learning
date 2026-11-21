@@ -19,6 +19,8 @@ why a design was chosen over the obvious alternative, and the constraints that s
 
 `learning/build.py` reads the catalog, Markdown content and banners, checks that they agree (unknown links, missing banners and misplaced files all fail the build), and renders Jinja2 templates into `learning/dist/`. It also writes `static/index.js`, the data behind link hover previews and search. The output is published as one multi-file private artifact. Its URL is in `learning/artifact-url.txt`.
 
+Deploy: the `.github/workflows/pages.yml` GitHub Actions workflow runs the learning tests, builds the site and deploys `learning/dist/` to GitHub Pages (<https://krtiiik.github.io/trading/>) on every push to `main` that touches `learning/`, the learning tests or the dependencies. It also has a manual run button.
+
 Sync: the `learning-sync.sh` PostToolUse hook runs after `git commit`/`git merge` on `main`. If `learning/` differs from the commit in `learning/.published-commit` (local, gitignored), it tells Claude to rebuild and republish to the same URL. `learning/SPEC.md` is the contract between structure and design.
 
 Content work runs through `learning-*` subagents in `.claude/agents/`: a planner (what to write next), a writer, an illustrator (banners), and three read-only checkers: a reviewer (one page, readability and consistency), a fact checker (one page, against the web) and an auditor (all pages, drift). The `write-page` skill chains writer and illustrator, then reviewer and fact checker until clean, then build, a banner look in the browser pane, and commit.
