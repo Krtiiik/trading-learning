@@ -16,11 +16,11 @@ Three troughs between $44.70 and $45.40 make a support level near $45. Two peaks
 
 ## A zone, not one exact price
 
-The troughs are not at the same cent. Treat a level as a narrow zone, here about $44.70 to $45.40. Most traders do not count a [[wick]] that goes a little below the zone, with a close (the last price of the period) back inside it, as a break. A close well below the zone usually counts.
+The troughs are not at the same cent. Treat a level as a narrow zone, here about $44.70 to $45.40. A [[wick]] a little below the zone, with a close (the last price of the period) back inside it, is usually not a break. A close below the zone usually counts as one; [[breakout]] lists stricter rules.
 
 ## Why levels can work
 
-- **Many traders watch the same prices.** If many people expect a turn at $45, they buy there, and their buying helps make the turn.
+- **Many traders watch the same prices.** Traders who expect a turn at $45 buy there, and their buying helps make it.
 - **Orders wait at the level.** Buyers who missed the last turn place [[order-types|limit orders]] (orders that buy only at a set price or better) near $45. Sellers place sell orders near $55.
 - **Round numbers.** Prices such as $50 or $100 are easy to remember, so orders collect there.
 
@@ -28,13 +28,13 @@ A level works only while enough traders act on it.
 
 ## Broken resistance often becomes support
 
-Take the turning points from the [[trend]] page: $40 (low), $48 (high), $44, $53, $49, $58. The first rise stopped at $48. That is only one peak, but traders watch it. Later the price rose past it, and the next fall stopped at $49, just above that old peak. A price that had stopped a rise now stopped a fall. Broken support often becomes resistance, too.
+Turning points from the [[trend]] page: $40 (low), $48 (high), $44, $53, $49, $58. The first rise stopped at $48. That is only one peak, but traders watch it. Later the price rose past it, and the next fall stopped at $49, just above that old peak. A price that had stopped a rise now stopped a fall. Broken support often becomes resistance, too.
 
 ## Using levels
 
-- **A stop just beyond the level.** You buy near support at $45.50. A [[stop-loss]] also sells on a wick, so leave room: a little more than one [[atr]] ($1) below the zone, here $43.50. Below it, the reason to buy is gone.
-- **A target at the next level.** Plan to sell just below resistance, near $54.50, because the rise may stop a little short of it. The risk is $2 and the reward $9: a [[risk-reward]] of 4.5 to 1.
-- **Breakouts.** A clear move past a level is a [[breakout]]. [[breakout-trading|Breakout trading]] enters on it.
+- **A stop just beyond the level.** You buy near support at $45.50. A [[stop-loss]] also sells on a wick, so leave room: a little more than one [[atr]] (the price's average move in one period, here $1) below the zone: $43.50. Below it, the support has failed.
+- **A target at the next level.** Sell just below resistance, near $54.50: the rise may stop a little short of it. The risk is $2 and the reward $9: a [[risk-reward]] (the possible gain compared with the possible loss) of 4.5 to 1.
+- **Breakouts.** [[breakout-trading|Breakout trading]] enters on a clear move past a level.
 
 ## Watch out
 

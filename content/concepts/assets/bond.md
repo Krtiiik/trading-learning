@@ -8,7 +8,7 @@ A **bond** is a loan that you give to a government or a company. The borrower pa
 
 ## Credit risk and ratings
 
-**Credit risk** is the risk that the borrower does not pay. Bonds of large, rich governments are seen as the safest. **Company bonds** usually pay more, because a company is more likely to fail. Rating agencies such as S&P and Moody's grade borrowers with letters, from AAA (safest) down. **Investment grade** is BBB- or better. Below that is **high yield** (it pays more), also called **junk**, because more of these borrowers fail.
+**Credit risk** is the risk that the borrower does not pay. Bonds of large, rich governments are seen as the safest. **Company bonds** usually pay more, because a company is more likely to fail. Rating agencies such as S&P Global and Moody's grade borrowers with letters, from AAA (safest) down. **Investment grade** is BBB- or better. Below that is **high yield** (it pays more), also called **junk**, because more of these borrowers fail.
 
 ## Trading before maturity
 

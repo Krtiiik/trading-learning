@@ -7,11 +7,11 @@ An **ETF** (exchange-traded fund) is a fund that holds many assets. Its shares t
 
 ## Price and value
 
-The market price of an ETF can differ slightly from the value of its holdings, but large trading firms keep the two close. When the ETF price is too high, they swap holdings with the fund for new ETF shares and sell them, which pushes the price down. When it is too low, they do the reverse, and their buying pushes it up. So you usually pay close to the value of the holdings.
+The market price of an ETF can differ slightly from the value of its holdings, but large trading firms keep the two close. When the ETF price is too high, they swap holdings with the fund for new shares and sell them, pushing the price down. When it is too low, they do the reverse.
 
 ## The expense ratio
 
-The **expense ratio** is the fund's yearly fee, in percent of your money in it. The fund takes it from its assets, so you get no bill. Broad ETFs often charge 0.03% to 0.2% a year; sector ETFs often charge more.
+The **expense ratio** is the fund's yearly fee, in percent of your money in it. The fund takes it from its assets, so you get no bill. Broad ETFs often charge 0.03% to 0.20% a year; sector ETFs often charge more.
 
 ## Example
 
@@ -30,7 +30,7 @@ This cost comes on top of the [[spread]] (the gap between the best price buyers 
 - **Broad ETFs** follow a broad index, such as the MSCI World.
 - **Sector ETFs** follow an index of one industry, such as banks. They usually move more ([[volatility]]).
 - **Bond ETFs** hold many [[bond|bonds]].
-- **Commodity ETFs** follow a [[commodity]] or a basket of them, often through [[futures]]. In Europe, a product on gold alone is usually an ETC, not an ETF.
+- **Commodity ETFs** follow a [[commodity]] or a basket of them, often through [[futures]]. In Europe, a product on gold alone is usually an ETC (exchange-traded commodity), not an ETF.
 
 ## Which ETFs you can buy (EU and UK)
 
@@ -38,7 +38,7 @@ Private traders in the EU and UK usually cannot buy US-listed ETFs. In the EU, t
 
 ## Watch out
 
-- **Leveraged and inverse ETFs reset every day.** A 2x ETF aims for twice the daily move of its index; an inverse ETF aims for the opposite of the daily move. Over weeks, the result drifts, usually downward in markets that go up and down. An index at 100 rises 10% to 110, then falls 10% to 99: a loss of 1%. A 2x ETF goes from 100 to 120, then to 96: a loss of 4%, not 2%. See [[leverage]].
-- **Thin ETFs have wide spreads.** An ETF with little trading, or with holdings that are hard to trade, can have a wide spread. Check the [[bid-and-ask|bid and ask]], or use a limit order. See [[liquidity]].
+- **Leveraged and inverse ETFs reset every day.** A 2x ETF aims for twice the daily move of its index; an inverse ETF aims for the opposite of the daily move. Over weeks, the result drifts, usually downward in markets that go up and down. An index at 100 rises 10% to 110, then falls 10% to 99: a loss of 1%. A 2x ETF goes from 100 to 120, then to 96: a loss of 4%, not 2%. An inverse ETF goes from 100 to 90, then to 99: a loss of 1%, like the index. See [[leverage]].
+- **Thin ETFs have wide spreads.** An ETF with little trading, or with holdings that are hard to trade, can have a wide spread. Check the [[bid-and-ask|bid and ask]], or use a [[order-types|limit order]]. See [[liquidity]].
 
 Next, see [[index]], or [[fees-and-commissions]] for other trading costs.

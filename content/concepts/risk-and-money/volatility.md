@@ -1,4 +1,4 @@
-Volatility is how much a price usually moves in a given time. A price with high volatility makes large jumps up and down; a price with low volatility moves in small steps. Traders give it as a percentage per day or per year.
+Volatility is how much a price usually moves in a given time. A price with high volatility makes large jumps up and down; one with low volatility moves in small steps. Traders give it as a percentage per day or per year.
 
 ## Size, not direction
 
@@ -10,9 +10,9 @@ Volatility also differs between assets: many smaller [[cryptocurrency|cryptocurr
 
 - **Daily range**: the day's high minus its low (see [[ohlc]]). Its average over recent days is a rough measure.
 - **[[atr]]** (average true range): the same average, but it also counts any jump ([[gap]]) from the previous close.
-- **Standard deviation of daily changes**: a statistic of how far daily percentage changes usually spread from their average.
+- **Standard deviation of daily changes**: how far daily percentage changes usually spread from their average. ([[bollinger-bands]] use the standard deviation of closes instead.)
 
-All these measure **historical volatility**: how much the price moved in the past. **Implied volatility** is the size of move that traders expect in the future, read from the prices of [[option|options]] (contracts giving the right to buy or sell at a set price; they cost more when traders expect bigger moves). The VIX shows the implied volatility of the S&P 500 index for the next 30 days, as a yearly percentage.
+All these measure **historical volatility**: how much the price has moved. **Implied volatility** is the size of move that traders expect in the future, read from the prices of [[option|options]] (contracts giving the right to buy or sell at a set price; they cost more when traders expect bigger moves). The VIX shows the implied volatility of the S&P 500 index for the next 30 days, as a yearly percentage.
 
 ## Calm and wild periods
 
@@ -29,7 +29,7 @@ Two stocks both trade at $42. You risk 1% of a $10,000 account ($100) per trade.
 
 ## Watch out
 
-- **Volatility changes.** A stop that fit a calm month can be too tight in a wild one, so measure again from time to time.
+- **Volatility changes.** A stop that fit a calm month can be too tight in a wild one, so measure it again.
 - **Past volatility does not limit the next move.** A gap can be many times larger than a normal day's move.
 - **Do not chase volatility for fast gains.** Large moves bring large losses as easily as large gains.
 

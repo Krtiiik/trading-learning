@@ -14,7 +14,7 @@ While the position is open, you pay:
 
 ## Example
 
-You have a $10,000 account and risk 1%, which is $100. You short 25 shares at $42; the sale brings in $1,050. Your [[stop-loss]] is a buy stop at $46: at $46 it buys the shares back, a loss of 25 × $4 = $100.
+You have a $10,000 account and risk 1%: $100. You short 25 shares at $42; the sale brings in $1,050. Your [[stop-loss]] is a buy stop at $46: at $46 it buys the shares back, a loss of 25 × $4 = $100.
 
 | Price when you buy back | Cost to buy back | Result |
 |-------------------------|------------------|--------|
@@ -27,19 +27,19 @@ The stop does not guarantee its price. Say the stock closes at $44, then opens a
 ## US rules
 
 - Shorting needs a margin account (an account where the broker can lend to you; see [[leverage]]).
-- Under **SEC Rule 201**, an exchange-listed stock that falls 10% or more from the previous day's close gets a limit for the rest of that day and the next day. Short sales are then allowed only above the national best bid (the highest price a buyer offers across US markets; see [[bid-and-ask]]).
+- Under **SEC Rule 201**, an exchange-listed stock that falls 10% or more from the previous day's close gets a limit for the rest of that day and the next day. Short sales are then allowed only above the national best [[bid-and-ask|bid]] (the highest price a buyer offers across US markets).
 
 ## Other ways to go short
 
-Outside the US, many brokers offer CFDs (contracts with a broker that pay the change in a price), which you can sell. You borrow no shares, but you usually pay overnight financing: interest for each night you hold the position (see [[fees-and-commissions]]).
+Outside the US, many brokers offer CFDs (contracts with a broker that pay the change in a price), which you can sell. You borrow no shares, but you usually pay [[fees-and-commissions|overnight financing]]: interest for each night you hold the position.
 
-An inverse [[etf]] rises when an [[index]] falls, and you buy it in a normal account. It follows the opposite of each day's move, so over weeks the result can differ from the opposite of the index's move.
+An inverse [[etf]] (a fund that holds many assets and trades like one stock) aims for the opposite of each day's move of an [[index]], and you buy it in a normal account. It resets every day, so over weeks the result drifts from the opposite of the index's move.
 
 ## Watch out
 
 - **The possible loss has no limit.** A price can rise without limit, but it can fall only to zero, so the most you can gain is the $1,050, less fees and dividends paid.
 - **A short squeeze.** When a stock that many traders sold short rises, they buy back to stop their losses. Their buying pushes it higher still.
 - **The broker can recall the shares.** If the lender wants them back and no others are found, the broker can close your position without asking.
-- **A rising price can cause a margin call**: the broker asks you to add money or close the position (see [[leverage]]).
+- **A rising price can cause a [[leverage|margin call]]**: the broker asks you to add money or close the position.
 
 Next, see [[stop-loss]], or [[leverage]], which also borrows.

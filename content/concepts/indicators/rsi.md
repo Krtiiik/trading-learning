@@ -1,4 +1,4 @@
-RSI (relative strength index) is an [[indicator]] that compares the size of recent rises with the size of recent falls and gives a score from 0 to 100. Wilder introduced it in 1978. Apps draw it in a separate box (a panel) under the [[price-chart|chart]].
+RSI (relative strength index) is an [[indicator]] that compares the size of recent rises with the size of recent falls and gives a score from 0 to 100. J. Welles Wilder introduced it in 1978. Apps draw it in a separate box (a panel) under the [[price-chart|chart]].
 
 ## How it is built
 

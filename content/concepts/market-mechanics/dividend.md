@@ -28,7 +28,7 @@ The **dividend yield** is the dividends of the past year divided by the share pr
 A US stock trades at $42. It paid 40 cents each quarter (every three months) for the past year.
 
 - One year: 4 × 40 cents = $1.60 per share.
-- Yield: $1.60 ÷ $42 = about 3.8%.
+- Dividend yield: $1.60 ÷ $42 = about 3.8%.
 - You own 25 shares: 25 × 40 cents = $10 per quarter, before tax.
 
 On the ex-date, the stock opens at about $41.60, not $42.
@@ -39,9 +39,9 @@ Most countries tax dividends. The US keeps back (withholds) 30% of each dividend
 
 ## Watch out
 
-- **A high yield can be a warning.** The yield uses past dividends. If the price fell by half because the company is in trouble, the yield doubles, and a cut often follows.
+- **A high dividend yield can be a warning.** It uses past dividends. If the price fell by half because the company is in trouble, the dividend yield doubles, and a cut often follows.
 - **Buying just before the ex-date gains nothing.** The price drops by about the dividend, and you pay tax on it.
 - **A short seller pays the dividend.** If you are [[short-selling|short]] on the ex-date, you pay the same amount to the lender.
-- **Most index levels leave dividends out.** A price [[index]] counts only prices. A total-return index adds each dividend back, so over years it rises more.
+- **Most index levels leave dividends out**, so over years they rise less than a total-return [[index]], which adds each dividend back.
 
 Next, see [[stock]] for what else a share gives, or [[index]].

@@ -18,7 +18,7 @@ Pick the last candle and read its four prices, the [[ohlc]]: open, high, low and
 2. Its body shows the move from open to close.
 3. Its [[wick|wicks]] show how far the price swung beyond that.
 
-A long body with short wicks means the price moved one way all day. A small body with long wicks means it swung a lot but ended near where it started: buyers and sellers were undecided.
+A long body with short wicks means the price moved one way all day. A small body with long wicks means it swung a lot but ended near where it started: buyers and sellers were undecided. Traders give names to shapes like these: see [[candlestick-pattern|candlestick patterns]].
 
 ## Step 3: Which way is it going overall?
 

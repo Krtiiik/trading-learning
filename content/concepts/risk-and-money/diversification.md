@@ -9,11 +9,11 @@ Diversification removes most of the first kind, not the second. The S&P 500, an 
 
 ## Example: one stock or twenty
 
-You have $10,000 in one stock. The company reports bad news, and the price falls 50%. You lose $5,000, half the account.
+You have $10,000 in one stock. The company reports bad news; the price falls 50%. You lose $5,000, half the account.
 
 Now split the same $10,000 over 20 stocks from different industries, $500 each. The same news cuts one of them in half. You lose $250, 2.5% of the account.
 
-A few dozen stocks from different industries remove most company-specific risk. An [[etf]], a fund that trades like one stock, can hold a whole index: one purchase does this.
+A few dozen stocks from different industries remove most company-specific risk. An [[etf]], a fund that holds many assets and trades like one stock, can hold a whole index: one purchase does this.
 
 ## Correlation: do they move together?
 
@@ -25,7 +25,7 @@ Diversification works only with assets that are not closely correlated. Ten oil 
 
 Here a trade means one position: a buy and the later sale that closes it.
 
-A [[stop-loss]] sells automatically if the price falls to a level you chose. [[position-sizing|Position sizing]] picks the number of shares so that a hit stop costs a fixed part of the account, for example 1% of $10,000: $100. Say you hold three positions at once, in three oil companies, and each stop risks $100. Then the oil price falls hard. All three stocks hit their stops in the same week: you lose $300, 3% of the account, on one idea.
+A [[stop-loss]] sells automatically if the price falls to a level you chose. [[position-sizing|Position sizing]] picks the number of shares so that a hit stop costs a fixed part of the account, for example 1% of $10,000: $100. Say you hold three oil stocks at once, and each stop risks $100. Then the oil price falls hard. All three stocks hit their stops in the same week: you lose $300, 3% of the account, on one idea.
 
 Positions in assets that move together act like one larger position, so their risks add up. Many traders therefore also limit the total risk of correlated positions.
 

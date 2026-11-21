@@ -26,4 +26,4 @@ The last five daily closes are $10, $11, $12, $11 and $13. The 5-day moving aver
 
 A moving average is built from past prices, so it always lags. In a market that moves sideways it crosses back and forth and gives many false signals.
 
-Next, see [[trend-following]] for how traders build rules around moving averages.
+Next, see [[trend-following]] for how traders build rules around moving averages, or [[bollinger-bands]] for bands built around an average.
