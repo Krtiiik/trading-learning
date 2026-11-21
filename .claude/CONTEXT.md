@@ -9,7 +9,7 @@ Glossary for Claude: the terms and top-level concepts this project uses with a s
 
 ## Language
 
-**Learning site**: the static knowledge base in `learning/`, published as one private Claude artifact.
+**Learning site**: the static knowledge base in `learning/`, deployed to GitHub Pages.
 _Avoid_: wiki, docs site.
 
 **Concept**: a short, standalone page explaining one idea in simple words.

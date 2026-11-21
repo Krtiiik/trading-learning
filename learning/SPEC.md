@@ -6,7 +6,7 @@ This is the contract between the site's structure (build script, catalog, conten
 
 | Part | Owner | Files |
 |---|---|---|
-| Structure | build and content work | `build.py`, `catalog.yaml`, `content/`, `banners/`, `artifact-url.txt` |
+| Structure | build and content work | `build.py`, `catalog.yaml`, `content/`, `banners/` |
 | Design | design work | `templates/*.html`, `static/site.css`, any new files in `static/` (fonts, icons) |
 | Behaviour | shared | `static/site.js`: the design may restyle or extend it, but keeps the hooks in [Behaviour hooks](#behaviour-hooks) |
 
@@ -25,7 +25,7 @@ Expect high tens of pages, growing over time. Most pages start planned.
 
 ## Pages and URLs
 
-All URLs are relative. Every template gets `root` (`""` on the home page, `"../"` one level down) and must prefix every internal link and asset with it. The site is published as a multi-file artifact and also served from `learning/dist/` locally.
+All URLs are relative. Every template gets `root` (`""` on the home page, `"../"` one level down) and must prefix every internal link and asset with it. The site is deployed to GitHub Pages under a sub-path (`/trading/`) and also served from `learning/dist/` locally, so a root-relative link (`/...`) breaks.
 
 | Page | URL | Template | Purpose |
 |---|---|---|---|
@@ -110,7 +110,7 @@ Page templates also receive: `group.html` → `group`; `concept.html` and `lesso
 
 ## Constraints
 
-- The site is published as a private Claude artifact. Everything must be local files in `static/`. External stylesheets may come only from Google Fonts. Scripts may only come from cdnjs, jsdelivr or unpkg, pinned to exact versions. Prefer none.
+- The site is a public static site on GitHub Pages. Keep everything as local files in `static/`. External stylesheets may come only from Google Fonts. Scripts may only come from cdnjs, jsdelivr or unpkg, pinned to exact versions. Prefer none.
 - It must work at phone width (16px side gutter, no horizontal page scroll; shelf rows scroll inside themselves) and in light and dark mode (`prefers-color-scheme`).
 - Keep pages readable without JavaScript, except search and previews.
 
@@ -121,4 +121,4 @@ uv run python learning/build.py          # builds learning/dist/
 uv run pytest tests/learning             # structure tests; they also build the real site
 ```
 
-Preview locally with the `learning-site` entry in `.claude/launch.json`. It runs `learning/serve.py`, which serves `learning/dist` on `$PORT` (default 8765); add `--open` to also open it in the default browser. Don't publish the artifact from a branch: it is republished from `main` after merge.
+Preview locally with the `learning-site` entry in `.claude/launch.json`. It runs `learning/serve.py`, which serves `learning/dist` on `$PORT` (default 8765); add `--open` to also open it in the default browser. Don't deploy from a branch: GitHub Actions deploys the site when a change to it reaches `main`.
