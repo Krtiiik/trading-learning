@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="The same five days of prices drawn twice: on the left a line joins only the closes, on the right candles also show each day's open, high and low, and a gap that the line hides">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- divider between the two drawings -->
+  <line x1="600" y1="40" x2="600" y2="350" stroke-width="2" stroke-dasharray="6 6" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3"/>
+  <!-- left: a line through the closes -->
+  <path d="M110 230 L210 260 L310 225 L410 140 L510 175" fill="none" stroke-width="7" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <circle cx="110" cy="230" r="11"/><circle cx="210" cy="260" r="11"/><circle cx="310" cy="225" r="11"/>
+    <circle cx="410" cy="140" r="11"/><circle cx="510" cy="175" r="11"/>
+  </g>
+  <!-- right: the same days as candles -->
+  <g stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a)">
+    <line x1="690" y1="210" x2="690" y2="290"/><line x1="790" y1="200" x2="790" y2="285"/>
+    <line x1="890" y1="210" x2="890" y2="275"/><line x1="990" y1="110" x2="990" y2="185"/>
+    <line x1="1090" y1="95" x2="1090" y2="200"/>
+  </g>
+  <g style="fill: var(--banner-up, #1a9b5b)">
+    <rect x="672" y="230" width="36" height="40"/><rect x="872" y="225" width="36" height="35"/>
+    <rect x="972" y="140" width="36" height="25"/>
+  </g>
+  <g style="fill: var(--banner-down, #d0453a)">
+    <rect x="772" y="230" width="36" height="30"/><rect x="1072" y="140" width="36" height="35"/>
+  </g>
+  <!-- the gap the line hides -->
+  <rect x="905" y="185" width="70" height="25" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .25"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="310" y="375" text-anchor="middle" font-size="30">LINE</text>
+    <text x="890" y="375" text-anchor="middle" font-size="30">CANDLES</text>
+    <text x="930" y="172" text-anchor="middle" font-size="26" style="fill: var(--banner-accent, #0b6bcb)">GAP</text>
+  </g>
+</svg>
