@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A row of daily candles with a gap down: one day closes at $40, the next day opens at $35, and the price jumps past a stop level inside the empty space">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the gap: empty space between the close at $40 and the next open at $35 -->
+  <rect x="500" y="150" width="130" height="110" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .2"/>
+  <g stroke-width="3" style="stroke: var(--banner-accent, #0b6bcb)">
+    <line x1="500" y1="150" x2="630" y2="150"/><line x1="500" y1="260" x2="630" y2="260"/>
+  </g>
+  <!-- the stop level the price jumped past -->
+  <line x1="40" y1="194" x2="1160" y2="194" stroke-width="3" stroke-dasharray="10 10" style="stroke: var(--banner-down, #d0453a)"/>
+  <!-- wicks -->
+  <g stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35">
+    <line x1="110" y1="115" x2="110" y2="185"/><line x1="240" y1="105" x2="240" y2="175"/>
+    <line x1="370" y1="90" x2="370" y2="180"/>
+    <line x1="760" y1="260" x2="760" y2="320"/><line x1="890" y1="270" x2="890" y2="340"/>
+    <line x1="1020" y1="270" x2="1020" y2="335"/>
+  </g>
+  <g stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a)">
+    <line x1="500" y1="100" x2="500" y2="168"/><line x1="630" y1="238" x2="630" y2="325"/>
+  </g>
+  <!-- candles before and after, muted -->
+  <g style="fill: var(--banner-up, #1a9b5b); fill-opacity: .55">
+    <rect x="85" y="130" width="50" height="40"/><rect x="345" y="110" width="50" height="55"/>
+    <rect x="735" y="275" width="50" height="30"/><rect x="995" y="285" width="50" height="30"/>
+  </g>
+  <g style="fill: var(--banner-down, #d0453a); fill-opacity: .55">
+    <rect x="215" y="125" width="50" height="35"/><rect x="865" y="280" width="50" height="40"/>
+  </g>
+  <!-- the two candles on each side of the gap -->
+  <g style="fill: var(--banner-down, #d0453a)">
+    <rect x="475" y="115" width="50" height="35"/><rect x="605" y="260" width="50" height="50"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="3">
+    <text x="565" y="245" text-anchor="middle" style="fill: var(--banner-accent, #0b6bcb)">GAP</text>
+    <text x="535" y="140" style="fill: var(--banner-fg, #1a1a1a)">$40</text>
+    <text x="595" y="292" text-anchor="end" style="fill: var(--banner-fg, #1a1a1a)">$35</text>
+    <text x="1160" y="180" text-anchor="end" style="fill: var(--banner-down, #d0453a)">STOP</text>
+  </g>
+</svg>
