@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="The forex quote EUR/USD = 1.0850, with EUR labelled as the base currency, USD as the quote currency, and the last digit of the price highlighted as one pip">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <g transform="translate(0 -15)">
+  <!-- the pair -->
+  <g font-family="system-ui, sans-serif" font-size="120" font-weight="700" text-anchor="middle"
+     style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="185" y="220">EUR</text>
+    <text x="335" y="220" style="fill-opacity: .45">/</text>
+    <text x="485" y="220">USD</text>
+    <text x="700" y="212" style="fill-opacity: .45">=</text>
+  </g>
+  <!-- the price, its 4th decimal is the pip -->
+  <text x="1140" y="220" text-anchor="end" font-family="system-ui, sans-serif" font-size="120" font-weight="700"
+        style="fill: var(--banner-fg, #1a1a1a); font-variant-numeric: tabular-nums">1.085<tspan style="fill: var(--banner-accent, #0b6bcb)">0</tspan></text>
+  <!-- brackets under base and quote -->
+  <g fill="none" stroke-width="4" stroke-linecap="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .55">
+    <path d="M95 255 L95 268 L275 268 L275 255 M185 268 L185 282"/>
+    <path d="M395 255 L395 268 L575 268 L575 255 M485 268 L485 282"/>
+  </g>
+  <!-- pip marker -->
+  <rect x="1076" y="246" width="62" height="8" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <path d="M1107 262 L1107 284" stroke-width="4" stroke-linecap="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- labels -->
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="3" text-anchor="middle">
+    <text x="185" y="324" style="fill: var(--banner-fg, #1a1a1a)">BASE</text>
+    <text x="485" y="324" style="fill: var(--banner-fg, #1a1a1a)">QUOTE</text>
+    <text x="1107" y="324" style="fill: var(--banner-accent, #0b6bcb)">PIP</text>
+  </g>
+  </g>
+</svg>
