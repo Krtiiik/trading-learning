@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="An entry level at $42 and a stop level at $38 leave a $4 risk per share; dividing the $100 at risk by $4 gives 25 shares, drawn as a row of 25 small blocks">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the risk per share: gap between entry and stop -->
+  <rect x="60" y="130" width="380" height="150" style="fill: var(--banner-down, #d0453a); fill-opacity: .12"/>
+  <line x1="60" y1="130" x2="440" y2="130" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <line x1="60" y1="280" x2="440" y2="280" stroke-width="5" style="stroke: var(--banner-down, #d0453a)"/>
+  <path d="M110 146 L110 264 M96 160 L110 146 L124 160 M96 250 L110 264 L124 250" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="60" y="110" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">ENTRY $42</text>
+    <text x="60" y="324" style="fill: var(--banner-down, #d0453a)">STOP $38</text>
+    <text x="150" y="220" font-size="44" style="fill: var(--banner-down, #d0453a)">$4 RISK</text>
+  </g>
+  <!-- risk per share feeds the calculation -->
+  <path d="M478 205 L522 205 M508 191 L522 205 L508 219" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the calculation -->
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="560" y="100" font-size="26" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">1% OF $10,000 AT RISK</text>
+    <text x="560" y="180" font-size="60" style="fill: var(--banner-fg, #1a1a1a)">$100 ÷ <tspan style="fill: var(--banner-down, #d0453a)">$4</tspan></text>
+    <text x="560" y="262" font-size="60" style="fill: var(--banner-accent, #0b6bcb)">= 25 SHARES</text>
+  </g>
+  <!-- the 25 shares -->
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <rect x="562" y="300" width="17" height="24" rx="3"/>
+    <rect x="585" y="300" width="17" height="24" rx="3"/>
+    <rect x="608" y="300" width="17" height="24" rx="3"/>
+    <rect x="631" y="300" width="17" height="24" rx="3"/>
+    <rect x="654" y="300" width="17" height="24" rx="3"/>
+    <rect x="677" y="300" width="17" height="24" rx="3"/>
+    <rect x="700" y="300" width="17" height="24" rx="3"/>
+    <rect x="723" y="300" width="17" height="24" rx="3"/>
+    <rect x="746" y="300" width="17" height="24" rx="3"/>
+    <rect x="769" y="300" width="17" height="24" rx="3"/>
+    <rect x="792" y="300" width="17" height="24" rx="3"/>
+    <rect x="815" y="300" width="17" height="24" rx="3"/>
+    <rect x="838" y="300" width="17" height="24" rx="3"/>
+    <rect x="861" y="300" width="17" height="24" rx="3"/>
+    <rect x="884" y="300" width="17" height="24" rx="3"/>
+    <rect x="907" y="300" width="17" height="24" rx="3"/>
+    <rect x="930" y="300" width="17" height="24" rx="3"/>
+    <rect x="953" y="300" width="17" height="24" rx="3"/>
+    <rect x="976" y="300" width="17" height="24" rx="3"/>
+    <rect x="999" y="300" width="17" height="24" rx="3"/>
+    <rect x="1022" y="300" width="17" height="24" rx="3"/>
+    <rect x="1045" y="300" width="17" height="24" rx="3"/>
+    <rect x="1068" y="300" width="17" height="24" rx="3"/>
+    <rect x="1091" y="300" width="17" height="24" rx="3"/>
+    <rect x="1114" y="300" width="17" height="24" rx="3"/>
+  </g>
+</svg>
