@@ -45,7 +45,7 @@ Had it soon closed back below the average, say at $41, you would sell for a smal
 
 ## Watch out
 
-- **Fitting the past is not proof.** Rules tuned until a backtest looks great may only fit chance moves in that data. This is **overfitting**; such rules often fail later.
+- **Fitting the past is not proof.** Rules tuned until a [[backtest]] looks great may only fit chance moves in that data (overfitting), and often fail later.
 - **No strategy wins every trade.** What matters is how often it wins and its average result per trade: its [[win-rate-and-expectancy]].
 
 Next, see [[entry-and-exit-rules]], then [[backtest]].

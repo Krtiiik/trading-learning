@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A past price chart, split by a dashed line into a TUNED part and a TEST part, with buy and sell markers from the rules, feeding an arrow into a rising but bumpy equity line labelled RESULT">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the past data panel -->
+  <rect x="40" y="40" width="660" height="320" rx="14" stroke-width="3"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .04; stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3"/>
+  <!-- split between the part used to tune the rules and the part kept for the test -->
+  <line x1="480" y1="110" x2="480" y2="320" stroke-width="3" stroke-dasharray="10 10" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5"/>
+  <!-- past price -->
+  <path d="M70 250 L110 270 L150 220 L190 240 L230 180 L270 200 L310 150 L350 175 L390 230 L430 260 L470 210 L510 230 L550 170 L590 190 L630 140 L670 160"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- simulated trades from the rules: entries a step after the turn, and one quick losing trade -->
+  <path d="M130 255 L114 283 L146 283 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <path d="M330 152 L314 124 L346 124 Z" style="fill: var(--banner-down, #d0453a)"/>
+  <path d="M360 199 L344 227 L376 227 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <path d="M400 228 L384 200 L416 200 Z" style="fill: var(--banner-down, #d0453a)"/>
+  <path d="M530 210 L514 238 L546 238 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <path d="M650 140 L634 112 L666 112 Z" style="fill: var(--banner-down, #d0453a)"/>
+  <!-- arrow into the result -->
+  <path d="M715 200 L762 200 M748 186 L762 200 L748 214" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the result: an equity line that rises with drawdowns -->
+  <path d="M790 310 L830 280 L860 295 L900 240 L935 258 L975 200 L1010 222 L1050 165 L1085 188 L1125 125 L1160 110 L1160 330 L790 330 Z"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .12"/>
+  <line x1="790" y1="330" x2="1160" y2="330" stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <path d="M790 310 L830 280 L860 295 L900 240 L935 258 L975 200 L1010 222 L1050 165 L1085 188 L1125 125 L1160 110"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="70" y="90" font-size="30" style="fill: var(--banner-fg, #1a1a1a)">PAST DATA</text>
+    <text x="790" y="90" font-size="30" style="fill: var(--banner-accent, #0b6bcb)">RESULT</text>
+    <g font-size="26" text-anchor="middle" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">
+      <text x="260" y="345">TUNED</text>
+      <text x="590" y="345">TEST</text>
+    </g>
+  </g>
+</svg>
