@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: dividend, the four dates and why you must buy before the ex-date, why the price drops on the ex-date, dividend yield, and US withholding tax for holders outside the US.
 - Concept page: breakout, what counts as a breakout (a close beyond the zone), volume as a rule of thumb, retests, false breakouts and downward breakouts.
 - Concept page: ETF, how an exchange-traded fund tracks an index, why its price stays close to its holdings, the expense ratio, kinds of ETF, which ETFs private traders in the EU and UK can buy, and leveraged and inverse ETFs.
 - Concept page: short selling, the steps (borrow, sell, buy back, return), the borrow fee and dividends, US rules, other ways to go short, and why the possible loss has no limit.

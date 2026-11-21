@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A bar of company profit with its top part flowing out as one dollar coin for each share; beside it a price line drops by about that amount on the ex-dividend date">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the company profit: the part kept, and the part paid out -->
+  <rect x="70" y="160" width="160" height="170" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14"/>
+  <rect x="70" y="90" width="160" height="70" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <!-- paid out to shareholders -->
+  <path d="M245 125 L385 125 M365 105 L385 125 L365 145" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the shares, each with its coin -->
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14">
+    <rect x="420" y="180" width="60" height="70"/><rect x="510" y="180" width="60" height="70"/><rect x="600" y="180" width="60" height="70"/>
+  </g>
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <circle cx="450" cy="125" r="28"/><circle cx="540" cy="125" r="28"/><circle cx="630" cy="125" r="28"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" text-anchor="middle" style="fill: var(--banner-bg, #f2f4f7)">
+    <text x="450" y="136">$</text><text x="540" y="136">$</text><text x="630" y="136">$</text>
+  </g>
+  <!-- the ex-dividend date -->
+  <line x1="950" y1="70" x2="950" y2="320" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <!-- the old price level, to show the gap -->
+  <line x1="950" y1="130" x2="1080" y2="130" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .8"/>
+  <!-- the price line -->
+  <path d="M760 150 L800 140 L840 152 L880 135 L920 145 L950 130" fill="none" stroke-width="6" stroke-linejoin="round"
+        style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <path d="M950 200 L990 210 L1030 195 L1080 205 L1140 192" fill="none" stroke-width="6" stroke-linejoin="round"
+        style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- the drop by about the dividend -->
+  <path d="M950 130 L950 200" fill="none" stroke-width="7" stroke-linecap="round" style="stroke: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="3" text-anchor="middle">
+    <text x="150" y="370" style="fill: var(--banner-fg, #1a1a1a)">PROFIT</text>
+    <text x="540" y="310" style="fill: var(--banner-fg, #1a1a1a)">PER SHARE</text>
+    <text x="950" y="365" style="fill: var(--banner-fg, #1a1a1a)">EX-DATE</text>
+  </g>
+</svg>
