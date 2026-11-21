@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="The payoff of buying a call option, shaped like a hockey stick: below the strike price the loss stays flat at the premium paid, above the strike the line rises into profit; beside it, a call is the right to buy and a put is the right to sell">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- loss and profit areas against the zero line -->
+  <path d="M60 190 L60 270 L360 270 L484 190 Z" style="fill: var(--banner-down, #d0453a); fill-opacity: .12"/>
+  <path d="M484 190 L700 50 L700 190 Z" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .12"/>
+  <!-- the strike price -->
+  <line x1="360" y1="50" x2="360" y2="270" stroke-width="3" stroke-dasharray="10 8"
+        style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .7"/>
+  <!-- zero line: price at expiry -->
+  <path d="M60 190 L740 190 M726 178 L740 190 L726 202" fill="none" stroke-width="4" stroke-linecap="round"
+        stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <!-- the payoff: flat loss of the premium, then rising -->
+  <path d="M60 270 L360 270 L484 190" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-down, #d0453a)"/>
+  <path d="M484 190 L700 50" fill="none" stroke-width="7" stroke-linecap="round"
+        style="stroke: var(--banner-up, #1a9b5b)"/>
+  <circle cx="360" cy="270" r="11" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="80" y="318" style="fill: var(--banner-down, #d0453a)">LOSS = PREMIUM</text>
+    <text x="340" y="76" text-anchor="end" style="fill: var(--banner-accent, #0b6bcb)">STRIKE</text>
+    <text x="580" y="176" style="fill: var(--banner-up, #1a9b5b)">PROFIT</text>
+    <text x="740" y="236" font-size="26" text-anchor="end" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">PRICE</text>
+  </g>
+  <!-- divider -->
+  <line x1="800" y1="50" x2="800" y2="350" stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .2"/>
+  <!-- the two kinds of option -->
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="850" y="130" font-size="64" style="fill: var(--banner-accent, #0b6bcb)">CALL</text>
+    <text x="850" y="178" font-size="28" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .8">RIGHT TO BUY</text>
+    <text x="850" y="282" font-size="64" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">PUT</text>
+    <text x="850" y="330" font-size="28" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">RIGHT TO SELL</text>
+  </g>
+</svg>
