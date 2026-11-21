@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Two order books side by side: the liquid one has long bars of waiting buy and sell orders with a tight spread between them; the illiquid one has short bars and a wide spread">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- divider between the two books -->
+  <line x1="600" y1="40" x2="600" y2="370" stroke-width="2" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .2"/>
+  <!-- the gap between best sell and best buy -->
+  <g style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .15">
+    <rect x="60" y="222" width="480" height="12"/>
+    <rect x="660" y="150" width="480" height="156"/>
+  </g>
+  <!-- LIQUID: many long bars, centred on x 300 (bar length = shares waiting) -->
+  <g style="fill: var(--banner-down, #d0453a); fill-opacity: .4">
+    <rect x="80" y="84" width="440" height="30"/><rect x="100" y="120" width="400" height="30"/><rect x="70" y="156" width="460" height="30"/>
+  </g>
+  <rect x="90" y="192" width="420" height="30" style="fill: var(--banner-down, #d0453a)"/>
+  <rect x="85" y="234" width="430" height="30" style="fill: var(--banner-up, #1a9b5b)"/>
+  <g style="fill: var(--banner-up, #1a9b5b); fill-opacity: .4">
+    <rect x="65" y="270" width="470" height="30"/><rect x="95" y="306" width="410" height="30"/><rect x="75" y="342" width="450" height="30"/>
+  </g>
+  <!-- ILLIQUID: few short bars on the same price scale, centred on x 900 -->
+  <rect x="855" y="84" width="90" height="30" style="fill: var(--banner-down, #d0453a); fill-opacity: .4"/>
+  <rect x="870" y="120" width="60" height="30" style="fill: var(--banner-down, #d0453a)"/>
+  <rect x="865" y="306" width="70" height="30" style="fill: var(--banner-up, #1a9b5b)"/>
+  <rect x="850" y="342" width="100" height="30" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .4"/>
+  <text x="900" y="238" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-accent, #0b6bcb)">WIDE SPREAD</text>
+  <!-- titles -->
+  <g font-family="system-ui, sans-serif" font-size="34" font-weight="700" letter-spacing="4" text-anchor="middle"
+     style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="300" y="62">LIQUID</text>
+    <text x="900" y="62">ILLIQUID</text>
+  </g>
+</svg>

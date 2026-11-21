@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The learning site is published as a private Claude artifact and republished after commits on `main` that change it.
 - `learning/serve.py --open` opens the local learning site in the default browser once the server listens.
 - Learning site content agents: a planner, a writer, a banner illustrator, a reviewer, a fact checker and a site-wide auditor, plus a `/write-page` skill that writes, checks and commits one page.
-- Learning site concept pages: trend, price chart, OHLC, bid and ask, spread, indicator, strategy, timeframe, wick, volume.
+- Learning site concept pages: trend, price chart, OHLC, bid and ask, spread, indicator, strategy, timeframe, wick, volume, liquidity.
 - Learning site favicon: a graduation cap with a bold rising trend line, in light and dark variants.
 
 ### Changed
