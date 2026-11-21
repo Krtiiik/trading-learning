@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Learning site design: a hard-edged layout with hairline borders, light and dark themes, home page shelves with scroll arrows, per-group progress meters and colour kept for highlights.
 - `learning/serve.py --open` opens the local learning site in the default browser once the server listens.
 - Learning site content agents: a planner, a writer, a banner illustrator, a reviewer, a fact checker and a site-wide auditor, plus a `/write-page` skill that writes, checks and commits one page.
-- Learning site concept pages: trend, price chart, OHLC, bid and ask, spread, indicator, strategy, timeframe, wick, volume, liquidity, gap, backtest, exchange, trading hours, fees and commissions, forex pair, position sizing.
+- Learning site concept pages: trend, price chart, OHLC, bid and ask, spread, indicator, strategy, timeframe, wick, volume, liquidity, gap, backtest, exchange, trading hours, fees and commissions, forex pair, position sizing, win rate and expectancy.
 - Learning site favicon: a graduation cap with a bold rising trend line, in light and dark variants.
 - `learning/build.py --words` prints the body word count of written pages by the site's length rule and fails when a concept is over 500 words, so writers and reviewers count the same way.
 - Learning site theme switch: System, Light and Dark buttons in the header, so light mode can be chosen on a device set to dark. The choice is remembered in the browser.

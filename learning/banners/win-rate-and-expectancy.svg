@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Ten trade results as bars in true proportion: three tall green wins of 150, 550 and 300 dollars and seven short red losses, with a dashed line for the average of plus 78 dollars per trade, labelled 3 OF 10 WIN and AVERAGE +$78">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the ten trades of the shared backtest, 0.45 px per dollar, zero at y=310 -->
+  <g style="fill: var(--banner-up, #1a9b5b)">
+    <rect x="62" y="242.5" width="44" height="67.5"/>
+    <rect x="402" y="62.5" width="44" height="247.5"/>
+    <rect x="674" y="175" width="44" height="135"/>
+  </g>
+  <g style="fill: var(--banner-down, #d0453a)">
+    <rect x="130" y="310" width="44" height="11.25"/>
+    <rect x="198" y="310" width="44" height="18"/>
+    <rect x="266" y="310" width="44" height="13.5"/>
+    <rect x="334" y="310" width="44" height="11.25"/>
+    <rect x="470" y="310" width="44" height="22.5"/>
+    <rect x="538" y="310" width="44" height="9"/>
+    <rect x="606" y="310" width="44" height="13.5"/>
+  </g>
+  <!-- zero line -->
+  <line x1="40" y1="310" x2="740" y2="310" stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5"/>
+  <!-- the average result per trade: +$78 -->
+  <line x1="40" y1="274.9" x2="760" y2="274.9" stroke-width="4" stroke-dasharray="12 9" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="785" y="130" font-size="44" style="fill: var(--banner-fg, #1a1a1a)"><tspan style="fill: var(--banner-up, #1a9b5b)">3</tspan> OF 10 WIN</text>
+    <text x="785" y="174" font-size="26" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">30% WIN RATE</text>
+    <text x="785" y="290" font-size="44" style="fill: var(--banner-accent, #0b6bcb)">AVERAGE +$78</text>
+    <text x="785" y="334" font-size="26" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">PER TRADE</text>
+  </g>
+</svg>
