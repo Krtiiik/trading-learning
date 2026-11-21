@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="An account balance line climbs to a high of $10,000, falls to a low of $5,000, then climbs back to the high; an arrow from the high down to the low marks the drawdown of -50%, and the climb back needs +100%">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- balance in true proportion: y = 370 - 0.03 px per dollar -->
+  <!-- the time below the high -->
+  <path d="M300 70 L350 120 L390 100 L440 170 L480 150 L520 220 L570 180 L610 195 L660 130 L700 145 L740 70 Z"
+        style="fill: var(--banner-down, #d0453a); fill-opacity: .12"/>
+  <!-- the high level -->
+  <line x1="300" y1="70" x2="760" y2="70" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <!-- rise to the high, fall to the low, recovery -->
+  <path d="M60 190 L120 160 L160 175 L220 115 L260 130 L300 70" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <path d="M300 70 L350 120 L390 100 L440 170 L480 150 L520 220" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-down, #d0453a)"/>
+  <path d="M520 220 L570 180 L610 195 L660 130 L700 145 L740 70" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-up, #1a9b5b)"/>
+  <!-- the drawdown: high to low -->
+  <path d="M520 80 L520 206 M506 192 L520 206 L534 192" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <circle cx="300" cy="70" r="10" style="fill: var(--banner-fg, #1a1a1a)"/>
+  <circle cx="520" cy="220" r="10" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2" text-anchor="middle">
+    <text x="300" y="50" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">HIGH $10,000</text>
+    <text x="520" y="266" style="fill: var(--banner-down, #d0453a)">LOW $5,000</text>
+  </g>
+  <!-- the percentages -->
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="820" y="100" font-size="26" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">DRAWDOWN</text>
+    <text x="820" y="174" font-size="64" style="fill: var(--banner-accent, #0b6bcb)">−50%</text>
+    <text x="820" y="250" font-size="26" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">TO GET BACK</text>
+    <text x="820" y="324" font-size="64" style="fill: var(--banner-up, #1a9b5b)">+100%</text>
+  </g>
+</svg>
