@@ -41,4 +41,7 @@ _Avoid_: guide, tutorial, article.
 
 - **period / length** (learning site): a *period* is the time one bar or candle covers; an indicator's *length* is how many periods it looks back. Write "length" even though apps label that setting "period".
 - **trade** (learning site): on market-mechanics pages, one transaction (a buyer and a seller agreeing on a price); on strategy and risk pages, a position from entry to exit. Say "position" or "round trip" where the difference matters.
+- **position size** (learning site): the number of shares or units held. Its money value is the *position value*; do not call that the size.
+- **slippage** (learning site): getting a worse fill price than expected or assumed. Use the word instead of paraphrases.
+- **order book** (learning site): the list of waiting limit orders; its best prices are the bid and the ask.
 - **mid price, round trip** (learning site): the names for the point halfway between bid and ask, and for buying then selling again. Use them instead of paraphrases.
