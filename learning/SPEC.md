@@ -120,6 +120,7 @@ Page templates also receive: `group.html` → `group`; `concept.html` and `lesso
 ```
 uv run python learning/build.py          # builds learning/dist/
 uv run pytest tests/learning             # structure tests; they also build the real site
+uv run python learning/build.py --words  # body word counts of written pages; exit 1 if a concept is over 500
 ```
 
 Preview locally with the `learning-site` entry in `.claude/launch.json`. It runs `learning/serve.py`, which serves `learning/dist` on `$PORT` (default 8765); add `--open` to also open it in the default browser. Don't publish the artifact from a branch: it is republished from `main` after merge.

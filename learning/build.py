@@ -1,6 +1,7 @@
 """Build the learning site from Markdown sources into static HTML pages.
 
 Usage: uv run python learning/build.py [--out DIR]
+       uv run python learning/build.py --words [SLUG ...]   count body words, without building
 
 Sources (all under learning/):
   catalog.yaml                         concept groups and every concept's title and summary
@@ -33,6 +34,8 @@ LINK = re.compile(r"\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]")
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LESSON_KEYS = {"title", "summary", "added", "builds_on"}
 PLANNED_BANNER = "_planned"
+CONCEPT_MAX_WORDS = 500
+WORD = re.compile(r"[A-Za-z0-9]")
 
 
 class BuildError(Exception):
@@ -98,8 +101,11 @@ def _ordered_unique(items):
     return list(dict.fromkeys(items))
 
 
-def load_site(root: Path) -> Site:
-    """Read the catalog, content and banners under root, and check they agree."""
+def load_site(root: Path, require_banners: bool = True) -> Site:
+    """Read the catalog, content and banners under root, and check they agree.
+
+    require_banners=False lets a written page without its banner through (for counting words
+    on a page the illustrator has not drawn yet)."""
     problems: list[str] = []
     catalog = yaml.safe_load((root / "catalog.yaml").read_text(encoding="utf-8"))
     banners = root / "banners"
@@ -113,7 +119,8 @@ def load_site(root: Path) -> Site:
             return planned_svg
         path = banners / f"{slug}.svg"
         if not path.exists():
-            problems.append(f"{slug}: written page has no banner banners/{slug}.svg")
+            if require_banners:
+                problems.append(f"{slug}: written page has no banner banners/{slug}.svg")
             return planned_svg
         return path.read_text(encoding="utf-8")
 
@@ -229,6 +236,16 @@ def default_link_text(title: str) -> str:
     return title[:1].lower() + title[1:]
 
 
+def word_count(site: Site, page: Page) -> int:
+    """Body words by the site's length rule: headings count, each link counts as its display text,
+    table rows are left out, and tokens without a letter or digit (Markdown marks, dashes) are not words."""
+    text = LINK.sub(
+        lambda m: m.group(2) or default_link_text(site.pages[m.group(1).strip()].title), page.body_md
+    )
+    lines = [line for line in text.splitlines() if not line.lstrip().startswith("|")]
+    return sum(1 for token in " ".join(lines).split() if WORD.search(token))
+
+
 def _link_html(site: Site, root_prefix: str):
     def replace(m: re.Match) -> str:
         slug = m.group(1).strip()
@@ -335,7 +352,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out", type=Path, default=HERE / "dist")
     parser.add_argument("--files-json", action="store_true",
                         help="after building, print the Artifact `files` list as JSON on stdout")
+    parser.add_argument("--words", nargs="*", metavar="SLUG",
+                        help="count the body words of these written pages (default: all) and exit; "
+                             f"exit 1 if a concept is over {CONCEPT_MAX_WORDS}")
     args = parser.parse_args(argv)
+    if args.words is not None:
+        return _report_words(args.words)
     try:
         site = build(HERE, args.out)
     except BuildError as e:
@@ -352,6 +374,30 @@ def main(argv: list[str] | None = None) -> int:
         f"{len(site.lessons)} lessons."
     )
     return 0
+
+
+def _report_words(slugs: list[str]) -> int:
+    try:
+        site = load_site(HERE)
+    except BuildError as e:
+        # A missing banner does not change the word count, so count anyway when that is the only problem.
+        if not all("no banner" in p for p in e.problems):
+            print("Build failed:", *(f"  - {p}" for p in e.problems), sep="\n", file=sys.stderr)
+            return 1
+        site = load_site(HERE, require_banners=False)
+    unknown = [s for s in slugs if s not in site.pages or not site.pages[s].written]
+    if unknown:
+        print(f"Not a written page: {', '.join(unknown)}", file=sys.stderr)
+        return 1
+    pages = [site.pages[s] for s in slugs] or [p for p in site.pages.values() if p.written]
+    over = False
+    for page in pages:
+        n = word_count(site, page)
+        flag = ""
+        if page.kind == "concept" and n > CONCEPT_MAX_WORDS:
+            flag, over = f"  over {CONCEPT_MAX_WORDS}", True
+        print(f"{n:5d}  {page.slug}{flag}")
+    return 1 if over else 0
 
 
 if __name__ == "__main__":

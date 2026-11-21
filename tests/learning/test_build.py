@@ -100,6 +100,22 @@ def test_unquoted_comma_in_catalog_summary_fails_the_build(site_root):
         build.load_site(site_root)
 
 
+def test_word_count_counts_link_text_and_headings_but_not_tables_or_marks(site_root):
+    body = """
+    ## Two words
+
+    - A **bold** [[wick]] and a [[trend|long trend]] at $40.50 — done.
+
+    | Price | Volume |
+    |---|---|
+    | $40 | 100 |
+    """
+    write(site_root, "content/concepts/charts/candle.md", body)
+    site = build.load_site(site_root)
+    # "Two words" (2) + "A bold wick and a long trend at $40.50 done." (10)
+    assert build.word_count(site, site.pages["candle"]) == 12
+
+
 def test_written_page_needs_its_own_banner(site_root):
     (site_root / "banners/candle.svg").unlink()
     with pytest.raises(build.BuildError, match="no banner"):

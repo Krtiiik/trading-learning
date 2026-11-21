@@ -29,6 +29,8 @@ Dispatch in parallel, each with the slug and the file path:
 - `learning-reviewer`
 - `learning-fact-checker`
 
+Run `uv run python learning/build.py --words <slug>` first and put the number in the reviewer's task: the reviewer cannot run commands, and counting by hand gives a different number each time.
+
 The page is **clean** when both end with `clean`. If not, send the blocker and major findings (minor ones too, if they are cheap) to `learning-writer`, and banner findings to `learning-illustrator`. Then check again.
 
 Once the page is clean, you may send the cheap minor findings to `learning-writer` in one last pass. Skip the re-check after that pass: minor fixes only change wording. Read the page yourself, and run the checkers again only if the writer changed a fact, a number or the page's structure.
