@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: ATR (average true range), true range on a gap day, Wilder's average, and using ATR to set the stop and the position size.
 - Concept page: risk/reward, the possible gain on a trade compared with the possible loss, and the win rate a ratio needs to break even.
 - Concept page: broker, what a broker does for you, the two kinds of broker, and the protection schemes that pay clients back when a broker fails (US, UK, EU).
 - Concept page: leverage, the leverage ratio, margin, margin calls and stop outs, and the leverage limits for private traders in the EU, UK and US.
