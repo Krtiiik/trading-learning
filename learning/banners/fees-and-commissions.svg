@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A green bar shows the gain of a trade; two red slices labelled BUY and SELL are cut off its end as fees, and the shorter green part that is left is marked as what you keep">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the whole gain before costs -->
+  <path d="M60 130 L60 110 L1140 110 L1140 130 M600 110 L600 96" fill="none" stroke-width="4" stroke-linejoin="round"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .55"/>
+  <text x="600" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="700"
+        letter-spacing="4" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">GAIN</text>
+  <!-- outline where the cut-off part of the gain used to be -->
+  <rect x="880" y="150" width="260" height="100" stroke-width="3" stroke-dasharray="10 8"
+        style="fill: none; stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <!-- the part you keep -->
+  <rect x="60" y="150" width="820" height="100" style="fill: var(--banner-up, #1a9b5b)"/>
+  <!-- the fees, cut off the end of the gain -->
+  <g transform="translate(955 238) rotate(7)">
+    <rect x="-55" y="-50" width="110" height="100" style="fill: var(--banner-down, #d0453a)"/>
+    <text x="0" y="10" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700"
+          letter-spacing="2" style="fill: var(--banner-bg, #f2f4f7)">BUY</text>
+  </g>
+  <g transform="translate(1080 244) rotate(-6)">
+    <rect x="-55" y="-50" width="110" height="100" style="fill: var(--banner-down, #d0453a)"/>
+    <text x="0" y="10" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700"
+          letter-spacing="2" style="fill: var(--banner-bg, #f2f4f7)">SELL</text>
+  </g>
+  <!-- bracket under the part you keep -->
+  <path d="M60 270 L60 290 L880 290 L880 270 M470 290 L470 304" fill="none" stroke-width="4" stroke-linejoin="round"
+        style="stroke: var(--banner-up, #1a9b5b)"/>
+  <g font-family="system-ui, sans-serif" font-size="34" font-weight="700" letter-spacing="4" text-anchor="middle">
+    <text x="470" y="345" style="fill: var(--banner-up, #1a9b5b)">YOU KEEP</text>
+    <text x="1018" y="352" style="fill: var(--banner-down, #d0453a)">FEES</text>
+  </g>
+</svg>
