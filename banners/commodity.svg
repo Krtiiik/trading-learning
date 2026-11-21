@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Three groups of raw materials traded in bulk: a stack of oil barrels for energy, a stack of gold bars for metals and a bundle of wheat for agriculture">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- energy: a stack of oil barrels -->
+  <g stroke-width="6" stroke-linejoin="round"
+     style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .12; stroke: var(--banner-accent, #0b6bcb)">
+    <rect x="108" y="180" width="94" height="110" rx="14"/>
+    <rect x="218" y="180" width="94" height="110" rx="14"/>
+    <rect x="163" y="62" width="94" height="110" rx="14"/>
+  </g>
+  <g fill="none" stroke-width="4" style="stroke: var(--banner-accent, #0b6bcb)">
+    <path d="M108 216 L202 216 M108 254 L202 254"/>
+    <path d="M218 216 L312 216 M218 254 L312 254"/>
+    <path d="M163 98 L257 98 M163 136 L257 136"/>
+  </g>
+  <!-- metals: a stack of gold bars -->
+  <g stroke-width="6" stroke-linejoin="round"
+     style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .12; stroke: var(--banner-accent, #0b6bcb)">
+    <path d="M445 290 L595 290 L578 220 L462 220 Z"/>
+    <path d="M605 290 L755 290 L738 220 L622 220 Z"/>
+    <path d="M525 210 L675 210 L658 140 L542 140 Z"/>
+  </g>
+  <!-- agriculture: a bundle of wheat stalks -->
+  <g fill="none" stroke-width="5" stroke-linecap="round" style="stroke: var(--banner-accent, #0b6bcb)">
+    <path d="M990 290 L990 84"/>
+    <path d="M990 290 L990 84" transform="rotate(-28 990 255)"/>
+    <path d="M990 290 L990 84" transform="rotate(28 990 255)"/>
+  </g>
+  <g stroke-width="4"
+     style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .12; stroke: var(--banner-accent, #0b6bcb)">
+    <g>
+      <ellipse cx="990" cy="68" rx="9" ry="18"/>
+      <ellipse cx="978" cy="100" rx="9" ry="18" transform="rotate(-30 978 100)"/>
+      <ellipse cx="1002" cy="100" rx="9" ry="18" transform="rotate(30 1002 100)"/>
+      <ellipse cx="978" cy="132" rx="9" ry="18" transform="rotate(-30 978 132)"/>
+      <ellipse cx="1002" cy="132" rx="9" ry="18" transform="rotate(30 1002 132)"/>
+    </g>
+    <g transform="rotate(-28 990 255)">
+      <ellipse cx="990" cy="68" rx="9" ry="18"/>
+      <ellipse cx="978" cy="100" rx="9" ry="18" transform="rotate(-30 978 100)"/>
+      <ellipse cx="1002" cy="100" rx="9" ry="18" transform="rotate(30 1002 100)"/>
+      <ellipse cx="978" cy="132" rx="9" ry="18" transform="rotate(-30 978 132)"/>
+      <ellipse cx="1002" cy="132" rx="9" ry="18" transform="rotate(30 1002 132)"/>
+    </g>
+    <g transform="rotate(28 990 255)">
+      <ellipse cx="990" cy="68" rx="9" ry="18"/>
+      <ellipse cx="978" cy="100" rx="9" ry="18" transform="rotate(-30 978 100)"/>
+      <ellipse cx="1002" cy="100" rx="9" ry="18" transform="rotate(30 1002 100)"/>
+      <ellipse cx="978" cy="132" rx="9" ry="18" transform="rotate(-30 978 132)"/>
+      <ellipse cx="1002" cy="132" rx="9" ry="18" transform="rotate(30 1002 132)"/>
+    </g>
+  </g>
+  <!-- the band that ties the bundle -->
+  <rect x="966" y="246" width="48" height="18" rx="4" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <!-- the ground all three stand on -->
+  <path d="M60 290 L1140 290" fill="none" stroke-width="4" stroke-linecap="round"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <g font-family="system-ui, sans-serif" font-size="32" font-weight="700" letter-spacing="3" text-anchor="middle"
+     style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="210" y="360">ENERGY</text>
+    <text x="600" y="360">METALS</text>
+    <text x="990" y="360">AGRICULTURE</text>
+  </g>
+</svg>

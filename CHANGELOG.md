@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: commodity, the three groups, spot and futures prices, cost of carry, contango and backwardation, the roll cost of futures funds, and the ways to trade commodities.
 - Concept page: futures, standard contracts with an expiry date, the multiplier, initial and maintenance margin, daily settlement, expiry and rolling, and why you can lose more than your margin.
 - Concept page: breakout trading, the entry, stop and target rules, a worked trade with position sizing, why the win rate is often low, and why chasing a breakout spoils the risk/reward.
 - Concept page: RSI (relative strength index), how it compares average gains with average losses, the 70 and 30 levels, why strong trends hold it at an extreme, and divergence.
