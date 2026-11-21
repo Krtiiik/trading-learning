@@ -9,6 +9,10 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ## [Unreleased]
 
+### Added
+
+- Concept page: risk/reward, the possible gain on a trade compared with the possible loss, and the win rate a ratio needs to break even.
+
 ### Changed
 
 - The repository holds only the learning site and is named `trading-learning`. The site moves to <https://krtiiik.github.io/trading-learning/>; the old `/trading/` address stops working.

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A buy at $42 with a stop at $38 and a target at $54: the green $12 reward zone from entry to target is three times as tall as the red $4 risk zone from entry to stop, a 3 to 1 reward to risk">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- reward: entry to target, drawn as three $4 steps -->
+  <rect x="60" y="60" width="560" height="192" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .12"/>
+  <line x1="60" y1="124" x2="620" y2="124" stroke-width="2" stroke-dasharray="4 8" style="stroke: var(--banner-up, #1a9b5b); stroke-opacity: .5"/>
+  <line x1="60" y1="188" x2="620" y2="188" stroke-width="2" stroke-dasharray="4 8" style="stroke: var(--banner-up, #1a9b5b); stroke-opacity: .5"/>
+  <line x1="60" y1="60" x2="620" y2="60" stroke-width="5" style="stroke: var(--banner-up, #1a9b5b)"/>
+  <path d="M110 238 L110 76 M96 90 L110 76 L124 90" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-up, #1a9b5b)"/>
+  <!-- risk: entry to stop, one $4 step -->
+  <rect x="60" y="252" width="560" height="64" style="fill: var(--banner-down, #d0453a); fill-opacity: .12"/>
+  <line x1="60" y1="316" x2="620" y2="316" stroke-width="5" style="stroke: var(--banner-down, #d0453a)"/>
+  <path d="M110 266 L110 302 M98 290 L110 302 L122 290" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-down, #d0453a)"/>
+  <!-- entry -->
+  <line x1="60" y1="252" x2="620" y2="252" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <circle cx="60" cy="252" r="10" style="fill: var(--banner-fg, #1a1a1a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="150" y="172" font-size="40" style="fill: var(--banner-up, #1a9b5b)">$12 REWARD</text>
+    <text x="150" y="296" font-size="32" style="fill: var(--banner-down, #d0453a)">$4 RISK</text>
+    <text x="650" y="70" style="fill: var(--banner-up, #1a9b5b)">TARGET $54</text>
+    <text x="650" y="262" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">ENTRY $42</text>
+    <text x="650" y="326" style="fill: var(--banner-down, #d0453a)">STOP $38</text>
+  </g>
+  <!-- the ratio -->
+  <g font-family="system-ui, sans-serif" font-weight="700" text-anchor="middle">
+    <text x="1040" y="150" font-size="26" letter-spacing="2" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">REWARD : RISK</text>
+    <text x="1040" y="260" font-size="110" style="fill: var(--banner-accent, #0b6bcb)"><tspan style="fill: var(--banner-up, #1a9b5b)">3</tspan> : <tspan style="fill: var(--banner-down, #d0453a)">1</tspan></text>
+  </g>
+</svg>
