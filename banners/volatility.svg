@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Two price lines start and end at the same place: a calm line with small swings marked low volatility, and a jumpy line with big swings marked high volatility">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the range of each line's swings -->
+  <rect x="60" y="65" width="700" height="250" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .08"/>
+  <rect x="60" y="160" width="700" height="52" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .1"/>
+  <!-- jumpy price: big swings -->
+  <path d="M60 200 L130 80 L200 305 L270 70 L340 300 L410 95 L480 315 L550 65 L620 290 L690 85 L760 170"
+        fill="none" stroke-width="5" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- calm price: small swings -->
+  <path d="M60 200 L130 182 L200 212 L270 175 L340 204 L410 170 L480 200 L550 163 L620 192 L690 160 L760 170"
+        fill="none" stroke-width="6" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- same start, same end -->
+  <circle cx="60" cy="200" r="10" style="fill: var(--banner-fg, #1a1a1a)"/>
+  <circle cx="760" cy="170" r="10" style="fill: var(--banner-fg, #1a1a1a)"/>
+  <!-- size of the swings -->
+  <path d="M800 65 L800 315 M788 79 L800 65 L812 79 M788 301 L800 315 L812 301" fill="none" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <path d="M830 160 L830 212 M820 170 L830 160 L840 170 M820 202 L830 212 L840 202" fill="none" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2">
+    <text x="860" y="100" style="fill: var(--banner-accent, #0b6bcb)">HIGH VOLATILITY</text>
+    <text x="860" y="196" style="fill: var(--banner-fg, #1a1a1a)">LOW VOLATILITY</text>
+  </g>
+</svg>

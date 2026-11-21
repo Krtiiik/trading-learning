@@ -15,6 +15,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 - Concept page: broker, what a broker does for you, the two kinds of broker, and the protection schemes that pay clients back when a broker fails (US, UK, EU).
 - Concept page: leverage, the leverage ratio, margin, margin calls and stop outs, and the leverage limits for private traders in the EU, UK and US.
 - Concept page: cryptocurrency, what a coin and a blockchain are, keys and wallets, stablecoins, crypto pairs, and who holds your coins on an exchange.
+- Concept page: volatility, how big a price's moves are (not their direction), how traders measure it, and how it sets the stop, the position size and the target.
 - Concept page: drawdown, how far an account has fallen from its high, maximum drawdown, time under water, and the larger gain needed to recover.
 
 ### Changed
