@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price line moving sideways under a resistance zone, then breaking up through it on tall volume bars; on a small pullback the old resistance zone holds as support and the price rises again">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the level, drawn as a zone like on the support and resistance banner: resistance before the break, support after it -->
+  <rect x="40" y="150" width="720" height="36" style="fill: var(--banner-down, #d0453a); fill-opacity: .18"/>
+  <rect x="760" y="150" width="400" height="36" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .18"/>
+  <g fill="none" stroke-width="2" style="stroke-opacity: .55">
+    <path d="M40 150 H760 M40 186 H760" style="stroke: var(--banner-down, #d0453a)"/>
+    <path d="M760 150 H1160 M760 186 H1160" style="stroke: var(--banner-up, #1a9b5b)"/>
+  </g>
+  <!-- volume: quiet while the price waits, tall on the break -->
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .3">
+    <rect x="53" y="338" width="34" height="32"/><rect x="113" y="342" width="34" height="28"/><rect x="173" y="334" width="34" height="36"/><rect x="233" y="344" width="34" height="26"/><rect x="293" y="340" width="34" height="30"/><rect x="353" y="336" width="34" height="34"/><rect x="413" y="344" width="34" height="26"/><rect x="473" y="340" width="34" height="30"/><rect x="533" y="346" width="34" height="24"/><rect x="593" y="342" width="34" height="28"/><rect x="653" y="336" width="34" height="34"/>
+    <rect x="833" y="330" width="34" height="40"/><rect x="893" y="320" width="34" height="50"/><rect x="953" y="334" width="34" height="36"/><rect x="1013" y="338" width="34" height="32"/><rect x="1073" y="332" width="34" height="38"/>
+  </g>
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <rect x="711" y="270" width="38" height="100"/><rect x="771" y="248" width="38" height="122"/>
+  </g>
+  <line x1="40" y1="370" x2="1160" y2="370" stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- price: sideways under the zone, then the retest and the move on -->
+  <path d="M40 240 L100 205 L130 215 L190 190 L260 255 L320 200 L350 210 L420 188 L490 260 L560 215 L590 225 L640 191 L690 240"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <path d="M790 90 L860 147 L960 72 L1030 98 L1150 46"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- the breakout: a strong move up through the zone -->
+  <path d="M690 240 L790 90" fill="none" stroke-width="10" stroke-linecap="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- touches: rises stopped under resistance -->
+  <g style="fill: var(--banner-down, #d0453a)">
+    <circle cx="190" cy="190" r="12"/><circle cx="420" cy="188" r="12"/><circle cx="640" cy="191" r="12"/>
+  </g>
+  <!-- retest: the old resistance holds as support -->
+  <circle cx="860" cy="147" r="12" style="fill: var(--banner-up, #1a9b5b)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="60" y="134" style="fill: var(--banner-down, #d0453a)">RESISTANCE</text>
+    <text x="760" y="76" text-anchor="end" font-size="30" style="fill: var(--banner-accent, #0b6bcb)">BREAKOUT</text>
+    <text x="900" y="226" text-anchor="middle" style="fill: var(--banner-up, #1a9b5b)">RETEST</text>
+  </g>
+</svg>
