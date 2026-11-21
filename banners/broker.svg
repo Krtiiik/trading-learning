@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="You send an order to your broker, which holds your account with your cash and shares and passes the order on to the exchange">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- you: one person -->
+  <g style="fill: var(--banner-fg, #1a1a1a)">
+    <circle cx="120" cy="178" r="24"/><rect x="82" y="208" width="76" height="46" rx="20"/>
+  </g>
+  <!-- order: you to broker, broker to exchange -->
+  <g fill="none" stroke-width="5" stroke-linecap="round" style="stroke: var(--banner-fg, #1a1a1a)">
+    <path d="M180 216 L302 216"/>
+    <path d="M778 216 L880 216"/>
+  </g>
+  <g style="fill: var(--banner-fg, #1a1a1a)">
+    <polygon points="300,200 328,216 300,232"/>
+    <polygon points="878,200 906,216 878,232"/>
+  </g>
+  <!-- the broker -->
+  <rect x="334" y="60" width="438" height="300" rx="18" stroke-width="4"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .1; stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="553" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="700"
+        letter-spacing="4" style="fill: var(--banner-accent, #0b6bcb)">BROKER</text>
+  <!-- your account inside the broker -->
+  <rect x="374" y="140" width="358" height="184" rx="12" stroke-width="3"
+        style="fill: var(--banner-bg, #f2f4f7); stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .45"/>
+  <!-- cash: a stack of coins -->
+  <g stroke-width="3" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .25; stroke: var(--banner-fg, #1a1a1a)">
+    <ellipse cx="470" cy="282" rx="44" ry="13"/>
+    <ellipse cx="470" cy="264" rx="44" ry="13"/>
+    <ellipse cx="470" cy="246" rx="44" ry="13"/>
+    <ellipse cx="470" cy="228" rx="44" ry="13"/>
+  </g>
+  <!-- shares: equal squares -->
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <rect x="580" y="214" width="34" height="34"/><rect x="622" y="214" width="34" height="34"/>
+    <rect x="580" y="256" width="34" height="34"/><rect x="622" y="256" width="34" height="34"/>
+  </g>
+  <!-- labels -->
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" text-anchor="middle"
+     style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="120" y="134">YOU</text>
+    <text x="553" y="186" font-size="26">YOUR ACCOUNT</text>
+    <text x="1035" y="226">EXCHANGE</text>
+    <text x="244" y="196" font-size="26" letter-spacing="2">ORDER</text>
+  </g>
+  <!-- the exchange -->
+  <rect x="912" y="150" width="246" height="124" rx="18" fill="none" stroke-width="4"
+        style="stroke: var(--banner-fg, #1a1a1a)"/>
+</svg>

@@ -12,6 +12,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 ### Added
 
 - Concept page: risk/reward, the possible gain on a trade compared with the possible loss, and the win rate a ratio needs to break even.
+- Concept page: broker, what a broker does for you, the two kinds of broker, and the protection schemes that pay clients back when a broker fails (US, UK, EU).
 
 ### Changed
 
