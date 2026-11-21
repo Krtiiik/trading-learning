@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A basket of company blocks of different sizes, where bigger companies count more, combines into one index number and its line">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the basket: companies of different sizes, bigger ones weigh more -->
+  <g stroke-width="5" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)">
+    <rect x="60" y="104" width="200" height="200"/>
+    <rect x="280" y="174" width="130" height="130"/>
+    <rect x="430" y="224" width="80" height="80"/>
+    <rect x="430" y="154" width="56" height="56"/>
+    <rect x="280" y="114" width="46" height="46"/>
+  </g>
+  <path d="M40 220 L40 320 L530 320 L530 220" fill="none" stroke-width="6" stroke-linejoin="round"
+        style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <text x="285" y="368" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">BASKET</text>
+  <!-- combine arrow -->
+  <path d="M565 190 L655 190 M635 170 L655 190 L635 210" fill="none" stroke-width="6"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the index: one number and one line -->
+  <rect x="690" y="50" width="480" height="270" rx="10" stroke-width="6"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .12; stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="930" y="132" text-anchor="middle" font-family="system-ui, sans-serif" font-size="60" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-accent, #0b6bcb)">4 210</text>
+  <path d="M720 292 L780 270 L840 280 L900 245 L960 255 L1020 218 L1080 228 L1140 190" fill="none" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="930" y="368" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">INDEX</text>
+</svg>

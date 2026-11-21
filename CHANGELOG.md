@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: index, what an index tracks, major indices by market, cap-weighted and price-weighted indices, points and percent, and how people trade an index.
 - Concept page: peak and trough, how to spot turning points (swing highs and lows), why they are confirmed late, and how they place stops and targets.
 - Concept page: line vs candle chart, the same prices drawn two ways, what a line hides (swings and gaps), and bar charts.
 - Concept page: ATR (average true range), true range on a gap day, Wilder's average, and using ATR to set the stop and the position size.
