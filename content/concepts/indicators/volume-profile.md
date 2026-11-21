@@ -19,14 +19,14 @@ Of 100 million shares, 30 million traded between $49 and $51. Little traded abov
 ## The parts of a profile
 
 - **Point of control (POC)**: the single price with the most volume, here near $50.
-- **Value area**: the prices around the POC where most of the volume traded, usually about 70%. Apps start at the POC, then keep adding the busier of the two levels just above or just below, until they reach 70%. Here, $47 to $53 holds 20 + 30 + 20 = 70 million shares: the value area.
+- **Value area**: the prices around the POC where most of the volume traded, usually about 70%. Apps start at the POC and add the busier neighbouring level each time, until they reach 70%. Here, $47 to $53 holds 20 + 30 + 20 = 70 million shares: the value area.
 - **High-volume node**: a price area with long bars, where many shares traded. The area around $50 is one.
 - **Low-volume node**: a dip of short bars between busier prices, which the price crossed quickly. The thin ends of a profile are low-volume too: here, the prices above $55 and below $45.
 
 ## How traders read it
 
 - **High-volume nodes often act like support or resistance.** Many traders bought or sold there, and some act again when the price returns.
-- **The price tends to move fast through low-volume prices.** If the stock closes above the resistance zone, as with the $56 close in [[breakout-trading]], little stands in its way until the next busy price, which a profile over a longer time span would show. Breakout trading sets its $65 target from the height of the trading range; the thin volume above $55 is one reason traders think the price can get that far.
+- **The price tends to move fast through low-volume prices.** The edges at $45 and $55 are thin because the price turned there quickly, not because it crossed them. Thin prices matter most beyond a level: if the stock closes above the resistance zone, as with the $56 close in [[breakout-trading]], little stands in its way until the next busy price. The thin volume above $55 is one reason traders expect the price to reach breakout trading's $65 target.
 - **The POC is a reference price.** When the price comes back into the value area, some traders expect it to drift toward the POC.
 
 ## Which time span

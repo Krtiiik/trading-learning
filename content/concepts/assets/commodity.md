@@ -26,7 +26,7 @@ Oil is in contango:
 | Spot | $70.00 |
 | Next month | $70.50 |
 
-A fund holds oil futures. Before expiry, it rolls: it sells the contract that ends soon, near the spot price of $70.00, and buys the next one at $70.50. If the spot price stays at $70.00, the new contract falls to it by expiry. The fund loses 50 cents per barrel, about 0.7%, while oil stood still. If contango stays like this for a year, the rolls cost about 8%. Futures need only a deposit, so the fund holds mostly cash; its interest pays back part of the cost.
+A fund holds oil futures. Before expiry, it rolls: it sells the contract that ends soon, near the spot price of $70.00, and buys the next one at $70.50. If the spot price stays at $70.00, the new contract falls to it by expiry. The fund loses 50 cents per barrel, about 0.7%, while oil stood still. If contango stays like this for a year, twelve monthly rolls cost about 8%. Futures need only a deposit, so the fund holds mostly cash; its interest pays back part of the cost.
 
 In backwardation, the roll gains instead.
 
@@ -46,6 +46,6 @@ In backwardation, the roll gains instead.
 ## Watch out
 
 - **Prices can go to extremes.** In April 2020, a US oil futures contract close to expiry fell below zero for one day, to about minus $37 a barrel: storage was full, so sellers paid buyers to take the oil.
-- **Delivery is real.** Some contracts, like US oil (WTI), end in delivery. Close or roll before expiry, or your broker usually closes the position for you.
+- **Delivery is real.** Some contracts, like US oil (WTI), end in delivery. Close or roll before expiry, or your broker usually closes it for you.
 
 Next, see [[futures]] for margin, expiry and rolling.

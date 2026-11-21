@@ -21,21 +21,21 @@ So a dividend is **not free money**. Part of the value of your shares becomes ca
 
 ## Dividend yield
 
-The **dividend yield** is the dividends of the past year divided by the share price, in percent.
+The **dividend yield** is the dividends of the past year divided by the share price, in percent. Some companies, such as [[reit|REITs]], must pay out most of their income.
 
 ## Example
 
-A US stock trades at $42. It paid 40 cents each quarter (every three months) for the past year.
+A US stock trades at $42. It paid 40 cents each quarter (every three months) last year.
 
 - One year: 4 × 40 cents = $1.60 per share.
-- Dividend yield: $1.60 ÷ $42 = about 3.8%.
+- Dividend yield: $1.60 / $42 = about 3.8%.
 - You own 25 shares: 25 × 40 cents = $10 per quarter, before tax.
 
 On the ex-date, the stock opens at about $41.60, not $42.
 
 ## Taxes
 
-Most countries tax dividends. The US keeps back (withholds) 30% of each dividend a US company pays to holders who are not US citizens and do not live in the US. If your country has a tax treaty with the US and you give your [[broker]] the form W-8BEN (it tells the US where you live for tax), the rate is often 15%. On your $10, that is $1.50 kept back, so $8.50 arrives. Your own country can then tax the dividend too, but often it subtracts the US tax already paid.
+Most countries tax dividends. The US keeps back (withholds) 30% of each dividend a US company pays to holders who are not US citizens and do not live in the US. If your country has a tax treaty with the US and you give your [[broker]] the form W-8BEN (it tells the US where you live for tax), the rate is often 15%. On your $10, that is $1.50 kept back, so $8.50 arrives. Your own country can tax it too, but often subtracts the US tax already paid.
 
 ## Watch out
 

@@ -6,7 +6,7 @@ Take the [[ohlc|closing prices]] of the last N periods, add them up and divide b
 
 The N is called the **length** (apps often label it "period"). A 20-day moving average uses the last 20 daily closes.
 
-This plain version is the **simple** moving average (SMA). A variant called the **exponential** moving average weighs recent prices more, so it lags a little less.
+This plain version is the **simple** moving average (SMA). A variant called the **exponential** moving average weighs recent prices more, so it lags a little less (see [[macd]]).
 
 ## Example
 

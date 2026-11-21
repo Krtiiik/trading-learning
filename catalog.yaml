@@ -50,8 +50,8 @@ groups:
       - {slug: support-and-resistance, title: Support and resistance, summary: Price levels where falls or rises have repeatedly stopped.}
       - {slug: breakout, title: Breakout, summary: A price moving decisively past a level it had been held by.}
       - {slug: gap, title: Gap, summary: A jump between one period's close and the next period's open.}
-      - {slug: chart-pattern, title: Chart pattern, summary: "A recurring shape formed by many candles, read as a hint of what comes next."}
       - {slug: candlestick-pattern, title: Candlestick pattern, summary: "A recurring shape of one to three candles, read as a short-term signal."}
+      - {slug: chart-pattern, title: Chart pattern, summary: "A recurring shape formed by many candles, read as a hint of what comes next."}
 
   - slug: indicators
     title: Indicators

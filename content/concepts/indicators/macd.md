@@ -10,7 +10,7 @@ MACD uses the **exponential moving average** (EMA), which weighs recent closes m
 - **Signal line**: a 9-period EMA of the MACD line.
 - **Histogram**: the MACD line minus the signal line, drawn as bars around zero. Bars are above zero (usually green) when the MACD line is higher, below zero (usually red) when lower.
 
-The usual setting is written "12, 26, 9".
+The usual lengths are written "12, 26, 9".
 
 ## Example
 

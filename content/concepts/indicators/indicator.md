@@ -28,7 +28,7 @@ An indicator's main setting is its **length**: how many bars it looks back over 
 ## The main families
 
 - **Trend**: shows the price's [[trend]]; the moving average is the basic one.
-- **Momentum**: shows how strong recent moves were. See RSI and [[macd]].
+- **Momentum**: shows how strong recent moves were. See RSI and [[macd]]. (This is not the [[momentum]] strategy, which ranks assets by past return.)
 - **Volatility**: shows the price's [[volatility]], how much it swings. See Bollinger bands and ATR.
 - **Volume**: shows how much was traded. [[volume-profile|Volume profile]], for example, shows it at each price, drawn sideways.
 

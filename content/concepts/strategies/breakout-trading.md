@@ -6,7 +6,7 @@ A price that moved sideways between two levels for months (a trading range) some
 
 - **Entry**: buy on a close above the resistance zone. Or place a buy stop just above it (see [[order-types]]): it becomes a market buy once the price reaches or passes that level. It gets in sooner, but in a fast move or a [[gap]] it can fill above your price.
 - **Stop loss**: a [[stop-loss]] a little below the old resistance zone. A close back below the zone is a false breakout; the stop also sells if the price drops to it during the day.
-- **Exit**: a target, often the height of the trading range added to the resistance level. Or a trailing stop: a stop loss you raise by a fixed rule, for example $2 below the highest close.
+- **Exit**: a target, often the height of the trading range added to the resistance level (a measured move, see [[chart-pattern]]). Or a trailing stop: a stop loss you raise by a fixed rule, for example $2 below the highest close.
 
 ## Example
 
@@ -26,7 +26,7 @@ The reward is $9 and the risk $2: a [[risk-reward]] of 4.5 to 1.
 
 ## What it feels like
 
-Expect many small losses and a few large wins, as in [[trend-following|trend following]]. Many breakouts fail and the close stop is often hit, so the [[win-rate-and-expectancy|win rate]] (the share of trades that end in a gain) is often low. Each loss costs about the planned $100; a few large wins pay for them.
+Expect many small losses and a few large wins, as in [[trend-following|trend following]]. Many breakouts fail and the close stop is often hit, so the [[win-rate-and-expectancy|win rate]] (the share of trades that end in a gain) is often low. Each loss costs about the planned $100.
 
 [[mean-reversion|Mean reversion]] does the opposite: it buys near support, expecting the price to stay in the trading range.
 

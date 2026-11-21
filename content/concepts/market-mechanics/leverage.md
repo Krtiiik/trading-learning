@@ -36,9 +36,9 @@ Regulators in many countries limit the leverage brokers give private traders. Br
 |--------|-------|------------------|
 | EU and UK, CFDs | Major forex pairs | 30:1 |
 | EU and UK, CFDs | Other forex pairs, gold, major [[index|stock indices]] | 20:1 |
-| EU and UK, CFDs | Other commodities, other stock indices | 10:1 |
+| EU and UK, CFDs | Other [[commodity|commodities]], other stock indices | 10:1 |
 | EU and UK, CFDs | Single stocks | 5:1 |
-| EU, CFDs | [[cryptocurrency|Cryptocurrency]] | 2:1 (the UK bans crypto CFDs, futures and options for private traders) |
+| EU, CFDs | [[cryptocurrency|Cryptocurrency]] | 2:1 (the UK bans crypto CFDs, [[futures]] and [[option|options]] for private traders) |
 | US, forex | Major pairs | 50:1 |
 | US, forex | Other pairs | 20:1 |
 | US, stocks | Stocks | 2:1 at purchase (Regulation T) |

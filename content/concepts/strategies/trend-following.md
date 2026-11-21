@@ -26,4 +26,4 @@ A [[stock]] drifts down to about $40 and stays below its 100-day average for mon
 - **Sideways markets cost money.** When the price moves back and forth with no clear trend, it crosses the average again and again, and each false signal is a small loss. You need patience through those stretches. A [[backtest]], which runs the rules on past prices, can show how long such stretches lasted in the past and how much they cost.
 - **On a winning trade, you always give some back.** The exit comes only after the trend has turned. In the example the price reached $70, but you sold at $64.
 
-Next, see [[entry-and-exit-rules]], [[breakout-trading]], which feels much the same, or [[mean-reversion]] for the opposite approach.
+Next, see [[entry-and-exit-rules]], [[breakout-trading]], which feels much the same, [[momentum]], which compares many assets with each other, or [[mean-reversion]] for the opposite approach.

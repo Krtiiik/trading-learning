@@ -5,7 +5,7 @@ Diversification is spreading your money over assets that do not all move the sam
 - **Company-specific risk**: bad news that hits one company, such as a failed product or a lost court case. Only that [[stock]] falls.
 - **Market-wide risk**: news that hits almost all companies at once, such as a recession or a sudden rise in interest rates. Most stocks fall together.
 
-Diversification removes most of the first kind, not the second. The S&P 500, an [[index]] of about 500 large US companies, still fell by more than half from late 2007 to early 2009.
+Diversification removes most of the first kind, not the second. The S&P 500, an [[index]] of about 500 large US companies, still fell more than half from late 2007 to early 2009.
 
 ## Example: one stock or twenty
 
@@ -17,7 +17,7 @@ A few dozen stocks from different industries remove most company-specific risk. 
 
 ## Correlation: do they move together?
 
-**Correlation** tells you how closely two prices move together: whether they tend to go up and down on the same days. Two oil companies are closely correlated, because both depend on the oil price. An oil company and a software company are less so. Different kinds of assets, such as stocks, [[bond|bonds]] and [[commodity|commodities]], often move differently, but not always.
+**Correlation** tells you how closely two prices move together: whether they tend to rise and fall on the same days. Two oil companies are closely correlated, because both depend on the oil price. An oil company and a software company are less so. Different kinds of assets, such as stocks, [[bond|bonds]] and [[commodity|commodities]], often move differently, but not always.
 
 Diversification works only with assets that are not closely correlated. Ten oil companies are ten stocks, but almost one bet.
 
@@ -25,15 +25,15 @@ Diversification works only with assets that are not closely correlated. Ten oil 
 
 Here a trade means one position: a buy and the later sale that closes it.
 
-A [[stop-loss]] sells automatically if the price falls to a level you chose. [[position-sizing|Position sizing]] picks the number of shares so that a hit stop costs a fixed part of the account, for example 1% of $10,000: $100. Say you hold three oil stocks at once, and each stop risks $100. Then the oil price falls hard. All three stocks hit their stops in the same week: you lose $300, 3% of the account, on one idea.
+A [[stop-loss]] sells automatically if the price falls to a level you chose. [[position-sizing|Position sizing]] picks the number of shares so that a hit stop costs a fixed part of the account, for example 1% of $10,000: $100. Say you hold three oil stocks at once; each stop risks $100. Then the oil price falls hard. All three stocks hit their stops in the same week: you lose $300, 3% of the account, on one idea.
 
-Positions in assets that move together act like one larger position, so their risks add up. Many traders therefore also limit the total risk of correlated positions.
+Positions in assets that move together act like one larger position, so their risks add up. Many traders therefore limit the total risk of correlated positions.
 
 ## Watch out
 
 - **In a crash, many assets fall together.** Correlations rise when markets panic, as in 2008.
 - **Ten stocks can be one bet.** Check what drives each asset: industry, country, currency.
-- **A gap hits all correlated positions at once.** A [[gap]] (a jump in price, for example overnight) can take all three past their stops, so you lose more than $300.
+- **A gap hits all correlated positions at once.** A [[gap]] (a jump in price, for example overnight) can take all three past their stops: you lose more than $300.
 - **Diversification makes one loss smaller; it does not stop losses.** It makes the gain from one good idea smaller too.
 
-Next, see [[position-sizing]] for the risk per trade, then [[drawdown]].
+Next, see [[position-sizing]] for the risk per trade, [[drawdown]], or [[rebalancing]] to keep a mix.

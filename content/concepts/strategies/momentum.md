@@ -9,7 +9,7 @@ On [[indicator]] pages, "momentum" means how strong the recent moves of one pric
 ## The rules
 
 1. **Pick the group**: many similar assets, such as the [[stock|stocks]] in the S&P 500 [[index]].
-2. **Measure** each one's return (its price change in percent) over a look-back period, often 12 months. Many versions skip the latest month, because a very recent jump often turns back a little.
+2. **Measure** each one's return (its price change in percent) over a look-back, often 12 months. Many versions skip the latest month, because a very recent jump often turns back a little.
 3. **Buy the top group**, for example the top 10%, with equal money in each.
 4. **Hold and rank again**, often monthly. Sell what fell out of the top group; buy what came in.
 

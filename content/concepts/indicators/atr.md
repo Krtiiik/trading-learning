@@ -22,7 +22,7 @@ The true range is $5.50. The plain range, $1.50, makes the day look calm, but at
 
 ## From true range to ATR
 
-ATR is the average true range over usually 14 periods, its length (see [[moving-average]]). Most apps use the average of ATR's inventor, J. Welles Wilder, which is like an exponential moving average. Each period, the new ATR is (13 × the last ATR + the new true range) / 14, so the newest period counts for only 1/14.
+ATR is the average true range over usually 14 periods, its length (see [[moving-average]]). Most apps use the average of ATR's inventor, J. Welles Wilder, which is like an exponential moving average (see [[macd]]). Each period, the new ATR is (13 × the last ATR + the new true range) / 14, so the newest period counts for only 1/14.
 
 Say the ATR was $1 before the gap day. The $5.50 true range lifts it only to about $1.32. It then falls slowly. Some apps use a simple average, so apps can show slightly different values.
 
@@ -34,7 +34,7 @@ ATR also changes with the [[timeframe]]. An hourly chart gives a much smaller AT
 
 ## Stops and size
 
-Traders often put the [[stop-loss]] a fixed number of ATRs below the buy price (2 or 3 is common), so that normal wobbles seldom reach it. This example uses four, a wider stop that gives the trade more room.
+Traders often put the [[stop-loss]] a fixed number of ATRs below the buy price (2 or 3 is common), so that normal wobbles seldom reach it. This example uses four, a wider stop that gives more room.
 
 Take a $10,000 account that risks 1% ($100) per trade and buys at $42:
 

@@ -42,7 +42,7 @@ The buyer can lose at most the premium. The seller keeps it and takes the risk:
 - A seller of an **uncovered call** (without the shares) who is assigned must buy them at the market price, however high, so the loss has no limit, as with [[short-selling|short selling]].
 - A put seller can lose the strike minus the premium per share if the stock falls to zero.
 
-Brokers ask sellers for margin, a deposit (see [[leverage]]).
+[[broker|Brokers]] ask sellers for margin, a deposit (see [[leverage]]).
 
 With [[futures]], both sides must buy or sell; with an option, only the seller can be made to.
 

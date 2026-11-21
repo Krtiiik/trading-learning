@@ -34,12 +34,12 @@ The same rise from 4% to 5% hurts more when more years are left:
 | 10 | about $920 |
 | 30 | about $850 |
 
-This **interest rate risk** is larger for longer bonds.
+This **interest rate risk** is larger for longer bonds. Rising rates hurt [[reit|REITs]] too.
 
 ## Watch out
 
-- **A "safe" bond can lose money.** US government bonds with 20 or more years left lost about 30% of their price in 2022.
+- **A "safe" bond can lose money.** US government bonds with 20 or more years left lost about 30% in 2022.
 - **Bonds and stocks can fall together.** Both fell in 2022, so bonds do not always soften losses on your [[stock|stocks]]. See [[diversification]].
-- **Most [[etf|bond ETFs]] never mature.** They usually sell bonds before they mature and buy new ones, so you get no fixed amount back; the price keeps moving with rates.
+- **Most [[etf|bond ETFs]] never mature.** They sell bonds before maturity and buy new ones, so you get no fixed amount back; the price keeps moving with rates.
 
 Next, see [[etf]] for holding many bonds in one trade, or [[diversification]].

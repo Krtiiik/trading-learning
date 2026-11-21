@@ -2,7 +2,7 @@ A peak is a local high point of a price: the price rose to it, then turned and f
 
 ## Not every candle high is a peak
 
-Each [[candle]] has a high, the highest price of one period (see [[ohlc]]). Most candle highs are not peaks, because a nearby candle, before or after, went higher.
+Each [[candle]] has a high, the highest price of one period (see [[ohlc]]). Most candle highs are not peaks, because a nearby candle went higher.
 
 ## How traders spot them
 
@@ -37,11 +37,11 @@ At the end of week 3, nobody knew that $48 was a peak. You knew it at the end of
 
 ## Trends
 
-Higher highs and higher lows make an uptrend; lower highs and lower lows make a downtrend (see [[trend]]). The peak at $48 and the trough at $44 are the same turning points as in the trend page's example. If week 10's high stays below $53, week 8 also becomes a peak. When the peaks stop at about the same level, and the troughs too, the price moves sideways between them. Levels where several peaks or troughs line up are [[support-and-resistance|support and resistance]].
+Higher highs and higher lows make an uptrend; lower highs and lower lows make a downtrend (see [[trend]]). The peak at $48 and the trough at $44 are the same turning points as in the trend page's example. If week 10's high stays below $53, week 8 also becomes a peak. When the peaks stop at about the same level, and the troughs too, the price moves sideways between them. Levels where several peaks or troughs line up are [[support-and-resistance|support and resistance]]; larger shapes built from these turns are [[chart-pattern|chart patterns]].
 
 ## Practical use
 
-- **Stop below the last trough.** The trough is confirmed at the close of week 7, and you buy at that close, about $50. A common choice is a [[stop-loss]] a little below the trough, at $43.50. Below $44, the higher lows would break.
+- **Stop below the last trough.** The trough is confirmed at the close of week 7, and you buy then, at about $50. One choice is a [[stop-loss]] below it, at $43.50. Below $44, the higher lows would break.
 - **The last peak as a target.** If you buy after a dip, a common first [[risk-reward|target]] is the most recent peak above your buy price, because the last rise stopped there.
 
 ## Watch out

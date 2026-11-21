@@ -33,7 +33,7 @@ The stop does not guarantee its price. Say the stock closes at $44, then opens a
 
 Outside the US, many brokers offer CFDs (contracts with a broker that pay the change in a price), which you can sell. You borrow no shares, but you usually pay [[fees-and-commissions|overnight financing]]: interest for each night you hold the position.
 
-An inverse [[etf]] (a fund that holds many assets and trades like one stock) aims for the opposite of each day's move of an [[index]], and you buy it in a normal account. It resets every day, so over weeks the result drifts from the opposite of the index's move.
+An inverse [[etf]] (a fund that holds many assets and trades like one stock) aims for the opposite of each day's move of an [[index]], and you buy it in a normal account. It resets daily, so over weeks the result is often not the opposite of the index's move.
 
 ## Watch out
 

@@ -47,6 +47,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Changed
 
+- Learning pages aligned after the fourth site-wide audit: REIT now has incoming links, the volume profile explains why the edges of the $45–$55 stock are thin, older pages link the new owners (chart pattern, MACD, momentum, commodity, rebalancing), glosses and terms match their owners, and chart pattern now follows candlestick pattern in the catalog.
 - Breakout trading: the stop explanation now compares the 80-cent distance below the zone, not the $2 risk, with one ATR.
 - Learning pages agree with each other after a third site-wide audit: each page that sets a stop on the shared $45–$55 stock says how the stop was set and how it differs from the others, "trading range", "zone" and "band" each have one meaning, the ETF, gap and ATR glosses are the same everywhere, dividend pages say "dividend yield", and the fees page lists the ETF expense ratio and the borrow fee.
 - Learning pages agree with each other after a second site-wide audit: CFDs are explained the same way and owned by the broker page, the drawdown page alone gives the recovery maths, the calm and jumpy stocks are described by their ATR, Bitcoin's volatility is worded the same on every page, an account's highest value is its "high" (not a "peak"), and the candle chart lesson now says a candle's colour compares its close with its own open.

@@ -2,11 +2,11 @@ Rebalancing means trading back to the mix of assets you chose, after price moves
 
 ## Target mix and drift
 
-Your **target mix** (also called **asset allocation**) is the share of your money you want in each kind of asset. A common example is 60% [[stock|stocks]] and 40% [[bond|bonds]] (a 60/40 mix). Bonds are loans to governments or companies. Stocks usually swing more, so more stocks means more risk.
+Your **target mix** (also called **asset allocation**) is the share of your money you want in each kind of asset. A common example is 60% [[stock|stocks]] and 40% [[bond|bonds]] (a 60/40 mix). Bonds are loans to governments or companies. Stocks usually [[volatility|swing more]], so more stocks means more risk.
 
 Prices do not move together, so the mix changes by itself: **drift**.
 
-In a [[momentum]] strategy, the target mix is equal money in each stock held, so rebalancing there means moving money to make them equal again.
+In a [[momentum]] [[strategy]], the target mix is equal money in each stock held, so rebalancing there means moving money to make them equal again.
 
 ## Example
 
@@ -19,7 +19,7 @@ Stocks rise 30%; bonds stay flat. Stocks are now $7,800, bonds $4,000, the total
 ## When to rebalance
 
 - **Calendar rebalancing**: on a fixed date, for example once a year.
-- **Threshold rebalancing**: only when a part is a set distance from its target, for example 5 percentage points (stocks above 65% or below 55%). In the example, stocks at 66% pass that line, so this rule acts now.
+- **Threshold rebalancing**: only when a part is a set distance from the target mix, for example 5 percentage points (stocks above 65% or below 55%). In the example, stocks at 66% pass that line, so this rule acts now.
 
 ## With new money instead of selling
 
@@ -28,7 +28,7 @@ Put regular new money into the part that is too small. In the example, $7,800 of
 ## What it does
 
 - **It keeps the mix, and so roughly the risk, that you chose.** Without it, a 60/40 mix usually drifts toward stocks, because they tend to rise more over the years, and the next crash hits harder (see [[drawdown]]).
-- **It makes you sell what rose the most and buy what fell behind.** A fixed rule, as in any [[strategy]], means fear and hope do not decide.
+- **It makes you sell what rose the most and buy what fell behind.** A fixed rule, as in any strategy, means fear and hope do not decide.
 
 ## Watch out
 

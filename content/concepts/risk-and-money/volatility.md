@@ -12,15 +12,15 @@ Volatility also differs between assets: many smaller [[cryptocurrency|cryptocurr
 - **[[atr]]** (average true range): the same average, but it also counts any jump ([[gap]]) from the previous close.
 - **Standard deviation of daily changes**: how far daily percentage changes usually spread from their average. ([[bollinger-bands]] use the standard deviation of closes instead.)
 
-All these measure **historical volatility**: how much the price has moved. **Implied volatility** is the size of move that traders expect in the future, read from the prices of [[option|options]] (contracts giving the right to buy or sell at a set price; they cost more when traders expect bigger moves). The VIX shows the implied volatility of the S&P 500 index for the next 30 days, as a yearly percentage.
+All these measure **historical volatility**: how much the price has moved. **Implied volatility** is the size of move that traders expect in the future, read from the prices of [[option|options]] (contracts giving the right, but not the duty, to buy or sell at a set price; they cost more when traders expect bigger moves). The VIX shows the implied volatility of the S&P 500 index for the next 30 days, as a yearly percentage.
 
 ## Calm and wild periods
 
-Large moves tend to come in groups, and calm days usually follow calm days. A market can stay quiet for months, then swing hard for weeks after bad news.
+Large moves tend to come in groups, and calm days usually follow calm days. A market can stay quiet for months, then swing hard for weeks.
 
 ## Example
 
-Two stocks both trade at $42. You risk 1% of a $10,000 account ($100) per trade.
+Two stocks trade at $42. You risk 1% of a $10,000 account ($100) per trade.
 
 - **Calm stock**: its ATR (average daily move, gaps included) is about $1 (about 2.4%). You put the [[stop-loss]] at $38, four daily moves below the $42 buy price, so normal wobbles seldom reach it.
 - **Jumpy stock**: its ATR is about $2 (about 4.8%). A stop at $38 is only two daily moves away, so you put it four moves away, at $34.

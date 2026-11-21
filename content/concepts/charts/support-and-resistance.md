@@ -1,4 +1,4 @@
-Support is a price level where falls stopped more than once: buyers came in, and the price turned back up. Resistance is a level where rises stopped more than once: sellers came in, and the price turned back down. On a [[price-chart]], they are where several [[peak-and-trough|peaks or troughs]] line up at about the same price.
+Support is a price level where falls stopped more than once: buyers came in, and the price turned back up. Resistance is a level where rises stopped more than once: sellers came in, and the price turned back down. On a [[price-chart]], they are where several [[peak-and-trough|peaks or troughs]] line up at about the same price. Larger shapes built from these turns are [[chart-pattern|chart patterns]].
 
 ## Example
 
@@ -21,14 +21,14 @@ The troughs are not at the same cent. Treat a level as a narrow zone, here about
 ## Why levels can work
 
 - **Many traders watch the same prices.** Traders who expect a turn at $45 buy there, and their buying helps make it.
-- **Orders wait at the level.** Buyers who missed the last turn place [[order-types|limit orders]] (orders that buy only at a set price or better) near $45. Sellers place sell orders near $55.
+- **Orders wait at the level.** Buyers place [[order-types|limit orders]] (orders that buy only at a set price or better) near $45. Sellers place them near $55.
 - **Round numbers.** Prices such as $50 or $100 are easy to remember, so orders collect there.
 
 A level works only while enough traders act on it.
 
 ## Broken resistance often becomes support
 
-Turning points from the [[trend]] page: $40 (low), $48 (high), $44, $53, $49, $58. The first rise stopped at $48. That is only one peak, but traders watch it. Later the price rose past it, and the next fall stopped at $49, just above that old peak. A price that had stopped a rise now stopped a fall. Broken support often becomes resistance, too.
+Turning points from the [[trend]] page: $40 (low), $48 (high), $44, $53, $49, $58. The first rise stopped at $48. That is only one peak, but traders watch it. Later the price rose past it, and the next fall stopped at $49, just above it. A price that had stopped a rise now stopped a fall. Broken support often becomes resistance.
 
 ## Using levels
 
