@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: momentum, ranking many assets by past return, the 12-month look-back that skips the latest month, a worked monthly re-rank with rebalancing, and momentum crashes. The momentum summary now says the top risers are expected to keep beating the rest.
 - Concept page: MACD, the exponential moving average, the MACD and signal lines, the histogram, signal-line and zero-line crossovers, and why its values cannot be compared across stocks.
 - Concept page: chart pattern, double tops and bottoms, head and shoulders, triangles and flags, the neckline, the measured-move target, and a worked double top.
 - Concept page: option, calls and puts, strike, premium, exercise and assignment, intrinsic and time value, time decay, a worked call on the $42 stock, and the risk for buyers and sellers.

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Eight assets ranked as bars by their past return, from the biggest rise at the top to the biggest fall at the bottom; the top three bars are picked to buy">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the top group: biggest past rises, picked -->
+  <g style="fill: var(--banner-up, #1a9b5b)">
+    <rect x="520" y="40" width="400" height="28"/>
+    <rect x="520" y="82" width="320" height="28"/>
+    <rect x="520" y="124" width="260" height="28"/>
+  </g>
+  <!-- the rest: smaller rises, not picked -->
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .25">
+    <rect x="520" y="166" width="150" height="28"/>
+    <rect x="520" y="208" width="80" height="28"/>
+    <rect x="520" y="250" width="30" height="28"/>
+  </g>
+  <!-- falls, not picked -->
+  <g style="fill: var(--banner-down, #d0453a); fill-opacity: .45">
+    <rect x="460" y="292" width="60" height="28"/>
+    <rect x="380" y="334" width="140" height="28"/>
+  </g>
+  <!-- zero return -->
+  <line x1="520" y1="30" x2="520" y2="372" stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- the pick -->
+  <rect x="504" y="30" width="440" height="132" rx="10" fill="none" stroke-width="4" stroke-dasharray="10 8"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="3">
+    <text x="975" y="88" style="fill: var(--banner-accent, #0b6bcb)">BUY</text>
+    <text x="975" y="128" style="fill: var(--banner-accent, #0b6bcb)">TOP 3</text>
+    <text x="40" y="88" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">RANKED BY</text>
+    <text x="40" y="128" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">PAST RETURN</text>
+  </g>
+</svg>

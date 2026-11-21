@@ -33,7 +33,7 @@ Had it soon closed back below the average, say at $41, you would sell for a smal
 
 - **Trend following**: ride a price while it keeps moving one way.
 - [[mean-reversion|Mean reversion]]: bet that a price far from its usual level comes back.
-- [[momentum|Momentum]]: buy the recent biggest risers among many assets, expecting them to keep rising.
+- [[momentum|Momentum]]: buy the recent biggest risers among many assets, expecting them to keep beating the rest.
 - [[breakout-trading|Breakout trading]]: enter when the price breaks past a [[support-and-resistance|support or resistance]] level.
 - [[buy-and-hold|Buy and hold]]: buy and keep for years.
 - [[rebalancing|Rebalancing]]: trade back to a target mix after price moves have shifted it.

@@ -72,7 +72,7 @@ groups:
       - {slug: strategy, title: Strategy, summary: A fixed set of rules that decides when to enter and exit trades.}
       - {slug: trend-following, title: Trend following, summary: "Buying what is rising and selling what is falling, staying in while the trend lasts."}
       - {slug: mean-reversion, title: Mean reversion, summary: Betting that a price that moved far from its usual level will come back.}
-      - {slug: momentum, title: Momentum, summary: "Picking assets that rose the most recently, expecting them to keep rising."}
+      - {slug: momentum, title: Momentum, summary: "Buying the assets that rose the most recently, expecting them to keep beating the rest."}
       - {slug: breakout-trading, title: Breakout trading, summary: Entering a trade when the price breaks past a support or resistance level.}
       - {slug: buy-and-hold, title: Buy and hold, summary: "Buying and keeping an asset for years, ignoring short-term moves."}
       - {slug: rebalancing, title: Rebalancing, summary: Trading back to your target mix of assets after prices have shifted it.}
