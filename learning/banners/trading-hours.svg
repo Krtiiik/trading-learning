@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="One day as a 24-hour timeline in New York time: the regular session from the open at 9:30 to the close at 16:00 is a thick bar, with thinner, fainter pre-market and after-hours zones on each side and the market closed overnight">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the day: 0:00 at x=60 to 24:00 at x=1140, 45 px per hour -->
+  <!-- closed hours: a thin faint line -->
+  <line x1="60" y1="210" x2="1140" y2="210" stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3"/>
+  <!-- hour ticks every 6 hours -->
+  <g stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3">
+    <line x1="60" y1="195" x2="60" y2="225"/><line x1="330" y1="200" x2="330" y2="220"/>
+    <line x1="600" y1="200" x2="600" y2="220"/><line x1="870" y1="200" x2="870" y2="220"/>
+    <line x1="1140" y1="195" x2="1140" y2="225"/>
+  </g>
+  <!-- extended hours: pre-market 4:00-9:30, after-hours 16:00-20:00, thin and faint -->
+  <g style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .3">
+    <rect x="240" y="192" width="248" height="36"/>
+    <rect x="780" y="192" width="180" height="36"/>
+  </g>
+  <!-- the regular session 9:30-16:00 -->
+  <rect x="488" y="165" width="292" height="90" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <!-- open and close markers -->
+  <g stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a)">
+    <line x1="488" y1="125" x2="488" y2="275"/><line x1="780" y1="125" x2="780" y2="275"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="3" text-anchor="middle"
+     style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="488" y="72">OPEN</text><text x="488" y="112">9:30</text>
+    <text x="780" y="72">CLOSE</text><text x="780" y="112">16:00</text>
+  </g>
+  <text x="634" y="221" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-bg, #f2f4f7)">REGULAR</text>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2" text-anchor="middle"
+     style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">
+    <text x="364" y="315">PRE-MARKET</text><text x="880" y="315">AFTER-HOURS</text>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2"
+     style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .45">
+    <text x="60" y="370">0:00</text><text x="1140" y="370" text-anchor="end">24:00</text>
+  </g>
+</svg>
