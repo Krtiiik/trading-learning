@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price line moving sideways between two price zones: each rise stops at the upper zone, resistance, and each fall stops at the lower zone, support">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the two levels, drawn as zones because a level is an area, not an exact price -->
+  <rect x="40" y="80" width="1120" height="36" style="fill: var(--banner-down, #d0453a); fill-opacity: .18"/>
+  <rect x="40" y="264" width="1120" height="36" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .18"/>
+  <g fill="none" stroke-width="2" style="stroke-opacity: .55">
+    <path d="M40 80 H1160 M40 116 H1160" style="stroke: var(--banner-down, #d0453a)"/>
+    <path d="M40 264 H1160 M40 300 H1160" style="stroke: var(--banner-up, #1a9b5b)"/>
+  </g>
+  <!-- price, turned back at each zone -->
+  <path d="M40 230 L120 175 L150 190 L210 98 L290 200 L320 185 L380 284 L470 150 L500 165 L560 94 L640 210 L670 195 L740 280 L820 160 L850 175 L910 102 L990 220 L1020 205 L1080 286 L1160 210"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- touches: rises stopped -->
+  <g style="fill: var(--banner-down, #d0453a)">
+    <circle cx="210" cy="98" r="12"/><circle cx="560" cy="94" r="12"/><circle cx="910" cy="102" r="12"/>
+  </g>
+  <!-- touches: falls stopped -->
+  <g style="fill: var(--banner-up, #1a9b5b)">
+    <circle cx="380" cy="284" r="12"/><circle cx="740" cy="280" r="12"/><circle cx="1080" cy="286" r="12"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="60" y="64" style="fill: var(--banner-down, #d0453a)">RESISTANCE</text>
+    <text x="60" y="344" style="fill: var(--banner-up, #1a9b5b)">SUPPORT</text>
+  </g>
+</svg>
