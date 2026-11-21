@@ -16,7 +16,7 @@ groups:
       - {slug: cryptocurrency, title: Cryptocurrency, summary: "A digital currency recorded on a blockchain, like Bitcoin."}
       - {slug: futures, title: Futures, summary: A contract to buy or sell something at a set price on a future date.}
       - {slug: option, title: Option, summary: "A contract giving the right, but not the duty, to buy or sell at a set price."}
-      - {slug: reit, title: REIT, summary: A company that owns property and pays most of its rental income to shareholders.}
+      - {slug: reit, title: REIT, summary: A company that owns property or property loans and pays most of its income to shareholders.}
 
   - slug: market-mechanics
     title: Market mechanics

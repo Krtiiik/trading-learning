@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: REIT (real estate investment trust), equity and mortgage REITs, the payout rule, FFO, a worked dividend yield example, why rising rates hurt REIT prices, and US tax on REIT dividends. The REIT summary now covers property loans too.
 - Concept page: buy and hold, compounding with reinvested dividends, how fees compound, time in the market, why a broad index fund, and long drawdowns.
 - Concept page: momentum, ranking many assets by past return, the 12-month look-back that skips the latest month, a worked monthly re-rank with rebalancing, and momentum crashes. The momentum summary now says the top risers are expected to keep beating the rest.
 - Concept page: MACD, the exponential moving average, the MACD and signal lines, the histogram, signal-line and zero-line crossovers, and why its values cannot be compared across stocks.

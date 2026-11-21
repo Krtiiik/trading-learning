@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A REIT box holding an office tower, a block of flats and a warehouse, with one small coin kept inside; an arrow labelled rent goes to three shareholders, each with a dividend coin">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the REIT: one company that owns the buildings -->
+  <rect x="40" y="40" width="430" height="290" rx="18" stroke-width="6"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .1; stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="255" y="92" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="700"
+        letter-spacing="4" style="fill: var(--banner-accent, #0b6bcb)">REIT</text>
+  <!-- the buildings: office tower, flats, warehouse -->
+  <g stroke-width="5" stroke-linejoin="round" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)">
+    <rect x="80" y="115" width="95" height="190"/>
+    <rect x="200" y="170" width="110" height="135"/>
+    <path d="M335 305 L335 225 L385 190 L435 225 L435 305 Z"/>
+  </g>
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .45">
+    <!-- office windows -->
+    <rect x="97" y="135" width="22" height="22"/><rect x="136" y="135" width="22" height="22"/>
+    <rect x="97" y="175" width="22" height="22"/><rect x="136" y="175" width="22" height="22"/>
+    <rect x="97" y="215" width="22" height="22"/><rect x="136" y="215" width="22" height="22"/>
+    <rect x="97" y="255" width="22" height="22"/><rect x="136" y="255" width="22" height="22"/>
+    <!-- flats windows -->
+    <rect x="218" y="190" width="24" height="24"/><rect x="268" y="190" width="24" height="24"/>
+    <rect x="218" y="235" width="24" height="24"/><rect x="268" y="235" width="24" height="24"/>
+    <!-- warehouse door -->
+    <rect x="360" y="250" width="50" height="55"/>
+  </g>
+  <!-- the small part of the rent the REIT keeps -->
+  <circle cx="400" cy="125" r="22" style="fill: var(--banner-up, #1a9b5b)"/>
+  <text x="400" y="134" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700"
+        style="fill: var(--banner-bg, #f2f4f7)">$</text>
+  <text x="255" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">PROPERTY</text>
+  <!-- the rent flows out to the shareholders -->
+  <path d="M500 200 L720 200 M700 180 L720 200 L700 220" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="605" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">RENT</text>
+  <!-- the shareholders, each with a dividend coin -->
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .25">
+    <circle cx="820" cy="210" r="26"/><circle cx="950" cy="210" r="26"/><circle cx="1080" cy="210" r="26"/>
+    <path d="M775 310 Q775 248 820 248 Q865 248 865 310 Z"/>
+    <path d="M905 310 Q905 248 950 248 Q995 248 995 310 Z"/>
+    <path d="M1035 310 Q1035 248 1080 248 Q1125 248 1125 310 Z"/>
+  </g>
+  <g style="fill: var(--banner-up, #1a9b5b)">
+    <circle cx="820" cy="128" r="30"/><circle cx="950" cy="128" r="30"/><circle cx="1080" cy="128" r="30"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="32" font-weight="700" text-anchor="middle" style="fill: var(--banner-bg, #f2f4f7)">
+    <text x="820" y="139">$</text><text x="950" y="139">$</text><text x="1080" y="139">$</text>
+  </g>
+  <text x="950" y="68" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-up, #1a9b5b)">DIVIDENDS</text>
+  <text x="950" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">SHAREHOLDERS</text>
+</svg>
