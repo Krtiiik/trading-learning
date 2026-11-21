@@ -45,3 +45,23 @@ def test_open_flag_opens_the_site_once_the_server_listens(monkeypatch):
 
 def test_without_open_flag_no_browser_opens(monkeypatch):
     assert run_main(monkeypatch, []) == []
+
+
+def test_files_are_served_with_no_cache_so_a_rebuild_shows_on_reload(tmp_path):
+    import functools
+    import threading
+    import urllib.request
+
+    (tmp_path / "site.css").write_text("body{}", encoding="utf-8")
+    handler = functools.partial(serve.NoCacheHandler, directory=tmp_path)
+    server = serve.http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        url = f"http://127.0.0.1:{server.server_address[1]}/site.css"
+        with urllib.request.urlopen(url, timeout=2) as response:
+            assert response.headers["Cache-Control"] == "no-cache"
+            assert response.read() == b"body{}"
+    finally:
+        server.shutdown()
+        server.server_close()

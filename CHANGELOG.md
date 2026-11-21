@@ -28,3 +28,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Learning site: 18 catalog summaries that contain a comma were cut off at the comma. They now show in full, and the build fails on an unquoted comma.
+- `learning/serve.py` tells the browser to check every file again, so a rebuilt stylesheet shows after a normal reload instead of an old cached copy.

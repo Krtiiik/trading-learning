@@ -16,13 +16,21 @@ from pathlib import Path
 DIST = Path(__file__).resolve().parent / "dist"
 
 
+class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
+    """Tells the browser to check every file again, so a rebuilt site.css shows on a normal reload."""
+
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-cache")
+        super().end_headers()
+
+
 def main(argv=None, open_browser=webbrowser.open):
     parser = argparse.ArgumentParser(description="Serve learning/dist for local preview.")
     parser.add_argument("--open", action="store_true", help="open the site in the default browser")
     args = parser.parse_args(argv)
 
     port = int(os.environ.get("PORT", "8765"))
-    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=DIST)
+    handler = functools.partial(NoCacheHandler, directory=DIST)
     server = http.server.ThreadingHTTPServer(("127.0.0.1", port), handler)
     url = f"http://localhost:{server.server_address[1]}/"
     print(f"Serving {DIST} on {url}")
