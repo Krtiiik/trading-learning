@@ -40,7 +40,7 @@ groups:
     blurb: How to read a price chart and the shapes that appear on it.
     concepts:
       - {slug: price-chart, title: Price chart, summary: A picture of how a price moved over time.}
-      - {slug: timeframe, title: Timeframe, summary: The length of time each bar or candle on a chart covers.}
+      - {slug: timeframe, title: Timeframe, summary: How much time each bar or candle on a chart covers.}
       - {slug: candle, title: Candle, summary: "One bar of a chart showing four prices for one period: open, high, low and close."}
       - {slug: ohlc, title: OHLC, summary: "Open, high, low, close: the four prices that summarise a period."}
       - {slug: wick, title: Wick, summary: The thin line on a candle showing how far the price reached beyond the open and close.}
