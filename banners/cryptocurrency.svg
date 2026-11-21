@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A key opens a coin, and the coin is one line in a chain of ledger blocks that many connected computers keep together">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the key: whoever holds it holds the coin -->
+  <g fill="none" stroke-width="6" stroke-linecap="round" style="stroke: var(--banner-fg, #1a1a1a)">
+    <circle cx="96" cy="170" r="36"/>
+    <path d="M132 170 L242 170 M196 170 L196 194 M222 170 L222 188"/>
+  </g>
+  <text x="150" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">KEY</text>
+  <!-- the coin: plain, no logo -->
+  <circle cx="330" cy="170" r="85" stroke-width="6"
+          style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .12; stroke: var(--banner-accent, #0b6bcb)"/>
+  <circle cx="330" cy="170" r="64" fill="none" stroke-width="3"
+          style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .55"/>
+  <text x="330" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700"
+        letter-spacing="2" style="fill: var(--banner-accent, #0b6bcb)">COIN</text>
+  <!-- the coin is a record in the ledger -->
+  <path d="M415 170 L470 170" fill="none" stroke-width="4" stroke-dasharray="8 8"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the blockchain: three ledger blocks, chained -->
+  <g fill="none" stroke-width="5" style="stroke: var(--banner-fg, #1a1a1a)">
+    <rect x="480" y="70" width="170" height="160" rx="10"/>
+    <rect x="710" y="70" width="170" height="160" rx="10"/>
+    <rect x="940" y="70" width="170" height="160" rx="10"/>
+    <path d="M650 150 L710 150 M880 150 L940 150"/>
+  </g>
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .25">
+    <rect x="480" y="70" width="170" height="26" rx="10"/>
+    <rect x="710" y="70" width="170" height="26" rx="10"/>
+    <rect x="940" y="70" width="170" height="26" rx="10"/>
+  </g>
+  <g stroke-width="8" stroke-linecap="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3">
+    <path d="M505 130 L625 130 M505 200 L605 200"/>
+    <path d="M735 130 L855 130 M735 165 L825 165 M735 200 L845 200"/>
+    <path d="M965 130 L1075 130 M965 165 L1085 165 M965 200 L1045 200"/>
+  </g>
+  <path d="M505 165 L625 165" stroke-width="8" stroke-linecap="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- many computers keep the same ledger -->
+  <g fill="none" stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3">
+    <path d="M520 290 L1070 290"/>
+    <path d="M565 230 L565 277 M795 230 L795 277 M1025 230 L1025 277" stroke-dasharray="6 6"/>
+  </g>
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .45">
+    <circle cx="520" cy="290" r="13"/><circle cx="565" cy="290" r="13"/><circle cx="680" cy="290" r="13"/>
+    <circle cx="795" cy="290" r="13"/><circle cx="910" cy="290" r="13"/><circle cx="1025" cy="290" r="13"/>
+    <circle cx="1070" cy="290" r="13"/>
+  </g>
+  <text x="795" y="358" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">BLOCKCHAIN</text>
+</svg>
