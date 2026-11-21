@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: candlestick pattern, common one- to three-candle patterns (doji, hammer, shooting star, engulfing, morning star), why context and confirmation matter, and why a pattern alone is a weak signal.
 - Concept page: entry and exit rules, what makes a rule exact (condition, time, order), the kinds of exit, and turning a vague idea into exact rules.
 - Concept page: mean reversion, buying a price far below its usual level and selling when it comes back, how far is measured, and why it has many small wins and a few large losses.
 - Concept page: index, what an index tracks, major indices by market, cap-weighted and price-weighted indices, points and percent, and how people trade an index.
