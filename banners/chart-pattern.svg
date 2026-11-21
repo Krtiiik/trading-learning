@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A double top: the price rises to a top, falls back to the neckline, rises to a second top at the same height, then breaks down through the neckline; the height of the pattern, measured from the tops to the neckline, is projected the same distance below the neckline to give the target">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- guide at the height of the two tops, used for the measured move -->
+  <path d="M300 80 H1110" fill="none" stroke-width="2" stroke-dasharray="6 10"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <!-- the neckline: the low between the two tops -->
+  <path d="M250 190 H1110" fill="none" stroke-width="4" stroke-dasharray="16 10"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the target: the same distance below the neckline -->
+  <path d="M700 300 H1110" fill="none" stroke-width="4" stroke-dasharray="16 10"
+        style="stroke: var(--banner-down, #d0453a)"/>
+  <!-- price: up to the first top, back to the neckline, up to the second top, then down through the neckline -->
+  <path d="M40 345 L110 290 L140 305 L300 80 L450 190 L600 82 L720 215 L750 200 L870 300 L900 290 L930 305"
+        fill="none" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .8"/>
+  <!-- the two tops -->
+  <g fill="none" stroke-width="3" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .4">
+    <circle cx="300" cy="80" r="24"/><circle cx="600" cy="82" r="24"/>
+  </g>
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <circle cx="300" cy="80" r="12"/><circle cx="600" cy="82" r="12"/>
+  </g>
+  <!-- the break of the neckline -->
+  <circle cx="697" cy="190" r="12" style="fill: var(--banner-down, #d0453a)"/>
+  <!-- measured move: two equal heights -->
+  <g fill="none" stroke-width="5" stroke-linecap="round">
+    <path d="M1080 84 H1100 M1090 84 V186 M1080 186 H1100" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .7"/>
+    <path d="M1080 194 H1100 M1090 194 V296 M1080 296 H1100" style="stroke: var(--banner-down, #d0453a)"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" text-anchor="middle">
+    <text x="300" y="46" style="fill: var(--banner-accent, #0b6bcb)">TOP</text>
+    <text x="600" y="48" style="fill: var(--banner-accent, #0b6bcb)">TOP</text>
+    <text x="350" y="234" style="fill: var(--banner-accent, #0b6bcb)">NECKLINE</text>
+    <text x="1090" y="346" style="fill: var(--banner-down, #d0453a)">TARGET</text>
+  </g>
+</svg>

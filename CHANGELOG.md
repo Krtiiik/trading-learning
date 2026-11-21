@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: chart pattern, double tops and bottoms, head and shoulders, triangles and flags, the neckline, the measured-move target, and a worked double top.
 - Concept page: option, calls and puts, strike, premium, exercise and assignment, intrinsic and time value, time decay, a worked call on the $42 stock, and the risk for buyers and sellers.
 - Concept page: commodity, the three groups, spot and futures prices, cost of carry, contango and backwardation, the roll cost of futures funds, and the ways to trade commodities.
 - Concept page: futures, standard contracts with an expiry date, the multiplier, initial and maintenance margin, daily settlement, expiry and rolling, and why you can lose more than your margin.
