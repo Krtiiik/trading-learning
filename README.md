@@ -1,12 +1,10 @@
-# Trading
+# Trading learning
 
-My personal collection of learning how to trade.
+My personal learning site about trading: a beginner knowledge base of short concept pages and lessons.
 
-## Learning site
-
-- Published version: <https://krtiiik.github.io/trading/> (GitHub Pages, deployed from `main`)
+- Published version: <https://krtiiik.github.io/trading-learning/> (GitHub Pages, deployed from `main`)
 - Local version: build the site, serve it on <http://localhost:8765> and open it in your default browser:
 
 ```powershell
-uv run python learning/build.py && uv run python learning/serve.py --open
+uv run python scripts/build.py && uv run python scripts/serve.py --open
 ```

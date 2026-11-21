@@ -25,7 +25,7 @@ Expect high tens of pages, growing over time. Most pages start planned.
 
 ## Pages and URLs
 
-All URLs are relative. Every template gets `root` (`""` on the home page, `"../"` one level down) and must prefix every internal link and asset with it. The site is deployed to GitHub Pages under a sub-path (`/trading/`) and also served from `learning/dist/` locally, so a root-relative link (`/...`) breaks.
+All URLs are relative. Every template gets `root` (`""` on the home page, `"../"` one level down) and must prefix every internal link and asset with it. The site is deployed to GitHub Pages under a sub-path (`/trading-learning/`) and also served from `dist/` locally, so a root-relative link (`/...`) breaks.
 
 | Page | URL | Template | Purpose |
 |---|---|---|---|
@@ -118,9 +118,9 @@ Page templates also receive: `group.html` → `group`; `concept.html` and `lesso
 ## Build and preview
 
 ```
-uv run python learning/build.py          # builds learning/dist/
-uv run pytest tests/learning             # structure tests; they also build the real site
-uv run python learning/build.py --words  # body word counts of written pages; exit 1 if a concept is over 500
+uv run python scripts/build.py          # builds dist/
+uv run pytest                          # structure tests; they also build the real site
+uv run python scripts/build.py --words  # body word counts of written pages; exit 1 if a concept is over 500
 ```
 
-Preview locally with the `learning-site` entry in `.claude/launch.json`. It runs `learning/serve.py`, which serves `learning/dist` on `$PORT` (default 8765); add `--open` to also open it in the default browser. Don't deploy from a branch: GitHub Actions deploys the site when a change to it reaches `main`.
+Preview locally with the `site` entry in `.claude/launch.json`. It runs `scripts/serve.py`, which serves `dist/` on `$PORT` (default 8765); add `--open` to also open it in the default browser. Don't deploy from a branch: GitHub Actions deploys the site when a change to it reaches `main`.

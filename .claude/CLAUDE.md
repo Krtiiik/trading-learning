@@ -30,7 +30,7 @@ Docs for Claude, kept in the repository:
 - @CONTEXT.md: glossary of the project's terms and top-level concepts. Use these terms exactly in code, commits and conversation.
 - `ARCHITECTURE.md`: the big picture (components, how they relate, data flow) and the reasons behind design choices. Read it before changing structure or adding a component, and when a design looks odd.
 - `CONVENTIONS.md`: idioms and placement rules that a linter or formatter can't enforce. Read it before writing new code.
-- `DESIGN.md` (repository root): the portable visual design guideline taken from the learning site. Read it before changing `learning/static/site.css` or the templates, and update it when the design changes.
+- `DESIGN.md` (repository root): the portable visual design guideline taken from the learning site. Read it before changing `static/site.css` or the templates, and update it when the design changes.
 
 Maintaining them:
 

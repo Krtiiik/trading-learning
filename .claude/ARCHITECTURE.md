@@ -11,17 +11,19 @@ why a design was chosen over the obvious alternative, and the constraints that s
 
 <!-- What the system does and its main parts, in a few sentences. -->
 
+The repository holds only the learning site: the catalog and content at the root, the build and preview scripts in `scripts/`, and their tests in `tests/`. It was split out of a wider trading repository, so older history also has an unused Python trading package.
+
 ## Components and flow
 
 <!-- How the main parts relate, and how data or control moves between them. -->
 
 ### Learning site
 
-`learning/build.py` reads the catalog, Markdown content and banners, checks that they agree (unknown links, missing banners and misplaced files all fail the build), and renders Jinja2 templates into `learning/dist/`. It also writes `static/index.js`, the data behind link hover previews and search. Deploy: the `.github/workflows/pages.yml` GitHub Actions workflow runs the learning tests, builds the site and deploys `learning/dist/` to GitHub Pages (<https://krtiiik.github.io/trading/>) on every push to `main` that touches `learning/`, the learning tests or the dependencies. It also has a manual run button.
+`scripts/build.py` reads the catalog, Markdown content and banners, checks that they agree (unknown links, missing banners and misplaced files all fail the build), and renders Jinja2 templates into `dist/`. It also writes `static/index.js`, the data behind link hover previews and search. Deploy: the `.github/workflows/pages.yml` GitHub Actions workflow runs the tests, builds the site and deploys `dist/` to GitHub Pages (<https://krtiiik.github.io/trading-learning/>) on every push to `main`. It also has a manual run button.
 
-`learning/SPEC.md` is the contract between structure and design.
+`SPEC.md` is the contract between structure and design.
 
-Content work runs through `learning-*` subagents in `.claude/agents/`: a planner (what to write next), a writer, an illustrator (banners), and three read-only checkers: a reviewer (one page, readability and consistency), a fact checker (one page, against the web) and an auditor (all pages, drift). The `write-page` skill chains writer and illustrator, then reviewer and fact checker until clean, then build, a banner look in the browser pane, and commit.
+Content work runs through subagents in `.claude/agents/`: a planner (what to write next), a writer, an illustrator (banners), and three read-only checkers: a reviewer (one page, readability and consistency), a fact checker (one page, against the web) and an auditor (all pages, drift). The `write-page` skill chains writer and illustrator, then reviewer and fact checker until clean, then build, a banner look in the browser pane, and commit.
 
 ## Design notes
 

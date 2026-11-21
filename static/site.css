@@ -3,7 +3,7 @@
    cards tile edge to edge and share their borders. Zero radius, zero shadow.
    Neutrals are fixed and almost colourless. The highlight colour (--hi) is reserved for the few
    things that matter most: written concept links, focus, and the banners' own accent.
-   Class names and the --banner-* variables are the contract with the build (see learning/SPEC.md). */
+   Class names and the --banner-* variables are the contract with the build (see SPEC.md). */
 
 :root {
   --bg:      oklch(0.978 0.002 250);

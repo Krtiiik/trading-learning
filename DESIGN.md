@@ -1,8 +1,8 @@
 # Design guideline: Hairline
 
-A portable design language, taken from the trading learning site (`learning/static/site.css`). Use it for documentation sites, knowledge bases, dashboards and tools. Copy this file into a new project and start from the [starter tokens](#14-starter-tokens).
+A portable design language, taken from the trading learning site (`static/site.css`). Use it for documentation sites, knowledge bases, dashboards and tools. Copy this file into a new project and start from the [starter tokens](#14-starter-tokens).
 
-The reference implementation is `learning/static/site.css`. When this file and that stylesheet disagree on the learning site, the stylesheet is correct and this file must be updated.
+The reference implementation is `static/site.css`. When this file and that stylesheet disagree on the learning site, the stylesheet is correct and this file must be updated.
 
 ---
 

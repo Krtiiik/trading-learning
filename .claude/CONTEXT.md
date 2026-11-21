@@ -9,7 +9,7 @@ Glossary for Claude: the terms and top-level concepts this project uses with a s
 
 ## Language
 
-**Learning site**: the static knowledge base in `learning/`, deployed to GitHub Pages.
+**Learning site**: the static knowledge base this repository holds, deployed to GitHub Pages.
 _Avoid_: wiki, docs site.
 
 **Concept**: a short, standalone page explaining one idea in simple words.
@@ -24,7 +24,7 @@ _Avoid_: stub, draft.
 **Lesson**: a longer guided page that connects several concepts and lists the ones it builds on. Written on request.
 _Avoid_: guide, tutorial, article.
 
-**Catalog**: `learning/catalog.yaml`, the single list of concept groups and concepts with their titles and summaries.
+**Catalog**: `catalog.yaml`, the single list of concept groups and concepts with their titles and summaries.
 
 **Banner**: the hand-drawn SVG at the top of each written page that shows what the page is about.
 
