@@ -46,7 +46,10 @@ _Avoid_: guide, tutorial, article.
 - **order book** (learning site): the list of waiting limit orders; its best prices are the bid and the ask.
 - **high / peak** (learning site): an account's highest value so far is its *high*. A *peak* is a local turning point of a price (see peak-and-trough). Do not call the account high a peak.
 - **bar** (learning site): one period's mark on a chart in general ("bar or candle"). A *bar chart* is the OHLC bar chart; *volume bars* are the bars under a chart. Say which one you mean.
-- **range** (learning site): the *daily range* is a period's high minus its low. A sideways band between two levels is a *trading range*; prefer "moves sideways between them" in passing.
+- **range / zone / band** (learning site): the *daily range* is a period's high minus its low. The sideways area between support and resistance is a *trading range*: write that on first use, never "range" alone, and "moves sideways between them" in passing. A *zone* is the narrow price area of one support or resistance level. *Band* means a Bollinger band only.
+- **yield** (learning site): on bond pages, the yearly return if you buy now and hold to maturity. On stock pages, always write *dividend yield*. *High yield* means junk bonds only.
+- **maintenance margin** (learning site): for US stocks, the FINRA minimum share of the position value; for futures, the exchange-set amount below which a margin call comes. Say which one you mean.
+- **confirmation** (learning site): the later prices a rule waits for before it acts: candles after a peak, the next candle after a pattern, or a close beyond a zone. Say what confirms.
 - **CFD** (learning site): a contract with a broker that pays the change in a price, without holding the asset. Not offered to private traders in the US. Broker owns the term.
 - **market maker / large trading firm** (learning site): write "large trading firm" in passing; write "market maker" only where the page explains it.
 - **stop loss** (learning site): two words, no hyphen, as in the catalog title.

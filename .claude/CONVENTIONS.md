@@ -15,12 +15,12 @@ Skip anything tooling already checks. Prefer a rule plus a one-line reason over 
 - Link each concept the first time it is mentioned with `[[slug]]`. Use `[[slug|text]]` when the wording differs (plural, inflection, a proper noun that the default lowercasing would break). Default link text is the title with its first letter lowercased, except acronyms.
 - Advanced concepts and lessons may lean on basics, and should link them rather than re-explain them.
 - One page owns each definition. Other pages give a one-line version in passing and link the owner, so the wording can't drift. Owners so far:
-  - market mechanics: bid-and-ask (bid, ask, order book), spread (the spread cost), liquidity (slippage), fees-and-commissions (payment for order flow, overnight financing), broker (custody, CFDs, market maker, compensation schemes), leverage (margin, margin call, stop out, leverage limits);
-  - assets: forex-pair (pip, lot), cryptocurrency (blockchain, wallet, stablecoin), index (cap and price weighting);
-  - charts: ohlc (open/high/low/close), line-vs-candle-chart (bar chart), peak-and-trough (swing high and low, late confirmation);
-  - indicators: moving-average (length), atr (true range, ATR-based stops);
+  - market mechanics: bid-and-ask (bid, ask, order book), spread (the spread cost), liquidity (slippage), fees-and-commissions (payment for order flow, overnight financing), broker (custody, CFDs, market maker, compensation schemes), leverage (margin, margin call, stop out, leverage limits), short-selling (borrow fee, short squeeze, share recall, SEC Rule 201), dividend (the four dates, dividend yield, withholding tax);
+  - assets: forex-pair (pip, lot), cryptocurrency (blockchain, wallet, stablecoin), index (cap and price weighting, price and total-return index), etf (expense ratio, leveraged and inverse ETFs, daily reset, UCITS), bond (face value, coupon, maturity, yield, credit ratings, interest rate risk), futures (expiry, multiplier, futures margin, daily settlement, rolling);
+  - charts: ohlc (open/high/low/close), line-vs-candle-chart (bar chart), peak-and-trough (swing high and low, late confirmation), support-and-resistance (zones, role reversal), breakout (what counts as a break, retest, false breakout), candlestick-pattern (named patterns, pattern confirmation);
+  - indicators: moving-average (length), atr (true range, ATR-based stops), rsi (70 and 30 levels, divergence), bollinger-bands (standard deviation of closes, squeeze, walking the band);
   - strategies: backtest (overfitting, look-ahead bias), entry-and-exit-rules (exit kinds, rule timing);
-  - risk and money: stop-loss (stop-limit), position-sizing (position size), risk-reward (target, ratio direction, break-even win rate), win-rate-and-expectancy (win rate, expectancy), drawdown (maximum drawdown, time under water, the gain needed to recover), volatility (historical and implied volatility, the calm and jumpy stocks).
+  - risk and money: stop-loss (stop-limit), position-sizing (position size), risk-reward (target, ratio direction, break-even win rate), win-rate-and-expectancy (win rate, expectancy), drawdown (maximum drawdown, time under water, the gain needed to recover), volatility (historical and implied volatility, the calm and jumpy stocks), diversification (correlation, company-specific and market-wide risk).
 - The site reuses one set of example numbers. Reuse them as they are, and give the full calculation only on the page that owns the idea:
   - the order book: asks $50.02 × 100 and $50.03 × 200, bids $49.98 × 400 and $49.97 × 150;
   - the trade: a $10,000 account risking 1%, 25 shares bought at $42, stop at $38, planned target $54 (3 to 1), sold at $64;
@@ -28,8 +28,14 @@ Skip anything tooling already checks. Prefer a rule plus a one-line reason over 
   - the calm and jumpy $42 stocks: ATR $1 and $2, stops $38 and $34, 25 and 12 shares, targets $54 and $66;
   - the trend: turning points $40, $48, $44, $53, $49, $58; the trend-following rule buys on a close above the 100-day moving average and sells on a close below;
   - the 10-trade backtest table (backtest, win-rate-and-expectancy, drawdown);
-  - forex: EUR/USD at 1.0850, a mini lot of 10,000 units, $1 per pip.
-- Fixed glosses, reused word for word: the spread is "the gap between the best price buyers offer and the best price sellers want"; CFDs are "contracts with a broker that pay the change in a price"; on strategy and risk pages, "a trade means one position: a buy and the later sale that closes it".
+  - forex: EUR/USD at 1.0850, a mini lot of 10,000 units, $1 per pip;
+  - the range stock: sideways between about $45 and $55 for months, troughs $45.20, $44.70 and $45.40, peaks $54.80 and $55.30, so zones $44.70–$45.40 and $54.80–$55.30; ATR $1, 20-day average $50, standard deviation $2 (bands $46 and $54). Mean reversion buys a close at $46 (RSI 25) with a stop at $42 (4 ATRs below) and exits near $50; support and resistance buys $45.50 with a stop at $43.50 (a little more than one ATR below the zone) and a target of $54.50; breakout trading buys a $56 close on twice the usual volume with a stop at $54 (just below the zone), 50 shares and a target of $65;
+  - the short: 25 shares sold short at $42, buy stop at $46, a gap to $50 loses $200;
+  - the dividend: 40 cents a quarter on the $42 stock;
+  - the future: a Micro E-mini S&P 500 at 6,000, $5 per point, margins $2,500 and $2,250;
+  - the bond: $1,000 at a 4% coupon for 10 years, about $920 if rates go to 5%, about $1,085 at 3%.
+- When a page sets a stop on a shared example, say how it was set (ATRs from the entry, or beyond a zone), and if another page sets a different stop on the same example, name the difference.
+- Fixed glosses, reused word for word: the spread is "the gap between the best price buyers offer and the best price sellers want"; CFDs are "contracts with a broker that pay the change in a price"; on strategy and risk pages, "a trade means one position: a buy and the later sale that closes it". In passing, where a page needs them: a stop loss is "an order that sells automatically if the price falls to a level you chose"; ATR is "the price's average move in one period" ("average daily move" in daily examples); a gap is "a jump in price, for example overnight" (weekend for forex and futures); an ETF is "a fund that holds many assets and trades like one stock"; an index is "a number that tracks the combined price of a basket of stocks"; short selling is "selling borrowed shares, hoping to buy them back cheaper".
 - Write ratios as "3 to 1", reward first. Only leverage uses the "30:1" form.
 - Don't state market conventions as universal: some apps, especially in China and Japan, reverse the candle colours, so write "(usually green)" or "(usually red)" when a colour means up or down. Name the market when a rule is not universal (US, UK, EU).
 - Write cents as numerals: "1 cent", "40 cents", not "$0.10".
