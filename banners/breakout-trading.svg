@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A trade plan on a breakout: price moves sideways in a range, a buy marker sits where it closes above the top of the range, a stop line sits just below the old top, and a target line sits one range height above the top">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the sideways range -->
+  <rect x="40" y="200" width="680" height="100" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .07"/>
+  <path d="M40 200 H720 M40 300 H720" fill="none" stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5"/>
+  <!-- target: the range height measured again above the top -->
+  <line x1="40" y1="100" x2="740" y2="100" stroke-width="2" stroke-dasharray="6 8" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .5"/>
+  <line x1="740" y1="100" x2="1160" y2="100" stroke-width="5" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <path d="M60 212 L60 288 M48 224 L60 212 L72 224 M48 276 L60 288 L72 276" fill="none" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <path d="M60 112 L60 188 M48 124 L60 112 L72 124 M48 176 L60 188 L72 176" fill="none" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- stop: just below the old top -->
+  <line x1="740" y1="228" x2="1160" y2="228" stroke-width="5" style="stroke: var(--banner-down, #d0453a)"/>
+  <!-- price after the entry (the plan, not yet happened) -->
+  <path d="M760 165 L810 190 L870 140 L910 160 L990 102" fill="none" stroke-width="4" stroke-dasharray="10 10"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <!-- price in the range, then the close above the top -->
+  <path d="M100 255 L150 206 L200 245 L260 294 L320 210 L370 246 L430 295 L490 206 L540 242 L600 292 L650 212 L690 248 L760 165"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- the buy -->
+  <circle cx="760" cy="165" r="14" style="fill: var(--banner-up, #1a9b5b)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="742" y="146" text-anchor="end" style="fill: var(--banner-up, #1a9b5b)">BUY</text>
+    <text x="1160" y="82" text-anchor="end" style="fill: var(--banner-accent, #0b6bcb)">TARGET</text>
+    <text x="1160" y="266" text-anchor="end" style="fill: var(--banner-down, #d0453a)">STOP</text>
+  </g>
+</svg>
