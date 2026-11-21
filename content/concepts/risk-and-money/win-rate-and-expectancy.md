@@ -1,4 +1,4 @@
-The win rate is the share of trades that end in a gain. Expectancy is the average result per trade, wins and losses together. Here a trade means one round trip: a buy and the later sale that closes it.
+The win rate is the share of trades that end in a gain. Expectancy is the average result per trade, wins and losses together. Here a trade means one position: a buy and the later sale that closes it.
 
 The win rate tells you how often a [[strategy]] wins. Expectancy tells you whether it made money on the trades you measured.
 

@@ -11,7 +11,7 @@ Many trend-following strategies are built from a [[moving-average]], the average
 
 The 100 is the average's length: it looks back over the last 100 daily periods. A longer length gives fewer, later signals. A shorter one reacts sooner, but also gives more false signals.
 
-Those are the [[entry-and-exit-rules]]. Adding a [[stop-loss]], an order that sells automatically if the price falls to a level you chose, helps limit how much a single trade can lose (in a fast drop it can sell below your level).
+Those are the [[entry-and-exit-rules]]. Adding a [[stop-loss]], an order that sells automatically if the price falls to a level you chose, helps limit how much a single trade can lose (in a fast drop it can sell lower: [[liquidity|slippage]]).
 
 ## What it feels like
 

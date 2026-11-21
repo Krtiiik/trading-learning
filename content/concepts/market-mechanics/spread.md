@@ -2,10 +2,10 @@ The **spread** is the gap between the bid (the best price a buyer offers) and th
 
 ## Where the cost comes from
 
-In the [[bid-and-ask]] order book (the list of waiting orders), the bid is $49.98 and the ask is $50.02, so the spread is $0.04. The point halfway between, $50.00, is the **mid price**. A market order usually does not trade there, but the mid price is useful for measuring the cost.
+In the [[bid-and-ask]] order book (the list of waiting orders), the bid is $49.98 and the ask is $50.02, so the spread is 4 cents. The point halfway between, $50.00, is the **mid price**. A market order usually does not trade there, but the mid price is useful for measuring the cost.
 
-- A market buy pays the ask, $50.02: $0.02 more than the mid price.
-- A market sell gets the bid, $49.98: $0.02 less than the mid price.
+- A market buy pays the ask, $50.02: 2 cents more than the mid price.
+- A market sell gets the bid, $49.98: 2 cents less than the mid price.
 
 So one market order (see [[order-types]]) costs about **half the spread**. A **round trip** (buying, then selling) costs about the **full spread**.
 
@@ -21,7 +21,7 @@ You buy 100 shares with a market order and change your mind a second later.
 
 The price did not move, but you lost $4: the full spread. Each order cost $2 compared with the value at the mid price (100 × $50.00 = $5,000).
 
-After buying at $50.02, the bid must rise $0.04 before you can sell without loss. So a position opened with a market order starts with a small loss.
+After buying at $50.02, the bid must rise 4 cents before you can sell without loss. So a position opened with a market order starts with a small loss.
 
 ## Why the percentage matters
 

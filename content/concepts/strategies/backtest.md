@@ -12,7 +12,7 @@ A backtest runs a [[strategy]]'s rules on past prices as if you had traded them 
 - **Total return**: the account's gain or loss.
 - **Number of trades**: how many the rules made.
 - **Win rate**: the share of trades with a gain (see [[win-rate-and-expectancy]]).
-- **Worst fall from a high**: the account's largest drop from a peak, its [[drawdown]]. It shows how painful the strategy was to follow.
+- **Worst fall from a high**: the account's largest drop, its maximum [[drawdown]]. It shows how painful the strategy was to follow.
 
 ## Example
 
@@ -41,7 +41,7 @@ To catch it, tune on one stretch, such as the first seven years, then run the ru
 
 ## Watch out
 
-- **Left-out costs.** Without the spread, fees and slippage (getting a worse price than the test assumed), a backtest looks better than real trading.
+- **Left-out costs.** Without the spread, fees and [[liquidity|slippage]] (getting a worse price than the test assumed), a backtest looks better than real trading.
 - **Look-ahead bias.** Using data you would not have had then. A rule that checks the day's close but buys at its open could never be traded.
 - **Survivorship bias.** Picking from today's companies leaves out those that went bankrupt or were delisted (removed from the [[exchange]]). Many were losers, so results look too good.
 - **The past does not repeat exactly.** A good backtest shows the rules worked then, not that they will work next.

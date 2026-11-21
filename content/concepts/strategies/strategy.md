@@ -4,7 +4,7 @@ A strategy is a fixed set of rules for when to enter and exit trades: decided in
 
 The rules are fixed, written down, and precise enough that two people following them on the same chart get the same trades.
 
-"Buy when the [[stock]] looks strong" is not a strategy: people read "strong" differently. "Buy on the first day the daily close is above the 100-day [[moving-average]] (the average of the last 100 daily closes)" is precise.
+"Buy when the [[stock]] looks strong" is not a strategy: people read "strong" differently. "Buy on the first day the daily close is above the 100-day [[moving-average]] (the average of the last 100 daily closes)" is precise. The time to check and the order to use complete it (see [[entry-and-exit-rules]]).
 
 ## The parts
 
@@ -23,7 +23,7 @@ A simple [[trend-following]] strategy:
 - **Stop loss**: $4 below entry.
 - **How much**: about 1% of the account is lost if the stop is hit.
 
-On a $10,000 account, 1% is $100. The stock closes above its average at $42, and you buy. The stop goes at $38: at $4 risk per share, $100 of risk allows 25 shares (see [[position-sizing]]).
+On a $10,000 account, 1% is $100. The stock closes above its average at $42, and you buy. The stop goes at $38: at $4 risk per share, $100 of risk allows 25 shares (see position sizing).
 
 Months later it closes below the average at $64, and you sell: a gain of $22 per share, or $550 in total before [[fees-and-commissions|fees]] and the [[spread]].
 
@@ -45,7 +45,7 @@ Had it soon closed back below the average, say at $41, you would sell for a smal
 
 ## Watch out
 
-- **Fitting the past is not proof.** Rules tuned until a [[backtest]] looks great may only fit chance moves in that data (overfitting), and often fail later.
+- **Fitting the past is not proof.** Rules tuned until a backtest looks great may only fit chance moves in that data (overfitting), and often fail later.
 - **No strategy wins every trade.** What matters is how often it wins and its average result per trade: its [[win-rate-and-expectancy]].
 
 Next, see [[entry-and-exit-rules]], then [[backtest]].

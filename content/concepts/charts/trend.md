@@ -53,4 +53,4 @@ Many traders prefer to trade with the trend: buy in an uptrend, and stay out or 
 
 You can only see a trend after it has started, and you only know it has ended after it has turned. A chart or average shows only what the price has done so far, not where it goes next.
 
-Next, read [[peak-and-trough|peaks and troughs]] to spot turning points, or [[trend-following|trend following]] to trade with the trend.
+Next, see [[peak-and-trough|peaks and troughs]] to spot turning points, or [[trend-following|trend following]] to trade with the trend.

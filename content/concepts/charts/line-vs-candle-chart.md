@@ -17,7 +17,7 @@ A [[stock]] over four trading days:
 
 - **Friday** has a small body and long [[wick|wicks]] on both sides. The price swung $3.50, from $38.40 to $41.90, but closed only 10 cents below Thursday. On the line, Friday looks like a calm day.
 - **Tuesday** opens at $35, far below Monday's close of $40. That jump is a [[gap]]. The candles show empty space between Monday's low ($39.20) and Tuesday's high ($36). The line draws a smooth slope across it, as if the price slid down during the night.
-- **Tuesday's candle is an up candle** (green in most apps), because it closed above its own open. The day still ended $4.50 below Monday. A candle's colour compares the close with the open of the same period, not with the close before.
+- **Tuesday's candle is an up candle** (usually green), because it closed above its own open. The day still ended $4.50 below Monday. A candle's colour compares the close with the open of the same period, not with the close before.
 
 ## What each is best for
 
@@ -35,7 +35,7 @@ A [[stock]] over four trading days:
 
 ## Other chart types
 
-A third way is the **bar chart** (or OHLC chart; not the [[volume]] bars (how much was traded) under a chart). Each period is a vertical line from the low to the high, with a short tick to the left at the open and to the right at the close. It holds the same data as a candle, with ticks in place of a body.
+A third way is the **bar chart** (or OHLC chart). It is not the [[volume]] bars (how much was traded) under a chart. Each period is a vertical line from the low to the high, with a short tick to the left at the open and to the right at the close. It holds the same data as a candle, with ticks in place of a body.
 
 ## Watch out
 

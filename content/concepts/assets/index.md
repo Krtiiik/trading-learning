@@ -1,4 +1,4 @@
-An **index** is a number that tracks the combined price of a chosen group of assets, usually [[stock|stocks]]. You cannot buy an index itself, only products that follow it.
+An **index** is a number that tracks the combined price of a chosen group of assets, usually [[stock|stocks]]. You cannot buy an index, only products that follow it.
 
 ## Examples by market
 
@@ -41,11 +41,11 @@ The index provider checks the list at fixed times, often every three months. It 
 
 ## How people trade an index
 
-People trade products that follow an index: an [[etf]] that holds its stocks, index [[futures]] and [[option|options]], or CFDs (contracts for difference with a [[broker]], not offered to private traders in the US; see [[leverage]]). A product that follows a broad index spreads your money over many companies ([[diversification]]).
+People trade products that follow an index: an [[etf]] that holds its stocks, index [[futures]] and [[option|options]], or CFDs (contracts with a [[broker]] that pay the change in a price; not offered to private US traders). A product that follows a broad index spreads your money over many companies ([[diversification]]).
 
 ## Watch out
 
-- **Most index levels leave out dividends.** A **price index** counts only prices. A **total-return index** also adds back each [[dividend]]; the DAX is one. A product that follows an index pays [[fees-and-commissions|fees]], so it does a little worse than the total-return version of that index.
+- **Most index levels leave out dividends.** A **price index** counts only prices. A **total-return index** also adds back each [[dividend]]; the DAX is one. A product that follows an index pays [[fees-and-commissions|fees]], so it does a little worse than the total-return version.
 - **A few large companies can control a cap-weighted index.** At the end of 2025, the ten largest companies made up about 40% of the S&P 500.
 
-Next, see [[etf]] for holding a whole index in one trade, or [[diversification]].
+Next, see [[etf]] for holding a whole index in one trade, [[diversification]], or [[stock]].

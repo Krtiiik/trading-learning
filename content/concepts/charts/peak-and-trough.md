@@ -33,20 +33,20 @@ A [[stock]] on a weekly chart, with N = 2:
 
 ## You know a peak only later
 
-At the end of week 3, nobody knew that $48 was a peak. You knew it at the end of week 5, after the price had fallen away from it. Every peak and trough is confirmed late: with N = 2, two candles late.
+At the end of week 3, nobody knew that $48 was a peak. You knew it at the end of week 5, after the price fell away from it. Every peak and trough is confirmed late: with N = 2, two candles late.
 
 ## Trends
 
-Higher highs and higher lows make an uptrend; lower highs and lower lows make a downtrend (see [[trend]]). The peak at $48 and the trough at $44 match the first high and low after $40 in the trend page's example. $53 becomes the example's next peak if week 10's high stays below it. When the peaks stop at about the same level, and the troughs too, the price moves sideways between them. Levels where several peaks or troughs line up are [[support-and-resistance|support and resistance]].
+Higher highs and higher lows make an uptrend; lower highs and lower lows make a downtrend (see [[trend]]). The peak at $48 and the trough at $44 are the same turning points as in the trend page's example. If week 10's high stays below $53, week 8 also becomes a peak. When the peaks stop at about the same level, and the troughs too, the price moves sideways between them. Levels where several peaks or troughs line up are [[support-and-resistance|support and resistance]].
 
 ## Practical use
 
 - **Stop below the last trough.** The trough is confirmed at the close of week 7, and you buy at that close, about $50. A common choice is a [[stop-loss]] a little below the trough, at $43.50. Below $44, the higher lows would break.
-- **The last peak as a target.** If you buy after a dip, a common first target is the most recent peak above your buy price, because the last rise stopped there.
+- **The last peak as a target.** If you buy after a dip, a common first [[risk-reward|target]] is the most recent peak above your buy price, because the last rise stopped there.
 
 ## Watch out
 
 - **Peaks depend on the [[timeframe]] and on N.** A peak on an hourly chart can be a wiggle inside one daily candle. A bigger N finds fewer, larger turning points but confirms them later.
 - **Small wiggles are not real turning points.** Ignore turns smaller than the price's usual move per candle, its [[volatility]].
 
-Next, see [[support-and-resistance]], then [[breakout]].
+Next, see [[support-and-resistance]], then [[breakout]], or [[trend]].

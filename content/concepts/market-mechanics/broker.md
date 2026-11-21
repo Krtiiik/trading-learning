@@ -10,13 +10,13 @@ A **broker** gives you access to a market: you cannot send orders to an [[exchan
 ## Two kinds of broker
 
 - **A broker that passes your order on** to a market. Your gain or loss does not change its income.
-- **A broker that takes the other side.** It sells when you buy, and buys when you sell. A **market maker** (a large trading firm that always offers both to buy and to sell) does this. So do most providers of **CFDs** (contracts for difference; not offered to private traders in the US), which pay the change in a price without you holding the asset. Many [[forex-pair|forex]] brokers work this way. Some make the opposite trade with another firm, so your result does not touch them. Others keep your trade open against you: your loss is their gain.
+- **A broker that takes the other side.** It sells when you buy, and buys when you sell. A **market maker** (a large trading firm that always offers to buy and sell) does this. So do most providers of **CFDs** (contracts for difference): contracts with a broker that pay the change in a price, without you holding the asset. CFDs are not offered to private traders in the US. Many [[forex-pair|forex]] brokers work this way. Some make the opposite trade with another firm, so your result does not touch them. Others keep the other side themselves: your loss is their gain.
 
 ## Protection if a broker fails
 
 In many countries, a regulator licenses brokers and makes them keep clients' assets apart from their own. If a broker fails with client assets missing, a compensation scheme pays them back, up to a limit:
 
-- **US:** SIPC, up to $500,000 per client, of which at most $250,000 in cash. It covers only member brokers, and not forex accounts.
+- **US:** SIPC, up to $500,000 per client, of which at most $250,000 in cash. It covers only member brokers, not forex accounts.
 - **UK:** FSCS, up to £85,000 per person for each failed firm.
 - **EU:** national schemes, at least €20,000 per person.
 
@@ -29,12 +29,12 @@ You hold 25 shares bought at $42 with a US broker, and the broker fails.
 
 ## How to check a broker
 
-A regulated broker names its regulator. Look the broker up in the regulator's own list (in the US, FINRA BrokerCheck; in the UK, the FCA register) and check that the name, website and contact details match.
+A regulated broker names its regulator. Look the broker up in the regulator's list (in the US, FINRA BrokerCheck; in the UK, the FCA register) and check that the name, website and contact details match.
 
 ## Watch out
 
 - **[[cryptocurrency|Crypto]] may not be protected.** A crypto exchange is often your broker too, but most schemes do not cover coins.
-- **CFDs are risky.** In the UK and EU, CFD providers must show what percentage of their private clients lose money; it is often more than half.
+- **CFDs are risky.** In the UK and EU, CFD providers must show what percentage of private traders lose money; it is often more than half.
 - **Fake brokers exist.** Promises of sure gains are a warning sign.
 
 Next, see [[fees-and-commissions]] for what brokers charge, or [[leverage]] for trading with borrowed money.

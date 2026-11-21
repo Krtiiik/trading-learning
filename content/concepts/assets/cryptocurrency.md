@@ -2,7 +2,7 @@ A **cryptocurrency** (crypto for short) is money that exists only as an entry on
 
 ## The blockchain
 
-A **blockchain** records every transfer of a coin. On public blockchains such as Bitcoin's, many computers keep a copy. Transfers are added in linked groups called blocks. Changing an old transfer means rebuilding every later block faster than all the other computers together: very hard on a large blockchain.
+A **blockchain** records every transfer of a coin. On public blockchains such as Bitcoin's, many computers keep a copy. Transfers are added in linked groups called blocks. Changing an old transfer means rebuilding every later block faster than all other computers together: very hard on a large blockchain.
 
 The blockchain records coins at **addresses**: strings of letters and numbers, like account numbers.
 
@@ -21,7 +21,7 @@ A **stablecoin** is tied to a currency, usually the US dollar, so one coin shoul
 
 ## Pairs and hours
 
-Coins trade in pairs, written like a [[forex-pair]]: **BTC/USD** is the price of one bitcoin in US dollars. The first is the base (what the price is for); the second is the quote (what the price is given in). Many exchanges quote in a stablecoin, for example BTC/USDT (the stablecoin Tether).
+Coins trade in pairs, written like a [[forex-pair]]: **BTC/USD** is the price of one bitcoin in US dollars. The first is the base (what the price is for); the second is the quote (what the price is given in). Many exchanges quote in a stablecoin, for example BTC/USDT (Tether).
 
 Crypto trades all day, every day, but fewer orders wait at night and weekends (see [[trading-hours]]).
 
@@ -34,9 +34,9 @@ BTC/USD is at $60,000. You buy 0.01 BTC for $600, fees left out.
 
 ## Watch out
 
-- **Prices swing a lot.** Bitcoin swings about as much as the jumpiest large stocks; most other coins swing more. See [[volatility]].
+- **Prices swing a lot.** Bitcoin swings more than a broad stock index, about as much as the jumpiest large stocks; most other coins swing more. See [[volatility]].
 - **Small coins can be hard to sell.** See [[liquidity]].
 - **A transfer cannot be undone.** Coins sent to a wrong address or a scammer are usually lost.
-- **An exchange that holds your coins can fail.** Schemes that pay clients back when a [[broker]] fails (US SIPC, UK FSCS) usually do not cover coins.
+- **An exchange that holds your coins can fail.** Compensation schemes for a failed [[broker]] (US SIPC, UK FSCS) usually do not cover coins.
 
 Next, see [[volatility]], or [[exchange]] for where coins trade.

@@ -50,4 +50,4 @@ Many charts have a row of bars under the price line or candles that shows [[volu
 - **Check the numbers on the price axis.** Most charts start the axis just below the lowest price and end it just above the highest, so a small move looks big. With an axis from $49 to $57, the example's 12% rise fills most of the picture. From $0 to $60, it looks like a gentle slope.
 - **A chart shows only the past.** It tells you what the price did, not what it will do next.
 
-For a guided first read, see the lesson [[reading-your-first-candle-chart]].
+Next, see the lesson [[reading-your-first-candle-chart]] for a guided first read, or [[candle]] for what each candle shows.

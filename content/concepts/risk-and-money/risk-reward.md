@@ -20,7 +20,7 @@ The price passes $54 and still rises, so you decide to keep the shares and sell 
 
 ## The win rate you need
 
-Your win rate is the share of your trades that end in a gain. If every trade ends at its stop or at its target, the ratio tells you how often you must win to break even (no gain, no loss), before costs:
+Your [[win-rate-and-expectancy|win rate]] is the share of your trades that end in a gain. If every trade ends at its stop or at its target, the ratio tells you how often you must win to break even (no gain, no loss), before costs:
 
 **break-even win rate = 1 / (1 + ratio)**
 
@@ -30,7 +30,7 @@ Your win rate is the share of your trades that end in a gain. If every trade end
 | 2 to 1 | 33% |
 | 3 to 1 | 25% |
 
-At 2 to 1, one win pays for two losses, so winning more than a third of your trades makes money. Real exits often differ from the plan, as the $64 sale shows. For what a [[strategy]] makes per trade, see [[win-rate-and-expectancy]].
+At 2 to 1, one win pays for two losses, so winning more than a third of your trades makes money. Real exits often differ from the plan, as the $64 sale shows. For what a [[strategy]] makes per trade, see win rate and expectancy.
 
 ## Costs make the ratio smaller
 

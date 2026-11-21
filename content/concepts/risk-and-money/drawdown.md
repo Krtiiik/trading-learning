@@ -1,4 +1,4 @@
-Drawdown is how far your account has fallen from its highest value so far, its high (or peak). You measure it from that high, not from the money you started with.
+Drawdown is how far your account has fallen from its highest value so far, its high. You measure it from that high, not from the money you started with.
 
 Every [[strategy]] has losing streaks, even one that makes money on average (a positive [[win-rate-and-expectancy|expectancy]]). Drawdown shows what they cost.
 
@@ -42,7 +42,7 @@ A 50% fall needs a 100% gain: $10,000 falls to $5,000, and $5,000 must double.
 
 ## Risk per trade sets the depth
 
-The example in [[position-sizing]] has 10 losses in a row on a $10,000 account. If each of the 10 losses takes the full 1% of the current balance, $9,044 is left: a drawdown of 9.56%, which needs a gain of about 11% to recover. Risking 10% leaves $3,487: a drawdown of 65.13%, which needs about 187%. The streak is the same; the risk per trade sets the depth.
+The example in [[position-sizing]] has 10 losses in a row on a $10,000 account. If each loss takes the full 1% of the current balance, $9,044 is left: a drawdown of 9.56%, which needs a gain of about 11% to recover. Risking 10% leaves $3,487: a drawdown of 65.13%, which needs about 187%. The streak is the same; the risk per trade sets the depth.
 
 ## Watch out
 
@@ -50,4 +50,4 @@ The example in [[position-sizing]] has 10 losses in a row on a $10,000 account. 
 - **You must be able to keep following the rules through it.** Before you start, ask if you could accept that fall and that time under water without giving up on the strategy at its lowest point.
 - **Do not raise your risk after losses to win the money back.** Bigger positions make the next losses bigger too, so the drawdown gets deeper faster.
 
-Next, see [[diversification]].
+Next, see [[diversification]], or [[position-sizing]] to limit it.

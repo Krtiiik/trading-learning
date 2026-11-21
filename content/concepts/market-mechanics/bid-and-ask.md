@@ -34,7 +34,7 @@ The order book of a [[stock]] at one moment:
 
 The more shares wait near the bid and ask, the more you can trade without moving the price. That is a big part of a stock's [[liquidity]].
 
-The $0.04 gap between $49.98 and $50.02 is the [[spread]].
+The 4-cent gap between $49.98 and $50.02 is the [[spread]].
 
 ## Bid, ask and the price on a chart
 

@@ -13,7 +13,7 @@ You buy a [[stock]] at $42 and decide you are willing to lose about $4 per share
 
 ## Where to put it
 
-- **Too close** and normal day-to-day wobbles trigger it, so you are stopped out (sold by your stop) of trades that would have worked. How much a price usually wobbles is its [[volatility]]; the [[atr]] is a common way to measure it. A stock that often moves $2 in a day needs a wider stop than one that moves 20 cents.
+- **Too close** and normal day-to-day wobbles trigger it, so you are stopped out (sold by your stop) of trades that would have worked. How much a price usually wobbles is its [[volatility]]; the [[atr]] is a common way to measure it. A stock that often moves $2 in a day needs a wider stop than one that moves $1.
 - **Too far** and each loss is bigger than it needs to be.
 
 ## What the stop lets you plan

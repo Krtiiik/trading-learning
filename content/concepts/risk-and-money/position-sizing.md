@@ -27,13 +27,13 @@ Now say this stock swings more (higher [[volatility]]), so you put the stop at $
 
 ## Why a small fixed percentage
 
-Every [[strategy]] has runs of losing trades. Risking 1% of the current balance makes each loss a little smaller than the last. After 10 losses in a row, the account still holds about $9,044 (10,000 × 0.99¹⁰). Risking 10% each time instead would leave about $3,487. A small percentage keeps the account's fall from its high, its [[drawdown]], small. From $3,487 you need a gain of about 187% to get back to $10,000; from $9,044, only about 11%.
+Every [[strategy]] has runs of losing trades. Risking 1% of the current balance makes each loss a little smaller than the last. After 10 losses in a row, the account still holds about $9,044 (10,000 × 0.99¹⁰). Risking 10% each time instead would leave about $3,487. A small percentage keeps the [[drawdown]] (the account's fall from its high) small.
 
 The 1% is an example, not a recommendation.
 
 ## When cash is the limit
 
-A very tight stop gives a very large position size. With a stop at $41.90, the risk is only $0.10 per share, and the formula says 1,000 shares: a position value of $42,000, more than the whole account. Your cash buys at most 238 shares (position value $9,996). Then the account, not the percentage, limits the size. Borrowing to buy more is [[leverage]], which enlarges losses too.
+A very tight stop gives a very large position size. With a stop at $41.90, the risk is only 10 cents per share, and the formula says 1,000 shares: a position value of $42,000, more than the whole account. Your cash buys at most 238 shares (position value $9,996). Then the account, not the percentage, limits the size. Borrowing to buy more is [[leverage]], which enlarges losses too.
 
 ## Watch out
 
