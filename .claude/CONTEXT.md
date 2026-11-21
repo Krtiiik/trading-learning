@@ -39,17 +39,20 @@ _Avoid_: guide, tutorial, article.
 
 <!-- Words used loosely or differently by different people, and which meaning wins. -->
 
-- **period / length** (learning site): a *period* is the time one bar or candle covers; an indicator's *length* is how many periods it looks back. Write "length" even though apps label that setting "period".
+- **period / length** (learning site): a *period* is the time one bar or candle covers; an indicator's *length* is how many periods it looks back. Write "length" even though apps label that setting "period". A strategy's *look-back* is a span such as 12 months: write "look-back", not "period".
 - **trade** (learning site): on market-mechanics pages, one transaction (a buyer and a seller agreeing on a price); on strategy and risk pages, a position from entry to exit. Say "position" or "round trip" where the difference matters.
 - **position size** (learning site): the number of shares or units held. Its money value is the *position value*; do not call that the size.
 - **slippage** (learning site): getting a worse fill price than expected or assumed. Use the word instead of paraphrases.
 - **order book** (learning site): the list of waiting limit orders; its best prices are the bid and the ask.
 - **high / peak** (learning site): an account's highest value so far is its *high*. A *peak* is a local turning point of a price (see peak-and-trough). Do not call the account high a peak.
-- **bar** (learning site): one period's mark on a chart in general ("bar or candle"). A *bar chart* is the OHLC bar chart; *volume bars* are the bars under a chart. Say which one you mean.
+- **bar** (learning site): one period's mark on a chart in general ("bar or candle"). A *bar chart* is the OHLC bar chart; *volume bars* are the bars under a chart. Say which one you mean. *Profile bars* are the horizontal bars of a volume profile, one per price level.
 - **range / zone / band** (learning site): the *daily range* is a period's high minus its low. The sideways area between support and resistance is a *trading range*: write that on first use, never "range" alone, and "moves sideways between them" in passing. A *zone* is the narrow price area of one support or resistance level. *Band* means a Bollinger band only.
 - **yield** (learning site): on bond pages, the yearly return if you buy now and hold to maturity. On stock pages, always write *dividend yield*. *High yield* means junk bonds only.
 - **maintenance margin** (learning site): for US stocks, the FINRA minimum share of the position value; for futures, the exchange-set amount below which a margin call comes. Say which one you mean.
 - **confirmation** (learning site): the later prices a rule waits for before it acts: candles after a peak, the next candle after a pattern, or a close beyond a zone. Say what confirms.
+- **momentum** (learning site): on strategy pages, the strategy that ranks many assets by past return; on indicator pages, how strong one price's recent moves were (RSI, MACD). Write "momentum strategy" or "momentum indicator" where both could be meant.
+- **drift** (learning site): a target mix changing by itself as prices move (rebalancing). Do not use it for the daily-reset decay of leveraged ETFs.
+- **target / target mix** (learning site): a *target* is a planned sell price (risk-reward); a *target mix* is the planned share of each asset (rebalancing). Never write "target" alone for a mix.
 - **CFD** (learning site): a contract with a broker that pays the change in a price, without holding the asset. Not offered to private traders in the US. Broker owns the term.
 - **market maker / large trading firm** (learning site): write "large trading firm" in passing; write "market maker" only where the page explains it.
 - **stop loss** (learning site): two words, no hyphen, as in the catalog title.

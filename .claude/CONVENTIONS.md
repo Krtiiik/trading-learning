@@ -39,9 +39,13 @@ Skip anything tooling already checks. Prefer a rule plus a one-line reason over 
   - the double top (not the $45–$55 stock): peaks $60.00 and $59.80, neckline $54, close $53.40, target $48, buy stop on a short at $60.50;
   - the REIT: $40, 50 cents a quarter, 5% dividend yield; 6.25% at $32;
   - the rebalance: $10,000 at 60/40, stocks up 30% to $7,800 (about 66%), sell $720 of stocks for bonds, or add $1,200 of new money to bonds;
+  - compounding: $10,000 at 7% a year for 30 years grows to about $76,000; about $74,600 with a 0.07% yearly fee and about $61,600 with 0.75% (the fee levels of the etf table);
   - the volume profile of the $45–$55 stock: POC near $50, value area $47–$53 (70 of 100 million shares).
 - When a page sets a stop on a shared example, say how it was set (ATRs from the entry, or beyond a zone), and if another page sets a different stop on the same example, name the difference.
 - Fixed glosses, reused word for word: the spread is "the gap between the best price buyers offer and the best price sellers want"; CFDs are "contracts with a broker that pay the change in a price"; on strategy and risk pages, "a trade means one position: a buy and the later sale that closes it". In passing, where a page needs them: a stop loss is "an order that sells automatically if the price falls to a level you chose"; ATR is "the price's average move in one period" ("average daily move" in daily examples); a gap is "a jump in price, for example overnight" (weekend for forex and futures); an ETF is "a fund that holds many assets and trades like one stock"; an index is "a number that tracks the combined price of a basket of stocks"; short selling is "selling borrowed shares, hoping to buy them back cheaper".
+- More fixed glosses, for use in passing: an option is "a contract giving the right, but not the duty, to buy or sell at a set price"; a bond is "a loan to a government or company"; a dividend is "money a company pays for each share you own"; dividend yield is "the past year's dividends divided by the price".
+- When a new page becomes the owner of an idea that older pages already mention, link the new owner from those pages in the same change. Every written page needs at least one incoming link from another written page.
+- In prose calculations, write division as "/", not "÷".
 - Write ratios as "3 to 1", reward first. Only leverage uses the "30:1" form.
 - Don't state market conventions as universal: some apps, especially in China and Japan, reverse the candle colours, so write "(usually green)" or "(usually red)" when a colour means up or down. Name the market when a rule is not universal (US, UK, EU).
 - Write cents as numerals: "1 cent", "40 cents", not "$0.10".
