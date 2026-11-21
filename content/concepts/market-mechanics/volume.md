@@ -1,4 +1,4 @@
-Volume is how much of an asset was traded during one period, such as one day or one hour. For a [[stock]], it is the number of shares bought and sold; for other assets, units, contracts or coins.
+Volume is how much of an asset was traded during one period, such as one day or one hour. For a [[stock]], it is the number of shares traded; for other assets, units, contracts or coins.
 
 ## How it is counted
 
@@ -8,7 +8,7 @@ Like the open, high, low and close prices ([[ohlc]]), volume belongs to one peri
 
 ## Volume bars
 
-Most [[price-chart|price charts]] show volume as bars under the [[candle|candles]], one per candle. A taller bar means more was traded. The bar usually takes its candle's colour: green when the candle closed higher than it opened, red when lower. Some apps use other colours (in some countries red means up). A green bar shows only that the price rose: every share traded had a buyer and a seller.
+Most [[price-chart|price charts]] show volume as bars under the [[candle|candles]], one per candle. A taller bar means more was traded. The bar usually takes its candle's colour: green when the candle closed higher than it opened, red when lower. Some apps, especially in China and Japan, use the opposite colours. A green bar shows only that the price rose: every share traded had a buyer and a seller.
 
 ## Example
 

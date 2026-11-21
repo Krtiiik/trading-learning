@@ -11,7 +11,7 @@ The rules are fixed, written down, and precise enough that two people following 
 1. **What to trade**: which assets, on which [[timeframe]].
 2. **When to enter**: the condition that opens a trade.
 3. **When to exit**: the condition that closes it, at a gain or a loss, and a [[stop-loss]] as a safety net if the price falls hard.
-4. **How much**: [[position-sizing]], the money put into each trade.
+4. **How much**: [[position-sizing]], how many shares to buy.
 
 ## Example
 
@@ -23,7 +23,7 @@ A simple [[trend-following]] strategy:
 - **Stop loss**: $4 below entry.
 - **How much**: about 1% of the account is lost if the stop is hit.
 
-On a $10,000 account, 1% is $100. The stock closes above its average at $42, and you buy. The stop goes at $38, a risk of $4 per share, so you buy $100 / $4 = 25 shares. They cost $1,050, but the plan risks only about $100 of it.
+On a $10,000 account, 1% is $100. The stock closes above its average at $42, and you buy. The stop goes at $38: at $4 risk per share, $100 of risk allows 25 shares (see [[position-sizing]]).
 
 Months later it closes below the average at $64, and you sell: a gain of $22 per share, or $550 in total before [[fees-and-commissions|fees]] and the [[spread]].
 

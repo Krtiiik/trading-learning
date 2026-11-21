@@ -27,7 +27,7 @@ Your stop at $38 sells at the first price after the jump, around $35. You lose a
 
 ## What a gap does to stop orders
 
-A stop order waits until the price reaches or passes its stop price, then becomes a market order (see [[order-types]]). At most brokers, a plain stop works only in the regular session, so after a gap it triggers at the first price after the jump.
+A stop order waits until the price reaches or passes its stop price, then becomes a market order (see [[order-types]]). A plain stop usually works only in the regular session, so it waits for the open and then triggers at the first price after the jump.
 
 ## Filling the gap
 

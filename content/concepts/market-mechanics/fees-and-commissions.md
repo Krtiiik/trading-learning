@@ -1,13 +1,13 @@
 **Fees and commissions** are the trading costs you see listed as a separate charge. A **commission** is the fee your [[broker]] charges for each order. Other fees go to the broker, the [[exchange]], a regulator or the government.
 
-The [[spread]] (the gap between the price buyers offer and the price sellers want) is a separate cost on top, hidden in the price.
+The [[spread]] (the gap between the best price buyers offer and the best price sellers want) is a separate cost on top, hidden in the price.
 
 ## The kinds of costs
 
-- **Broker commission.** A flat amount per order (for example $2.50), an amount per share (for example 1 cent), or a percentage of the order value (for example 0.1%). Many brokers now charge no commission on stocks.
-- **Regulator fees and transaction taxes.** These differ by market. In the US, a seller of stocks pays a tiny fee to the regulator, the SEC: usually a fraction of a cent per $100 sold. The rate changes at least once a year. In the UK, a buyer of most UK company shares pays stamp duty, a tax of 0.5% of the price; some other countries, such as France and Ireland, have similar taxes on purchases. The broker passes these fees on to you.
+- **Broker commission.** A flat amount per order (for example $2.50), an amount per share (for example 1 cent), or a percentage of the order value (for example 0.1%). Many brokers now charge no commission on [[stock|stocks]].
+- **Regulator fees and transaction taxes.** These differ by market. In the US, a seller of stocks pays a tiny fee to the regulator, the SEC: usually a fraction of a cent per $100 sold. The rate changes at least once a year. In the UK, a buyer of most UK company shares pays stamp duty, a tax of 0.5% of the price; France and Ireland, among others, have similar purchase taxes. The broker passes these fees on to you.
 - **Currency conversion.** When a stock is priced in a different currency from your account, the broker converts your money. It often takes 0.25% to 1.5% (some brokers charge less), on the purchase and again on the sale unless you keep the foreign currency in your account.
-- **Overnight financing.** With borrowed money ([[leverage]]), you usually pay interest for each night you hold the position.
+- **Overnight financing.** With borrowed money ([[leverage]]), you usually pay interest (in forex, a swap) for each night you hold the position.
 - **Account fees.** A monthly or inactivity fee.
 
 Tax on your gains is different: it is charged on your profit, not on each order, and it differs by country.
@@ -28,7 +28,7 @@ On this round trip, the fees are small. They grow large on:
 
 ## How zero-commission brokers are paid
 
-Some, mostly currency ([[forex-pair|forex]]) brokers, quote a wider spread than the market and keep the difference. Others earn on currency conversion, interest on your cash, or account fees. Many US brokers also get **payment for order flow**: large trading firms pay the broker to receive your orders, and trade with you directly, earning a little on the spread. This is mostly a US practice: the UK bans it, and the EU bans it too (fully since July 2026).
+Some brokers, mostly [[forex-pair|forex]] ones, quote a wider spread than the market and keep the difference. Others earn on currency conversion, interest on your cash, or account fees. Many US brokers also get **payment for order flow**: large trading firms pay the broker to receive your orders, and trade with you directly, earning a little on the spread. This is mostly a US practice: the UK bans it, and the EU bans it too (fully since July 2026).
 
 ## Watch out
 

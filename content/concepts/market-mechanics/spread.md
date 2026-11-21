@@ -7,7 +7,7 @@ In the [[bid-and-ask]] order book (the list of waiting orders), the bid is $49.9
 - A market buy pays the ask, $50.02: $0.02 more than the mid price.
 - A market sell gets the bid, $49.98: $0.02 less than the mid price.
 
-So one market order (see [[order-types]]) costs about **half the spread**. A **round trip**, buying and then selling again, costs about the **full spread**.
+So one market order (see [[order-types]]) costs about **half the spread**. A **round trip** (buying, then selling) costs about the **full spread**.
 
 ## Example
 
@@ -36,7 +36,7 @@ Same spread in cents, but on the cheap stock it costs 25 times as much.
 
 ## What makes a spread wide or narrow
 
-- **[[liquidity|Liquidity]].** Many orders near the bid and ask keep it small. In the US, large, popular [[stock|stocks]] often have a spread of just one cent, the smallest price step allowed. Rarely traded ones can be far wider.
+- **[[liquidity|Liquidity]].** Many orders near the bid and ask keep it small. In the US, large, popular [[stock|stocks]] often have a spread of just 1 cent, the smallest price step allowed. Rarely traded ones can be far wider.
 - **[[trading-hours|Trading hours]].** The spread is usually wider before the open and after the close, when fewer orders wait, and often in the first minutes of the day.
 
 ## Avoiding it with limit orders
@@ -45,6 +45,6 @@ A limit order trades only at your price or better. A buy limit at $49.98 waits a
 
 ## Watch out
 
-The spread comes on top of any [[fees-and-commissions]]. "No commission" is not "no cost": many currency ([[forex-pair|forex]]) brokers quote a wider spread than the market and keep the difference. Zero-commission stock brokers usually fill at the market's best price, but earn in other ways, such as (in the US) [[fees-and-commissions|payment for order flow]].
+The spread comes on top of any [[fees-and-commissions]]. "No commission" is not "no cost": some brokers, mostly [[forex-pair|forex]] ones, earn by widening the spread. Zero-commission stock brokers usually fill at the market's best price, but earn in other ways, such as (in the US) [[fees-and-commissions|payment for order flow]].
 
 Next, see [[liquidity]] for what keeps spreads narrow, or [[fees-and-commissions]] for other costs.

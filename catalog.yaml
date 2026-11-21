@@ -30,7 +30,7 @@ groups:
       - {slug: liquidity, title: Liquidity, summary: How easily you can trade without moving the price.}
       - {slug: volume, title: Volume, summary: How much of an asset changed hands during a period.}
       - {slug: trading-hours, title: Trading hours, summary: "When a market is open, and what happens around the open and close."}
-      - {slug: fees-and-commissions, title: Fees and commissions, summary: What you pay the broker and the market for each trade.}
+      - {slug: fees-and-commissions, title: Fees and commissions, summary: "What you pay the broker, the market and the government to trade."}
       - {slug: short-selling, title: Short selling, summary: "Selling something you borrowed, hoping to buy it back cheaper."}
       - {slug: leverage, title: Leverage, summary: "Trading with borrowed money, which enlarges both gains and losses."}
       - {slug: dividend, title: Dividend, summary: A share of company profit paid out to shareholders.}
@@ -84,7 +84,7 @@ groups:
     blurb: How much to put in each trade and how to survive the losing ones.
     concepts:
       - {slug: risk-reward, title: Risk/reward, summary: How much you could gain on a trade compared with how much you could lose.}
-      - {slug: position-sizing, title: Position sizing, summary: Deciding how much money to put into a single trade.}
+      - {slug: position-sizing, title: Position sizing, summary: Deciding how many shares or units to buy in a single trade.}
       - {slug: stop-loss, title: Stop loss, summary: An order that sells automatically once the price falls to a level you chose.}
       - {slug: drawdown, title: Drawdown, summary: How far your account has fallen from its highest point.}
       - {slug: diversification, title: Diversification, summary: Spreading money across different assets so one loss hurts less.}

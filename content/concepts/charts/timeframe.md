@@ -35,7 +35,7 @@ Many traders first check a longer timeframe for the [[trend]], then a shorter on
 ## Watch out
 
 - **A trend on one timeframe can be noise on another.** Noise is small, random moves with no lasting direction. A downtrend on an hourly chart can be a short dip inside an uptrend on the weekly chart. Always say which timeframe you mean.
-- **Short timeframes show more noise and cost more.** They usually mean more trades: you pay the [[spread]] on every trade, and [[fees-and-commissions|fees]] too if your broker charges them.
+- **Short timeframes show more noise and cost more.** They usually mean more trades: you pay part of the [[spread]] on most trades, and [[fees-and-commissions|fees]] too if your broker charges them.
 - **The newest candle is not finished.** On a weekly chart, its close is not final for days.
 
 Next, see [[candle]] to read each period, or [[trend]] for the bigger direction.

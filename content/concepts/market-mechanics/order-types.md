@@ -28,6 +28,6 @@ The market buy fills at once at the ask, about $100.02. The limit buy at $95 doe
 
 ## Watch out
 
-A stop order becomes a market order, so it does not guarantee the stop price. After a jump, for example an overnight [[gap]], the price can pass $90 without trading near it, and the sell fills well below. In assets with little [[liquidity]] (few orders waiting near the bid and ask), a market order can also fill at a worse price than you expected: a big order takes all the shares offered at the best price, then fills the rest at the next, worse price.
+A stop order becomes a market order, so it does not guarantee the stop price. After a jump, for example an overnight [[gap]], the price can pass $90 without trading near it, and the sell fills well below. In assets with little [[liquidity]] (few orders waiting near the bid and ask), a market order can also fill at a worse price than you expected (this is called slippage): a big order takes all the shares offered at the best price, then fills the rest at the next, worse price.
 
 Next, see [[bid-and-ask]] and [[stop-loss]].

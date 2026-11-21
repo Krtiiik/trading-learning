@@ -13,6 +13,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 - The repository holds only the learning site and is named `trading-learning`. The site moves to <https://krtiiik.github.io/trading-learning/>; the old `/trading/` address stops working.
 - Site sources are at the repository root. Build with `uv run python scripts/build.py` (output in `dist/`), preview with `uv run python scripts/serve.py --open`, test with `uv run pytest`.
+- Concept pages agree with each other after a site-wide audit: "position size" means the number of shares (its money value is the position value), payment for order flow and slippage are named where they are described, US-only rules on the exchange page say so, and bid, ask, spread and colour wording is the same on every page.
 
 ### Removed
 

@@ -17,7 +17,7 @@ The **majors** are the handful of most-traded pairs, such as EUR/USD, USD/JPY (J
 
 Traders count forex moves in **pips**. For most pairs, a pip is the 4th decimal place: 0.0001. For pairs with the yen, it is the 2nd: 0.01.
 
-A pip's money value depends on your position size and is in the quote currency. 10,000 units of the base is called a **mini lot**; 100,000 is a **standard lot**.
+A pip's money value depends on your [[position-sizing|position size]] and is in the quote currency. 10,000 units of the base is called a **mini lot**; 100,000 is a **standard lot**.
 
 ## Example
 
@@ -34,7 +34,7 @@ Most forex trades between banks and brokers, not on an [[exchange]]. Your [[brok
 
 ## Watch out
 
-- **Leverage is common in forex.** Brokers often let you trade many times your money, multiplying gains and losses. Limits differ by country. See [[leverage]].
+- **[[leverage|Leverage]] is common in forex.** Brokers often let you trade many times your money, multiplying gains and losses. Limits differ by country.
 - **Your gain is in the quote currency** (dollars, for EUR/USD). If your account is in another currency, the broker converts it, often for a fee.
 - **Many brokers show one more decimal** (the fifth, or the third for yen pairs), a tenth of a pip: in 1.08505, the last 5 is half a pip.
 - **Holding a position overnight brings an interest charge or credit** (a swap), set by the two currencies' interest rates. With the broker's own charge, it is often a cost. See [[fees-and-commissions]].

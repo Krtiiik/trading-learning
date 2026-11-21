@@ -16,7 +16,7 @@ A backtest runs a [[strategy]]'s rules on past prices as if you had traded them 
 
 ## Example
 
-The rules: buy one stock on the first close above its 100-day [[moving-average]], and sell on the first close below, with a stop $4 below entry. On a $10,000 account, 25 shares risk about $100 (1%) if the stop is hit. The test finds 10 trades:
+The [[trend-following]] rules: buy one stock on the first close above its 100-day [[moving-average]], and sell on the first close below, with a [[stop-loss|stop]] $4 below entry. On a $10,000 account, [[position-sizing]] gives 25 shares, risking about $100 (1%) if the stop is hit. The test finds 10 trades:
 
 | Trade | Result | Account |
 |-------|--------|---------|
@@ -43,7 +43,7 @@ To catch it, tune on one stretch, such as the first seven years, then run the ru
 
 - **Left-out costs.** Without the spread, fees and slippage (getting a worse price than the test assumed), a backtest looks better than real trading.
 - **Look-ahead bias.** Using data you would not have had then. A rule that checks the day's close but buys at its open could never be traded.
-- **Survivorship bias.** Picking from today's companies leaves out those that went bankrupt or were delisted (removed from the exchange). Many were losers, so results look too good.
+- **Survivorship bias.** Picking from today's companies leaves out those that went bankrupt or were delisted (removed from the [[exchange]]). Many were losers, so results look too good.
 - **The past does not repeat exactly.** A good backtest shows the rules worked then, not that they will work next.
 
 Next, see [[win-rate-and-expectancy]], then [[drawdown]].

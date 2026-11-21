@@ -1,4 +1,4 @@
-The win rate is the share of trades that end in a gain. Expectancy is the average result per trade, wins and losses together. Here a trade means one buy and the later sale that closes it.
+The win rate is the share of trades that end in a gain. Expectancy is the average result per trade, wins and losses together. Here a trade means one round trip: a buy and the later sale that closes it.
 
 The win rate tells you how often a [[strategy]] wins. Expectancy tells you whether it made money on the trades you measured.
 
@@ -15,7 +15,7 @@ Write the average loss as a positive amount; the minus sign in the formula takes
 
 ## Example
 
-A [[backtest]] of a [[trend-following]] strategy finds 10 trades:
+A [[backtest]] of a [[trend-following]] strategy finds 10 trades (losses as positive amounts):
 
 | | Trades | Total | Average |
 |---|---|---|---|
@@ -37,16 +37,16 @@ Now take a strategy that wins 90% of the time, but each win is $10 and each loss
 
 0.90 × $10 − 0.10 × $150 = $9 − $15 = **−$6 per trade**.
 
-It wins nine trades in ten and loses money anyway: one loss takes away more than nine wins bring. Always look at the win rate and the average sizes together.
+It wins nine trades in ten and loses money anyway: one loss takes away more than nine wins bring. Always read the win rate with the average sizes.
 
 ## Costs come off every trade
 
-The [[spread]] (the gap between the price buyers offer and the price sellers want) and [[fees-and-commissions|fees]] make each win smaller and each loss bigger. At $5 per round trip (buying, then selling), the $78 expectancy becomes about $73. A strategy with a small expectancy can turn negative after costs.
+The [[spread]] (the gap between the best price buyers offer and the best price sellers want) and [[fees-and-commissions|fees]] make each win smaller and each loss bigger. At $5 per round trip, the $78 expectancy becomes about $73. A small expectancy can turn negative after costs.
 
 ## Watch out
 
-- **Ten trades is few.** One more big win or loss would change these numbers a lot. Expectancy from a few trades is a rough guess, not a measurement.
+- **Ten trades is few.** One more big win or loss would change them a lot. Expectancy from a few trades is a rough guess, not a measurement.
 - **Positive expectancy still has losing streaks.** In the backtest behind this example, trades 2 to 5 were four losses in a row. Such runs pull the account down from its high, its [[drawdown]]. A small risk per trade, set with [[position-sizing]], helps you survive them.
-- **The past is not a promise.** An expectancy from past trades shows how the rules did then, not what they will do next.
+- **The past is not a promise.** Past expectancy shows how the rules did then, not what they will do next.
 
 Next, see [[risk-reward]], then [[drawdown]].
