@@ -179,6 +179,18 @@ def test_pages_use_root_relative_prefixes(site_root, tmp_path):
     assert 'data-root="../"' in concept and 'href="../static/site.css"' in concept
 
 
+def test_every_page_has_the_theme_switch_and_applies_the_saved_theme_early(site_root, tmp_path):
+    out = tmp_path / "dist"
+    build.build(site_root, out)
+    for rel in ["index.html", "concepts/candle.html", "lessons/index.html"]:
+        page = (out / rel).read_text(encoding="utf-8")
+        for choice in ["system", "light", "dark"]:
+            assert f'data-theme-choice="{choice}"' in page, (rel, choice)
+        head = page.split("</head>")[0]
+        assert "learning-theme" in head, rel
+        assert head.index("learning-theme") < head.index("site.css"), rel
+
+
 def test_cards_put_written_concepts_before_planned_ones(site_root):
     write(site_root, "banners/wick.svg", SVG)
     write(site_root, "content/concepts/charts/wick.md", "x")

@@ -1,4 +1,4 @@
-// Behaviour for the learning site: link hover previews, search, and shelf arrows.
+// Behaviour for the learning site: link hover previews, search, the theme switch, and shelf arrows.
 // Data comes from index.js (window.LEARNING_INDEX); URLs there are relative to the site root.
 (function () {
   "use strict";
@@ -82,6 +82,29 @@
       input.focus();
     });
   }
+
+  // Theme switch: System removes data-theme (prefers-color-scheme decides); Light and Dark set it.
+  // The choice is kept in localStorage; the head script in base.html applies it before first paint.
+  var themeButtons = document.querySelectorAll(".theme__button");
+  function showTheme(choice) {
+    themeButtons.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-theme-choice") === choice ? "true" : "false");
+    });
+  }
+  function setTheme(choice) {
+    var d = document.documentElement;
+    if (choice === "light" || choice === "dark") d.setAttribute("data-theme", choice);
+    else { choice = "system"; d.removeAttribute("data-theme"); }
+    try {
+      if (choice === "system") localStorage.removeItem("learning-theme");
+      else localStorage.setItem("learning-theme", choice);
+    } catch (e) {}
+    showTheme(choice);
+  }
+  showTheme(document.documentElement.getAttribute("data-theme") || "system");
+  themeButtons.forEach(function (b) {
+    b.addEventListener("click", function () { setTheme(b.getAttribute("data-theme-choice")); });
+  });
 
   // Shelf arrows scroll the single card row by most of its visible width.
   // Arrows disable at either end; a shelf whose cards all fit gets .is-static (arrows hidden).

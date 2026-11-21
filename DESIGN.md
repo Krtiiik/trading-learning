@@ -76,6 +76,7 @@ Keep green and red inside figures and data. The UI chrome stays neutral.
 
 - Light is the default. Dark follows `prefers-color-scheme`.
 - A `data-theme="light"` or `data-theme="dark"` attribute on `<html>` overrides the system. Define dark twice: under `@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { … } }` and under `:root[data-theme="dark"]`.
+- The header ends with a System / Light / Dark switch: three 44px square icon buttons that share their borders, the chosen one marked like the current nav link. System removes `data-theme`. The choice is saved in the browser, and a small script in `<head>` applies it before the stylesheet loads, so a saved theme never flashes the other one first. Without JavaScript the switch is hidden and the system decides.
 - Set `color-scheme: light` / `dark` with each theme, so form controls and scrollbars follow.
 - In dark mode, the highlight and semantic colours get *lighter and a little less saturated*. Do not reuse the light values.
 

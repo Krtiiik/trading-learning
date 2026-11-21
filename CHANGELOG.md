@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Learning site content agents: a planner, a writer, a banner illustrator, a reviewer, a fact checker and a site-wide auditor, plus a `/write-page` skill that writes, checks and commits one page.
 - Learning site concept pages: trend, price chart, OHLC, bid and ask, spread, indicator, strategy, timeframe, wick, volume, liquidity.
 - Learning site favicon: a graduation cap with a bold rising trend line, in light and dark variants.
+- Learning site theme switch: System, Light and Dark buttons in the header, so light mode can be chosen on a device set to dark. The choice is remembered in the browser.
 
 ### Changed
 

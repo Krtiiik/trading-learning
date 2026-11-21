@@ -107,12 +107,13 @@ Page templates also receive: `group.html` → `group`; `concept.html` and `lesso
 | Shelf | `.shelf` holding `.shelf__row` (the scrolling row) and `.shelf__arrow--prev` / `.shelf__arrow--next` buttons |
 | Status | `.is-written` / `.is-planned` on cards, links and the article |
 | Page kind | `body.page-home|group|lessons|concept|lesson` |
+| Theme switch | `.theme` holding `button.theme__button[data-theme-choice=system|light|dark]` with `aria-pressed`. The choice is kept in `localStorage` under `learning-theme`; the inline script in `base.html`'s `<head>` reads it and sets `data-theme` and `html.js` before first paint. |
 
 ## Constraints
 
 - The site is published as a private Claude artifact. Everything must be local files in `static/`. External stylesheets may come only from Google Fonts. Scripts may only come from cdnjs, jsdelivr or unpkg, pinned to exact versions. Prefer none.
 - It must work at phone width (16px side gutter, no horizontal page scroll; shelf rows scroll inside themselves) and in light and dark mode (`prefers-color-scheme`).
-- Keep pages readable without JavaScript, except search and previews.
+- Keep pages readable without JavaScript, except search, previews and the theme switch.
 
 ## Build and preview
 
