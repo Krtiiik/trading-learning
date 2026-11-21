@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price line with a moving average in the middle and an upper and lower band around it; the bands are narrow while the price is calm, a squeeze, and widen when the price swings more">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the space between the bands -->
+  <path d="M40 160 C53 162 93 169 120 173 C147 177 173 180 200 182 C227 184 253 182 280 182 C307 182 333 183 360 183 C387 183 413 183 440 182 C467 181 493 182 520 179 C547 176 573 172 600 164 C627 156 653 143 680 132 C707 121 733 107 760 97 C787 87 813 77 840 70 C867 63 893 59 920 55 C947 51 973 48 1000 46 C1027 44 1053 42 1080 40 C1107 38 1147 37 1160 36 L1160 260 C1147 261 1107 262 1080 264 C1053 266 1027 268 1000 270 C973 272 947 274 920 275 C893 276 867 275 840 274 C813 273 787 271 760 267 C733 263 707 257 680 252 C653 247 627 240 600 236 C573 232 547 229 520 227 C493 225 467 226 440 226 C413 226 387 227 360 227 C333 227 307 226 280 226 C253 226 227 228 200 230 C173 232 147 234 120 237 C93 240 53 248 40 250 Z"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .12"/>
+  <!-- price: calm at first, then big swings -->
+  <path d="M40 196 L80 228 L120 189 L160 214 L200 192 L240 216 L280 195 L320 218 L360 194 L400 213 L440 191 L480 215 L520 196 L560 220 L600 175 L640 220 L680 168 L720 245 L760 106 L800 233 L840 90 L880 264 L920 88 L960 250 L1000 52 L1040 211 L1080 51 L1120 245 L1160 81"
+        fill="none" stroke-width="4" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <!-- middle: the moving average -->
+  <path d="M40 205 C53 205 93 205 120 205 C147 205 173 206 200 206 C227 206 253 204 280 204 C307 204 333 205 360 205 C387 205 413 204 440 204 C467 204 493 204 520 203 C547 202 573 202 600 200 C627 198 653 195 680 192 C707 189 733 185 760 182 C787 179 813 175 840 172 C867 169 893 167 920 165 C947 163 973 160 1000 158 C1027 156 1053 154 1080 152 C1107 150 1147 149 1160 148"
+        fill="none" stroke-width="4" stroke-dasharray="14 10" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .8"/>
+  <!-- upper and lower band -->
+  <g fill="none" stroke-width="7" stroke-linecap="round" style="stroke: var(--banner-accent, #0b6bcb)">
+    <path d="M40 160 C53 162 93 169 120 173 C147 177 173 180 200 182 C227 184 253 182 280 182 C307 182 333 183 360 183 C387 183 413 183 440 182 C467 181 493 182 520 179 C547 176 573 172 600 164 C627 156 653 143 680 132 C707 121 733 107 760 97 C787 87 813 77 840 70 C867 63 893 59 920 55 C947 51 973 48 1000 46 C1027 44 1053 42 1080 40 C1107 38 1147 37 1160 36"/>
+    <path d="M40 250 C53 248 93 240 120 237 C147 234 173 232 200 230 C227 228 253 226 280 226 C307 226 333 227 360 227 C387 227 413 226 440 226 C467 226 493 225 520 227 C547 229 573 232 600 236 C627 240 653 247 680 252 C707 257 733 263 760 267 C787 271 813 273 840 274 C867 275 893 276 920 275 C947 274 973 272 1000 270 C1027 268 1053 266 1080 264 C1107 262 1147 261 1160 260"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="2" text-anchor="middle">
+    <text x="320" y="300" style="fill: var(--banner-accent, #0b6bcb)">SQUEEZE</text>
+    <text x="960" y="340" style="fill: var(--banner-fg, #1a1a1a)">BIG SWINGS</text>
+  </g>
+</svg>
