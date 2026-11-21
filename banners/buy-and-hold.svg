@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price line climbs for years and gets steeper as gains compound; it is bought once at the start, falls 40% in one deep dip and recovers, and the holder never sells">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the time below the old high -->
+  <path d="M430 228 L470 262 L510 250 L550 300 L590 270 L630 278 L670 228 Z"
+        style="fill: var(--banner-down, #d0453a); fill-opacity: .12"/>
+  <line x1="430" y1="228" x2="670" y2="228" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <!-- price: small dips, one deep fall, and a climb that steepens as gains compound -->
+  <path d="M70 290 L130 280 L170 288 L230 266 L270 274 L330 250 L370 258 L430 228" fill="none" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <path d="M430 228 L470 262 L510 250 L550 300" fill="none" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-down, #d0453a)"/>
+  <path d="M550 300 L590 270 L630 278 L670 228 L720 204 L760 214 L820 176 L860 190 L920 140 L960 154 L1020 106 L1060 118 L1130 60"
+        fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- the single buy -->
+  <path d="M70 300 L50 340 L90 340 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <circle cx="1130" cy="60" r="10" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <!-- holding time -->
+  <path d="M640 360 L1150 360 M1130 344 L1150 360 L1130 376" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="104" y="338" style="fill: var(--banner-up, #1a9b5b)">BUY</text>
+    <text x="550" y="345" text-anchor="middle" style="fill: var(--banner-down, #d0453a)">−40%</text>
+    <text x="895" y="334" text-anchor="middle" style="fill: var(--banner-accent, #0b6bcb)">HOLD FOR YEARS</text>
+  </g>
+</svg>
