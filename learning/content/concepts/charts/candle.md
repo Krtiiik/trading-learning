@@ -5,8 +5,8 @@ A candle (or candlestick) is one bar on a [[price-chart]]. It sums up what the p
 Each candle shows four prices, together called [[ohlc]]:
 
 - **Open**: the price of the first trade in the period.
-- **High**: the highest price reached.
-- **Low**: the lowest price reached.
+- **High**: the highest price of any trade in the period.
+- **Low**: the lowest price of any trade in the period.
 - **Close**: the price of the last trade in the period.
 
 ## Reading the shape

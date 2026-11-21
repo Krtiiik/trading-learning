@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Learning site pages now agree with each other: candle colours are hedged everywhere, "length" is the look-back setting and "period" one bar, candle uses the OHLC definitions, and the first candle chart lesson builds on the price chart and OHLC pages.
+- Learning site: the stock, order types, stop loss and trend following pages explain their terms more fully and end with "Watch out" and "Next" sections; stop loss no longer promises a fixed maximum loss, and stock no longer describes US dividend habits as universal.
 
 ### Fixed
 

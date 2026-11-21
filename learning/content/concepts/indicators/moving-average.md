@@ -6,6 +6,8 @@ Take the [[ohlc|closing prices]] of the last N periods, add them up and divide b
 
 The N is called the **length** (apps often label it "period"). A 20-day moving average uses the last 20 daily closes.
 
+This plain version is the **simple** moving average (SMA). A variant called the **exponential** moving average weighs recent prices more, so it lags a little less.
+
 ## Example
 
 The last five daily closes are $10, $11, $12, $11 and $13. The 5-day moving average today is (10 + 11 + 12 + 11 + 13) / 5 = $11.40. Tomorrow the price closes at $14: drop the $10, add the $14, and the average becomes $12.20.
@@ -23,7 +25,5 @@ The last five daily closes are $10, $11, $12, $11 and $13. The 5-day moving aver
 ## Watch out
 
 A moving average is built from past prices, so it always lags. In a market that moves sideways it crosses back and forth and gives many false signals.
-
-This plain version is the **simple** moving average (SMA). A variant called the **exponential** moving average weighs recent prices more, so it lags a little less.
 
 Next, see [[trend-following]] for how traders build rules around moving averages.

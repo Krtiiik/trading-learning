@@ -1,21 +1,30 @@
-A company can split its ownership into millions of equal pieces called **shares**. When you buy a stock, you buy some of those shares, and you own that tiny part of the company.
+A company can split its ownership into millions of equal pieces called **shares**. When you buy a stock, you buy some of those shares and own part of the company. A stock's price is the price of one share: "a stock trades at $50" means one share costs $50.
 
 ## What you get
 
-- **A part of the company's value.** If the company grows and people think it is worth more, the price of its shares tends to rise. If it struggles, the price tends to fall.
-- **Sometimes a share of the profit.** Some companies pay part of their profit to shareholders as a [[dividend]].
-- **A vote.** Shareholders can vote on big decisions, such as who sits on the board.
+- **A part of the company's value.** If the company grows and people think it is worth more, the share price tends to rise. If it struggles, the price tends to fall.
+- **Sometimes a share of the profit.** Some companies pay shareholders a [[dividend]]: an amount of money for each share you own. US companies usually pay every three months; many European companies pay once or twice a year. The company decides each payment and can cut or stop it. Many pay nothing and keep the profit to grow.
+- **A vote.** Shareholders can vote on big decisions, such as who sits on the board that oversees the managers. Each share usually gives one vote, but some companies sell shares with fewer votes or none.
 
 ## How you buy one
 
-Shares trade on an [[exchange]], such as the New York Stock Exchange. You do not go there yourself: you open an account with a [[broker]], and the broker sends your order to the exchange for you.
+Shares trade on an [[exchange]]: a marketplace where buyers and sellers are matched, such as the New York Stock Exchange. You open an account with a [[broker]], and the broker sends your order to an exchange, or another place where orders are matched, for you.
 
-The price changes all day while the exchange is open, as buyers and sellers agree on new prices (see [[bid-and-ask]]). A [[price-chart]] shows those changes over time.
+## The price you see
+
+The price changes throughout the trading day. Each time a buyer and a seller agree on a price, that is one trade, and apps usually show the price of the last trade. Buying right now usually costs a little more than that (see [[bid-and-ask]]). A [[price-chart]] shows how the price changed over time.
 
 ## Example
 
-A company has 1,000,000 shares and each one trades at $50. The whole company is then valued at $50,000,000. If you buy 10 shares for $500, you own 0.001% of it. If the price rises to $55, your 10 shares are worth $550.
+A company has 1,000,000 shares and each one trades at $50. The whole company is then valued at $50,000,000 (price times number of shares). If you buy 10 shares for $500, you own 0.001% of it. If the price rises to $55, your shares are worth $550, a gain of $50 or 10%. At $45, they are worth $450, a loss of $50 or 10%.
 
 ## Many stocks at once
 
-Instead of picking single companies, many people buy a basket of them. An [[index]] tracks such a basket, and an [[etf]] lets you buy one in a single trade.
+Many people buy a basket of companies instead of picking single ones. An [[index]] is a number that tracks the combined price of such a basket. An [[etf]] is a fund that holds the basket, so you buy all of it in one trade.
+
+## Watch out
+
+- **A high share price does not mean a big company or a bad deal.** A $500 share costs more to buy, but the company's value is price times shares. A company with 1,000,000 shares at $500 is worth $500 million; one with 1,000,000,000 shares at $5 is worth $5 billion. To judge a price, people compare the company's value with its profit.
+- **A stock can fall to zero.** If the company fails, you can lose all you paid.
+
+Next, see [[price-chart]] for how to read a stock's price over time, and [[bid-and-ask]] for what you actually pay.

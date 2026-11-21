@@ -24,7 +24,7 @@ A long body with short wicks means the price moved one way all day. A small body
 
 Zoom out and look at the last few months instead of a single candle. Compare the highs and lows to find the [[trend]]: up, down or sideways.
 
-Then add a 50-day [[moving-average]] to the chart. Check two things: is the price mostly above or below the average, and is the average rising, falling or flat? The trend page shows what each answer means.
+Then add a 50-day [[moving-average]] to the chart. Check two things: is the price mostly above or below the average, and is the average rising, falling or flat? [[trend|The trend page]] shows what each answer means.
 
 ## Try it
 
