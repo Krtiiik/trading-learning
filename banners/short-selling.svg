@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A falling price with four numbered steps: 1 borrow, 2 sell at the high, 3 buy back at the low, 4 return; the gap between the sell price and the buy-back price is the gain">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the gain: the gap between the sell price and the buy-back price -->
+  <rect x="300" y="115" width="540" height="195" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .1"/>
+  <line x1="300" y1="115" x2="840" y2="115" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-down, #d0453a); stroke-opacity: .6"/>
+  <line x1="300" y1="310" x2="840" y2="310" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-up, #1a9b5b); stroke-opacity: .6"/>
+  <path d="M300 128 L300 297 M286 142 L300 128 L314 142 M286 283 L300 297 L314 283" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-up, #1a9b5b)"/>
+  <!-- price after the buy-back -->
+  <path d="M840 310 L900 290 L960 300 L1030 285 L1100 290" fill="none" stroke-width="4" stroke-dasharray="10 10"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3"/>
+  <!-- price while short -->
+  <path d="M60 150 L120 135 L180 152 L240 130 L300 115 L360 145 L420 135 L480 180 L540 170 L600 220 L660 210 L720 265 L780 255 L840 310"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- borrow and return -->
+  <circle cx="60" cy="150" r="12" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <circle cx="1100" cy="290" r="12" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <!-- sell at the high, buy back at the low -->
+  <path d="M300 107 L280 71 L320 71 Z" style="fill: var(--banner-down, #d0453a)"/>
+  <path d="M840 318 L820 354 L860 354 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="40" y="110" style="fill: var(--banner-accent, #0b6bcb)">1 BORROW</text>
+    <text x="334" y="100" style="fill: var(--banner-down, #d0453a)">2 SELL</text>
+    <text x="876" y="354" style="fill: var(--banner-up, #1a9b5b)">3 BUY BACK</text>
+    <text x="1160" y="250" text-anchor="end" style="fill: var(--banner-accent, #0b6bcb)">4 RETURN</text>
+    <text x="280" y="224" text-anchor="end" style="fill: var(--banner-up, #1a9b5b)">GAIN</text>
+  </g>
+</svg>
