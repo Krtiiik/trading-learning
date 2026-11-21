@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price line moving sideways, with horizontal volume bars beside it, one bar per price level; the longest bar, the point of control, sits at the middle price, and the band of busy prices around it is the value area">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- value area: the band of prices where most trading happened -->
+  <rect x="40" y="146" width="1120" height="104" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .1"/>
+  <g fill="none" stroke-width="2" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .45">
+    <path d="M40 146 H1160 M40 250 H1160"/>
+  </g>
+  <!-- point of control carried across the chart -->
+  <line x1="190" y1="198" x2="700" y2="198" stroke-width="4" stroke-dasharray="12 9" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- price, moving sideways -->
+  <polyline points="190,210 220,180 245,230 270,170 295,120 320,190 345,215 370,175 395,240 420,300 445,220 470,190 495,205 520,160 545,95 570,185 595,210 620,180 660,200"
+            fill="none" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- volume profile: one sideways bar per price level -->
+  <line x1="700" y1="60" x2="700" y2="340" stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .3">
+    <rect x="700" y="70" width="25" height="16"/><rect x="700" y="90" width="42" height="16"/><rect x="700" y="110" width="67" height="16"/><rect x="700" y="130" width="108" height="16"/>
+    <rect x="700" y="250" width="108" height="16"/><rect x="700" y="270" width="67" height="16"/><rect x="700" y="290" width="42" height="16"/><rect x="700" y="310" width="25" height="16"/>
+  </g>
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">
+    <rect x="700" y="150" width="200" height="16"/><rect x="700" y="170" width="250" height="16"/>
+    <rect x="700" y="210" width="250" height="16"/><rect x="700" y="230" width="200" height="16"/>
+  </g>
+  <rect x="700" y="190" width="300" height="16" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" style="fill: var(--banner-accent, #0b6bcb)">
+    <text x="1016" y="208">POC</text>
+    <text x="40" y="192">VALUE</text>
+    <text x="40" y="228">AREA</text>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .55">
+    <text x="190" y="64">PRICE</text>
+    <text x="1160" y="372" text-anchor="end">VOLUME AT EACH PRICE</text>
+  </g>
+</svg>

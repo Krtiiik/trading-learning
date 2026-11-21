@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: volume profile, volume at each price, the point of control, the value area, high- and low-volume nodes, and a worked profile of the $45–$55 stock.
 - Concept page: REIT (real estate investment trust), equity and mortgage REITs, the payout rule, FFO, a worked dividend yield example, why rising rates hurt REIT prices, and US tax on REIT dividends. The REIT summary now covers property loans too.
 - Concept page: buy and hold, compounding with reinvested dividends, how fees compound, time in the market, why a broad index fund, and long drawdowns.
 - Concept page: momentum, ranking many assets by past return, the 12-month look-back that skips the latest month, a worked monthly re-rank with rebalancing, and momentum crashes. The momentum summary now says the top risers are expected to keep beating the rest.
