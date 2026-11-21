@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price line crosses above its moving average, where the rule CLOSE ABOVE MA marks the entry, and later crosses below it, where the rule CLOSE BELOW MA marks the exit">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the moving average the rules compare against -->
+  <path d="M40 270 C260 262 420 215 640 205 C880 195 1020 220 1160 245"
+        fill="none" stroke-width="4" stroke-dasharray="12 10" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .45"/>
+  <!-- price -->
+  <path d="M40 300 L90 285 L140 305 L200 288 L250 300 L300 270 L340 238 L390 190 L440 212 L500 160 L550 178 L610 128 L660 150 L720 110 L770 132 L830 150 L870 135 L912 210 L960 260 L1010 248 L1070 300 L1120 290 L1160 310"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- the moments a rule is met -->
+  <circle cx="340" cy="238" r="13" stroke-width="5" style="fill: var(--banner-bg, #f2f4f7); stroke: var(--banner-accent, #0b6bcb)"/>
+  <circle cx="912" cy="210" r="13" stroke-width="5" style="fill: var(--banner-bg, #f2f4f7); stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- entry and exit markers -->
+  <path d="M340 260 L320 296 L360 296 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <path d="M914 180 L894 144 L934 144 Z" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="340" y="330" text-anchor="middle" style="fill: var(--banner-up, #1a9b5b)">ENTRY</text>
+    <text x="340" y="366" text-anchor="middle" font-size="26" style="fill: var(--banner-accent, #0b6bcb)">CLOSE &gt; MA</text>
+    <text x="950" y="144" style="fill: var(--banner-down, #d0453a)">EXIT</text>
+    <text x="950" y="180" font-size="26" style="fill: var(--banner-accent, #0b6bcb)">CLOSE &lt; MA</text>
+    <text x="1160" y="222" text-anchor="end" font-size="26" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">MA</text>
+  </g>
+</svg>
