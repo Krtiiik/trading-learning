@@ -44,4 +44,11 @@ _Avoid_: guide, tutorial, article.
 - **position size** (learning site): the number of shares or units held. Its money value is the *position value*; do not call that the size.
 - **slippage** (learning site): getting a worse fill price than expected or assumed. Use the word instead of paraphrases.
 - **order book** (learning site): the list of waiting limit orders; its best prices are the bid and the ask.
+- **high / peak** (learning site): an account's highest value so far is its *high*. A *peak* is a local turning point of a price (see peak-and-trough). Do not call the account high a peak.
+- **bar** (learning site): one period's mark on a chart in general ("bar or candle"). A *bar chart* is the OHLC bar chart; *volume bars* are the bars under a chart. Say which one you mean.
+- **range** (learning site): the *daily range* is a period's high minus its low. A sideways band between two levels is a *trading range*; prefer "moves sideways between them" in passing.
+- **CFD** (learning site): a contract with a broker that pays the change in a price, without holding the asset. Not offered to private traders in the US. Broker owns the term.
+- **market maker / large trading firm** (learning site): write "large trading firm" in passing; write "market maker" only where the page explains it.
+- **stop loss** (learning site): two words, no hyphen, as in the catalog title.
+- **private traders** (learning site): the name for retail investors; use it instead of "retail" or "private clients", except when quoting a regulator's rule.
 - **mid price, round trip** (learning site): the names for the point halfway between bid and ask, and for buying then selling again. Use them instead of paraphrases.
