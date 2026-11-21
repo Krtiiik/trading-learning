@@ -4,7 +4,7 @@ My personal collection of learning how to trade.
 
 ## Learning site
 
-- Published version: [Trading learning site](https://claude.ai/artifact/DkWqRG1wNUjDHuzddr4zSa) (Claude artifact)
+- Published version: <https://krtiiik.github.io/trading/> (GitHub Pages, deployed from `main`)
 - Local version: build the site, serve it on <http://localhost:8765> and open it in your default browser:
 
 ```powershell

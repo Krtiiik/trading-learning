@@ -338,20 +338,9 @@ def build(root: Path = HERE, out: Path | None = None) -> Site:
     return site
 
 
-def publish_files(out: Path) -> list[dict]:
-    """Every built file except the home page, as the `files` list of an Artifact publish rooted at out."""
-    return [
-        {"path": p.relative_to(out).as_posix()}
-        for p in sorted(out.rglob("*"))
-        if p.is_file() and p != out / "index.html"
-    ]
-
-
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--out", type=Path, default=HERE / "dist")
-    parser.add_argument("--files-json", action="store_true",
-                        help="after building, print the Artifact `files` list as JSON on stdout")
     parser.add_argument("--words", nargs="*", metavar="SLUG",
                         help="count the body words of these written pages (default: all) and exit; "
                              f"exit 1 if a concept is over {CONCEPT_MAX_WORDS}")
@@ -365,9 +354,6 @@ def main(argv: list[str] | None = None) -> int:
         for p in e.problems:
             print(f"  - {p}", file=sys.stderr)
         return 1
-    if args.files_json:
-        print(json.dumps(publish_files(args.out)))
-        return 0
     concepts = [p for p in site.pages.values() if p.kind == "concept"]
     print(
         f"Built {args.out}: {sum(p.written for p in concepts)}/{len(concepts)} concepts written, "

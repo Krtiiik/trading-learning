@@ -215,13 +215,5 @@ def test_cards_put_written_concepts_before_planned_ones(site_root):
     assert order == ["candle", "wick", "trend"]
 
 
-def test_publish_files_lists_everything_but_the_home_page(site_root, tmp_path):
-    out = tmp_path / "dist"
-    build.build(site_root, out)
-    paths = [f["path"] for f in build.publish_files(out)]
-    assert "index.html" not in paths
-    assert {"concepts/candle.html", "lessons/index.html", "static/index.js"} <= set(paths)
-
-
 def test_real_site_builds(tmp_path):
     build.build(LEARNING, tmp_path / "dist")
