@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Buyers on the left and sellers on the right send their orders into one exchange in the middle, which matches a buy with a sell and makes a trade of 100 shares at 50.02">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- buyers: three people -->
+  <g style="fill: var(--banner-up, #1a9b5b)">
+    <circle cx="130" cy="104" r="16"/><rect x="104" y="124" width="52" height="30" rx="14"/>
+    <circle cx="130" cy="194" r="16"/><rect x="104" y="214" width="52" height="30" rx="14"/>
+    <circle cx="130" cy="284" r="16"/><rect x="104" y="304" width="52" height="30" rx="14"/>
+  </g>
+  <!-- sellers: three people -->
+  <g style="fill: var(--banner-down, #d0453a)">
+    <circle cx="1070" cy="104" r="16"/><rect x="1044" y="124" width="52" height="30" rx="14"/>
+    <circle cx="1070" cy="194" r="16"/><rect x="1044" y="214" width="52" height="30" rx="14"/>
+    <circle cx="1070" cy="284" r="16"/><rect x="1044" y="304" width="52" height="30" rx="14"/>
+  </g>
+  <!-- buy orders flow in -->
+  <g fill="none" stroke-width="5" stroke-linecap="round" style="stroke: var(--banner-up, #1a9b5b)">
+    <path d="M180 130 L360 210 M180 220 L360 220 M180 310 L360 230" style="stroke-opacity: .45"/>
+    <path d="M360 220 L400 220"/>
+  </g>
+  <polygon points="398,204 426,220 398,236" style="fill: var(--banner-up, #1a9b5b)"/>
+  <!-- sell orders flow in -->
+  <g fill="none" stroke-width="5" stroke-linecap="round" style="stroke: var(--banner-down, #d0453a)">
+    <path d="M1020 130 L840 210 M1020 220 L840 220 M1020 310 L840 230" style="stroke-opacity: .45"/>
+    <path d="M840 220 L800 220"/>
+  </g>
+  <polygon points="802,204 774,220 802,236" style="fill: var(--banner-down, #d0453a)"/>
+  <!-- the exchange -->
+  <rect x="432" y="80" width="336" height="250" rx="18" stroke-width="4"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .1; stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="700"
+        letter-spacing="4" style="fill: var(--banner-accent, #0b6bcb)">EXCHANGE</text>
+  <!-- a buy and a sell meet: matched -->
+  <polygon points="520,192 594,220 520,248" style="fill: var(--banner-up, #1a9b5b)"/>
+  <polygon points="680,192 606,220 680,248" style="fill: var(--banner-down, #d0453a)"/>
+  <text x="600" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700"
+        style="fill: var(--banner-fg, #1a1a1a)">100 @ 50.02</text>
+  <!-- titles -->
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" text-anchor="middle"
+     style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="130" y="66">BUYERS</text>
+    <text x="1070" y="66">SELLERS</text>
+  </g>
+</svg>
