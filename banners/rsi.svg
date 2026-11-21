@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price line on top and an RSI line from 0 to 100 in a panel below it, with dashed lines at 70 and 30; where the price falls hard the RSI drops below 30, oversold, and where the price rises hard the RSI climbs above 70, overbought">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- price -->
+  <polyline points="100,110 140,100 180,115 220,95 260,105 300,135 340,150 380,170 420,175 460,160 500,150 540,140 580,140 620,120 660,95 700,75 740,60 780,45 820,55 860,60 880,58"
+            fill="none" stroke-width="4" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .55"/>
+  <!-- the hard fall and the hard rise -->
+  <polyline points="260,105 300,135 340,150 380,170 420,175" fill="none" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" style="stroke: var(--banner-down, #d0453a)"/>
+  <polyline points="580,140 620,120 660,95 700,75 740,60 780,45" fill="none" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" style="stroke: var(--banner-up, #1a9b5b)"/>
+  <!-- indicator panel: 0 to 100 -->
+  <line x1="40" y1="195" x2="1160" y2="195" stroke-width="2" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .25"/>
+  <rect x="100" y="210" width="780" height="160" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .05"/>
+  <!-- RSI past the levels -->
+  <polygon points="320,322 340,330 380,341 420,338 447,322" style="fill: var(--banner-down, #d0453a); fill-opacity: .3"/>
+  <polygon points="652,258 660,255 700,244 740,237 780,232 820,248 860,258" style="fill: var(--banner-up, #1a9b5b); fill-opacity: .3"/>
+  <!-- levels 70 and 30 -->
+  <g stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5">
+    <line x1="100" y1="258" x2="880" y2="258"/>
+    <line x1="100" y1="322" x2="880" y2="322"/>
+  </g>
+  <!-- RSI -->
+  <polyline points="100,287 140,280 180,293 220,282 260,290 300,314 340,330 380,341 420,338 460,314 500,298 540,290 580,287 620,271 660,255 700,244 740,237 780,232 820,248 860,258 880,261"
+            fill="none" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2">
+    <text x="905" y="110" style="fill: var(--banner-fg, #1a1a1a)">PRICE</text>
+    <text x="88" y="267" text-anchor="end" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">70</text>
+    <text x="88" y="331" text-anchor="end" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">30</text>
+    <text x="905" y="267" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">OVERBOUGHT</text>
+    <text x="905" y="299" style="fill: var(--banner-accent, #0b6bcb)">RSI</text>
+    <text x="905" y="331" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">OVERSOLD</text>
+  </g>
+</svg>
