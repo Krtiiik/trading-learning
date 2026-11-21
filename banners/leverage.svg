@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A tall position bar made of a thin slice of your own money, the margin, and a large borrowed part, ten times the margin; a price move of plus or minus 1% becomes a gain or loss of plus or minus 10% on your own money">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the position: borrowed money on top of a thin slice of margin -->
+  <rect x="120" y="60" width="160" height="252" stroke-width="3" stroke-dasharray="10 8"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .1; stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5"/>
+  <rect x="120" y="312" width="160" height="28" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="200" y="206" font-size="56" text-anchor="middle" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">10×</text>
+    <text x="304" y="196" font-size="28" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">BORROWED</text>
+    <text x="304" y="336" font-size="28" style="fill: var(--banner-accent, #0b6bcb)">MARGIN</text>
+  </g>
+  <!-- the position feeds the outcome -->
+  <path d="M520 200 L570 200 M556 186 L570 200 L556 214" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- small price move, large result on your own money -->
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="620" y="84" font-size="26" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">PRICE</text>
+    <text x="900" y="84" font-size="26" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">YOUR MONEY</text>
+    <text x="620" y="190" font-size="56" style="fill: var(--banner-up, #1a9b5b)">+1%</text>
+    <text x="900" y="200" font-size="88" style="fill: var(--banner-up, #1a9b5b)">+10%</text>
+    <text x="620" y="320" font-size="56" style="fill: var(--banner-down, #d0453a)">−1%</text>
+    <text x="900" y="330" font-size="88" style="fill: var(--banner-down, #d0453a)">−10%</text>
+  </g>
+  <g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5">
+    <path d="M790 170 L850 170 M838 158 L850 170 L838 182"/>
+    <path d="M790 300 L850 300 M838 288 L850 300 L838 312"/>
+  </g>
+</svg>
