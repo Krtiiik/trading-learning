@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: mean reversion, buying a price far below its usual level and selling when it comes back, how far is measured, and why it has many small wins and a few large losses.
 - Concept page: index, what an index tracks, major indices by market, cap-weighted and price-weighted indices, points and percent, and how people trade an index.
 - Concept page: peak and trough, how to spot turning points (swing highs and lows), why they are confirmed late, and how they place stops and targets.
 - Concept page: line vs candle chart, the same prices drawn two ways, what a line hides (swings and gaps), and bar charts.

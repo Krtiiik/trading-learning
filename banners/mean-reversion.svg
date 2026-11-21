@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A price line that drops far below its flat average, is bought at the bottom and exited when it comes back to the average">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the stretch away from the usual level -->
+  <path d="M264 200 L300 230 L350 280 L400 310 L440 335 L490 300 L540 270 L590 230 L640 200 Z"
+        style="fill: var(--banner-up, #1a9b5b); fill-opacity: .14"/>
+  <!-- the usual level: flat average -->
+  <line x1="40" y1="200" x2="1160" y2="200" stroke-width="8" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- price -->
+  <path d="M40 190 L100 215 L150 185 L210 210 L260 195 L300 230 L350 280 L400 310 L440 335 L490 300 L540 270 L590 230 L640 200 L700 180 L760 210 L820 190 L880 215 L940 185 L1000 205 L1060 190 L1160 200"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- entry and exit markers -->
+  <path d="M440 340 L420 375 L460 375 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <path d="M640 192 L620 152 L660 152 Z" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="480" y="372" style="fill: var(--banner-up, #1a9b5b)">BUY</text>
+    <text x="640" y="138" text-anchor="middle" style="fill: var(--banner-down, #d0453a)">EXIT</text>
+    <text x="1160" y="150" text-anchor="end" style="fill: var(--banner-accent, #0b6bcb)">USUAL LEVEL</text>
+  </g>
+</svg>
