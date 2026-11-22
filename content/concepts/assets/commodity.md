@@ -39,7 +39,7 @@ In backwardation, the roll gains instead.
 | Shares of producers | Easy to buy, like any stock | Company risk and stock market moves too |
 | CFDs | Small sizes | Leverage; overnight financing |
 
-- An [[etf]] (a fund that holds many assets and trades like one stock) or an **ETC** (exchange-traded commodity, common in Europe) is easy to buy. Most gold ETCs hold gold bars and follow the spot price, less a fee.
+- An [[etf]] or an **ETC** (exchange-traded commodity, common in Europe) is easy to buy. Most gold ETCs hold gold bars and follow the spot price, less a fee.
 - Oil company shares follow oil only in part: company news and the [[stock]] market move them too. Several oil stocks are almost one bet ([[diversification]]).
 - **[[cfd|CFDs]]** are contracts with a [[broker]] that pay the change in a price, common in the EU and UK but not offered to private traders in the US. You put down only a deposit, so gains and losses are large ([[leverage]]: in the EU and UK at most 20:1 for gold, 10:1 for other commodities). Most brokers charge [[fees-and-commissions|overnight financing]].
 

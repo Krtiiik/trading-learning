@@ -40,7 +40,7 @@ On 1 April you rank again. A is still first, but C has passed B. A is now worth 
 
 ## Watch out
 
-- **Costs add up.** Each change pays [[fees-and-commissions|fees]] and the [[spread]] (the gap between the best price buyers offer and the best price sellers want) on both orders. Add them to any [[backtest]].
+- **Costs add up.** Each change pays [[fees-and-commissions|fees]] and the [[spread]] on both orders. Add them to any [[backtest]].
 - **Momentum crashes.** When a falling market turns up, the biggest fallers often rise fastest and past winners lag. Versions that also sell the past losers short ([[short-selling|short selling]] is selling borrowed shares, hoping to buy them back cheaper) lost about two thirds of their value from March to May 2009: a deep, fast [[drawdown]].
 - **Taxes.** In the US, gains held one year or less are taxed higher; in Czechia, a monthly re-rank sells most holdings within months, so they miss the 3-year exemption, unless your sales stay under the yearly 100,000 CZK limit (see [[taxes-on-trading]]).
 - **It needs many assets.** Two stocks from one industry are almost one bet (see [[diversification]]). Real versions rank hundreds of stocks, or [[etf|ETFs]] on whole markets.

@@ -19,7 +19,7 @@ For a [[dividend]], the broker credits buyers a matching cash amount (often afte
 
 ## Going short
 
-Selling a CFD first gains when the price falls: sell 25 at $42 with a buy stop at $46 (an order that buys back once the price reaches $46), as in [[short-selling]], risking $100. You borrow no shares, but many brokers add a borrow fee and can close the short if shares get hard to borrow. A [[gap]] (a jump in price, for example overnight) to $50 loses $200.
+Selling a CFD first gains when the price falls: sell 25 at $42 with a buy stop at $46 (an order that buys back once the price reaches $46), as in [[short-selling]], risking $100. You borrow no shares, but many brokers add a borrow fee and can close the short if shares get hard to borrow. A [[gap]] to $50 loses $200.
 
 ## Costs
 

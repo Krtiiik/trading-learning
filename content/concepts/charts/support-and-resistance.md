@@ -32,8 +32,8 @@ Turning points from the [[trend]] page: $40 (low), $48 (high), $44, $53, $49, $5
 
 ## Using levels
 
-- **A stop just beyond the level.** You buy near support at $45.50. A [[stop-loss]] also sells on a wick, so leave room: a little more than one [[atr]] (the price's average move in one period, here $1) below the zone: $43.50. Below it, the support has failed.
-- **A target at the next level.** Sell just below resistance, near $54.50: the rise may stop a little short of it. The risk is $2 and the reward $9: a [[risk-reward]] (the possible gain compared with the possible loss) of 4.5 to 1.
+- **A stop just beyond the level.** You buy near support at $45.50. A [[stop-loss]] also sells on a wick, so leave room: a little more than one [[atr]] ($1) below the zone: $43.50. Below it, the support has failed.
+- **A target at the next level.** Sell just below resistance, near $54.50: the rise may stop a little short of it. The risk is $2 and the reward $9: a [[risk-reward]] of 4.5 to 1.
 - **Breakouts.** [[breakout-trading|Breakout trading]] enters on a clear move past a level.
 
 ## Watch out

@@ -12,7 +12,7 @@ The trade: a $10,000 account buys a calm [[stock]] (one that moves little each d
 
 Write the rule before you buy, not while you watch the price. The [[entry-and-exit-rules]] page explains its three parts: the condition, the time and the order.
 
-This trade uses the [[trend-following]] rule, with the 100-day [[moving-average]] (the average of the last 100 daily closes):
+This trade uses the [[trend-following]] rule, with the 100-day [[moving-average]]:
 
 1. **Entry**: a few minutes before the close (16:00 New York time, usually 22:00 CET), check the price. On the first day it is above the average, buy with a market order.
 2. **Signal exit**: on the first day it is below the average, sell the same way.

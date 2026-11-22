@@ -22,7 +22,7 @@ A long body with short wicks means the price moved one way all day. A small body
 
 ## Step 3: Which way is it going overall?
 
-Zoom out and look at the last few months instead of a single candle. Compare the [[peak-and-trough|peaks and troughs]] (the highs and lows where the price turns) to find the [[trend]]: up, down or sideways.
+Zoom out and look at the last few months instead of a single candle. Compare the [[peak-and-trough|peaks and troughs]] to find the [[trend]]: up, down or sideways.
 
 Then add a 50-day [[moving-average]] to the chart. Check two things: is the price mostly above or below the average, and is the average rising, falling or flat? The trend page shows what each answer means.
 

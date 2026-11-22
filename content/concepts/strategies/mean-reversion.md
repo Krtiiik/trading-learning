@@ -1,4 +1,4 @@
-Mean reversion is a [[strategy]] (fixed rules for when to buy and sell) built on one idea: a price that moved far from its usual level often comes back to it.
+Mean reversion is a [[strategy]] built on one idea: a price that moved far from its usual level often comes back to it.
 
 It buys a falling price and expects a turn back, the opposite of [[trend-following|trend following]], which buys a rising price and expects it to keep rising. Some traders also bet on falls from far above, with [[short-selling|short selling]]: selling borrowed shares, hoping to buy them back cheaper.
 
@@ -32,7 +32,7 @@ It fails when the price keeps falling in a new downtrend. Traders call this **ca
 
 ## What it feels like
 
-Expect many small wins and a few large losses, the reverse of trend following. Large losses come from a too-wide stop, a [[gap]] through the stop, or no stop at all. The [[win-rate-and-expectancy|win rate]] (the share of trades that end in a gain) is often high, but one loss can cancel several wins.
+Expect many small wins and a few large losses, the reverse of trend following. Large losses come from a too-wide stop, a [[gap]] through the stop, or no stop at all. The [[win-rate-and-expectancy|win rate]] is often high, but one loss can cancel several wins.
 
 ## Watch out
 

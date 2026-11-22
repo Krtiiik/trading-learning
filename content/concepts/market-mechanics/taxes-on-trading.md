@@ -1,4 +1,4 @@
-**Taxes on trading** are what the state takes from your trading profits and income: the gain when you sell, each [[dividend]] (money a company pays for each share you own), and interest. This page is a simplified overview of the 2026 rules, not tax advice: rules differ by country and change often.
+**Taxes on trading** are what the state takes from your trading profits and income: the gain when you sell, each [[dividend]], and interest. This page is a simplified overview of the 2026 rules, not tax advice: rules differ by country and change often.
 
 ## Tax on the gain, not on each order
 
@@ -20,7 +20,7 @@ The EU has no common tax on gains: each country sets its own, so the Czechia col
 
 ## The Czech rules
 
-The 100,000 CZK limit counts **sale proceeds**, not gains. The 3-year test covers [[stock|shares]], [[etf|ETFs]] and [[bond|bonds]]. When you sell part of a holding, the oldest units count as sold first. [[cryptocurrency|Crypto]] has its own 3-year test (up to 40 million CZK of sales a year) and its own 100,000 CZK limit. Gains on [[cfd|CFDs]] (contracts with a broker that pay the change in a price), [[futures]] and [[option|options]] are always taxed.
+The 100,000 CZK limit counts **sale proceeds**, not gains. The 3-year test covers [[stock|shares]], [[etf|ETFs]] and [[bond|bonds]]. When you sell part of a holding, the oldest units count as sold first. [[cryptocurrency|Crypto]] has its own 3-year test (up to 40 million CZK of sales a year) and its own 100,000 CZK limit. Gains on [[cfd|CFDs]], [[futures]] and [[option|options]] are always taxed.
 
 The US keeps back 15% of a US dividend (withholding tax) if you filed form W-8BEN. This counts against the Czech 15%, so usually nothing more is due.
 

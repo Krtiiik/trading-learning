@@ -37,9 +37,9 @@ The stop does not guarantee its price. If the stock closes at $44 and opens at $
 
 ## Other ways to go short
 
-Most EU brokers do not offer private traders stock shorting. The main route is [[cfd|CFDs]] (contracts with a broker that pay the change in a price), which are common in the EU and UK but not offered to private traders in the US. You borrow no shares but usually pay [[fees-and-commissions|overnight financing]] each night; many brokers also add a borrow fee and can close the short.
+Most EU brokers do not offer private traders stock shorting. The main route is [[cfd|CFDs]], which are common in the EU and UK but not offered to private traders in the US. You borrow no shares but usually pay [[fees-and-commissions|overnight financing]] each night; many brokers also add a borrow fee and can close the short.
 
-An inverse [[etf]] (a fund that holds many assets and trades like one stock) aims for the opposite of an [[index]]'s daily move, and you buy it in a normal account. Over weeks, its result often differs from the opposite of the index's move.
+An inverse [[etf]] aims for the opposite of an [[index]]'s daily move, and you buy it in a normal account. Over weeks, its result often differs from the opposite of the index's move.
 
 ## Watch out
 

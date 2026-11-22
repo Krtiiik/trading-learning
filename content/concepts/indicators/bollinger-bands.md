@@ -20,7 +20,7 @@ Most closes stay inside the bands, often about 9 in 10. Some books say 95%, but 
 
 A [[stock]] has moved sideways between about $45 and $55 for months. Its 20-day average is $50, and the standard deviation of the last 20 closes is $2. The upper band is $50 + 2 × $2 = $54, and the lower band is $50 − 2 × $2 = $46.
 
-In the [[mean-reversion]] example, a trader buys this stock on a close at $46, 4 [[atr|ATRs]] (average daily moves of $1) below the average. That buy is at the lower band, and the exit at the average is the middle band.
+In the [[mean-reversion]] example, a trader buys this stock on a close at $46, 4 [[atr|ATRs]] of $1 each below the average. That buy is at the lower band, and the exit at the average is the middle band.
 
 ## Width follows volatility
 

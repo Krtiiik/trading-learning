@@ -40,7 +40,7 @@ A [[stock]] (not the $45–$55 one on other pages) rises, then:
 
 The peaks are 20 cents apart: a possible double top, with the neckline at $54.
 
-Weeks later, a close at $53.40, below $54, confirms the pattern. The height is $60 − $54 = $6, so the target is $54 − $6 = $48. A trader who expects the fall may use [[short-selling]] (selling borrowed shares, hoping to buy them back cheaper), with $48 as the target and a [[stop-loss|buy stop]] just above the higher peak, at $60.50. The risk ($7.10) is larger than the reward ($5.40): under 1 to 1, so many traders skip this trade or wait for a retest to sell higher.
+Weeks later, a close at $53.40, below $54, confirms the pattern. The height is $60 − $54 = $6, so the target is $54 − $6 = $48. A trader who expects the fall may use [[short-selling]], with $48 as the target and a [[stop-loss|buy stop]] just above the higher peak, at $60.50. The risk ($7.10) is larger than the reward ($5.40): under 1 to 1, so many traders skip this trade or wait for a retest to sell higher.
 
 ## Watch out
 

@@ -10,7 +10,7 @@ Most of this site is about trading: buying and selling within days or weeks. Thi
 
 A single [[stock]] can fall 50% on bad news about one company. With $10,000 in that stock, you lose $5,000. Spread it over 20 stocks, $500 each, and the same news costs $250. This is [[diversification]].
 
-An [[etf]] (a fund that holds many assets and trades like one stock) that follows a broad [[index]] (a number that tracks the combined price of a basket of stocks) does this in one purchase. One example is a fund that follows the MSCI World, an index of more than 1,000 large and mid-sized companies in about 23 developed countries, so no single failure matters much. What remains is market-wide risk: when most stocks fall, the fund falls too.
+An [[etf]] that follows a broad [[index]] does this in one purchase. One example is a fund that follows the MSCI World, an index of more than 1,000 large and mid-sized companies in about 23 developed countries, so no single failure matters much. What remains is market-wide risk: when most stocks fall, the fund falls too.
 
 Picking stocks also rarely pays. S&P, the company behind the S&P 500 (an index of about 500 large US companies), publishes SPIVA reports. They find that over 15 years about 9 in 10 US large-company funds run by professional stock pickers did worse than that index. This is why most [[buy-and-hold]] investors buy a fund that follows the index instead of trying to beat it.
 
@@ -25,7 +25,7 @@ Stocks usually grow more but [[volatility|swing more]]. Bonds usually grow less 
 Private traders in the EU usually buy European-listed funds marked UCITS (an EU fund standard). The [[etf]] page explains why and what each item means. In the fund's name and fact sheet, check:
 
 1. **TER**: the fund's yearly fee. Lower is better (Step 5 shows why).
-2. **Acc or Dist**: whether the fund reinvests each [[dividend]] (money a company pays for each share you own) or pays it out. This changes your tax (Step 4).
+2. **Acc or Dist**: whether the fund reinvests each [[dividend]] or pays it out. This changes your tax (Step 4).
 3. **Domicile**: the country the fund is registered in. It decides how much US tax is kept back from US dividends.
 4. **Currency**: a euro-priced world fund still moves with the dollar. A hedged version removes most of that, at a yearly cost: see [[currency-risk]].
 

@@ -30,7 +30,7 @@ An [[indicator]], a number calculated from past prices or [[volume]], counts per
 
 ## Checking a longer timeframe
 
-Many traders first check a longer timeframe for the [[trend]], then a shorter one to choose when to act: the weekly chart for the direction, then the daily chart to choose the day. The same rule gives different signals on different timeframes, so a [[strategy]] (fixed rules for when to buy and sell) states its timeframe.
+Many traders first check a longer timeframe for the [[trend]], then a shorter one to choose when to act: the weekly chart for the direction, then the daily chart to choose the day. The same rule gives different signals on different timeframes, so a [[strategy]] states its timeframe.
 
 ## Watch out
 

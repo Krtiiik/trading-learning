@@ -1,6 +1,6 @@
 A candlestick pattern is a shape made by one, two or three [[candle|candles]] in a row. Traders give each common shape a name and read it as a hint about the next few candles, often a sign that a rise or a fall is about to turn.
 
-Each pattern is built from the body (the thick part, from the open to the close: the first and last price of the period, see [[ohlc]]) and the [[wick|wicks]] (the thin lines up to the high and down to the low). An up candle (usually green) closed above its own open; a down candle (usually red) closed below it.
+Each pattern is built from the body (the thick part, from the open to the close: the first and last price of the period, see [[ohlc]]) and the [[wick|wicks]]. An up candle (usually green) closed above its own open; a down candle (usually red) closed below it.
 
 ## Common patterns
 
@@ -31,7 +31,7 @@ A [[stock]] (not the $45–$55 one on other pages) falls for several days. Then 
 - The lower wick runs from $45.20 down to $43: $2.20, eleven times the body.
 - The upper wick is only 10 cents.
 
-That is a hammer. The next day the stock closes at $46.10, above the hammer's high of $45.50, so the pattern is confirmed. You buy near the close, at about $46.10, and put a [[stop-loss]] a little below the hammer's low, at $42.80. If the price falls below $43, the buyers who pushed it back up have failed. The planned risk is $3.30 per share; a [[gap]] (a jump in price, for example overnight) past the stop can make it more.
+That is a hammer. The next day the stock closes at $46.10, above the hammer's high of $45.50, so the pattern is confirmed. You buy near the close, at about $46.10, and put a [[stop-loss]] a little below the hammer's low, at $42.80. If the price falls below $43, the buyers who pushed it back up have failed. The planned risk is $3.30 per share; a [[gap]] past the stop can make it more.
 
 ## Watch out
 

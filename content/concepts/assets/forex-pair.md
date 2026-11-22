@@ -30,7 +30,7 @@ The spread (the gap between the best price buyers offer and the best price selle
 
 ## Where you trade it
 
-Most forex trades between banks and brokers, not on an [[exchange]]. In the EU and UK, most forex for private traders is traded as [[cfd|CFDs]] (contracts with a [[broker]] that pay the change in a price). They are not offered to private traders in the US, where brokers offer spot forex accounts instead. Either way, you gain or lose as if holding the currency.
+Most forex trades between banks and brokers, not on an [[exchange]]. In the EU and UK, most forex for private traders is traded as [[cfd|CFDs]]. They are not offered to private traders in the US, where [[broker|brokers]] offer spot forex accounts instead. Either way, you gain or lose as if holding the currency.
 
 ## Watch out
 

@@ -1,4 +1,4 @@
-**Leverage** means holding a position that is worth more than your own money. With [[stock|stocks]], your [[broker]] lends you the rest. With [[forex-pair|forex]] and [[cfd|CFDs]] (contracts with a broker that pay the change in a price), you put down only a deposit. Gains and losses come from the full [[position-sizing|position value]], so they are large next to your money.
+**Leverage** means holding a position that is worth more than your own money. With [[stock|stocks]], your [[broker]] lends you the rest. With [[forex-pair|forex]] and [[cfd|CFDs]], you put down only a deposit. Gains and losses come from the full [[position-sizing|position value]], so they are large next to your money.
 
 ## Leverage and margin
 
@@ -26,7 +26,7 @@ Your **account value** is your $1,000 plus or minus the open gain or loss.
 
 ## Losing more than you deposit
 
-A fast move or a [[gap]] (a jump in price, for example over a weekend) can go past the stop-out level. You can then lose more than your account and owe the broker the difference. In the EU and UK, private CFD traders have **negative balance protection**: they cannot lose more than their account.
+A fast move or a weekend [[gap]] can go past the stop-out level. You can then lose more than your account and owe the broker the difference. In the EU and UK, private CFD traders have **negative balance protection**: they cannot lose more than their account.
 
 ## Limits by market
 
@@ -50,6 +50,6 @@ For US stocks, after the purchase your own money must stay at 25% of the positio
 - **A leveraged position usually costs interest** for each night held. See [[fees-and-commissions]].
 - **"Professional client" status removes the limits**, and often negative balance protection. See [[cfd]] for who qualifies.
 - **The maximum leverage is a limit, not a target.** Use position sizing and a [[stop-loss]] to keep your risk small.
-- **Leverage makes a [[drawdown]] (the account's fall from its high) deeper.**
+- **Leverage makes a [[drawdown]] deeper.**
 
 Next, see [[position-sizing]] for how much to trade, or [[short-selling]].

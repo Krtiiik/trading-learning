@@ -34,7 +34,7 @@ At 2 to 1, one win pays for two losses, so winning more than a third of your tra
 
 ## Costs make the ratio smaller
 
-[[fees-and-commissions|Fees]] and the [[spread]] (the gap between the best price buyers offer and the best price sellers want) come off every gain and add to every loss. With $5 of fees for the round trip (buying, then selling), the example gives $295 of possible gain against $105 of possible loss: about 2.8 to 1, not 3 to 1.
+[[fees-and-commissions|Fees]] and the [[spread]] come off every gain and add to every loss. With $5 of fees for the round trip (buying, then selling), the example gives $295 of possible gain against $105 of possible loss: about 2.8 to 1, not 3 to 1.
 
 ## Watch out
 

@@ -41,7 +41,7 @@ It wins nine trades in ten and loses money anyway: one loss takes away more than
 
 ## Costs come off every trade
 
-The [[spread]] (the gap between the best price buyers offer and the best price sellers want) and [[fees-and-commissions|fees]] make each win smaller and each loss bigger. At $5 per round trip, the $78 expectancy becomes about $73. A small expectancy can turn negative after costs.
+The [[spread]] and [[fees-and-commissions|fees]] make each win smaller and each loss bigger. At $5 per round trip, the $78 expectancy becomes about $73. A small expectancy can turn negative after costs.
 
 ## Watch out
 

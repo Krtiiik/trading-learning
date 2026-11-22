@@ -5,7 +5,7 @@ An **exchange** is a marketplace where buyers and sellers are matched. Examples 
 - **It keeps the order book.** This is the list of orders waiting to be filled (carried out).
 - **It matches orders.** Its **matching engine** checks each new order against the book. On most stock exchanges, the best price fills first (the lowest sell price for a buyer, the highest buy price for a seller); at the same price, the earlier order fills first.
 - **It lists assets.** A company must meet the exchange's rules before its [[stock]] is listed there.
-- **It publishes every trade made on it.** In the US, trades away from exchanges are reported too, and most charts and [[volume]] (how much was traded) figures include them.
+- **It publishes every trade made on it.** In the US, trades away from exchanges are reported too, and most charts and [[volume]] figures include them.
 - **It sets its hours.** See [[trading-hours]].
 
 ## Exchange and broker

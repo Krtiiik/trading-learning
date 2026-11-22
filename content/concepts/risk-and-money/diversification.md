@@ -33,7 +33,7 @@ Assets that move together act like one larger position, so their risks add up. M
 
 - **In a crash, many assets fall together.** Correlations rise when markets panic, as in 2008.
 - **Ten stocks can be one bet.** Check what drives each asset: industry, country, [[currency-risk|currency]]. Even a world stock fund is mostly in dollars.
-- **A gap hits all correlated positions at once.** A [[gap]] (a jump in price, for example overnight) can take all three past their stops: you lose more than $300.
+- **A gap hits all correlated positions at once.** A [[gap]] can take all three past their stops: you lose more than $300.
 - **Diversification makes one loss smaller; it does not stop losses.** It makes the gain from one good idea smaller too.
 
 Next, see [[position-sizing]] for the risk per trade, [[drawdown]], [[rebalancing]] to keep a mix, or the lesson [[building-a-simple-portfolio]].

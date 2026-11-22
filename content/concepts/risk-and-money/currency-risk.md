@@ -4,7 +4,7 @@ This site's examples are in US dollars. If your money is in Czech koruna (CZK) o
 
 ## Example
 
-A dollar costs 21 CZK. You change 210,000 CZK into $10,000 of an S&P 500 [[etf]] (a fund that holds many assets and trades like one stock).
+A dollar costs 21 CZK. You change 210,000 CZK into $10,000 of an S&P 500 [[etf]].
 
 - **The fund rises, the dollar falls.** The fund gains 10%, to $11,000. The dollar falls 10%, to 18.90 CZK. You have 11,000 × 18.90 = 207,900 CZK: about 1% less.
 - **The fund stays flat, the dollar rises.** The dollar rises 10%, to 23.10 CZK. You have 10,000 × 23.10 = 231,000 CZK: a 10% gain.
@@ -23,7 +23,7 @@ Some ETFs have a **hedged** version, often marked "EUR Hedged", which uses contr
 
 ## Months and decades
 
-Over months, a currency move can match the stock move: in the first half of 2025, the dollar lost over 10% against the koruna and the euro. Over decades, stock growth is usually much larger: [[buy-and-hold|compounding]] at 7% a year makes $10,000 about $76,000 in 30 years, still about six times your money after a 20% dollar fall. Currency matters more for short trades, and for [[bond|bonds]] (loans to governments or companies) with their smaller returns.
+Over months, a currency move can match the stock move: in the first half of 2025, the dollar lost over 10% against the koruna and the euro. Over decades, stock growth is usually much larger: [[buy-and-hold|compounding]] at 7% a year makes $10,000 about $76,000 in 30 years, still about six times your money after a 20% dollar fall. Currency matters more for short trades, and for [[bond|bonds]] with their smaller returns.
 
 Holding assets in several currencies is part of [[diversification]], but even world stock funds are about two-thirds (with emerging markets) to three-quarters in dollars.
 

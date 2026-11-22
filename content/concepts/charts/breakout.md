@@ -6,7 +6,7 @@ A level is a narrow zone, not one exact price. Most traders count a breakout onl
 
 Some traders want more than a plain close beyond the zone:
 
-- **A set distance.** For example, a close at least half an [[atr]] (the price's average move in one period) beyond the zone.
+- **A set distance.** For example, a close at least half an [[atr]] beyond the zone.
 - **Two closes.** Two periods in a row close beyond the zone.
 
 Stricter rules filter out more false breakouts, but they also confirm the real ones later, at a worse price.

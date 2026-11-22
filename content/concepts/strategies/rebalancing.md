@@ -2,7 +2,7 @@ Rebalancing means trading back to the mix of assets you chose, after prices have
 
 ## Target mix and drift
 
-Your **target mix** (also called **asset allocation**) is the share of your money you want in each kind of asset. A common example is 60% [[stock|stocks]] and 40% [[bond|bonds]] (loans to governments or companies): a 60/40 mix. Stocks usually [[volatility|swing more]], so more stocks means more risk.
+Your **target mix** (also called **asset allocation**) is the share of your money you want in each kind of asset. A common example is 60% [[stock|stocks]] and 40% [[bond|bonds]]: a 60/40 mix. Stocks usually [[volatility|swing more]], so more stocks means more risk.
 
 Prices do not move together, so the mix changes by itself: **drift**.
 
@@ -32,7 +32,7 @@ Put regular new money into the part that is too small. In the example, $7,800 of
 
 ## Watch out
 
-- **Each sale can cost money.** You pay [[fees-and-commissions|fees]] and the [[spread]] (the gap between the best price buyers offer and the best price sellers want). A sale at a gain can also mean tax. New money avoids this, and so do tax-advantaged accounts such as the US IRA, where sales are not taxed then. In Czechia, the DIP (a retirement investment account) gives its tax break on what you pay in, not on sales. But a sale of shares, funds or bonds held more than 3 years is tax-free, and so are such sales that total no more than 100,000 CZK a year (see [[taxes-on-trading]]).
+- **Each sale can cost money.** You pay [[fees-and-commissions|fees]] and the [[spread]]. A sale at a gain can also mean tax. New money avoids this, and so do tax-advantaged accounts such as the US IRA, where sales are not taxed then. In Czechia, the DIP (a retirement investment account) gives its tax break on what you pay in, not on sales. But a sale of shares, funds or bonds held more than 3 years is tax-free, and so are such sales that total no more than 100,000 CZK a year (see [[taxes-on-trading]]).
 - **Do not rebalance too often.** Small drifts often reverse; trading on each one adds costs.
 - **It does not promise a higher return.** In a long rise in stocks, it keeps selling the winner, so a mix you never rebalance can end higher.
 - **It means buying what is falling.** In a crash, the rule buys more stocks while they drop, and they can keep falling.

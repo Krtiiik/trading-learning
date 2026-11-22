@@ -1,4 +1,4 @@
-Trend following is a [[strategy]] (a fixed set of rules for when to buy and sell) built on one idea: prices that have started moving in a direction often keep moving that way for a while. So you buy when a price is rising, and sell what you hold (or stay out) when it is falling.
+Trend following is a [[strategy]] built on one idea: prices that have started moving in a direction often keep moving that way for a while. So you buy when a price is rising, and sell what you hold (or stay out) when it is falling.
 
 You do not try to predict where the [[trend]] starts or ends. You wait until it is visible, ride it, and leave when your exit rule says it has turned.
 
@@ -15,7 +15,7 @@ Those are the [[entry-and-exit-rules]]. Adding a [[stop-loss]], an order that se
 
 ## What it feels like
 
-Most trades are small losses: the price crosses the average, then turns back. A few trades catch a long trend and make large gains. The few big winners pay for the many small losers, so the [[win-rate-and-expectancy|win rate]] (the share of trades that end in a gain) is often below 50%, and the strategy can still make money overall if the winners are big enough.
+Most trades are small losses: the price crosses the average, then turns back. A few trades catch a long trend and make large gains. The few big winners pay for the many small losers, so the [[win-rate-and-expectancy|win rate]] is often below 50%, and the strategy can still make money overall if the winners are big enough.
 
 ## Example
 

@@ -46,7 +46,7 @@ A daily candle is built the same way from all the day's hours. For a stock, thou
 ## Where you meet it
 
 - A **line chart** uses only the close. See [[line-vs-candle-chart]].
-- Price data you download usually comes as columns named Open, High, Low and Close, often with a fifth, [[volume]] (how much was traded). Together they are called OHLCV.
+- Price data you download usually comes as columns named Open, High, Low and Close, often with a fifth, [[volume]]. Together they are called OHLCV.
 - Most [[indicator|indicators]], numbers calculated from past prices or volume such as a [[moving-average]], use the close. Some, such as [[atr]], also use the high and low to measure how far the price swings.
 
 ## Watch out

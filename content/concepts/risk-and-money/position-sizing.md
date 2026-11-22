@@ -27,7 +27,7 @@ Now say this stock swings more (higher [[volatility]]), so you put the stop at $
 
 ## Why a small fixed percentage
 
-Every [[strategy]] has runs of losing trades. Risking 1% of the current balance makes each loss a little smaller than the last. After 10 losses in a row, the account still holds about $9,044 (10,000 × 0.99¹⁰). Risking 10% each time instead would leave about $3,487. A small percentage keeps the [[drawdown]] (the account's fall from its high) small.
+Every [[strategy]] has runs of losing trades. Risking 1% of the current balance makes each loss a little smaller than the last. After 10 losses in a row, the account still holds about $9,044 (10,000 × 0.99¹⁰). Risking 10% each time instead would leave about $3,487. A small percentage keeps the [[drawdown]] small.
 
 The 1% is an example, not a recommendation.
 
@@ -37,8 +37,8 @@ A very tight stop gives a very large position size. With a stop at $41.90, the r
 
 ## Watch out
 
-- **The planned risk is not a guarantee.** A [[gap]] (a jump in price, for example overnight) past the stop can make the loss bigger than planned.
-- **Costs come on top.** [[fees-and-commissions|Fees]] and the [[spread]] (the gap between the best price buyers offer and the best price sellers want) add to each loss.
+- **The planned risk is not a guarantee.** A [[gap]] past the stop can make the loss bigger than planned.
+- **Costs come on top.** [[fees-and-commissions|Fees]] and the [[spread]] add to each loss.
 - **Size does not fix a bad trade.** It controls how much a loss hurts, not how often you lose.
 
 Next, see [[risk-reward]], then [[drawdown]], or try the lesson [[planning-one-trade]].

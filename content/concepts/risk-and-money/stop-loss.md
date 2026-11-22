@@ -2,7 +2,7 @@ A stop loss is a sell order that you place below the current price (usually belo
 
 Most often it is a plain stop order (see [[order-types]]): an order that waits until the price reaches or passes a level you chose, the **stop price**. It then becomes a market order, which sells right away at the best price a buyer offers at that moment. A stop-limit version becomes a limit order instead, so it sells only at your price or better; in a fast drop it may not sell at all.
 
-If you sold [[short-selling|short]] (sold borrowed shares, hoping to buy them back cheaper), the stop is a buy order above the price instead.
+If you sold [[short-selling|short]], the stop is a buy order above the price instead.
 
 ## Example
 

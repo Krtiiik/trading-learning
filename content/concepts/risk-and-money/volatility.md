@@ -12,7 +12,7 @@ Volatility also differs between assets: many smaller [[cryptocurrency|cryptocurr
 - **[[atr]]** (average true range): the same average, but it also counts any jump ([[gap]]) from the previous close.
 - **Standard deviation of daily changes**: how far daily percentage changes usually spread from their average. ([[bollinger-bands]] use the standard deviation of closes instead.)
 
-All these measure **historical volatility**: how much the price has moved. **Implied volatility** is the size of move that traders expect in the future, read from the prices of [[option|options]] (contracts giving the right, but not the duty, to buy or sell at a set price; they cost more when traders expect bigger moves). The VIX shows the implied volatility of the S&P 500 index for the next 30 days, as a yearly percentage.
+All these measure **historical volatility**: how much the price has moved. **Implied volatility** is the size of move that traders expect in the future, read from the prices of [[option|options]], which cost more when traders expect bigger moves. The VIX shows the implied volatility of the S&P 500 index for the next 30 days, as a yearly percentage.
 
 ## Calm and wild periods
 

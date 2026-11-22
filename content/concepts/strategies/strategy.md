@@ -4,7 +4,7 @@ A strategy is a fixed set of rules for when to enter and exit trades: decided in
 
 The rules are written down and precise enough that two people following them on the same chart get the same trades.
 
-"Buy when the [[stock]] looks strong" is not a strategy: people read "strong" differently. "Buy on the first day the daily close is above the 100-day [[moving-average]] (the average of the last 100 daily closes)" is precise. The time to check and the order to use complete it (see [[entry-and-exit-rules]]).
+"Buy when the [[stock]] looks strong" is not a strategy: people read "strong" differently. "Buy on the first day the daily close is above the 100-day [[moving-average]]" is precise. The time to check and the order to use complete it (see [[entry-and-exit-rules]]).
 
 ## The parts
 

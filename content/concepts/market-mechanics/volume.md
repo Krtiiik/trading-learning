@@ -25,11 +25,11 @@ On Wednesday, the company reports a much higher profit than expected. The price 
 
 ## Volume and liquidity
 
-High volume usually comes with many orders waiting near the [[bid-and-ask|bid and ask]] (the best prices buyers offer and sellers want), so you can trade without moving the price much. That is [[liquidity]]. Low volume often comes with a wider [[spread]]: a bigger gap between those two prices, part of which you pay on each trade.
+High volume usually comes with many orders waiting near the [[bid-and-ask|bid and ask]], so you can trade without moving the price much. That is [[liquidity]]. Low volume often comes with a wider [[spread]]: a bigger gap between those two prices, part of which you pay on each trade.
 
 ## Reading a move with volume
 
-Many traders trust a price move more when volume is high: much was traded at the new prices, not just a little. A [[breakout]] (the price pushing past a level where it had stopped before) on high volume is trusted more than one on low volume. This is a rule of thumb, not a reliable signal: moves on high volume also turn back.
+Many traders trust a price move more when volume is high: much was traded at the new prices, not just a little. A [[breakout]] on high volume is trusted more than one on low volume. This is a rule of thumb, not a reliable signal: moves on high volume also turn back.
 
 ## Watch out
 

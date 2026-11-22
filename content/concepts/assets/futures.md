@@ -37,7 +37,7 @@ To stay in, traders **roll**: they close the contract that ends soon and open th
 
 ## Watch out
 
-- **You can lose more than your margin.** A fast move or a [[gap]] (a jump in price, for example over a weekend) can take more than your deposit, and you owe the difference. The EU's leverage caps and negative balance protection cover [[cfd|CFDs]] (contracts with a broker that pay the change in a price), not futures.
+- **You can lose more than your margin.** A fast move or a weekend [[gap]] can take more than your deposit, and you owe the difference. The EU's leverage caps and negative balance protection cover [[cfd|CFDs]], not futures.
 - **One contract can be too big.** A $30,000 contract on a $5,000 account is leverage of 6:1. Use [[position-sizing]] and a [[stop-loss]].
 - **The futures price is not the asset's price.** It includes the cost of carry until expiry (see [[commodity]]; for an index, interest minus [[dividend|dividends]]), so it is usually a little above or below.
 
