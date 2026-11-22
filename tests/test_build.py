@@ -278,3 +278,9 @@ def test_cards_put_written_concepts_before_planned_ones(site_root):
 
 def test_real_site_builds(tmp_path):
     build.build(ROOT, tmp_path / "dist")
+
+
+def test_stylesheet_has_no_control_characters():
+    css = (ROOT / "static" / "site.css").read_text(encoding="utf-8")
+    bad = [hex(ord(c)) for c in css if ord(c) < 32 and c not in "\n\r\t"]
+    assert bad == []

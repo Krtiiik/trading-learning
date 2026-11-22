@@ -313,7 +313,7 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
 .next-lesson__link:hover { background: var(--panel); }
 .next-lesson__step { font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .next-lesson__title { font-size: 18px; font-weight: 600; }
-.next-lesson__title::after { content: " 92"; font-family: var(--mono); color: var(--faint); }
+.next-lesson__title::after { content: " \2192"; font-family: var(--mono); color: var(--faint); }
 .next-lesson__summary { color: var(--muted); font-size: 15px; }
 
 /* ---------- prose ---------- */
