@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import re
 import sys
 import textwrap
 from pathlib import Path
@@ -253,6 +254,17 @@ def test_pages_use_root_relative_prefixes(site_root, tmp_path):
     concept = (out / "concepts/candle.html").read_text(encoding="utf-8")
     assert 'data-root=""' in home and 'href="static/site.css"' in home
     assert 'data-root="../"' in concept and 'href="../static/site.css"' in concept
+
+
+def test_home_shows_groups_concepts_and_lessons_in_one_row_over_a_hidden_chart(site_root, tmp_path):
+    out = tmp_path / "dist"
+    build.build(site_root, out)
+    home = (out / "index.html").read_text(encoding="utf-8")
+    stats = home[home.index('<dl class="stats">'):home.index("</dl>")]
+    assert re.findall(r"<dt>([^<]+)</dt>", stats) == ["Groups", "Concepts", "Lessons"]
+    assert 'class="wide"' not in stats
+    panel = home[home.index('<div class="intro__panel">'):home.index('<dl class="stats">')]
+    assert '<svg class="ticker"' in panel and 'aria-hidden="true"' in panel
 
 
 def test_every_page_has_the_theme_switch_and_applies_the_saved_theme_early(site_root, tmp_path):

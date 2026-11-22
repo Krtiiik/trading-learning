@@ -1,0 +1,16 @@
+{#- Decorative chart behind the home stats. The 600-unit pattern is periodic (the last close is
+    the first open), so two copies side by side scroll left forever without a seam. -#}
+<svg class="ticker" viewBox="0 0 600 300" preserveAspectRatio="xMinYMid slice" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="ticker-tile">
+      <g class="ticker__up"><path d="M12 139V186"/><rect x="6" y="144" width="12" height="37"/><path d="M38 113V158"/><rect x="32" y="121" width="12" height="24"/><path d="M138 135V163"/><rect x="132" y="139" width="12" height="17"/><path d="M162 108V149"/><rect x="156" y="120" width="12" height="20"/><path d="M212 105V131"/><rect x="206" y="114" width="12" height="9"/><path d="M362 190V232"/><rect x="356" y="199" width="12" height="20"/><path d="M388 177V209"/><rect x="382" y="183" width="12" height="16"/><path d="M538 197V241"/><rect x="532" y="211" width="12" height="15"/><path d="M588 176V231"/><rect x="582" y="181" width="12" height="38"/></g>
+      <g class="ticker__down"><path d="M62 114V148"/><rect x="56" y="121" width="12" height="16"/><path d="M88 125V153"/><rect x="82" y="137" width="12" height="7"/><path d="M112 134V161"/><rect x="106" y="144" width="12" height="12"/><path d="M188 112V134"/><rect x="182" y="120" width="12" height="4"/><path d="M238 101V132"/><rect x="232" y="114" width="12" height="5"/><path d="M262 112V131"/><rect x="256" y="119" width="12" height="2"/><path d="M288 110V162"/><rect x="282" y="120" width="12" height="28"/><path d="M312 135V199"/><rect x="306" y="148" width="12" height="43"/><path d="M338 175V224"/><rect x="332" y="191" width="12" height="28"/><path d="M412 178V199"/><rect x="406" y="183" width="12" height="4"/><path d="M438 174V217"/><rect x="432" y="187" width="12" height="19"/><path d="M462 192V221"/><rect x="456" y="206" width="12" height="8"/><path d="M488 201V226"/><rect x="482" y="214" width="12" height="2"/><path d="M512 204V236"/><rect x="506" y="215" width="12" height="11"/><path d="M562 202V231"/><rect x="556" y="211" width="12" height="7"/></g>
+      <path class="ticker__ma" d="M-12 210 L12 196 L38 175 L62 160 L88 146 L112 141 L138 140 L162 139 L188 137 L212 131 L238 123 L262 119 L288 125 L312 138 L338 159 L362 175 L388 188 L412 196 L438 199 L462 198 L488 201 L512 210 L538 214 L562 217 L588 210 L612 196"/>
+    </g>
+  </defs>
+  <g class="ticker__track">
+    <use href="#ticker-tile"/>
+    <use href="#ticker-tile" x="600"/>
+  </g>
+  <line class="ticker__last" x1="0" y1="168" x2="600" y2="168"/>
+</svg>

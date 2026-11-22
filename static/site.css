@@ -165,33 +165,48 @@ html.js .theme { display: grid; }
 .intro h1 { margin: 0; font-size: clamp(36px, 5.4vw, 60px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 600; text-wrap: balance; }
 .intro p { margin: 0; max-width: 46ch; color: var(--muted); font-size: 17px; }
 .intro__panel {
+  position: relative; overflow: hidden; min-height: calc(8 * 32px);
   background:
     linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 32px 32px,
     linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 32px 32px,
     var(--panel);
   padding: 32px; display: grid; align-content: start; justify-items: start;
 }
+/* Decorative candlestick chart behind the stats: it fills the panel and scrolls left in a
+   seamless loop. Without motion permission it stays still. */
+.ticker { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.ticker__up, .ticker__down { stroke-width: 1.5; fill-opacity: .55; stroke-opacity: .7; }
+.ticker__up { fill: var(--banner-up); stroke: var(--banner-up); }
+.ticker__down { fill: var(--banner-down); stroke: var(--banner-down); }
+.ticker__ma { fill: none; stroke: var(--banner-accent); stroke-width: 2; stroke-opacity: .7; }
+.ticker__last { stroke: var(--line-2); stroke-width: 1; stroke-dasharray: 4 4; }
+@media (prefers-reduced-motion: no-preference) {
+  .ticker__track { animation: ticker-scroll 48s linear infinite; }
+  .ticker__last { animation: ticker-last 6s ease-in-out infinite alternate; }
+}
+@keyframes ticker-scroll { to { transform: translateX(-600px); } }
+@keyframes ticker-last { from { transform: translateY(-24px); } to { transform: translateY(24px); } }
+
 /* The stats box sits on the 32px background grid: it starts on a grid crossing (the panel's
    32px padding) and spans whole grid units, so its outer and inner lines land on grid lines.
    The lines are the box's own background showing through a 1px gap and 1px padding;
-   each cell is one unit short of 64px so that every line falls on a multiple of 32.
-   Width: two equal columns, so it snaps down to a multiple of 64px (plus the closing line). */
+   each cell is one unit short of a whole number of units so that every line falls on a multiple of 32.
+   Width: three equal columns in one row, so it snaps down to a multiple of 96px (plus the closing line). */
 .stats {
   --unit: 32px;
-  margin: 0; position: relative;
-  display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: calc(2 * var(--unit) - 1px);
+  margin: 0; position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: calc(2 * var(--unit) - 1px);
   gap: 1px; padding: 1px; background: var(--line-2);
-  width: calc(10 * var(--unit) + 1px);
+  width: calc(9 * var(--unit) + 1px);
   max-width: 100%;
 }
-@supports (width: round(down, 100%, 64px)) {
-  .stats { width: calc(round(down, min(100%, 12 * var(--unit)), 2 * var(--unit)) + 1px); max-width: none; }
+@supports (width: round(down, 100%, 96px)) {
+  .stats { width: calc(round(down, min(100%, 12 * var(--unit)), 3 * var(--unit)) + 1px); max-width: none; }
 }
 .stats::before, .stats::after { content: ""; position: absolute; width: 9px; height: 9px; border: 0 solid var(--fg); }
 .stats::before { top: -5px; left: -5px; border-top-width: 1px; border-left-width: 1px; }
 .stats::after { bottom: -5px; right: -5px; border-bottom-width: 1px; border-right-width: 1px; }
 .stats div { background: var(--bg); padding: 10px 14px; display: grid; gap: 4px; align-content: start; min-width: 0; }
-.stats div.wide { grid-column: 1 / -1; }
 .stats dt { font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .stats dd { margin: 0; font: 500 22px/1.1 var(--mono); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 
@@ -381,6 +396,8 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
   .shelf__row { grid-auto-columns: calc(100% / 1.3); }
   .shelf__header { grid-template-areas: "title title" "blurb blurb" ". arrows"; row-gap: 8px; }
   .shelf__arrow { width: 36px; height: 36px; }
+  /* Half-unit padding gives the one-row stats room; the grid shifts with it, so the box still starts on a crossing. */
+  .intro__panel { padding: 16px; background-position: 16px 16px, 16px 16px, 0 0; min-height: calc(6 * 32px + 32px); }
   .prose { font-size: 16px; }
 }
 @media (prefers-reduced-motion: no-preference) {

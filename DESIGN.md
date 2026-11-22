@@ -218,7 +218,9 @@ Title (24px, links to the full list, followed by a faint mono `→`), blurb belo
 
 ### 6.6 Stats block
 
-A tiled `dl`: each cell has a label (`dt`) and a mono number (`dd`, 22px, tabular figures). One cell can span both columns.
+A tiled `dl` in one row of equal cells: each cell has a label (`dt`) and a mono number (`dd`, 22px, tabular figures). Cell sizes are whole 32px grid units, so the box lines fall on the panel's grid; on phones the panel padding and the grid both move by half a unit to give the cells room.
+
+Behind the home stats, a decorative candlestick chart (up, down and accent colours of the banners, with a moving average and a dashed last-price line) fills the panel. It is `aria-hidden` and sits under the stats box.
 
 ### 6.7 Note box
 
@@ -296,6 +298,7 @@ Links inherit their colour (`a { color: inherit }`). Colour alone never marks a 
 ```
 
 - Only colour and background change. No transforms, no fades on entry, no spinners for instant work.
+- One exception: the home panel chart scrolls left in a slow seamless loop (48 s), and its last-price line drifts. It is ambient decoration, never content, and it stays still with reduced motion.
 - Scroll buttons animate the row in about 180 ms with an ease-out curve (native `behavior: "smooth"` is too slow and can't be tuned). Scroll snap is off while it runs. It also runs with reduced motion, because it is short.
 
 ## 12. Responsive

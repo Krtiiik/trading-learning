@@ -11,10 +11,11 @@
     <p>Short, standalone explanations of trading concepts, grouped by topic, and lessons that connect them.</p>
   </div>
   <div class="intro__panel">
+    {% include "_ticker.html" %}
     <dl class="stats">
+      <div><dt>Groups</dt><dd>{{ site.groups|length }}</dd></div>
       <div><dt>Concepts</dt><dd>{{ ns.t }}</dd></div>
       <div><dt>Lessons</dt><dd>{{ site.lessons|length }}</dd></div>
-      <div class="wide"><dt>Concept groups</dt><dd>{{ site.groups|length }}</dd></div>
     </dl>
   </div>
 </section>

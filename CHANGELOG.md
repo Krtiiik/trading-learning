@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Changed
 
+- Home page: the statistics box shows groups, concepts and lessons in one row, over a slowly scrolling candlestick chart (still when the system asks for reduced motion).
 - The site header now has two rows at every width: the title, search and theme switch on top, and the concept group navigation alone below.
 
 ### Added
