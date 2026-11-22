@@ -55,9 +55,10 @@ _Avoid_: guide, tutorial, article.
 - **momentum** (learning site): on strategy pages, the strategy that ranks many assets by past return; on indicator pages, how strong one price's recent moves were (RSI, MACD). Write "momentum strategy" or "momentum indicator" where both could be meant.
 - **drift** (learning site): a target mix changing by itself as prices move (rebalancing). Do not use it for the daily-reset decay of leveraged ETFs.
 - **target / target mix** (learning site): a *target* is a planned sell price (risk-reward); a *target mix* is the planned share of each asset (rebalancing). Never write "target" alone for a mix.
-- **CFD** (learning site): a contract with a broker that pays the change in a price, without holding the asset. Common in the EU and UK; not offered to private traders in the US. The cfd page owns the term; broker keeps the one-line gloss.
+- **CFD** (learning site): a contract with a broker that pays the change in a price, without owning the asset. Common in the EU and UK but not offered to private traders in the US. The cfd page owns the term; broker keeps the one-line gloss.
 - **market maker / large trading firm** (learning site): write "large trading firm" in passing; write "market maker" only where the page explains it.
 - **stop loss** (learning site): two words, no hyphen, as in the catalog title.
 - **private traders** (learning site): the name for retail investors; use it instead of "retail" or "private clients", except when quoting a regulator's rule.
 - **mid price, round trip** (learning site): the names for the point halfway between bid and ask, and for buying then selling again. Use them instead of paraphrases.
 - **Czechia** (learning site): the country name; use "Czech" only as an adjective (Czech tax, Czech resident).
+- **target as a check** (learning site): a target that no exit order waits at; the trade closes on another exit. Say whether a target (such as the $54 in the shared trade) is an exit or only a check.
