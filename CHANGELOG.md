@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Lesson: leverage, shorts and CFDs, step 6 of the reading path. It takes the planned $42 trade with 5:1 leverage and short, and shows what margin, overnight financing, gaps, the stop out and negative balance protection do to what you can lose, and how to size so leverage stays a tool.
 - Concept page: slippage, where it comes from (a big order, a moving price, a gap past a stop), a worked order-book and gap example, how it differs from the spread, and how to limit it.
 - Concept page: trading psychology, loss aversion, the disposition effect, selling winners early, holding losers, moving the stop, revenge trading and overconfidence, with the studies behind them and defences decided while calm.
 - Lesson: same chart, three strategies, step 5 of the reading path. It reads one chart as a trend follower, a mean-reversion trader (RSI and Bollinger bands) and a breakout trader, and shows why each wins and loses in a different way.

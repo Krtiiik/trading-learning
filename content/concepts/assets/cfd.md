@@ -41,4 +41,4 @@ The broker must also ask about your knowledge and experience (the **appropriaten
 - **"Professional client" offers** bring more leverage. You need two of: about 10 large trades a quarter over the last year, over €500,000 in cash and investments (not your home), a year in a finance job with such trades. You lose the leverage caps and often negative balance protection.
 - **Tax differs from shares.** In Czechia, shares held more than 3 years are tax-free, but CFD gains are taxed however long you hold. See [[taxes-on-trading]].
 
-Next, see [[leverage]] for margin, or [[short-selling]] for shorting real shares.
+Next, see [[leverage]] for margin, or [[short-selling]] for shorting real shares. The lesson [[leverage-shorts-and-cfds]] shows what they do to one trade.

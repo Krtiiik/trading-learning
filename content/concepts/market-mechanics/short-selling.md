@@ -48,4 +48,4 @@ An inverse [[etf]] aims for the opposite of an [[index]]'s daily move, and you b
 - **The lender can recall the shares.** If no other shares are found, the broker closes your position.
 - **A rising price can cause a [[leverage|margin call]]**: the broker asks you to add money or close.
 
-Next, see [[stop-loss]], or [[leverage]], which also borrows.
+Next, see [[stop-loss]], or [[leverage]], which also borrows. The lesson [[leverage-shorts-and-cfds]] shows what they do to one trade.

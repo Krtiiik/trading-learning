@@ -52,4 +52,4 @@ For US stocks, after the purchase your own money must stay at 25% of the positio
 - **The maximum leverage is a limit, not a target.** Use position sizing and a [[stop-loss]] to keep your risk small.
 - **Leverage makes a [[drawdown]] deeper.**
 
-Next, see [[position-sizing]] for how much to trade, or [[short-selling]].
+Next, see [[position-sizing]] for how much to trade, or [[short-selling]]. The lesson [[leverage-shorts-and-cfds]] shows what they do to one trade.

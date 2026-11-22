@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A short trade opened at $42 with a stop at $46; the stock closes at $44, gaps up overnight past the stop and the order fills at $50; beside it the planned loss of $4 and the actual loss of $8 a share, which takes almost all of the margin put up for the leveraged position">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- price scale: y = 340 - (price - 38) x 14 -->
+  <!-- planned risk (entry to stop) and the gap past the stop -->
+  <rect x="320" y="228" width="180" height="56" style="fill: var(--banner-down, #d0453a); fill-opacity: .12"/>
+  <rect x="500" y="172" width="60" height="84" style="fill: var(--banner-down, #d0453a); fill-opacity: .25"/>
+  <!-- the three levels -->
+  <line x1="240" y1="172" x2="760" y2="172" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <line x1="240" y1="228" x2="760" y2="228" stroke-width="5" style="stroke: var(--banner-down, #d0453a)"/>
+  <line x1="240" y1="284" x2="760" y2="284" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <!-- price before the short -->
+  <path d="M245 318 L272 300 L296 308 L320 284" fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- the short: price creeps up, closes at $44 below the stop, then opens at $50 above it -->
+  <path d="M320 284 L370 262 L410 274 L460 246 L500 256" fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <path d="M560 172 L610 196 L660 178 L710 206 L750 192" fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <circle cx="320" cy="284" r="12" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <circle cx="560" cy="172" r="12" style="fill: var(--banner-down, #d0453a)"/>
+  <text x="530" y="154" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2"
+        style="fill: var(--banner-down, #d0453a)">GAP</text>
+  <!-- level labels -->
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="1" text-anchor="end">
+    <text x="222" y="181" style="fill: var(--banner-down, #d0453a)">FILL $50</text>
+    <text x="222" y="237" style="fill: var(--banner-down, #d0453a)">STOP $46</text>
+    <text x="222" y="293" style="fill: var(--banner-accent, #0b6bcb)">SHORT $42</text>
+  </g>
+  <!-- planned loss against actual loss, and the margin behind the position -->
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2" style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="840" y="108">PLANNED</text>
+    <text x="840" y="238">ACTUAL</text>
+  </g>
+  <rect x="840" y="124" width="80" height="48" style="fill: var(--banner-down, #d0453a); fill-opacity: .55"/>
+  <rect x="840" y="254" width="160" height="48" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="800" style="fill: var(--banner-bg, #f2f4f7)">
+    <text x="852" y="158">$4</text>
+    <text x="852" y="288">$8</text>
+  </g>
+  <line x1="1008" y1="80" x2="1008" y2="330" stroke-width="4" stroke-dasharray="10 8" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="1008" y="364" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2"
+        style="fill: var(--banner-accent, #0b6bcb)">MARGIN</text>
+</svg>
