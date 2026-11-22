@@ -9,13 +9,11 @@ Buy and hold is a [[strategy]] where you buy an asset and keep it for many years
 
 ## Compounding
 
-Compounding means that your gains also earn gains. Example, not a forecast: $10,000 grows 7% every year. In year 1 it earns $700. In year 2, $10,700 earns $749: the $700 earns too. After 30 years: about $76,000. Taking the gain out each year leaves only $10,000 + 30 × $700 = $31,000. Real returns vary, and some years are losses.
-
-Reinvested [[dividend|dividends]] buy more shares, which pay dividends too.
+[[compounding|Compounding]] means that your gains also earn gains, so long holds grow fastest at the end. Example, not a forecast: $10,000 that grows 7% a year becomes about $76,000 after 30 years. Reinvested [[dividend|dividends]] buy more shares, which pay dividends too.
 
 ## Time in the market, not timing the market
 
-Timing the market means selling before falls and buying back before rises. It is hard: the best days often come soon after the worst, when fear is high. A J.P. Morgan study looked at the S&P 500, a US stock [[index]], from 2005 to 2024. Missing only its 10 best days left an investor with less than half as much money.
+Timing the market means selling before falls and buying back before rises. It is hard: the best days often come soon after the worst, when [[trading-psychology|fear]] is high. A J.P. Morgan study looked at the S&P 500, a US stock [[index]], from 2005 to 2024. Missing only its 10 best days left an investor with less than half as much money.
 
 ## Why a broad index fund
 

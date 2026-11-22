@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Bars show $10,000 growing 7% a year every five years for 30 years; each bar splits into the first $10,000, the gains on that $10,000, and the gains on earlier gains, which grow fastest and make the last bar reach about $76,000">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- $10,000 at 7% a year, years 0 to 30 in steps of 5; y = 340 - 0.003547 px per dollar -->
+  <!-- the first $10,000 -->
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .25">
+    <rect x="70" y="304.5" width="64" height="35.5"/>
+    <rect x="164" y="304.5" width="64" height="35.5"/>
+    <rect x="258" y="304.5" width="64" height="35.5"/>
+    <rect x="352" y="304.5" width="64" height="35.5"/>
+    <rect x="446" y="304.5" width="64" height="35.5"/>
+    <rect x="540" y="304.5" width="64" height="35.5"/>
+    <rect x="634" y="304.5" width="64" height="35.5"/>
+  </g>
+  <!-- gains on the first $10,000 only: $700 a year -->
+  <g style="fill: var(--banner-up, #1a9b5b)">
+    <rect x="164" y="292.1" width="64" height="12.4"/>
+    <rect x="258" y="279.7" width="64" height="24.8"/>
+    <rect x="352" y="267.3" width="64" height="37.2"/>
+    <rect x="446" y="254.8" width="64" height="49.7"/>
+    <rect x="540" y="242.4" width="64" height="62.1"/>
+    <rect x="634" y="230" width="64" height="74.5"/>
+  </g>
+  <!-- gains on earlier gains -->
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <rect x="164" y="290.3" width="64" height="1.8"/>
+    <rect x="258" y="270.2" width="64" height="9.5"/>
+    <rect x="352" y="242.1" width="64" height="25.2"/>
+    <rect x="446" y="202.7" width="64" height="52.1"/>
+    <rect x="540" y="147.5" width="64" height="94.9"/>
+    <rect x="634" y="70" width="64" height="160"/>
+  </g>
+  <line x1="50" y1="340" x2="718" y2="340" stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2" text-anchor="middle">
+    <text x="102" y="374" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">YEAR 0</text>
+    <text x="666" y="374" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">YEAR 30</text>
+    <text x="102" y="290" style="fill: var(--banner-fg, #1a1a1a)">$10,000</text>
+    <text x="666" y="56" style="fill: var(--banner-accent, #0b6bcb)">$76,000</text>
+  </g>
+  <!-- legend, in the same order as the stack -->
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="770" y="100" font-size="48" style="fill: var(--banner-fg, #1a1a1a)">+7% A YEAR</text>
+    <rect x="770" y="152" width="36" height="36" style="fill: var(--banner-accent, #0b6bcb)"/>
+    <text x="826" y="181" font-size="28" style="fill: var(--banner-accent, #0b6bcb)">GAINS ON GAINS</text>
+    <rect x="770" y="222" width="36" height="36" style="fill: var(--banner-up, #1a9b5b)"/>
+    <text x="826" y="251" font-size="28" style="fill: var(--banner-up, #1a9b5b)">GAINS ON $10,000</text>
+    <rect x="770" y="292" width="36" height="36" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .25"/>
+    <text x="826" y="321" font-size="28" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">FIRST $10,000</text>
+  </g>
+</svg>
