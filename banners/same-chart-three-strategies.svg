@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="One price line that moves sideways in a range, breaks out above it and then trends up, with three entry marks on it: a mean-reversion buy at the bottom of the range, a breakout buy where price closes above the top of the range, and a trend-following buy where the price crosses the middle of the range on its last rise, before the breakout">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the sideways range -->
+  <rect x="40" y="200" width="600" height="100" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .07"/>
+  <path d="M40 200 H640 M40 300 H640" fill="none" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5"/>
+  <!-- the one price line: range, breakout, trend -->
+  <path d="M60 250 L110 206 L170 290 L230 210 L290 296 L350 208 L410 292 L470 214 L530 288 L600 210 L650 165 L700 192 L770 120 L820 150 L890 92 L940 118 L1010 64 L1060 88 L1150 50"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- the three entries -->
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <circle cx="290" cy="296" r="14"/>
+    <circle cx="650" cy="165" r="14"/>
+    <circle cx="565" cy="249" r="14"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="2" style="fill: var(--banner-accent, #0b6bcb)">
+    <text x="290" y="356" text-anchor="middle">MEAN REVERSION</text>
+    <text x="628" y="140" text-anchor="end">BREAKOUT</text>
+    <text x="592" y="259">TREND FOLLOWING</text>
+  </g>
+</svg>

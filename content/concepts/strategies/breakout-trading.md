@@ -41,4 +41,4 @@ Expect many small losses and a few large wins, as in [[trend-following|trend fol
 - **Gaps can jump past the stop.** A gap down can sell well below $54.
 - **Do not chase.** Bought at $60, the risk to the $54 stop is $6 and the reward to $65 only $5: less than 1 to 1.
 
-Next, see [[breakout]] to judge the break itself, then [[trend-following]].
+Next, see [[breakout]] to judge the break itself, then [[trend-following]]. The lesson [[same-chart-three-strategies]] compares them on one chart.

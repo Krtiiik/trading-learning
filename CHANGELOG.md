@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Lesson: same chart, three strategies, step 5 of the reading path. It reads one chart as a trend follower, a mean-reversion trader (RSI and Bollinger bands) and a breakout trader, and shows why each wins and loses in a different way.
 - Concept page: trading journal, what to record before and after each trade, results in R, a worked entry for the $42 trade, paper trading, reviewing the journal against the backtest, and records for Czech tax.
 - Concept page: valuation, market value and earnings, the P/E ratio with a worked example, why a high P/E can be fair or risky, index P/E, earnings reports and gaps, and why a low P/E is not a buy signal.
 - Concept page: compounding, gains that earn gains with the $10,000 at 7% example, the rule of 72, reinvested dividends and accumulating funds, how fees and losses compound, and inflation.

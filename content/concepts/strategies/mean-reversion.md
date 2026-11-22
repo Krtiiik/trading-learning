@@ -40,4 +40,4 @@ Expect many small wins and a few large losses, the reverse of trend following. L
 - **Always use a stop.** Without one, a new downtrend can take away months of small gains.
 - **News can change the usual level.** After a bad earnings report, the company's [[valuation|value]] changes: a $50 stock may now be worth $40, and the old average is out of date.
 
-Next, see [[entry-and-exit-rules]], or [[trend-following]] for the opposite approach.
+Next, see [[entry-and-exit-rules]], or [[trend-following]] for the opposite approach. The lesson [[same-chart-three-strategies]] compares them on one chart.
