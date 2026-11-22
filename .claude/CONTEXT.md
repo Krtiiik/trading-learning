@@ -63,6 +63,6 @@ _Avoid_: guide, tutorial, article.
 - **Czechia** (learning site): the country name; use "Czech" only as an adjective (Czech tax, Czech resident).
 - **target as a check** (learning site): a target that no exit order waits at; the trade closes on another exit. Say whether a target (such as the $54 in the shared trade) is an exit or only a check.
 - **expense ratio / TER** (learning site): write "expense ratio" for a fund's yearly fee; give "(in Europe, TER)" on a page's first use.
-- **earnings** (learning site): a company's reported quarterly profit. Gloss it as "(its quarterly profit)" on first use.
+- **earnings** (learning site): a company's profit after all costs and taxes, which US companies report every quarter. In passing, gloss a report as "(its quarterly profit)"; the valuation page owns the full definition and the yearly sum used for P/E.
 - **trailing stop** (learning site): a stop that moves up as the price rises (down for a short position) and never moves back.
 - **portfolio** (learning site): all the assets you hold together, judged as one whole.
