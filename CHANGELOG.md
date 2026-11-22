@@ -9,6 +9,10 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ## [Unreleased]
 
+### Changed
+
+- The site header now has two rows at every width: the title, search and theme switch on top, and the concept group navigation alone below.
+
 ### Added
 
 - Lesson: leverage, shorts and CFDs, step 6 of the reading path. It takes the planned $42 trade with 5:1 leverage and short, and shows what margin, overnight financing, gaps, the stop out and negative balance protection do to what you can lose, and how to size so leverage stays a tool.

@@ -151,7 +151,7 @@ Use mono text arrows, not icon fonts: `→` for "go to", `←` for "back", `←`
 
 ### 5.3 Split rows
 
-A hero or header row can split into cells with a vertical rule between them, for example a `1.35fr / 1fr` intro (copy | panel) or the header grid (brand | nav | search). Each cell has its own `border-right`. Under 960px, cells stack and the vertical rule becomes a horizontal one.
+A hero or header row can split into cells with a vertical rule between them, for example a `1.35fr / 1fr` intro (copy | panel) or the header's top row (brand | search | theme). Each cell has its own `border-right`. Under 960px, cells stack and the vertical rule becomes a horizontal one.
 
 ### 5.4 Tiling
 
@@ -188,11 +188,11 @@ Anything placed on it snaps to the grid: start on a crossing, span whole units, 
 
 ### 6.1 Header
 
-- Sticky, `--bg`, bottom rule. A grid of cells, each separated by a vertical rule: brand | nav | search.
+- Sticky, `--bg`, bottom rule. Two rows of cells, each separated by a vertical rule: brand | search | theme switch on top, the nav alone below. On wide screens the search cell stays 200–300px and an empty cell fills the gap after the brand.
 - **Brand mark**: a 12px square outline with a 6px filled square inside, drawn in CSS, then the name in 600 weight with -0.01em tracking.
 - **Nav links**: 14px, `--muted`, padding 14px 16px, each with a right rule. Hover: `--fg` on `--panel`. Current page: `--fg` with a 2px inset bottom bar (`box-shadow: inset 0 -2px 0 var(--fg)`). Nav scrolls sideways with a hidden scrollbar when it does not fit.
 - **Search**: a borderless input that fills its cell. Placeholder in `--faint` shows the shortcut (`Search  /`). Focus: `--panel` background plus the same 2px inset bottom bar, no outline. `/` focuses it from anywhere; `Escape` clears; `Enter` opens the first result.
-- Under 1120px, the nav moves to its own row below brand and search.
+- Under 1120px, the search cell fills all the width between brand and theme switch.
 
 ### 6.2 Popover (search results, hover preview)
 
@@ -302,7 +302,7 @@ Links inherit their colour (`a { color: inherit }`). Colour alone never marks a 
 
 | Breakpoint | Changes |
 |---|---|
-| ≤ 1120px | header becomes two rows (brand + search, then nav) |
+| ≤ 1120px | header search fills the top row |
 | ≤ 960px | split rows stack; shelves show 2.6 cards |
 | ≤ 560px | gutter 16px; smaller header padding; shelves show 1.3 cards; 36px buttons; prose 16px |
 
