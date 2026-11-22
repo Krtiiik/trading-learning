@@ -54,6 +54,10 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Changed
 
+- Catalog: put Risk and money in teaching order (volatility, stop loss, position sizing, risk/reward, then results), put entry and exit rules right after strategy, and move CFD and dividend to Assets.
+- Catalog: plan five new concepts: valuation, slippage, trading journal, compounding and trading psychology.
+- The stop loss summary now fits short positions too: it closes a position once the price reaches your level.
+- The portfolio lesson says "expense ratio (in Europe, TER)" like the ETF page.
 - The home page and group pages no longer show a written count and progress meter per group. The home page and footer show only the total number of concepts and lessons.
 - Link hover previews show the linked page's banner above its title and summary, like the cards. A preview that does not fit below the link opens above it.
 - The theme switch is one button that cycles System, Light and Dark, in place of three buttons. On phones it now stays in the top row next to search.

@@ -14,7 +14,7 @@ Write the rule before you buy, not while you watch the price. The [[entry-and-ex
 
 This trade uses the [[trend-following]] rule, with the 100-day [[moving-average]]:
 
-1. **Entry**: a few minutes before the close (16:00 New York time, usually 22:00 CET), check the price. On the first day it is above the average, buy with a market order.
+1. **Entry**: a few minutes before the [[trading-hours|close]] (16:00 New York time, usually 22:00 CET), check the price. On the first day it is above the average, buy with a market order.
 2. **Signal exit**: on the first day it is below the average, sell the same way.
 3. **Stop loss exit**: a sell stop order below the entry. Step 2 sets its price.
 

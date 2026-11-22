@@ -62,3 +62,7 @@ _Avoid_: guide, tutorial, article.
 - **mid price, round trip** (learning site): the names for the point halfway between bid and ask, and for buying then selling again. Use them instead of paraphrases.
 - **Czechia** (learning site): the country name; use "Czech" only as an adjective (Czech tax, Czech resident).
 - **target as a check** (learning site): a target that no exit order waits at; the trade closes on another exit. Say whether a target (such as the $54 in the shared trade) is an exit or only a check.
+- **expense ratio / TER** (learning site): write "expense ratio" for a fund's yearly fee; give "(in Europe, TER)" on a page's first use.
+- **earnings** (learning site): a company's reported quarterly profit. Gloss it as "(its quarterly profit)" on first use.
+- **trailing stop** (learning site): a stop that moves up as the price rises (down for a short position) and never moves back.
+- **portfolio** (learning site): all the assets you hold together, judged as one whole.

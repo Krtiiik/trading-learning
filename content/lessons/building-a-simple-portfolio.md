@@ -24,7 +24,7 @@ Stocks usually grow more but [[volatility|swing more]]. Bonds usually grow less 
 
 Private traders in the EU usually buy European-listed funds marked UCITS (an EU fund standard). The [[etf]] page explains why and what each item means. In the fund's name and fact sheet, check:
 
-1. **TER**: the fund's yearly fee. Lower is better (Step 5 shows why).
+1. **Expense ratio** (in Europe, TER): the fund's yearly fee. Lower is better (Step 5 shows why).
 2. **Acc or Dist**: whether the fund reinvests each [[dividend]] or pays it out. This changes your tax (Step 4).
 3. **Domicile**: the country the fund is registered in. It decides how much US tax is kept back from US dividends.
 4. **Currency**: a euro-priced world fund still moves with the dollar. A hedged version removes most of that, at a yearly cost: see [[currency-risk]].
@@ -72,7 +72,7 @@ Stocks are now $3,000 of $7,000, about 43%. Rebalancing says sell $1,200 of bond
 
 Open the fact sheet of any UCITS world stock ETF and find:
 
-1. Its TER: what would it cost a year on $10,000?
+1. Its expense ratio: what would it cost a year on $10,000?
 2. Acc or Dist, and its domicile.
 3. The share of US companies, and whether the fund is hedged.
 

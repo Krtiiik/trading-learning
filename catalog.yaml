@@ -8,6 +8,8 @@ groups:
     blurb: The things you can buy and sell, and how they differ.
     concepts:
       - {slug: stock, title: Stock, summary: A small share of ownership in a company.}
+      - {slug: valuation, title: Valuation, summary: "Judging whether a company's price is high or low by comparing its value with its profit, as in the P/E ratio."}
+      - {slug: dividend, title: Dividend, summary: A share of company profit paid out to shareholders.}
       - {slug: etf, title: ETF, summary: A fund that holds many assets and trades on an exchange like a single stock.}
       - {slug: index, title: Index, summary: A number that tracks the combined price of a chosen basket of assets.}
       - {slug: bond, title: Bond, summary: A loan you give to a government or company in return for interest.}
@@ -16,6 +18,7 @@ groups:
       - {slug: cryptocurrency, title: Cryptocurrency, summary: "A digital currency recorded on a blockchain, like Bitcoin."}
       - {slug: futures, title: Futures, summary: A contract to buy or sell something at a set price on a future date.}
       - {slug: option, title: Option, summary: "A contract giving the right, but not the duty, to buy or sell at a set price."}
+      - {slug: cfd, title: CFD, summary: "A contract with a broker that pays the change in a price, without owning the asset."}
       - {slug: reit, title: REIT, summary: A company that owns property or property loans and pays most of its income to shareholders.}
 
   - slug: market-mechanics
@@ -28,14 +31,13 @@ groups:
       - {slug: bid-and-ask, title: Bid and ask, summary: The best price buyers offer and the best price sellers want right now.}
       - {slug: spread, title: Spread, summary: "The gap between the bid and the ask, a hidden cost of trading at the market price."}
       - {slug: liquidity, title: Liquidity, summary: How easily you can trade without moving the price.}
+      - {slug: slippage, title: Slippage, summary: "Getting a worse fill price than you expected, often in fast or thin markets."}
       - {slug: volume, title: Volume, summary: How much of an asset changed hands during a period.}
       - {slug: trading-hours, title: Trading hours, summary: "When a market is open, and what happens around the open and close."}
       - {slug: fees-and-commissions, title: Fees and commissions, summary: "What you pay the broker, the market and the government to trade."}
       - {slug: taxes-on-trading, title: Taxes on trading, summary: "How gains, dividends and interest are taxed, with US, UK and Czech examples."}
       - {slug: short-selling, title: Short selling, summary: "Selling something you borrowed, hoping to buy it back cheaper."}
       - {slug: leverage, title: Leverage, summary: "Trading with borrowed money, which enlarges both gains and losses."}
-      - {slug: cfd, title: CFD, summary: "A contract with a broker that pays the change in a price, without owning the asset."}
-      - {slug: dividend, title: Dividend, summary: A share of company profit paid out to shareholders.}
 
   - slug: charts
     title: Charts
@@ -72,6 +74,7 @@ groups:
     blurb: Rules for deciding when to buy, when to sell and how to test the idea.
     concepts:
       - {slug: strategy, title: Strategy, summary: A fixed set of rules that decides when to enter and exit trades.}
+      - {slug: entry-and-exit-rules, title: Entry and exit rules, summary: The exact conditions that open and close a trade.}
       - {slug: trend-following, title: Trend following, summary: "Buying what is rising and selling what is falling, staying in while the trend lasts."}
       - {slug: mean-reversion, title: Mean reversion, summary: Betting that a price that moved far from its usual level will come back.}
       - {slug: momentum, title: Momentum, summary: "Buying the assets that rose the most recently, expecting them to keep beating the rest."}
@@ -79,17 +82,19 @@ groups:
       - {slug: buy-and-hold, title: Buy and hold, summary: "Buying and keeping an asset for years, ignoring short-term moves."}
       - {slug: rebalancing, title: Rebalancing, summary: Trading back to your target mix of assets after prices have shifted it.}
       - {slug: backtest, title: Backtest, summary: Running a strategy's rules on past data to see how it would have done.}
-      - {slug: entry-and-exit-rules, title: Entry and exit rules, summary: The exact conditions that open and close a trade.}
+      - {slug: trading-journal, title: Trading journal, summary: "A record of every trade, its plan and its result, that shows whether you follow your rules."}
 
   - slug: risk-and-money
     title: Risk and money
     blurb: How much to put in each trade and how to survive the losing ones.
     concepts:
-      - {slug: risk-reward, title: Risk/reward, summary: How much you could gain on a trade compared with how much you could lose.}
+      - {slug: volatility, title: Volatility, summary: How much and how fast a price swings up and down.}
+      - {slug: stop-loss, title: Stop loss, summary: An order that closes a position automatically once the price reaches a level you chose.}
       - {slug: position-sizing, title: Position sizing, summary: Deciding how many shares or units to buy in a single trade.}
-      - {slug: stop-loss, title: Stop loss, summary: An order that sells automatically once the price falls to a level you chose.}
+      - {slug: risk-reward, title: Risk/reward, summary: How much you could gain on a trade compared with how much you could lose.}
+      - {slug: win-rate-and-expectancy, title: Win rate and expectancy, summary: "How often a strategy wins, and how much it makes on average per trade."}
       - {slug: drawdown, title: Drawdown, summary: How far your account has fallen from its highest point.}
+      - {slug: compounding, title: Compounding, summary: "Gains that earn further gains, so money grows faster the longer it stays invested."}
+      - {slug: trading-psychology, title: Trading psychology, summary: "The fear, hope and habits that push traders to break their own rules."}
       - {slug: diversification, title: Diversification, summary: Spreading money across different assets so one loss hurts less.}
       - {slug: currency-risk, title: Currency risk, summary: "The gain or loss from exchange rates when an asset's value depends on a currency that is not your own."}
-      - {slug: volatility, title: Volatility, summary: How much and how fast a price swings up and down.}
-      - {slug: win-rate-and-expectancy, title: Win rate and expectancy, summary: "How often a strategy wins, and how much it makes on average per trade."}
