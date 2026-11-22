@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Lesson: planning one trade, from the written rule through an ATR-based stop, position size, target and costs to a look back at the result.
 - Lesson: does this rule work, turning an idea into exact rules, running the 10-trade backtest, reading win rate, expectancy and drawdown, checking for overfitting, look-ahead bias and missing costs, and testing live with small risk.
 - Lesson: what your first order really costs, checking the broker in the ČNB register, where an EU broker sends the order, reading the order book, market and limit orders, why evening trading on a German venue costs more, and a worked round trip for a CZK account.
 - Lesson: building a simple long-term portfolio, why one broad fund, a 60/40 target mix, choosing a UCITS fund as an EU buyer (TER, accumulating or distributing, domicile, currency), Czech tax on funds, what fees do over 30 years, rebalancing, and living through a 50% fall.
