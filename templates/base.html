@@ -36,17 +36,12 @@
     <input class="search__input" type="search" placeholder="Search  /" aria-label="Search concepts and lessons" autocomplete="off">
     <ol class="search__results" hidden></ol>
   </div>
-  <div class="theme" role="group" aria-label="Colour theme">
-    <button class="theme__button" type="button" data-theme-choice="system" aria-pressed="true" aria-label="Use system theme" title="System theme">
-      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="1.5" y="2.5" width="13" height="9"/><path d="M5.5 14.5h5M8 11.5v3"/></svg>
-    </button>
-    <button class="theme__button" type="button" data-theme-choice="light" aria-pressed="false" aria-label="Use light theme" title="Light theme">
-      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3"/></svg>
-    </button>
-    <button class="theme__button" type="button" data-theme-choice="dark" aria-pressed="false" aria-label="Use dark theme" title="Dark theme">
-      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/></svg>
-    </button>
-  </div>
+  {# One button that cycles System > Light > Dark. site.js sets data-theme-current, the label and the title. #}
+  <button class="theme" type="button" data-theme-current="system" aria-label="Colour theme: System. Change to Light" title="System theme">
+    <svg class="theme__icon theme__icon--system" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="1.5" y="2.5" width="13" height="9"/><path d="M5.5 14.5h5M8 11.5v3"/></svg>
+    <svg class="theme__icon theme__icon--light" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3"/></svg>
+    <svg class="theme__icon theme__icon--dark" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/></svg>
+  </button>
 </header>
 <main class="site-main">
 {% block main %}{% endblock %}

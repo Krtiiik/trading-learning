@@ -107,7 +107,7 @@ Page templates also receive: `group.html` → `group`; `concept.html` and `lesso
 | Shelf | `.shelf` holding `.shelf__row` (the scrolling row) and `.shelf__arrow--prev` / `.shelf__arrow--next` buttons |
 | Status | `.is-written` / `.is-planned` on cards, links and the article |
 | Page kind | `body.page-home|group|lessons|concept|lesson` |
-| Theme switch | `.theme` holding `button.theme__button[data-theme-choice=system|light|dark]` with `aria-pressed`. The choice is kept in `localStorage` under `learning-theme`; the inline script in `base.html`'s `<head>` reads it and sets `data-theme` and `html.js` before first paint. |
+| Theme switch | a single `button.theme[data-theme-current=system|light|dark]` holding one `.theme__icon--<choice>` per choice; a click moves to the next choice (System > Light > Dark > System) and the CSS shows only the current icon. The choice is kept in `localStorage` under `learning-theme`; the inline script in `base.html`'s `<head>` reads it and sets `data-theme` and `html.js` before first paint. |
 
 ## Constraints
 

@@ -200,8 +200,9 @@ def test_every_page_has_the_theme_switch_and_applies_the_saved_theme_early(site_
     build.build(site_root, out)
     for rel in ["index.html", "concepts/candle.html", "lessons/index.html"]:
         page = (out / rel).read_text(encoding="utf-8")
+        assert page.count('class="theme"') == 1, rel
         for choice in ["system", "light", "dark"]:
-            assert f'data-theme-choice="{choice}"' in page, (rel, choice)
+            assert f"theme__icon--{choice}" in page, (rel, choice)
         head = page.split("</head>")[0]
         assert "learning-theme" in head, rel
         assert head.index("learning-theme") < head.index("site.css"), rel

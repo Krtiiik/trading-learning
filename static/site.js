@@ -83,13 +83,19 @@
     });
   }
 
-  // Theme switch: System removes data-theme (prefers-color-scheme decides); Light and Dark set it.
+  // Theme switch: one button cycles System > Light > Dark. System removes data-theme
+  // (prefers-color-scheme decides); Light and Dark set it.
   // The choice is kept in localStorage; the head script in base.html applies it before first paint.
-  var themeButtons = document.querySelectorAll(".theme__button");
+  var themeButton = document.querySelector(".theme");
+  var THEMES = ["system", "light", "dark"];
+  var THEME_NAMES = { system: "System", light: "Light", dark: "Dark" };
+  function nextTheme(choice) { return THEMES[(THEMES.indexOf(choice) + 1) % THEMES.length]; }
   function showTheme(choice) {
-    themeButtons.forEach(function (b) {
-      b.setAttribute("aria-pressed", b.getAttribute("data-theme-choice") === choice ? "true" : "false");
-    });
+    if (!themeButton) return;
+    themeButton.setAttribute("data-theme-current", choice);
+    themeButton.setAttribute("aria-label",
+      "Colour theme: " + THEME_NAMES[choice] + ". Change to " + THEME_NAMES[nextTheme(choice)]);
+    themeButton.title = THEME_NAMES[choice] + " theme";
   }
   function setTheme(choice) {
     var d = document.documentElement;
@@ -102,9 +108,11 @@
     showTheme(choice);
   }
   showTheme(document.documentElement.getAttribute("data-theme") || "system");
-  themeButtons.forEach(function (b) {
-    b.addEventListener("click", function () { setTheme(b.getAttribute("data-theme-choice")); });
-  });
+  if (themeButton) {
+    themeButton.addEventListener("click", function () {
+      setTheme(nextTheme(themeButton.getAttribute("data-theme-current")));
+    });
+  }
 
   // Shelf arrows scroll the single card row by most of its visible width.
   // Arrows disable at either end; a shelf whose cards all fit gets .is-static (arrows hidden).

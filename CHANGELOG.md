@@ -54,6 +54,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Changed
 
+- The theme switch is one button that cycles System, Light and Dark, in place of three buttons. On phones it now stays in the top row next to search.
 - Pages no longer follow a concept link with a parenthesis that repeats the link's hover preview; where the parenthesis also gave an example value or other detail, only that detail stays.
 - Pages agree after the fifth site-wide audit: exchange now says MiCA makes EU crypto firms keep coins apart, CFD and leverage agree on who sets the EU CFD rules, the shared trade treats the $54 target as a check on risk-reward and entry-and-exit rules, the portfolio lesson links the ETF page instead of repeating it, REIT gives the Czech dividend tax, and the new lessons are linked from broker, order types, ETF, diversification and currency risk.
 - EU and Czech notes on 23 concept pages: the Czech compensation fund and ČNB register (broker), Xetra, Euronext and Prague exchanges and CET times (exchange, trading hours), ESMA and ČNB CFD rules (leverage), the EU short selling rules, Czech dividend tax, accumulating and distributing funds, domicile and TER (ETF), currency notes (stock, bond, dividend, commodity, forex pair, diversification, buy and hold), the Czech 3-year test (momentum, rebalancing, buy and hold), MiCA (cryptocurrency), Eurex DAX futures, EU warrants and turbos (option), and links to the new CFD, currency risk and taxes pages.
