@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A rule, price above its 100-day moving average, feeds an arrow into a backtest: a row of 10 trades, a win, four losses, a big win, three losses and a win, and below it the equity line they make: small dips and big rises, with the drawdown from the high after trade 1 to the new high at trade 6 shaded">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the rule panel -->
+  <rect x="40" y="40" width="380" height="320" rx="14" stroke-width="3"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .04; stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3"/>
+  <path d="M70 235 C170 228 280 196 395 152" fill="none" stroke-width="6" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <path d="M70 250 L110 228 L140 246 L180 204 L215 218 L250 176 L285 194 L320 146 L355 166 L395 122"
+        fill="none" stroke-width="5" stroke-linejoin="miter" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="2">
+    <text x="70" y="92" font-size="30" style="fill: var(--banner-accent, #0b6bcb)">RULE</text>
+    <text x="70" y="300" font-size="26" style="fill: var(--banner-fg, #1a1a1a)">PRICE ABOVE</text>
+    <text x="70" y="336" font-size="26" style="fill: var(--banner-accent, #0b6bcb)">100-DAY MA</text>
+  </g>
+  <!-- arrow into the test -->
+  <path d="M435 200 L482 200 M468 186 L482 200 L468 214" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- 10 trades: one block per trade, between the equity points x = 510 + 62 i -->
+  <rect x="516" y="70" width="50" height="50" rx="4" style="fill: var(--banner-up, #1a9b5b)"/>
+  <rect x="578" y="70" width="50" height="50" rx="4" style="fill: var(--banner-down, #d0453a)"/>
+  <rect x="640" y="70" width="50" height="50" rx="4" style="fill: var(--banner-down, #d0453a)"/>
+  <rect x="702" y="70" width="50" height="50" rx="4" style="fill: var(--banner-down, #d0453a)"/>
+  <rect x="764" y="70" width="50" height="50" rx="4" style="fill: var(--banner-down, #d0453a)"/>
+  <rect x="826" y="70" width="50" height="50" rx="4" style="fill: var(--banner-up, #1a9b5b)"/>
+  <rect x="888" y="70" width="50" height="50" rx="4" style="fill: var(--banner-down, #d0453a)"/>
+  <rect x="950" y="70" width="50" height="50" rx="4" style="fill: var(--banner-down, #d0453a)"/>
+  <rect x="1012" y="70" width="50" height="50" rx="4" style="fill: var(--banner-down, #d0453a)"/>
+  <rect x="1074" y="70" width="50" height="50" rx="4" style="fill: var(--banner-up, #1a9b5b)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="800" text-anchor="middle" style="fill: var(--banner-bg, #f2f4f7)">
+    <text x="541" y="104">W</text><text x="603" y="104">L</text><text x="665" y="104">L</text><text x="727" y="104">L</text>
+    <text x="789" y="104">L</text><text x="851" y="104">W</text><text x="913" y="104">L</text><text x="975" y="104">L</text>
+    <text x="1037" y="104">L</text><text x="1099" y="104">W</text>
+  </g>
+  <!-- the drawdown: from the high after trade 1, down through four small losses, to the new high in trade 6 -->
+  <path d="M572 285 L634 291 L696 300 L758 307 L820 313 L834 285 Z" style="fill: var(--banner-down, #d0453a); fill-opacity: .25"/>
+  <line x1="572" y1="285" x2="834" y2="285" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-down, #d0453a); stroke-opacity: .7"/>
+  <!-- the equity line: y = 320 - 0.235 x cumulative result ($150, -25, -40, -30, -25, +550, -50, -20, -30, +300) -->
+  <line x1="510" y1="320" x2="1130" y2="320" stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <path d="M510 320 L572 285 L634 291 L696 300 L758 307 L820 313 L882 184 L944 196 L1006 200 L1068 207 L1130 137"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2">
+    <text x="510" y="180" style="fill: var(--banner-accent, #0b6bcb)">EQUITY</text>
+    <text x="696" y="362" text-anchor="middle" style="fill: var(--banner-down, #d0453a)">DRAWDOWN</text>
+  </g>
+</svg>
