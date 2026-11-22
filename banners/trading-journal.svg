@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A trading journal as a table of four trades with the columns PLAN, RESULT and RULES: three trades kept the rules and get a green tick, and the highlighted third trade, a loss of $90, broke them and gets a red cross">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the journal page -->
+  <rect x="40" y="36" width="1120" height="328" rx="14" stroke-width="3"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .04; stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .3"/>
+  <!-- the trade where the rules were broken -->
+  <rect x="42" y="232" width="1116" height="64" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .12"/>
+  <!-- header rule and row lines -->
+  <line x1="40" y1="104" x2="1160" y2="104" stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5"/>
+  <g stroke-width="2" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .2">
+    <line x1="40" y1="168" x2="1160" y2="168"/>
+    <line x1="40" y1="232" x2="1160" y2="232"/>
+    <line x1="40" y1="296" x2="1160" y2="296"/>
+    <line x1="120" y1="36" x2="120" y2="364"/>
+    <line x1="620" y1="36" x2="620" y2="364"/>
+    <line x1="880" y1="36" x2="880" y2="364"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="2">
+    <!-- headers -->
+    <g font-size="28" style="fill: var(--banner-fg, #1a1a1a)">
+      <text x="80" y="80" text-anchor="middle" style="fill-opacity: .6">#</text>
+      <text x="150" y="80">PLAN</text>
+      <text x="650" y="80">RESULT</text>
+      <text x="1020" y="80" text-anchor="middle" style="fill: var(--banner-accent, #0b6bcb)">RULES</text>
+    </g>
+    <!-- trade numbers -->
+    <g font-size="26" text-anchor="middle" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">
+      <text x="80" y="146">1</text>
+      <text x="80" y="210">2</text>
+      <text x="80" y="274">3</text>
+      <text x="80" y="338">4</text>
+    </g>
+    <!-- plans -->
+    <g font-size="26" letter-spacing="1" style="fill: var(--banner-fg, #1a1a1a)">
+      <text x="150" y="146">BUY $30  STOP $28</text>
+      <text x="150" y="210">BUY $60  STOP $57</text>
+      <text x="150" y="274">BUY $25  STOP $23</text>
+      <text x="150" y="338">BUY $18  STOP $17</text>
+    </g>
+    <!-- results -->
+    <g font-size="28">
+      <text x="650" y="147" style="fill: var(--banner-up, #1a9b5b)">+$120</text>
+      <text x="650" y="211" style="fill: var(--banner-down, #d0453a)">&#8722;$30</text>
+      <text x="650" y="275" style="fill: var(--banner-down, #d0453a)">&#8722;$90</text>
+      <text x="650" y="339" style="fill: var(--banner-up, #1a9b5b)">+$45</text>
+    </g>
+  </g>
+  <!-- rules kept: ticks; rules broken: a cross -->
+  <g fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1004 137 L1015 148 L1038 124" style="stroke: var(--banner-up, #1a9b5b)"/>
+    <path d="M1004 201 L1015 212 L1038 188" style="stroke: var(--banner-up, #1a9b5b)"/>
+    <path d="M1008 252 L1032 276 M1032 252 L1008 276" style="stroke: var(--banner-down, #d0453a)"/>
+    <path d="M1004 329 L1015 340 L1038 316" style="stroke: var(--banner-up, #1a9b5b)"/>
+  </g>
+</svg>

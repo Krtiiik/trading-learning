@@ -62,7 +62,7 @@ The price passed $54 and kept rising. No order waited at $54, so the trade staye
 
 Keep the plan and the result apart: a good result does not prove a good plan. Then check: did you follow the rule? If the rule said to sell at $54 and you held on, the extra gain came from breaking the plan, and next time that can turn into a loss.
 
-Record each trade: the rule, the entry, the stop and how you set it, the size, the target, the exit and which one closed the trade, the costs, the result as a multiple of the planned risk (here, 5.5 before costs), and whether you followed the rule. Over many trades, these records give your [[win-rate-and-expectancy|win rate and expectancy]].
+Record each trade in a [[trading-journal]]: the rule, the entry, the stop and how you set it, the size, the target, the exit and which one closed the trade, the costs, the result as a multiple of the planned risk (here, 5.5 before costs), and whether you followed the rule. Over many trades, these records give your [[win-rate-and-expectancy|win rate and expectancy]].
 
 The sale also makes the gain realised, and that is where tax can apply. The rules differ by country. In some, such as the US and Czechia, they also depend on how long you held: see [[taxes-on-trading]]. A Czech trader counts the gain in CZK, so keep the exchange rates in your record too.
 

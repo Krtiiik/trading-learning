@@ -59,13 +59,13 @@ Check three things before you believe any result:
 
 1. **Overfitting.** Did you try many lengths and stops (a 97-day average, a stop at $3.80) and keep the best? Then the rules may fit chance moves. Tune on the first years of data only, then run the rules unchanged, once, on the last years.
 2. **Look-ahead bias.** Did the test use anything not known at the time? A rule that checks the day's close but buys at that day's open could never be traded.
-3. **Missing costs.** Add the [[spread]], [[fees-and-commissions|fees]] and [[liquidity|slippage]]. At $5 per round trip ($2.50 per order, as in [[planning-one-trade]]), the total falls to +$730, the expectancy to about $73 per trade, and the maximum drawdown grows to $140.
+3. **Missing costs.** Add the [[spread]], [[fees-and-commissions|fees]] and [[slippage]]. At $5 per round trip ($2.50 per order, as in [[planning-one-trade]]), the total falls to +$730, the expectancy to about $73 per trade, and the maximum drawdown grows to $140.
 
 If your account is in CZK or EUR, the result in your own money differs from the dollar result, because the exchange rate moves too: see [[currency-risk]]. Your broker also takes a [[fees-and-commissions|currency conversion fee]] each way, often 0.25% to 1.5%. On a position of about $1,050 that is about $5 to $32 per round trip, large next to the $73 expectancy left after commission. [[what-your-first-order-costs]] adds up these costs for one order.
 
 ## Step 6: Does it work with real money?
 
-A backtest is still not real trading. First, many [[broker|brokers]] offer a demo account where you trade with pretend money; this is called paper trading. It checks that you can follow the rules on time, every day, but it hides real fills (the prices your orders actually trade at) and real fear.
+A backtest is still not real trading. First, many [[broker|brokers]] offer a demo account where you trade with pretend money; this is called paper trading (see [[trading-journal]]). It checks that you can follow the rules on time, every day, but it hides real fills (the prices your orders actually trade at) and [[trading-psychology|real fear]].
 
 Then trade the rules live, but small: risk much less per trade than the 1% the test used, for example 0.25%. On $10,000 that is $25, so 6 shares with the $4 stop. Write down every trade and compare it with what the backtest would have done on the same days. If your real fills are worse, or you skip signals, fix that before you raise the risk. The backtest had only ten trades, and your first live trades will be fewer still, so give it time; a short run of losses alone does not prove the rule is broken.
 
