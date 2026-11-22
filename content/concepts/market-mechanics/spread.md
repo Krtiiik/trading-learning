@@ -29,14 +29,14 @@ Compare the spread with the price of each stock:
 
 | Stock | Bid | Ask | Spread | % of price | Round trip on $1,000 |
 |-------|-----|-----|--------|------------|----------------------|
-| A | $49.98 | $50.02 | $0.04 | 0.08% | about $0.80 |
-| B | $1.98 | $2.02 | $0.04 | 2% | about $20 |
+| A | $49.98 | $50.02 | 4 cents | 0.08% | about 80 cents |
+| B | $1.98 | $2.02 | 4 cents | 2% | about $20 |
 
 Same spread in cents, but on the cheap stock it costs 25 times as much.
 
 ## What makes a spread wide or narrow
 
-- **[[liquidity|Liquidity]].** Many orders near the bid and ask keep it small. In the US, large, popular [[stock|stocks]] often have a spread of just 1 cent, the smallest price step allowed. Rarely traded ones can be far wider.
+- **[[liquidity|Liquidity]].** Many orders near the bid and ask keep it small. In the US, large, popular [[stock|stocks]] often have a spread of just 1 cent, the smallest price step allowed; rarely traded ones can be far wider. Even the largest stocks on the Prague Stock Exchange trade far less, with wider spreads.
 - **[[trading-hours|Trading hours]].** The spread is usually wider before the open and after the close, when fewer orders wait, and often in the first minutes of the day.
 
 ## Avoiding it with limit orders

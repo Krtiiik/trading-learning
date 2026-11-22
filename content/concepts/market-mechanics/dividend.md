@@ -1,4 +1,4 @@
-A **dividend** is money that a company pays to its shareholders, usually out of its profits: an amount of money for each share you own. Not every [[stock]] pays one. The company decides each payment, and it can raise, cut or stop it.
+A **dividend** is money a company pays for each share you own, usually out of its profits. Not every [[stock]] pays one. The company decides each payment, and it can raise, cut or stop it.
 
 ## The four dates
 
@@ -17,15 +17,15 @@ Why a buyer must be early: the company pays the owners in its records on the rec
 
 On the ex-date, the price usually falls by about the amount of the dividend. From that day, the share no longer carries the payment, so buyers pay less. Other news moves the price too.
 
-So a dividend is **not free money**. Part of the value of your shares becomes cash, which arrives on the payment date. Your total stays about the same, before tax.
+So a dividend is **not free money**. Part of the value of your shares becomes cash. Your total stays about the same, before tax.
 
 ## Dividend yield
 
-The **dividend yield** is the dividends of the past year divided by the share price, in percent. Some companies, such as [[reit|REITs]], must pay out most of their income.
+The **dividend yield** is the past year's dividends divided by the price, in percent. Some companies, such as [[reit|REITs]], must pay out most of their income.
 
 ## Example
 
-A US stock trades at $42. It paid 40 cents each quarter (every three months) last year.
+A US stock trades at $42. It paid 40 cents each quarter last year.
 
 - One year: 4 × 40 cents = $1.60 per share.
 - Dividend yield: $1.60 / $42 = about 3.8%.
@@ -35,13 +35,14 @@ On the ex-date, the stock opens at about $41.60, not $42.
 
 ## Taxes
 
-Most countries tax dividends. The US keeps back (withholds) 30% of each dividend a US company pays to holders who are not US citizens and do not live in the US. If your country has a tax treaty with the US and you give your [[broker]] the form W-8BEN (it tells the US where you live for tax), the rate is often 15%. On your $10, that is $1.50 kept back, so $8.50 arrives. Your own country can tax it too, but often subtracts the US tax already paid.
+The US keeps back (withholds) 30% of US dividends paid to people who are not US citizens or residents. If your country has a tax treaty with the US and you give your [[broker]] the form W-8BEN (it tells the US where you live for tax), the rate is often 15%. On your $10, that is $1.50 kept back, so $8.50 arrives. In Czechia, dividends are taxed 15%; the 15% US withholding counts against it, so usually nothing more is due ([[taxes-on-trading]]). Other countries keep back more on their companies' dividends, such as Germany (about 26.4%) and Switzerland (35%); part comes back only with forms.
 
 ## Watch out
 
-- **A high dividend yield can be a warning.** It uses past dividends. If the price fell by half because the company is in trouble, the dividend yield doubles, and a cut often follows.
+- **A high dividend yield can be a warning.** It uses past dividends: if a troubled company's price halves, the dividend yield doubles, and a cut often follows.
 - **Buying just before the ex-date gains nothing.** The price drops by about the dividend, and you pay tax on it.
 - **A short seller pays the dividend.** If you are [[short-selling|short]] on the ex-date, you pay the same amount to the lender.
-- **Most index levels leave dividends out**, so over years they rise less than a total-return [[index]], which adds each dividend back.
+- **US dividends arrive in dollars.** Their koruna or euro value moves with the exchange rate ([[currency-risk]]).
+- **Most index levels leave dividends out**; a total-return [[index]] adds them back.
 
 Next, see [[stock]] for what else a share gives, or [[index]].

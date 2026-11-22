@@ -15,13 +15,13 @@ Each address has a **private key**: a secret code that lets you move its coins. 
 
 ## What sets the price
 
-All prices come from buyers and sellers. With a [[stock]], buyers can compare the price with the company's profit. Most coins have no profit behind them, so their price rests only on what people expect others to pay.
+With a [[stock]], buyers can compare the price with the company's profit. Most coins have no profit behind them, so their price rests only on what people expect others to pay.
 
 A **stablecoin** is tied to a currency, usually the US dollar, so one coin should stay worth about $1. Most large ones have an issuer that says it holds cash or short-term [[bond|bonds]] worth $1 per coin. Others use other crypto or only computer code, and are riskier. Any stablecoin can lose its tie (its **peg**) if its backing fails or people stop trusting it.
 
 ## Pairs and hours
 
-Coins trade in pairs, written like a [[forex-pair]]: **BTC/USD** is the price of one bitcoin in US dollars. The first is the base (what the price is for); the second is the quote (what the price is given in). Many exchanges quote in a stablecoin, for example BTC/USDT (Tether).
+Coins trade in pairs, written like a [[forex-pair]]: **BTC/USD** is the price of one bitcoin in US dollars. Many exchanges quote in a stablecoin, such as BTC/USDT (Tether).
 
 Crypto trades all day, every day, but fewer orders wait at night and weekends (see [[trading-hours]]).
 
@@ -29,14 +29,14 @@ Crypto trades all day, every day, but fewer orders wait at night and weekends (s
 
 BTC/USD is at $60,000. You buy 0.01 BTC for $600, fees left out.
 
-- Up 10% to $66,000: your 0.01 BTC is worth $660, a $60 gain.
-- Down 10% to $54,000: your 0.01 BTC is worth $540, a $60 loss.
+- Up 10% to $66,000: now worth $660, a $60 gain.
+- Down 10% to $54,000: now worth $540, a $60 loss.
 
 ## Watch out
 
 - **Prices swing a lot.** Bitcoin swings more than a broad stock index, about as much as the jumpiest large stocks; most other coins swing more. See [[volatility]].
 - **Small coins can be hard to sell.** See [[liquidity]].
 - **A transfer cannot be undone.** Coins sent to a wrong address or a scammer are usually lost.
-- **An exchange that holds your coins can fail.** Compensation schemes for a failed [[broker]] (US SIPC, UK FSCS) usually do not cover coins.
+- **An exchange that holds your coins can fail.** Compensation schemes for a failed [[broker]] (US SIPC, UK FSCS, EU national schemes) usually do not cover coins. Since July 2026, EU crypto firms need a licence under MiCA, the EU crypto law (banks can register instead), which requires them to keep your coins apart from their own.
 
 Next, see [[volatility]], or [[exchange]] for where coins trade.

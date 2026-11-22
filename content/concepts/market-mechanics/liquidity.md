@@ -35,12 +35,12 @@ At the mid price, 300 shares are worth $15,000. Stock A costs $8 more; stock B c
 
 ## Liquid and illiquid assets
 
-A large company's stock trades millions of shares a day, often with a 1-cent spread in the US and thousands of shares at each price. A small company's stock may trade a few thousand shares a day, with a wide spread and little depth. Popular currency pairs ([[forex-pair|forex]]) are very liquid; small [[cryptocurrency|cryptocurrencies]] can be very illiquid.
+A large company's stock trades millions of shares a day, often with a 1-cent spread in the US. Even the largest stocks on the Prague Stock Exchange trade far less, with wider spreads. A small company's stock may trade a few thousand shares a day, with a wide spread and little depth. Popular currency pairs ([[forex-pair|forex]]) are very liquid; small [[cryptocurrency|cryptocurrencies]] can be very illiquid.
 
 ## Liquidity changes
 
-- **With the time of day.** For stocks, outside the regular [[trading-hours]], fewer orders wait, so spreads widen and the book thins. Forex trades around the clock on weekdays and crypto every day; both thin out at quiet hours, crypto also at weekends.
-- **In a panic.** When prices fall fast, many buyers cancel their waiting orders, so the bid drops and the book thins.
+- **With the time of day.** For stocks, outside the regular [[trading-hours]], fewer orders wait, so spreads widen and the book thins. Forex and crypto thin out at quiet hours, crypto also at weekends.
+- **In a panic.** When prices fall fast, buyers cancel their orders, so the bid drops and the book thins.
 
 ## Watch out
 

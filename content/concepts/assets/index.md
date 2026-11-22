@@ -5,14 +5,15 @@ An **index** is a number that tracks the combined price of a chosen group of ass
 - **US**: the **S&P 500** tracks about 500 large US companies. The **Nasdaq-100** tracks the 100 largest non-financial companies on the Nasdaq [[exchange]]. The **Dow Jones Industrial Average** (the Dow) tracks 30 large US companies.
 - **UK**: the **FTSE 100** tracks the 100 largest companies on the London Stock Exchange.
 - **Germany**: the **DAX** tracks 40 large German companies.
-- **Japan**: the **Nikkei 225** tracks 225 large companies on the Tokyo Stock Exchange.
+- **Czechia**: the **PX** tracks the main stocks listed in Prague.
+- **Japan**: the **Nikkei 225** tracks 225 large Japanese companies.
 - **Global**: the **MSCI World** tracks more than 1,000 large and mid-sized companies in about 23 developed countries.
 
 ## How an index is weighted
 
 Most indices, such as the S&P 500, FTSE 100 and DAX, are **cap-weighted**: each company counts in proportion to its **market value** (its "cap"), which is its share price times its number of shares.
 
-The Dow and the Nikkei 225 are **price-weighted**: they add up the share prices, so a stock with a high price counts more, whatever the size of the company.
+The Dow and the Nikkei 225 are **price-weighted**: they add up the share prices, so a stock with a high price counts more, whatever the company's size.
 
 ## Example
 
@@ -29,19 +30,19 @@ The company that runs the index (the index provider) sets the starting total of 
 - A rises 10% to $55: the total becomes $105,000,000, so the index rises 5% to **1,050**.
 - C rises 10% to $110 instead: the total becomes $103,000,000, so the index rises only 3% to **1,030**.
 
-The same 10% move changes the index more when a larger company makes it.
+The same 10% move counts more for a larger company.
 
 ## Points and percent
 
-News often gives index moves in points. Read them against the level (the index's current value). A fall of 50 points is 1% of an index at 5,000, but only 0.125% of an index at 40,000. Compare indices in percent.
+News often gives index moves in points. Read them against the level (the index's current value). A fall of 50 points is 1% of an index at 5,000, but only 0.125% at 40,000. Compare indices in percent.
 
 ## The list of companies changes
 
-The index provider checks the list at fixed times, often every three months. It removes companies that have become too small, adds new ones and updates the share counts it uses. For the S&P 500, a committee can change the list at any time.
+The index provider checks the list at fixed times, often every three months. It removes companies that became too small, adds new ones and updates share counts. For the S&P 500, a committee can change the list at any time.
 
 ## How people trade an index
 
-People trade products that follow an index: an [[etf]] that holds its stocks, index [[futures]] and [[option|options]], or CFDs (contracts with a [[broker]] that pay the change in a price; not offered to private US traders). A product that follows a broad index spreads your money over many companies ([[diversification]]).
+People trade products that follow an index: an [[etf]] that holds its stocks, index [[futures]] and [[option|options]], or [[cfd|CFDs]] (contracts with a [[broker]] that pay the change in a price; common in the EU and UK, not offered to private traders in the US). A product that follows a broad index spreads your money over many companies ([[diversification]]).
 
 ## Watch out
 

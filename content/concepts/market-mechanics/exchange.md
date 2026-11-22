@@ -1,20 +1,20 @@
-An **exchange** is a marketplace where buyers and sellers are matched. Examples are the New York Stock Exchange and Nasdaq in the US, and the London Stock Exchange.
+An **exchange** is a marketplace where buyers and sellers are matched. Examples are the New York Stock Exchange and Nasdaq in the US, the London Stock Exchange, and in the EU Xetra (Frankfurt), Euronext and the Prague Stock Exchange.
 
 ## What an exchange does
 
 - **It keeps the order book.** This is the list of orders waiting to be filled (carried out).
 - **It matches orders.** Its **matching engine** checks each new order against the book. On most stock exchanges, the best price fills first (the lowest sell price for a buyer, the highest buy price for a seller); at the same price, the earlier order fills first.
 - **It lists assets.** A company must meet the exchange's rules before its [[stock]] is listed there. In the US and Europe, other exchanges can then trade it too.
-- **It publishes every trade made on it.** In the US, trades away from exchanges must be reported too, and most charts and [[volume]] (how much was traded) figures include them.
+- **It publishes every trade made on it.** In the US, trades away from exchanges are reported too, and most charts and [[volume]] (how much was traded) figures include them.
 - **It sets its hours.** See [[trading-hours]].
 
 ## Exchange and broker
 
-Only firms that are members of the exchange, such as brokers and large trading firms, can send orders to it directly. You open an account with a [[broker]], and the broker sends your order to an exchange, or another place where orders are matched, for you. The broker, not the exchange, holds your money and shares.
+Only members of the exchange, such as brokers and large trading firms, can send it orders directly. You open an account with a [[broker]], and the broker sends your order to an exchange, or another market, for you. The broker, not the exchange, holds your money and shares.
 
 ## Example
 
-You place a market buy (trade now, see [[order-types]]) for 100 shares. The order book shows sellers waiting at $50.02 (100 shares) and $50.03 (200 shares). The lowest of these, $50.02, is the ask: the lowest price a seller wants right now (see [[bid-and-ask]]).
+You place a market buy (trade now, see [[order-types]]) for 100 shares. The order book shows sellers waiting at $50.02 (100 shares) and $50.03 (200 shares). The lower, $50.02, is the ask: the lowest price a seller wants right now (see [[bid-and-ask]]).
 
 1. Your broker sends the order to the exchange.
 2. The matching engine fills it: 100 shares at $50.02, so you pay $5,002.
