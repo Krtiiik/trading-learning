@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: taxes on trading, realised gains, holding periods, allowances, dividend and interest tax, tax-advantaged accounts, a US, UK and Czech comparison (including the 2026 Czech 3-year test and 100,000 CZK limit), and a worked example for each country.
 - Concept page: CFD, how a contract for difference works, the broker as the other side, a worked 5:1 stock CFD, going short, costs, the EU (ESMA and ČNB) protections, the appropriateness test, and the "professional client" trap.
 - Concept page: currency risk, what a dollar result means for a reader whose money is in koruna or euros, why a fund's holdings and not its listing currency decide the risk, currency-hedged funds, and months versus decades.
 - Concept page: rebalancing, target mix and drift, calendar and threshold rebalancing, rebalancing with new money, a worked 60/40 example, and its costs.

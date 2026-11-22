@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A time line starts at a buy; a gain sold early has a red slice cut off as tax, while the same gain sold after the Czech three-year holding line is kept whole and marked tax free">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the holding time, from the buy to the time test -->
+  <line x1="640" y1="76" x2="640" y2="312" stroke-width="3" stroke-dasharray="10 8"
+        style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .8"/>
+  <path d="M90 312 L640 312" fill="none" stroke-width="7" stroke-linecap="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- time axis -->
+  <path d="M640 312 L1150 312 M1130 296 L1150 312 L1130 328" fill="none" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .55"/>
+  <!-- the single buy -->
+  <path d="M90 322 L70 362 L110 362 Z" style="fill: var(--banner-up, #1a9b5b)"/>
+  <!-- sold early: the same gain, with tax cut off its top -->
+  <rect x="300" y="110" width="160" height="60" stroke-width="3" stroke-dasharray="10 8"
+        style="fill: none; stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <rect x="300" y="170" width="160" height="136" style="fill: var(--banner-up, #1a9b5b)"/>
+  <g transform="translate(400 128) rotate(8)">
+    <rect x="-80" y="-30" width="160" height="60" style="fill: var(--banner-down, #d0453a)"/>
+    <text x="0" y="10" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700"
+          letter-spacing="3" style="fill: var(--banner-bg, #f2f4f7)">TAX</text>
+  </g>
+  <!-- sold after the time test: the whole gain is kept -->
+  <rect x="820" y="110" width="160" height="196" style="fill: var(--banner-up, #1a9b5b)"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" text-anchor="middle">
+    <text x="640" y="58" font-size="28" letter-spacing="3" style="fill: var(--banner-accent, #0b6bcb)">CZECHIA: HELD 3 YEARS</text>
+    <text x="900" y="96" font-size="30" letter-spacing="3" style="fill: var(--banner-up, #1a9b5b)">TAX FREE</text>
+    <text x="380" y="365" font-size="28" letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">SELL EARLY</text>
+    <text x="900" y="365" font-size="28" letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a)">SELL LATER</text>
+  </g>
+  <text x="124" y="358" font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3"
+        style="fill: var(--banner-up, #1a9b5b)">BUY</text>
+</svg>

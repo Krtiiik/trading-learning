@@ -60,3 +60,4 @@ _Avoid_: guide, tutorial, article.
 - **stop loss** (learning site): two words, no hyphen, as in the catalog title.
 - **private traders** (learning site): the name for retail investors; use it instead of "retail" or "private clients", except when quoting a regulator's rule.
 - **mid price, round trip** (learning site): the names for the point halfway between bid and ask, and for buying then selling again. Use them instead of paraphrases.
+- **Czechia** (learning site): the country name; use "Czech" only as an adjective (Czech tax, Czech resident).
