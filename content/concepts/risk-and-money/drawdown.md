@@ -48,6 +48,6 @@ The example in [[position-sizing]] has 10 losses in a row on a $10,000 account. 
 
 - **A backtest's maximum drawdown is not the worst you will see.** It is only the worst in that piece of the past. Expect a larger one in real trading.
 - **You must be able to keep following the rules through it.** Before you start, ask if you could accept that fall and that time under water without giving up at its lowest point.
-- **Do not raise your risk after losses to win the money back.** Bigger positions make the next losses bigger too, so the drawdown gets deeper faster.
+- **Do not raise your risk after losses to win the money back.** Traders call this [[trading-psychology|revenge trading]]. Bigger positions make the next losses bigger too, so the drawdown gets deeper faster.
 
 Next, see [[diversification]], [[position-sizing]] to limit it, or try the lesson [[testing-a-trading-rule]].

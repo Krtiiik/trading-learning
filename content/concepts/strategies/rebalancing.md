@@ -28,7 +28,7 @@ Put regular new money into the part that is too small. In the example, $7,800 of
 ## What it does
 
 - **It keeps the mix, and so roughly the risk, that you chose.** Without it, a 60/40 mix usually drifts toward stocks, because they tend to rise more, and the next crash hits harder (see [[drawdown]]).
-- **It sells what rose most and buys what fell behind.** A fixed rule means fear and hope do not decide.
+- **It sells what rose most and buys what fell behind.** A fixed rule means [[trading-psychology|fear and hope]] do not decide.
 
 ## Watch out
 

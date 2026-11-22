@@ -43,7 +43,7 @@ Buy and hold and rebalancing are long-term styles: their rules decide what to ho
 ## Why fixed rules help
 
 - **They can be tested** on past prices in a [[backtest]].
-- **They remove in-the-moment emotion.** A rule decides before fear or hope can push you to sell winners early or hold losers too long.
+- **They remove in-the-moment emotion.** A rule decides before fear or hope can push you to [[trading-psychology|sell winners early or hold losers too long]].
 
 ## Watch out
 

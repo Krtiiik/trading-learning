@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Shares bought at $42 with a planned stop loss at $38; as the price falls toward the stop, hope makes the trader drag the stop down to $35 before it is reached, so the price falls through $38 and sells only at $35, at a bigger loss">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- price levels at 30 px per dollar: $42 y=110, $38 y=230, $35 y=320 -->
+  <!-- the extra loss that hope adds -->
+  <rect x="560" y="230" width="600" height="90" style="fill: var(--banner-down, #d0453a); fill-opacity: .12"/>
+  <!-- buy level -->
+  <line x1="40" y1="110" x2="1160" y2="110" stroke-width="2" stroke-dasharray="6 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .4"/>
+  <!-- planned stop, live until it is moved, then gone -->
+  <line x1="40" y1="230" x2="560" y2="230" stroke-width="5" style="stroke: var(--banner-down, #d0453a)"/>
+  <line x1="560" y1="230" x2="1160" y2="230" stroke-width="3" stroke-dasharray="6 8" style="stroke: var(--banner-down, #d0453a); stroke-opacity: .4"/>
+  <!-- moved stop -->
+  <line x1="560" y1="320" x2="1160" y2="320" stroke-width="5" stroke-dasharray="14 10" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- the stop is dragged lower before the price reaches it -->
+  <path d="M560 238 L560 306 M544 290 L560 306 L576 290" fill="none" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <!-- price -->
+  <path d="M120 110 L180 95 L240 120 L300 108 L360 150 L420 138 L480 185 L540 172 L600 205 L660 194 L720 255 L780 242 L840 290 L900 320"
+        fill="none" stroke-width="6" stroke-linejoin="round" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <circle cx="120" cy="110" r="10" style="fill: var(--banner-fg, #1a1a1a)"/>
+  <!-- sold at the moved stop, at a bigger loss -->
+  <rect x="882" y="302" width="36" height="36" transform="rotate(45 900 320)" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3">
+    <text x="60" y="80" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">BUY $42</text>
+    <text x="60" y="272" style="fill: var(--banner-down, #d0453a)">PLANNED STOP $38</text>
+    <text x="1160" y="370" text-anchor="end" style="fill: var(--banner-accent, #0b6bcb)">MOVED STOP $35</text>
+    <text x="590" y="284" style="fill: var(--banner-accent, #0b6bcb)">HOPE</text>
+  </g>
+</svg>
