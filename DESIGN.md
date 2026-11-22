@@ -41,7 +41,7 @@ All colours are in OKLCH. The neutrals use hue 250 (a cool grey) with chroma und
 Rules:
 
 - `--panel` is *lighter* than `--bg` in light mode and slightly lighter in dark mode. A hover lifts the surface; it does not darken it.
-- Use `--line` for layout. Use `--line-2` only for interactive edges (buttons, search results popover, empty meter squares) and for list markers.
+- Use `--line` for layout. Use `--line-2` only for interactive edges (buttons, search results popover) and for list markers.
 - Body text is `--fg`. Supporting text is `--muted`. Use `--faint` only for things the eye may skip.
 
 ### 3.2 Highlight
@@ -210,7 +210,7 @@ Anything placed on it snaps to the grid: start on a crossing, span whole units, 
 
 ### 6.4 Section header (shelf)
 
-Title (24px, links to the full list, followed by a faint mono `→`), blurb below in `--muted` 15px, and on the right a count and the arrow buttons, aligned to the bottom.
+Title (24px, links to the full list, followed by a faint mono `→`), blurb below in `--muted` 15px, and on the right the arrow buttons, aligned to the bottom.
 
 ### 6.5 Square buttons
 
@@ -218,21 +218,17 @@ Title (24px, links to the full list, followed by a faint mono `→`), blurb belo
 
 ### 6.6 Stats block
 
-A tiled `dl`: each cell has a label (`dt`) and a mono number (`dd`, 22px, tabular figures). A secondary part of the number (`/ 40`) is `small`, 13px, muted. One cell can span both columns.
+A tiled `dl`: each cell has a label (`dt`) and a mono number (`dd`, 22px, tabular figures). One cell can span both columns.
 
-### 6.7 Progress meter
-
-One 7px square per item, 3px gap, outline `--line-2`. Filled items are solid `--fg`. It is a precise, countable alternative to a progress bar.
-
-### 6.8 Note box
+### 6.7 Note box
 
 For "not ready" or info notes: `1px dashed var(--line-2)`, padding 16px 18px, muted text, and a label-style title in `--fg` on top (via `::before` or a real element).
 
-### 6.9 Link list
+### 6.8 Link list
 
 A tiled list of links, columns `repeat(auto-fill, minmax(190px, 1fr))`. Each item: title left, mono `→` right (`justify-content: space-between`), padding 10px 12px, 15px 500. Hover `--panel`, arrow to `--fg`. A secondary item swaps the arrow for a tiny label ("Planned").
 
-### 6.10 Footer
+### 6.9 Footer
 
 Label style, split left/right with `justify-content: space-between`, top rule, padding `18px var(--gutter)`. Links have no underline; hover to `--fg`.
 
@@ -318,7 +314,6 @@ Links inherit their colour (`a { color: inherit }`). Colour alone never marks a 
 
 - Visible focus on every interactive element (`:focus-visible`).
 - `aria-current="page"` for the current nav item; `aria-label` on icon-only buttons and on search.
-- Decorative markup (meters) gets `aria-hidden="true"` when the same number is in text nearby.
 - Core content works without JavaScript. Add `html.js` from the script and show JS-only controls under it.
 - `[hidden] { display: none !important; }` so the attribute always wins.
 - Check contrast: `--muted` on `--bg` must pass 4.5:1 in both themes; `--faint` is only for non-essential text.

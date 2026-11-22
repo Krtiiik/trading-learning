@@ -3,7 +3,7 @@
 {% block doc_title %}Trading Learning{% endblock %}
 {% block page_kind %}home{% endblock %}
 {% block main %}
-{%- set ns = namespace(w=0, t=0) %}{% for g in site.groups %}{% set ns.w = ns.w + g.written_count %}{% set ns.t = ns.t + g.concepts|length %}{% endfor %}
+{%- set ns = namespace(t=0) %}{% for g in site.groups %}{% set ns.t = ns.t + g.concepts|length %}{% endfor %}
 <section class="intro">
   <div class="intro__copy">
     <span class="label">Knowledge base</span>
@@ -12,14 +12,14 @@
   </div>
   <div class="intro__panel">
     <dl class="stats">
-      <div><dt>Concepts written</dt><dd>{{ ns.w }}<small> / {{ ns.t }}</small></dd></div>
+      <div><dt>Concepts</dt><dd>{{ ns.t }}</dd></div>
       <div><dt>Lessons</dt><dd>{{ site.lessons|length }}</dd></div>
       <div class="wide"><dt>Concept groups</dt><dd>{{ site.groups|length }}</dd></div>
     </dl>
   </div>
 </section>
 {% for g in site.groups %}
-{{ shelf(g.title, g.url, g.blurb, cards(g.concepts), root, g.written_count ~ " of " ~ g.concepts|length ~ " written", g.written_count, g.concepts|length) }}
+{{ shelf(g.title, g.url, g.blurb, cards(g.concepts), root) }}
 {% endfor %}
-{{ shelf("Lessons", "lessons/index.html", "Guided pages that put several concepts together.", site.lessons, root, site.lessons|length ~ (" lesson" if site.lessons|length == 1 else " lessons")) }}
+{{ shelf("Lessons", "lessons/index.html", "Guided pages that put several concepts together.", site.lessons, root) }}
 {% endblock %}

@@ -54,6 +54,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Changed
 
+- The home page and group pages no longer show a written count and progress meter per group. The home page and footer show only the total number of concepts and lessons.
 - Link hover previews show the linked page's banner above its title and summary, like the cards. A preview that does not fit below the link opens above it.
 - The theme switch is one button that cycles System, Light and Dark, in place of three buttons. On phones it now stays in the top row next to search.
 - Pages no longer follow a concept link with a parenthesis that repeats the link's hover preview; where the parenthesis also gave an example value or other detail, only that detail stays.

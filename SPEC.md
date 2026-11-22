@@ -38,7 +38,7 @@ All URLs are relative. Every template gets `root` (`""` on the home page, `"../"
 ### Home layout (decided)
 
 - A short intro at the top.
-- One section per concept group: the group title as a heading, which links to the group page, plus blurb and progress ("1 of 10 written"). Under it is **a single row of cards** that scrolls sideways, with left/right arrow buttons. It never wraps to a second row.
+- One section per concept group: the group title as a heading, which links to the group page, plus blurb. Under it is **a single row of cards** that scrolls sideways, with left/right arrow buttons. It never wraps to a second row.
 - Then a **Lessons** section in the same style: the heading links to `lessons/index.html`, with one row of lesson cards.
 - Group and lessons pages show the same cards in a **full grid**.
 

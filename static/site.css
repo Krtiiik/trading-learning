@@ -84,7 +84,7 @@ button, input { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--hi); outline-offset: 2px; }
 img, svg { max-width: 100%; }
 
-.label, .card__group, .card__status, .shelf__count, .listing-header__count, .listing-header__kicker,
+.label, .card__group, .card__status, .listing-header__count, .listing-header__kicker,
 .article__group, .search__meta, .link-preview__group, .link-preview__status, .site-footer {
   font: 500 11px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
 }
@@ -194,17 +194,11 @@ html.js .theme { display: grid; }
 .stats div.wide { grid-column: 1 / -1; }
 .stats dt { font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .stats dd { margin: 0; font: 500 22px/1.1 var(--mono); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-.stats dd small { font-size: 13px; color: var(--muted); letter-spacing: 0; }
-
-/* progress meter: one square per concept, filled when written */
-.meter { display: inline-flex; flex-wrap: wrap; gap: 3px; vertical-align: middle; }
-.meter i { width: 7px; height: 7px; border: 1px solid var(--line-2); }
-.meter i.on { background: var(--fg); border-color: var(--fg); }
 
 /* ---------- shelves (home) ---------- */
 .shelf { border-bottom: 1px solid var(--line); }
 .shelf__header {
-  display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "title count arrows" "blurb count arrows";
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title arrows" "blurb arrows";
   column-gap: 16px; row-gap: 4px; padding: 26px var(--gutter) 18px;
 }
 .shelf__title { grid-area: title; margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.2; }
@@ -213,8 +207,6 @@ html.js .theme { display: grid; }
 .shelf__title a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .shelf__title a:hover::after { color: var(--fg); }
 .shelf__blurb { grid-area: blurb; margin: 0; color: var(--muted); font-size: 15px; max-width: 70ch; }
-/* the count sits immediately left of the arrows, vertically centred on them */
-.shelf__count { grid-area: count; align-self: end; min-height: 40px; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
 .shelf__arrows { grid-area: arrows; align-self: end; display: none; }
 html.js .shelf__arrows { display: flex; }
 html.js .shelf.is-static .shelf__arrows { display: none; }
@@ -373,8 +365,7 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
   .site-brand { font-size: 15px; }
   .search__input { padding: 10px 12px; }
   .shelf__row { grid-auto-columns: calc(100% / 1.3); }
-  .shelf__header { grid-template-areas: "title title title" "blurb blurb blurb" ". count arrows"; row-gap: 8px; }
-  .shelf__count { min-height: 36px; }
+  .shelf__header { grid-template-areas: "title title" "blurb blurb" ". arrows"; row-gap: 8px; }
   .shelf__arrow { width: 36px; height: 36px; }
   .prose { font-size: 16px; }
 }

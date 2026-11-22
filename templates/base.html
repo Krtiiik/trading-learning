@@ -46,10 +46,10 @@
 <main class="site-main">
 {% block main %}{% endblock %}
 </main>
-{%- set fs = namespace(w=0, t=0) %}{% for g in site.groups %}{% set fs.w = fs.w + g.written_count %}{% set fs.t = fs.t + g.concepts|length %}{% endfor %}
+{%- set fs = namespace(t=0) %}{% for g in site.groups %}{% set fs.t = fs.t + g.concepts|length %}{% endfor %}
 <footer class="site-footer">
   <a href="{{ root }}index.html">Trading Learning</a>
-  <span>{{ fs.w }} of {{ fs.t }} concepts written · {{ site.lessons|length }} lesson{{ "" if site.lessons|length == 1 else "s" }}</span>
+  <span>{{ fs.t }} concepts · {{ site.lessons|length }} lesson{{ "" if site.lessons|length == 1 else "s" }}</span>
 </footer>
 </div>
 <div class="link-preview" hidden></div>

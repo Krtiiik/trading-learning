@@ -11,16 +11,11 @@
 {% endmacro %}
 
 {# One square per concept, filled when written. #}
-{% macro meter(written, total) %}
-{% if total %}<span class="meter" aria-hidden="true">{% for i in range(total) %}<i{% if i < written %} class="on"{% endif %}></i>{% endfor %}</span>{% endif %}
-{% endmacro %}
-
-{% macro shelf(title, url, blurb, pages, root, count, written=0, total=0) %}
+{% macro shelf(title, url, blurb, pages, root) %}
 <section class="shelf">
   <header class="shelf__header">
     <h2 class="shelf__title"><a href="{{ root }}{{ url }}">{{ title }}</a></h2>
     {% if blurb %}<p class="shelf__blurb">{{ blurb }}</p>{% endif %}
-    <span class="shelf__count">{{ meter(written, total) }}<span>{{ count }}</span></span>
     <div class="shelf__arrows">
       <button class="shelf__arrow shelf__arrow--prev" type="button" aria-label="Scroll {{ title }} left">&larr;</button>
       <button class="shelf__arrow shelf__arrow--next" type="button" aria-label="Scroll {{ title }} right">&rarr;</button>
