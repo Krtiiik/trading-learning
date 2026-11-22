@@ -54,6 +54,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Changed
 
+- Link hover previews show the linked page's banner above its title and summary, like the cards. A preview that does not fit below the link opens above it.
 - The theme switch is one button that cycles System, Light and Dark, in place of three buttons. On phones it now stays in the top row next to search.
 - Pages no longer follow a concept link with a parenthesis that repeats the link's hover preview; where the parenthesis also gave an example value or other detail, only that detail stays.
 - Pages agree after the fifth site-wide audit: exchange now says MiCA makes EU crypto firms keep coins apart, CFD and leverage agree on who sets the EU CFD rules, the shared trade treats the $54 target as a check on risk-reward and entry-and-exit rules, the portfolio lesson links the ETF page instead of repeating it, REIT gives the Czech dividend tax, and the new lessons are linked from broker, order types, ETF, diversification and currency risk.

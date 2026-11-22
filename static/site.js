@@ -2,7 +2,7 @@
 // Data comes from index.js (window.LEARNING_INDEX); URLs there are relative to the site root.
 (function () {
   "use strict";
-  var data = window.LEARNING_INDEX || { pages: [], groups: [] };
+  var data = window.LEARNING_INDEX || { pages: [], groups: [], banners: [] };
   var root = document.documentElement.getAttribute("data-root") || "";
   var bySlug = {};
   data.pages.forEach(function (p) { bySlug[p.slug] = p; });
@@ -20,15 +20,29 @@
     var p = bySlug[link.getAttribute("data-slug")];
     if (!p || !preview) return;
     preview.innerHTML = "";
-    preview.appendChild(el("span", "link-preview__group", p.group || "Lesson"));
-    preview.appendChild(el("strong", "link-preview__title", p.title));
-    preview.appendChild(el("p", "link-preview__summary", p.summary));
-    if (p.status === "planned") preview.appendChild(el("span", "link-preview__status", "Not written yet"));
+    preview.classList.toggle("is-planned", p.status === "planned");
+    var svg = data.banners && data.banners[p.banner];
+    if (svg) {
+      // The banner is our own build output (banners/*.svg), the same markup the page's card shows.
+      var banner = el("div", "link-preview__banner banner");
+      banner.setAttribute("aria-hidden", "true");
+      banner.innerHTML = svg;
+      preview.appendChild(banner);
+    }
+    var text = el("div", "link-preview__text");
+    text.appendChild(el("span", "link-preview__group", p.group || "Lesson"));
+    text.appendChild(el("strong", "link-preview__title", p.title));
+    text.appendChild(el("p", "link-preview__summary", p.summary));
+    if (p.status === "planned") text.appendChild(el("span", "link-preview__status", "Not written yet"));
+    preview.appendChild(text);
     var r = link.getBoundingClientRect();
-    var maxLeft = window.scrollX + document.documentElement.clientWidth - preview.offsetWidth - 8;
     preview.hidden = false;
+    var maxLeft = window.scrollX + document.documentElement.clientWidth - preview.offsetWidth - 8;
     preview.style.left = Math.max(8, Math.min(r.left + window.scrollX, maxLeft)) + "px";
-    preview.style.top = (r.bottom + window.scrollY + 6) + "px";
+    // Below the link, or above it when the card (now taller with its banner) would leave the window.
+    var h = preview.offsetHeight;
+    var above = r.bottom + 6 + h > document.documentElement.clientHeight && r.top - 6 - h >= 0;
+    preview.style.top = (above ? r.top - 6 - h : r.bottom + 6) + window.scrollY + "px";
   }
   document.addEventListener("mouseover", function (e) {
     var link = e.target.closest && e.target.closest("a.concept-link");

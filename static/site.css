@@ -343,9 +343,11 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
 /* ---------- hover preview ---------- */
 .link-preview {
   position: absolute; z-index: 40; width: min(320px, calc(100vw - 32px));
-  display: grid; gap: 4px; padding: 12px 14px;
-  background: var(--bg); border: 1px solid var(--fg); font-size: 14px; pointer-events: none;
+  display: grid; background: var(--bg); border: 1px solid var(--fg); font-size: 14px; pointer-events: none;
 }
+.link-preview__banner { border-bottom: 1px solid var(--line); }
+.link-preview.is-planned .link-preview__banner { opacity: .7; filter: grayscale(1); }
+.link-preview__text { display: grid; gap: 4px; padding: 12px 14px; }
 .link-preview__title { font-size: 15px; font-weight: 600; }
 .link-preview__summary { margin: 0; color: var(--muted); line-height: 1.45; }
 .link-preview__status { color: var(--faint); }

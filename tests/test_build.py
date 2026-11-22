@@ -182,8 +182,24 @@ def test_build_writes_every_page_and_the_index(site_root, tmp_path):
     by_slug = {p["slug"]: p for p in data["pages"]}
     assert by_slug["trend"] == {"slug": "trend", "kind": "concept", "title": "Trend",
                                 "summary": "The general direction.", "url": "concepts/trend.html",
-                                "status": "planned", "group": "Charts"}
+                                "status": "planned", "group": "Charts",
+                                "banner": by_slug["trend"]["banner"]}
     assert by_slug["first-chart"]["kind"] == "lesson"
+
+
+def test_index_lists_each_banner_once_for_the_hover_preview(site_root, tmp_path):
+    write(site_root, "banners/_planned.svg", "<svg id='planned'>\n  <!-- note -->\n  <rect/>\n</svg>")
+    write(site_root, "banners/candle.svg", "<svg id='candle'><rect/></svg>")
+    out = tmp_path / "dist"
+    build.build(site_root, out)
+    index_js = (out / "static/index.js").read_text(encoding="utf-8")
+    data = json.loads(index_js.removeprefix("window.LEARNING_INDEX = ").rstrip(";\n"))
+    by_slug = {p["slug"]: p for p in data["pages"]}
+    assert data["banners"][by_slug["candle"]["banner"]] == "<svg id='candle'><rect/></svg>"
+    assert data["banners"][by_slug["trend"]["banner"]] == "<svg id='planned'> <rect/> </svg>"
+    planned = [p["banner"] for p in data["pages"] if p["status"] == "planned"]
+    assert len(set(planned)) == 1
+    assert len(data["banners"]) == len(set(data["banners"]))
 
 
 def test_pages_use_root_relative_prefixes(site_root, tmp_path):

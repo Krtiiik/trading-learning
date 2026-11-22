@@ -198,7 +198,7 @@ Anything placed on it snaps to the grid: start on a crossing, span whole units, 
 
 - `--bg` background, a 1px border, no shadow, no radius.
 - Search results: border `--line-2`, rows split by `--line`, row hover `--panel`. Title 14px 600, meta in label style.
-- Hover preview: border `--fg` (strongest edge, because it floats over text), 12px 14px padding, label + title + muted summary.
+- Hover preview: border `--fg` (strongest edge, because it floats over text). Like a small card: the page's 3:1 banner on top (`border-bottom: 1px solid var(--line)`, grey and faded for a planned page), then label + title + muted summary with 12px 14px padding. It opens above the link when it does not fit below.
 - Position the popover 1px or 6px below its anchor and keep it 8px inside the viewport.
 
 ### 6.3 Card

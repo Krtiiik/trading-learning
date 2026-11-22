@@ -264,19 +264,32 @@ def render_body(site: Site, page: Page, root_prefix: str) -> str:
     return markdown.markdown(linked, extensions=["tables", "fenced_code", "sane_lists"])
 
 
+def _compact_svg(svg: str) -> str:
+    """Drop comments and collapse whitespace, so the banners add less to index.js."""
+    return re.sub(r"\s+", " ", re.sub(r"<!--.*?-->", "", svg, flags=re.S)).strip()
+
+
 def site_index(site: Site) -> dict:
-    """The data behind hover previews and search, with URLs relative to the site root."""
+    """The data behind hover previews and search, with URLs relative to the site root.
+
+    Banners are listed once in "banners" (planned pages share one) and pages point at them by
+    position, so the hover preview can show the same picture as the page's card."""
+    banners: dict[str, int] = {}
 
     def entry(p: Page) -> dict:
         d = {"slug": p.slug, "kind": p.kind, "title": p.title, "summary": p.summary,
              "url": p.url, "status": p.status}
         if p.group:
             d["group"] = p.group.title
+        if p.banner_svg:
+            d["banner"] = banners.setdefault(_compact_svg(p.banner_svg), len(banners))
         return d
 
+    pages = [entry(p) for p in site.pages.values()]
     return {
         "groups": [{"slug": g.slug, "title": g.title, "url": g.url} for g in site.groups],
-        "pages": [entry(p) for p in site.pages.values()],
+        "pages": pages,
+        "banners": list(banners),
     }
 
 

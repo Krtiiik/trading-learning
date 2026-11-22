@@ -29,6 +29,8 @@ Content work runs through subagents in `.claude/agents/`: a planner (what to wri
 
 **Titles and summaries only in the catalog.** A planned concept needs a working link and hover preview before its body exists, so title and summary can't live in the page file. Concept files carry only the body.
 
+**Banners for hover previews are inside `index.js`.** A banner takes its colours from the page's CSS variables, which only works when the SVG is inline, not in an `<img>`. Fetching each SVG on hover needs a server, so the build puts every banner (compacted, the planned one only once) in `index.js`, which already loads on every page.
+
 **Build-time link resolution with `[[slug]]`.** Slugs survive moving files between folders, and the build can fail on a typo. Plain Markdown paths would break silently.
 
 **Multi-page output, not a single-page app.** The site will have high tens of pages, and real URLs per page keep it simple. Previews and search share one generated index file.

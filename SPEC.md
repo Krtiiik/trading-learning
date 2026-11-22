@@ -99,10 +99,10 @@ Page templates also receive: `group.html` → `group`; `concept.html` and `lesso
 
 | Feature | Hook |
 |---|---|
-| Data | `static/index.js` (generated) sets `window.LEARNING_INDEX = {groups, pages}`. Each page entry has `slug, kind, title, summary, url, status, group?`. Load it before `site.js`. |
+| Data | `static/index.js` (generated) sets `window.LEARNING_INDEX = {groups, pages, banners}`. Each page entry has `slug, kind, title, summary, url, status, group?, banner?`; `banner` is a position in `banners`, the list of compacted banner SVGs (planned pages share one). Load it before `site.js`. |
 | Root | `<html data-root="{{ root }}">` |
 | Concept links | `a.concept-link[data-slug]` with `is-written`/`is-planned`. These appear in bodies, Related, Used in and Before you start. Body links come from the build, so their class names are fixed. |
-| Hover preview | a single `.link-preview` element (hidden) that the script fills with `.link-preview__group`, `__title`, `__summary`, `__status` and positions under the hovered link |
+| Hover preview | a single `.link-preview` element (hidden) that the script fills with `.link-preview__banner` (the page's banner SVG, inlined) and `.link-preview__text` holding `.link-preview__group`, `__title`, `__summary`, `__status`, adds `is-planned` for a planned page, and positions under the hovered link (above it when there is no room below) |
 | Search | `.search` holding `input.search__input` and `ol.search__results`. Results are `li.search__result.is-<status>` > `a.search__link` > `.search__title` + `.search__meta`, or `li.search__empty`. |
 | Shelf | `.shelf` holding `.shelf__row` (the scrolling row) and `.shelf__arrow--prev` / `.shelf__arrow--next` buttons |
 | Status | `.is-written` / `.is-planned` on cards, links and the article |
