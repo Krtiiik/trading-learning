@@ -51,13 +51,14 @@ _Avoid_: guide, tutorial, article.
 - **range / zone / band** (learning site): the *daily range* is a period's high minus its low. The sideways area between support and resistance is a *trading range*: write that on first use, never "range" alone, and "moves sideways between them" in passing. A *zone* is the narrow price area of one support or resistance level. *Band* means a Bollinger band only.
 - **yield** (learning site): on bond pages, the yearly return if you buy now and hold to maturity. On stock pages, always write *dividend yield*. *High yield* means junk bonds only.
 - **maintenance margin** (learning site): for US stocks, the FINRA minimum share of the position value; for futures, the exchange-set amount below which a margin call comes. Say which one you mean.
-- **confirmation** (learning site): the later prices a rule waits for before it acts: candles after a peak, the next candle after a pattern, or a close beyond a zone. Say what confirms.
+- **confirmation** (learning site): the later prices a rule waits for before it acts: candles after a peak, the next candle after a pattern, or a close beyond a zone. Say what confirms. A volume filter on a break is not a confirmation.
 - **momentum** (learning site): on strategy pages, the strategy that ranks many assets by past return; on indicator pages, how strong one price's recent moves were (RSI, MACD). Write "momentum strategy" or "momentum indicator" where both could be meant.
-- **drift** (learning site): a target mix changing by itself as prices move (rebalancing). Do not use it for the daily-reset decay of leveraged ETFs.
+- **drift** (learning site): a target mix changing by itself as prices move (rebalancing). Do not use it for the daily-reset decay of leveraged ETFs or for price moves ("drifts down", "drift toward").
 - **target / target mix** (learning site): a *target* is a planned sell price (risk-reward); a *target mix* is the planned share of each asset (rebalancing). Never write "target" alone for a mix.
 - **CFD** (learning site): a contract with a broker that pays the change in a price, without owning the asset. Common in the EU and UK but not offered to private traders in the US. The cfd page owns the term; broker keeps the one-line gloss.
 - **market maker / large trading firm** (learning site): write "large trading firm" in passing; write "market maker" only where the page explains it.
 - **stop loss** (learning site): two words, no hyphen, as in the catalog title.
+- **stop out / stopped out** (learning site): a *stop out* is the broker closing positions at a margin level (leverage). When your own stop loss is hit, you are *stopped out*; never write "stop-outs" for that.
 - **private traders** (learning site): the name for retail investors; use it instead of "retail" or "private clients", except when quoting a regulator's rule.
 - **mid price, round trip** (learning site): the names for the point halfway between bid and ask, and for buying then selling again. Use them instead of paraphrases.
 - **Czechia** (learning site): the country name; use "Czech" only as an adjective (Czech tax, Czech resident).

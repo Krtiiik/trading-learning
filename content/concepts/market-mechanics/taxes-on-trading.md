@@ -30,7 +30,7 @@ With taxable gains or foreign dividends, you usually must file a tax return (sma
 
 ## Example
 
-You buy 25 shares at $42 ($1,050) and sell them five months later at $64 ($1,600): a gain of $550.
+You buy 25 shares at $42 ($1,050) and sell them about eight months later at $64 ($1,600): a gain of $550.
 
 - **US resident:** if your wages are taxed at 22%, you pay $121. Held more than a year: 15%, $82.50.
 - **UK resident:** at $1.31 per pound, about £420 of gain, within the £3,000 allowance if you have no other gains: no tax.

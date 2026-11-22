@@ -11,7 +11,7 @@ Some traders want more than a plain close beyond the zone:
 
 Stricter rules filter out more false breakouts, but they also confirm the real ones later, at a worse price.
 
-## Confirmation by volume
+## Volume on the break
 
 [[volume|Volume]] is how much was traded in a period. A breakout on high volume is trusted more than one on low volume: many traders acted at the new prices. This is only a rule of thumb: studies of past charts find it helps only a little, and high-volume breakouts can fail too.
 

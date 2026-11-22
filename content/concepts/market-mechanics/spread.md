@@ -1,4 +1,4 @@
-The **spread** is the gap between the bid (the best price a buyer offers) and the ask (the best price a seller wants). It is usually not listed as a fee, but every trade at the market price pays part of it.
+The **spread** is the gap between the best price buyers offer and the best price sellers want: the [[bid-and-ask|bid and the ask]]. It is usually not listed as a fee, but every trade at the market price pays part of it.
 
 ## Where the cost comes from
 

@@ -13,7 +13,7 @@ A price that moved sideways between two levels for months (a trading range) some
 A [[stock]] moved sideways between about $45 and $55 for months. Its resistance zone is $54.80 to $55.30. One day it closes at $56, on about twice its usual [[volume]]. The [[entry-and-exit-rules]]:
 
 - **Enter**: buy at $56.
-- **Stop loss**: $54, 80 cents below the resistance zone ($54.80). The risk is $2 per share. The 80 cents are less than one [[atr]] ($1): a fall back into the trading range already means failure, so you accept more stop-outs for a smaller risk.
+- **Stop loss**: $54, 80 cents below the resistance zone ($54.80). The risk is $2 per share. The 80 cents are less than one [[atr]] ($1): a fall back into the trading range already means failure, so you accept being stopped out more often for a smaller risk.
 - **Size**: a $10,000 account risks 1%, $100. [[position-sizing|Position sizing]] gives $100 / $2 = 50 shares.
 - **Target**: the trading range is $10 high ($55 − $45). Added to $55, the resistance level: $65.
 

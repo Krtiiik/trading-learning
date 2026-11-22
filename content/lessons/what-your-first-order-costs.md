@@ -44,9 +44,9 @@ For a first order in a large, busy stock, a market order is simple. A limit orde
 
 ## Step 4: When does the market cost extra?
 
-The book above is a liquid one: many shares wait near a narrow spread. Two things make it thinner.
+The book above has good [[liquidity]]: many shares wait near a narrow spread. Two things make it thinner.
 
-- **A small or rarely traded stock.** Low [[volume]] (few shares traded each day) usually comes with fewer waiting orders and a wider spread.
+- **A small or rarely traded stock.** Low [[volume]], few shares traded each day, usually comes with fewer waiting orders and a wider spread.
 - **The hour.** The US regular session runs 9:30–16:00 New York time (15:30–22:00 CET; an hour earlier for two or three weeks in March and about one week around the end of October; see [[trading-hours]]). Some German venues, such as gettex, stay open until 23:00 CET. At 22:30 CET, the New York regular session has ended, so few orders wait. The bid might be $49.90 and the ask $50.10: a 20-cent spread, so the round trip costs $20 in spread instead of $4. The same happens in the morning, before New York opens.
 
 So trade US stocks while New York is open, and use limit orders when the book is thin.

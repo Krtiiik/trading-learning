@@ -20,7 +20,7 @@ A company has 1,000,000 shares and each one trades at $50. The whole company is 
 
 ## Many stocks at once
 
-Many people buy a basket of companies instead of picking single ones. An [[index]] is a number that tracks the combined price of such a basket. An [[etf]] is a fund that holds the basket, so you buy all of it in one trade.
+Many people buy a basket of companies instead of picking single ones. An [[index]] is a number that tracks the combined price of such a basket. An [[etf]] is a fund that holds many assets and trades like one stock.
 
 ## Watch out
 

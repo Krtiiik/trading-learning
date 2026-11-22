@@ -16,7 +16,7 @@ You have a $10,000 account and risk 1%. You buy 25 shares of a [[stock]] at $42 
 - Reward: $54 − $42 = $12 per share, $300 for the 25 shares.
 - Ratio: $12 / $4 = **3 to 1**.
 
-Here $54 is only a check: no sell order waits there. So the trade stays open until the [[trend-following]] rule's [[entry-and-exit-rules|signal exit]] (a close below the 100-day [[moving-average|average]]) sells at $64: a gain of $22 per share. The trade made 5.5 times the risk (5.5 to 1). Keep the plan (3 to 1) and the result apart.
+Here $54 is only a check: no sell order waits there. So the trade stays open until the [[trend-following]] rule's [[entry-and-exit-rules|signal exit]] (a close below the 100-day [[moving-average|average]]) sells at $64: a gain of $22 per share. The trade made 5.5 times the risk: 5.5 R (see [[trading-journal]]). Keep the plan (3 to 1) and the result apart.
 
 ## The win rate you need
 

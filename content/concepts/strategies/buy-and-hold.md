@@ -5,7 +5,7 @@ Buy and hold is a [[strategy]] where you buy an asset and keep it for many years
 - **Few sales.** You buy, then wait. Many people also buy a little more each month.
 - **Low costs.** Rare selling keeps [[fees-and-commissions|fees]] and [[spread]] costs low.
 - **Low tax.** Long holds are taxed less: usually tax-free after 3 years in Czechia, a lower rate after one year in the US ([[taxes-on-trading]]).
-- **No timing.** The only rule is to keep holding: there is no exit signal and usually no [[stop-loss|stop loss]].
+- **No timing.** The only rule is to keep holding: there is no exit signal and usually no [[stop-loss]].
 
 ## Compounding
 
@@ -17,7 +17,7 @@ Timing the market means selling before falls and buying back before rises. It is
 
 ## Why a broad index fund
 
-Most buy-and-hold investors buy an [[etf]] that follows a broad index, not one [[stock]]. One company can fail; a fund with hundreds of companies removes most of that risk ([[diversification]]). Broad ETFs often have an expense ratio of only 0.03% to 0.20% a year. This fee compounds too: over 30 years at 7%, $10,000 grows to about $74,600 at 0.07%, but only about $61,600 at 0.75%.
+Most buy-and-hold investors buy an [[etf]] that follows a broad index, not one [[stock]]. One company can fail; a fund with hundreds of companies removes most of that risk ([[diversification]]). Broad ETFs often have an expense ratio (in Europe, TER) of only 0.03% to 0.20% a year. This fee compounds too: over 30 years at 7%, $10,000 grows to about $74,600 at 0.07%, but only about $61,600 at 0.75%.
 
 In a mix of stocks and [[bond|bonds]], [[rebalancing]] trades back to your chosen mix as prices shift it.
 

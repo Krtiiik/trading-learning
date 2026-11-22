@@ -2,7 +2,7 @@
 title: Building a simple long-term portfolio
 summary: Build a low-cost mix of index funds and bonds, see what fees and compounding do over 30 years, and keep the mix through a crash.
 added: 2026-11-22
-builds_on: [stock, index, etf, bond, diversification, buy-and-hold, rebalancing, drawdown, volatility, fees-and-commissions, dividend, currency-risk, taxes-on-trading]
+builds_on: [stock, index, etf, bond, diversification, buy-and-hold, rebalancing, compounding, drawdown, volatility, fees-and-commissions, dividend, currency-risk, taxes-on-trading]
 ---
 Most of this site is about trading: buying and selling within days or weeks. This lesson is for the reader who wants to invest for decades. It shows how a simple portfolio (all the investments you hold) of two funds works. It is not advice on what you should buy.
 

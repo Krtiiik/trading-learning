@@ -21,7 +21,7 @@ Most gaps come from news while the market is closed, such as a company's earning
 
 You bought 25 shares of a [[stock]] at $42, with a [[stop-loss]] at $38. On Monday the stock closes at $40; its low that day is $39.20. After the close, the company reports bad earnings.
 
-On Tuesday the stock opens at $35, a gap down of $5. Both days also traded inside that range, so the empty space is smaller: from Tuesday's high, $36, to Monday's low, $39.20.
+On Tuesday the stock opens at $35, a gap down of $5. Both days also traded between their own high and low, so the empty space is smaller: from Tuesday's high, $36, to Monday's low, $39.20.
 
 Your stop at $38 sells at the first price after the jump, around $35. You lose about $7 per share, not the planned $4: about $175 instead of $100.
 

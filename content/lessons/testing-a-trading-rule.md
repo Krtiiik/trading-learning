@@ -61,7 +61,7 @@ Check three things before you believe any result:
 2. **Look-ahead bias.** Did the test use anything not known at the time? A rule that checks the day's close but buys at that day's open could never be traded.
 3. **Missing costs.** Add the [[spread]], [[fees-and-commissions|fees]] and [[slippage]]. At $5 per round trip ($2.50 per order, as in [[planning-one-trade]]), the total falls to +$730, the expectancy to about $73 per trade, and the maximum drawdown grows to $140.
 
-If your account is in CZK or EUR, the result in your own money differs from the dollar result, because the exchange rate moves too: see [[currency-risk]]. Your broker also takes a [[fees-and-commissions|currency conversion fee]] each way, often 0.25% to 1.5%. On a position of about $1,050 that is about $5 to $32 per round trip, large next to the $73 expectancy left after commission. [[what-your-first-order-costs]] adds up these costs for one order.
+If your account is in CZK or EUR, the result in your own money differs from the dollar result, because the exchange rate moves too: see [[currency-risk]]. Your broker also takes a [[fees-and-commissions|currency conversion fee]] each way, often 0.25% to 1.5%. On a position of about $1,050 that is about $5 to $32 per round trip, large next to the $73 expectancy left after commission. The lesson [[what-your-first-order-costs]] adds up these costs for one order.
 
 ## Step 6: Does it work with real money?
 
@@ -78,4 +78,4 @@ Write down one trading idea you have and answer:
 3. Could you sit through a drawdown twice as deep and twice as long as the test's maximum?
 4. Did you test it on years you did not use to tune it?
 
-Once a rule passes these steps, see [[planning-one-trade]] to take one trade from entry to exit.
+Once a rule passes these steps, see [[planning-one-trade]] to take one trade from entry to exit, and the next lesson, [[same-chart-three-strategies]], to compare three rules on one chart.

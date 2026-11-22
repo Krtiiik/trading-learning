@@ -11,7 +11,7 @@ An **index** is a number that tracks the combined price of a chosen group of ass
 
 ## How an index is weighted
 
-Most indices, such as the S&P 500, FTSE 100 and DAX, are **cap-weighted**: each company counts in proportion to its **market value** (its "cap"), which is its share price times its number of shares.
+Most indices, such as the S&P 500, FTSE 100 and DAX, are **cap-weighted**: each company counts in proportion to its [[valuation|market value]] (its "cap").
 
 The Dow and the Nikkei 225 are **price-weighted**: they add up the share prices, so a stock with a high price counts more, whatever the company's size.
 

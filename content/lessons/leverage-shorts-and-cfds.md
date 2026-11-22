@@ -44,7 +44,7 @@ The interest is on the full position value, not on your margin:
 - **25 shares**: 7% of $1,050 is $73.50 a year, about 20 cents a night.
 - **1,190 shares**: 7% of $49,980 is about $3,500 a year, about $290 a month. Almost 3% of the account each month, even if the price does not move.
 
-The planned trade was held for months and sold at $64 for a $550 gain. As a CFD held six months, financing takes about $37 of that, over seven times the $5 commission. A short CFD usually pays less financing, or gets a small credit, but the borrow fee and dividends from Step 2 still apply.
+The planned trade was held about eight months and sold at $64 for a $550 gain. As a CFD held those eight months, financing takes about $49 of that, almost ten times the $5 commission. A short CFD usually pays less financing, or gets a small credit, but the borrow fee and dividends from Step 2 still apply.
 
 For a hold of weeks or months, paying for the shares in full is often cheaper. In Czechia, shares held more than 3 years can be tax-free, but CFD gains are taxed however long you hold (see [[taxes-on-trading]]).
 
@@ -59,7 +59,7 @@ A [[gap]] is a jump in price, for example overnight. Stay with the long trade (2
 
 The 25-share trade loses $75 more than planned. The full-margin trade loses most of the account overnight; a drawdown of 83.3% needs a gain of about 500% to get back.
 
-The broker's stop out (also called margin close-out) does not help. In the EU and UK, a CFD broker must close one or more of a private trader's positions when the account value falls to half the required margin. After the gap, the account is far below that, but the stop out also closes at the market price, around $35. It stops a loss that grows step by step; it cannot act inside a gap.
+The broker's [[leverage|stop out]] does not help. In the EU and UK, a CFD broker must close one or more of a private trader's positions when the account value falls to half the required margin. After the gap, the account is far below that, but the stop out also closes at the market price, around $35. It stops a loss that grows step by step; it cannot act inside a gap.
 
 A bigger gap can take more than the account. Below about $33.60, the 1,190 shares lose more than $10,000. EU and UK private CFD traders have negative balance protection: they cannot lose more than their account. [[futures|Futures]], a US stock margin account and CFD accounts with "professional client" status (which brings more leverage) usually have no such protection, and you owe the broker the difference.
 

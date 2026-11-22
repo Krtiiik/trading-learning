@@ -19,7 +19,7 @@ Most trades are small losses: the price crosses the average, then turns back. A 
 
 ## Example
 
-A [[stock]] drifts down to about $40 and stays below its 100-day average for months. Then it climbs, and on the first close above the average, at $42, you buy. It rises for half a year to $70. The dips along the way stay above the average, until it finally closes below it at $64. You sell: a gain of $22 per share before costs, even though you missed both the bottom and the top.
+A [[stock]] slides down to about $40 and stays below its 100-day average for months. Then it climbs, and on the first close above the average, at $42, you buy. It rises for about seven months to $70. The dips along the way stay above the average, until it finally closes below it at $64. You sell: a gain of $22 per share before costs, even though you missed both the bottom and the top.
 
 ## Watch out
 

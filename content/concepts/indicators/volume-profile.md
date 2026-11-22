@@ -2,7 +2,7 @@ A volume profile is an [[indicator]] that shows how much was traded at each pric
 
 ## Example
 
-Take the stock from the [[support-and-resistance|support and resistance]] page (prices where falls or rises stopped more than once): it moves sideways between about $45 and $55 for months, a trading range. A profile over those months, with one bar for each $2 of price, could look like this:
+Take the stock from the [[support-and-resistance|support and resistance]] page: it moves sideways between about $45 and $55 for months, a trading range. A profile over those months, with one bar for each $2 of price, could look like this:
 
 | Price | Volume (million shares) |
 |-------|-------------------------|
@@ -27,7 +27,7 @@ Of 100 million shares, 30 million traded between $49 and $51. Little traded abov
 
 - **High-volume nodes often act like support or resistance.** Many traders bought or sold there, and some act again when the price returns.
 - **The price tends to move fast through low-volume prices.** The edges at $45 and $55 are thin because the price turned there quickly, not because it crossed them. Thin prices matter most beyond a level: if the stock closes above the resistance zone, as with the $56 close in [[breakout-trading]], little stands in its way until the next busy price. The thin volume above $55 is one reason traders expect the price to reach breakout trading's $65 target.
-- **The POC is a reference price.** When the price comes back into the value area, some traders expect it to drift toward the POC.
+- **The POC is a reference price.** When the price comes back into the value area, some traders expect it to move back toward the POC.
 
 ## Which time span
 

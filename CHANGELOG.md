@@ -17,6 +17,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Fixed
 
+- Pages agree on the shared $42 trade: it was held about eight months (taxes on trading said five, the leverage lesson six), and the lesson's CFD financing is now about $49. Wording follows the glossary across pages ("stopped out" for your own stop, no "drift" for price moves, the fixed spread and ETF wording, "5.5 R" for a result), missing links and backlinks are added (liquidity from the first-order lesson, market value, negative balance protection, the next reading-path step), and the trend-following summary no longer suggests going short.
 - Site-wide consistency pass: a page that is not written yet is called "Planned" everywhere; the hover preview and search show "Lesson · Step N" like the lesson cards; a lesson's back link reads "Lessons"; lessons linked from a lesson get their own "Lessons used" list instead of sitting under "Concepts used"; lessons come first in "Used in" lists, in search ties and in the search box label; the navigation marks the section of a concept or lesson page apart from the current page; back and next arrows turn dark on hover; tile links keep their keyboard focus ring inside the tile.
 - Shelf scroll arrows: when one arrow is disabled, the edge the two arrows share no longer looks thinner on the enabled arrow.
 

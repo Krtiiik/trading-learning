@@ -9,7 +9,7 @@ The [[spread]] is a separate cost on top, hidden in the price.
 - **Currency conversion.** When an asset is priced in a different currency from your account (for example, euros in a CZK account), the broker converts your money. It often takes 0.25% to 1.5%, on the purchase and again on the sale unless you keep the foreign currency. The exchange-rate move itself is a separate risk ([[currency-risk]]).
 - **Overnight financing.** With borrowed money ([[leverage]]) or [[cfd|CFDs]], you usually pay interest (in forex, a swap) for each night you hold it.
 - **Borrow fee.** Selling [[short-selling|short]] costs interest on borrowed shares.
-- **Fund costs.** An [[etf]] takes a yearly fee from its assets, the expense ratio.
+- **Fund costs.** An [[etf]] takes a yearly fee from its assets, the expense ratio (in Europe, TER).
 - **Account fees.** A monthly or inactivity fee.
 
 Tax on gains is different: it is charged on profit, not on each order, and differs by country (see [[taxes-on-trading]]).

@@ -75,7 +75,7 @@ groups:
     concepts:
       - {slug: strategy, title: Strategy, summary: A fixed set of rules that decides when to enter and exit trades.}
       - {slug: entry-and-exit-rules, title: Entry and exit rules, summary: The exact conditions that open and close a trade.}
-      - {slug: trend-following, title: Trend following, summary: "Buying what is rising and selling what is falling, staying in while the trend lasts."}
+      - {slug: trend-following, title: Trend following, summary: "Buying what is rising and selling once it turns down, staying in while the trend lasts."}
       - {slug: mean-reversion, title: Mean reversion, summary: Betting that a price that moved far from its usual level will come back.}
       - {slug: momentum, title: Momentum, summary: "Buying the assets that rose the most recently, expecting them to keep beating the rest."}
       - {slug: breakout-trading, title: Breakout trading, summary: Entering a trade when the price breaks past a support or resistance level.}

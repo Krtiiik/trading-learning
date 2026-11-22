@@ -17,7 +17,7 @@ Each candle shows four prices, together called [[ohlc]]:
 
 ## Example
 
-A [[stock]] opens the day at $100, climbs to $108, drops to $97 and closes at $105. The daily candle is green, its body runs from $100 to $105, the upper wick reaches $108 and the lower wick reaches $97.
+A [[stock]] opens the day at $100, climbs to $108, drops to $97 and closes at $105. The daily candle is up (usually green), its body runs from $100 to $105, the upper wick reaches $108 and the lower wick reaches $97.
 
 ## Why candles instead of a line
 

@@ -26,7 +26,7 @@ Your **account value** is your $1,000 plus or minus the open gain or loss.
 
 ## Losing more than you deposit
 
-A fast move or a weekend [[gap]] can go past the stop-out level. You can then lose more than your account and owe the broker the difference. In the EU and UK, private CFD traders have **negative balance protection**: they cannot lose more than their account.
+A fast move or a weekend [[gap]] can go past the stop-out level. You can then lose more than your account and owe the broker the difference. In the EU and UK, private CFD traders have [[cfd|negative balance protection]]: they cannot lose more than their account.
 
 ## Limits by market
 
@@ -47,7 +47,7 @@ For US stocks, after the purchase your own money must stay at 25% of the positio
 
 ## Watch out
 
-- **A leveraged position usually costs interest** for each night held. See [[fees-and-commissions]].
+- **A leveraged position usually costs interest** each night ([[futures]] margin does not). See [[fees-and-commissions]].
 - **"Professional client" status removes the limits**, and often negative balance protection. See [[cfd]] for who qualifies.
 - **The maximum leverage is a limit, not a target.** Use position sizing and a [[stop-loss]] to keep your risk small.
 - **Leverage makes a [[drawdown]] deeper.**
