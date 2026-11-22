@@ -17,7 +17,7 @@ A few dozen stocks from different industries remove most company-specific risk. 
 
 ## Correlation: do they move together?
 
-**Correlation** tells you how closely two prices move together: whether they tend to rise and fall on the same days. Two oil companies are closely correlated, because both depend on the oil price. An oil company and a software company are less so. Different kinds of assets, such as stocks, [[bond|bonds]] and [[commodity|commodities]], often move differently, but not always.
+**Correlation** tells you how closely two prices move together: whether they tend to rise and fall on the same days. Two oil companies are closely correlated: both depend on the oil price. An oil company and a software company are less so. Different kinds of assets, such as stocks, [[bond|bonds]] and [[commodity|commodities]], often move differently, but not always.
 
 Diversification works only with assets that are not closely correlated.
 
@@ -32,8 +32,8 @@ Assets that move together act like one larger position, so their risks add up. M
 ## Watch out
 
 - **In a crash, many assets fall together.** Correlations rise when markets panic, as in 2008.
-- **Ten stocks can be one bet.** Check what drives each asset: industry, country, [[currency-risk|currency]]. Even a fund of stocks from many countries is about two-thirds to three-quarters in dollars.
+- **Ten stocks can be one bet.** Check what drives each asset: industry, country, [[currency-risk|currency]]. Even a world stock fund is mostly in dollars.
 - **A gap hits all correlated positions at once.** A [[gap]] (a jump in price, for example overnight) can take all three past their stops: you lose more than $300.
 - **Diversification makes one loss smaller; it does not stop losses.** It makes the gain from one good idea smaller too.
 
-Next, see [[position-sizing]] for the risk per trade, [[drawdown]], or [[rebalancing]] to keep a mix.
+Next, see [[position-sizing]] for the risk per trade, [[drawdown]], [[rebalancing]] to keep a mix, or the lesson [[building-a-simple-portfolio]].

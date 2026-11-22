@@ -2,7 +2,7 @@
 title: Building a simple long-term portfolio
 summary: Build a low-cost mix of index funds and bonds, see what fees and compounding do over 30 years, and keep the mix through a crash.
 added: 2026-11-22
-builds_on: [stock, index, etf, bond, diversification, buy-and-hold, rebalancing, drawdown, fees-and-commissions, dividend, currency-risk, taxes-on-trading]
+builds_on: [stock, index, etf, bond, diversification, buy-and-hold, rebalancing, drawdown, volatility, fees-and-commissions, dividend, currency-risk, taxes-on-trading]
 ---
 Most of this site is about trading: buying and selling within days or weeks. This lesson is for the reader who wants to invest for decades. It shows how a simple portfolio (all the investments you hold) of two funds works. It is not advice on what you should buy.
 
@@ -10,7 +10,7 @@ Most of this site is about trading: buying and selling within days or weeks. Thi
 
 A single [[stock]] can fall 50% on bad news about one company. With $10,000 in that stock, you lose $5,000. Spread it over 20 stocks, $500 each, and the same news costs $250. This is [[diversification]].
 
-An [[etf]] (a fund that holds many assets and trades like one stock) that follows a broad [[index]] (a number that tracks the combined price of a basket of stocks) does this in one purchase. A world stock index such as the MSCI World tracks more than 1,000 large and mid-sized companies in about 23 rich countries, so no single failure matters much. What remains is market-wide risk: when most stocks fall, the fund falls too.
+An [[etf]] (a fund that holds many assets and trades like one stock) that follows a broad [[index]] (a number that tracks the combined price of a basket of stocks) does this in one purchase. One example is a fund that follows the MSCI World, an index of more than 1,000 large and mid-sized companies in about 23 developed countries, so no single failure matters much. What remains is market-wide risk: when most stocks fall, the fund falls too.
 
 Picking stocks also rarely pays. S&P, the company behind the S&P 500 (an index of about 500 large US companies), publishes SPIVA reports. They find that over 15 years about 9 in 10 US large-company funds run by professional stock pickers did worse than that index. This is why most [[buy-and-hold]] investors buy a fund that follows the index instead of trying to beat it.
 
@@ -22,18 +22,18 @@ Stocks usually grow more but [[volatility|swing more]]. Bonds usually grow less 
 
 ## Step 3: Which fund can an EU buyer pick?
 
-Private traders in the EU usually cannot buy US-listed ETFs, so they buy European-listed funds marked **UCITS** (an EU fund standard). Check four things in the fund's name and fact sheet:
+Private traders in the EU usually buy European-listed funds marked UCITS (an EU fund standard). The [[etf]] page explains why and what each item means. In the fund's name and fact sheet, check:
 
-1. **TER** (total expense ratio, the same as the expense ratio): the yearly fee, taken from the fund's assets; you get no bill. Broad stock ETFs often charge 0.03% to 0.20%.
-2. **Acc or Dist**: an accumulating fund reinvests each [[dividend]] (money a company pays for each share you own) for you; a distributing fund pays it out.
-3. **Domicile**: the country the fund is registered in, usually Ireland or Luxembourg. On US dividends, the US keeps back 15% from an Irish fund and usually 30% from a Luxembourg one. This comes out of the fund's return, and you cannot reclaim it.
-4. **Currency**: a euro-priced world fund is still over 70% US companies, so its value moves with the dollar. A euro-hedged version removes most of that, but in 2026 it cost about 1 to 2 percentage points a year.
+1. **TER**: the fund's yearly fee. Lower is better (Step 5 shows why).
+2. **Acc or Dist**: whether the fund reinvests each [[dividend]] (money a company pays for each share you own) or pays it out. This changes your tax (Step 4).
+3. **Domicile**: the country the fund is registered in. It decides how much US tax is kept back from US dividends.
+4. **Currency**: a euro-priced world fund still moves with the dollar. A hedged version removes most of that, at a yearly cost: see [[currency-risk]].
 
-Currency matters more for bonds, whose returns are smaller: a currency swing can erase years of interest. So many bond funds for EU buyers hold euro bonds or hedge to euros. If your money is in koruna, euro bonds still move with the euro–koruna rate (the price of a euro in koruna), though it usually swings less than the dollar. See [[currency-risk]].
+Currency matters more for bonds, whose returns are smaller, so many bond funds for EU buyers hold euro bonds or hedge to euros. If your money is in koruna, euro bonds still move with the euro–koruna rate, though it usually swings less than the dollar.
 
 ## Step 4: What about tax?
 
-Tax rules differ by country. These are the simplified 2026 rules for a Czech resident, not tax advice; [[taxes-on-trading]] compares them with the US and UK. A sale of fund units held more than 3 years is tax-free. Sales of any age are also tax-free in a year when what you get for all your sales of shares, funds and bonds (the sale prices, not the profits) adds up to no more than 100,000 CZK. When you sell part of a holding, the oldest units count as sold first. A distributing fund's payouts are taxed each year, usually at 15%, and you declare them in your tax return. So an accumulating fund, which pays out nothing, is not taxed while you hold it and can be sold with no Czech tax at all after 3 years.
+Tax rules differ by country. These are the simplified rules for a Czech resident as of 2026, not tax advice; [[taxes-on-trading]] compares them with the US and UK. A sale of fund units held more than 3 years is tax-free. Sales of any age are also tax-free in a year when what you get for all your sales of shares, funds and bonds (the sale prices, not the profits) adds up to no more than 100,000 CZK. When you sell part of a holding, the oldest units count as sold first. A distributing fund's payouts are taxed each year, usually at 15%, and you declare them in your tax return. So an accumulating fund, which pays out nothing, is not taxed while you hold it and can be sold with no Czech tax at all after 3 years.
 
 ## Step 5: What do fees do over 30 years?
 

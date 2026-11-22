@@ -8,7 +8,7 @@ This lesson follows one order: you buy 100 shares of a US [[stock]] priced near 
 
 ## Step 1: Who carries out your order?
 
-You cannot send an order to an [[exchange]] yourself. Your [[broker]] passes it on to an exchange or another market, and holds your cash and shares. So check the broker before your first order: in Czechia, look it up in the register of the ČNB (the Czech National Bank; elsewhere in the EU, your country's regulator). A firm that is not in the ČNB register may not offer you investment services in Czechia. An EU broker from another country is also listed there, as a foreign firm. The register also shows the broker's home country, and that country's compensation scheme covers you if the broker fails and cannot give back your cash and shares, up to a limit. It does not pay for losses on your trades.
+You cannot send an order to an [[exchange]] yourself. Your [[broker]] passes it on to an exchange or another market, and holds your cash and shares. So check the broker before your first order: in Czechia, look it up in the register of the ČNB (the Czech National Bank); elsewhere in the EU, look in your national regulator's register. A firm that is not in the ČNB register may not offer you investment services in Czechia. An EU broker from another country is also listed there, as a foreign firm. The register also shows the broker's home country, and that country's compensation scheme covers you if the broker fails and cannot give back your cash and shares, up to a limit. It does not pay for losses on your trades.
 
 In the US, large trading firms often pay brokers to send them small orders, which the firms then fill themselves ([[fees-and-commissions|payment for order flow]]). The EU bans this, so EU brokers send orders elsewhere: often to a German market such as Tradegate or gettex, not to New York. That matters for the hours (Step 4) and the currency (Step 5).
 
@@ -46,7 +46,7 @@ For a first order in a large, busy stock, a market order is simple. A limit orde
 The book above is a liquid one: many shares wait near a narrow spread. Two things make it thinner.
 
 - **A small or rarely traded stock.** Low [[volume]] (few shares traded each day) usually comes with fewer waiting orders and a wider spread.
-- **The hour.** The US regular session runs 9:30–16:00 New York time (15:30–22:00 Prague time; an hour earlier for two or three weeks in March and about one week around the end of October; see [[trading-hours]]). Some German venues, such as gettex, stay open until 23:00 Prague time. At 22:30 Prague time, the New York regular session has ended, so few orders wait. The bid might be $49.90 and the ask $50.10: a 20-cent spread, so the round trip costs $20 in spread instead of $4. The same happens in the morning, before New York opens.
+- **The hour.** The US regular session runs 9:30–16:00 New York time (15:30–22:00 CET; an hour earlier for two or three weeks in March and about one week around the end of October; see [[trading-hours]]). Some German venues, such as gettex, stay open until 23:00 CET. At 22:30 CET, the New York regular session has ended, so few orders wait. The bid might be $49.90 and the ask $50.10: a 20-cent spread, so the round trip costs $20 in spread instead of $4. The same happens in the morning, before New York opens.
 
 So trade US stocks while New York is open, and use limit orders when the book is thin.
 

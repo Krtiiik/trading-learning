@@ -20,13 +20,13 @@ The **expense ratio** (in Europe, TER: total expense ratio) is the fund's yearly
 
 Private traders in the EU and UK usually cannot buy US-listed ETFs: in the EU, these funds lack the key information document (a short standard fact sheet) the rules require; in the UK, similar disclosure rules block them. So most buy ETFs listed in Europe, often marked **UCITS** (an EU fund standard).
 
-- **Acc or Dist (in the fund's name).** A **distributing** fund pays [[dividend|dividends]] out to you. An **accumulating** fund reinvests them, so [[buy-and-hold|compounding]] runs by itself. In Czechia, nothing is then taxed until you sell, and not at all after 3 years or under the 100,000 CZK limit ([[taxes-on-trading]]).
+- **Acc or Dist (in the fund's name).** A **distributing** fund pays [[dividend|dividends]] out to you. An **accumulating** fund reinvests them, so [[buy-and-hold|compounding]] runs by itself. In Czechia, nothing is then taxed until you sell, and not at all after 3 years, or in a year when your sales of shares, funds and bonds total 100,000 CZK or less ([[taxes-on-trading]]).
 - **Domicile** (the country the fund is registered in). Most UCITS ETFs are Irish or Luxembourg funds. On US dividends, the US keeps back 15% from an Irish fund and usually 30% from a Luxembourg one. It comes out of the fund's return; you file no US form and cannot reclaim it.
-- **Currency.** A euro-priced world stock fund is still over 70% US companies, so it moves with the dollar. A **hedged** version removes most of that, but costs more: about 1 to 2 percentage points a year for a euro-hedged US stock fund in 2026, from the interest-rate gap. See [[currency-risk]].
+- **Currency.** A euro-priced world stock fund is still over 70% US companies, so it moves with the dollar. A **hedged** version removes most of that, for a yearly cost (see [[currency-risk]]).
 
 ## Watch out
 
 - **Leveraged and inverse ETFs reset every day.** A 2x ETF aims for twice the daily move of its index, an inverse ETF for the opposite. Over weeks, the result strays from that aim, usually downward when markets swing up and down. An index at 100 rises 10% to 110, then falls 10% to 99: a loss of 1%. A 2x ETF goes from 100 to 120, then to 96: a loss of 4%, not 2%. See [[leverage]].
 - **ETFs that trade little have a wide [[spread]]**, and their price can move further from the holdings' value. Check the [[bid-and-ask|bid and ask]]; use a [[order-types|limit order]]. See [[liquidity]].
 
-Next, see [[index]], or [[fees-and-commissions]] for other trading costs.
+Next, see [[index]], [[fees-and-commissions]] for other trading costs, or the lesson [[building-a-simple-portfolio]].

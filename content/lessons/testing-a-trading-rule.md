@@ -58,9 +58,9 @@ Check three things before you believe any result:
 
 1. **Overfitting.** Did you try many lengths and stops (a 97-day average, a stop at $3.80) and keep the best? Then the rules may fit chance moves. Tune on the first years of data only, then run the rules unchanged, once, on the last years.
 2. **Look-ahead bias.** Did the test use anything not known at the time? A rule that checks the day's close but buys at that day's open could never be traded.
-3. **Missing costs.** Add the [[spread]], [[fees-and-commissions|fees]] and [[liquidity|slippage]]. At $5 per round trip, the total falls to +$730, the expectancy to about $73 per trade, and the maximum drawdown grows to $140 (see [[what-your-first-order-costs]]).
+3. **Missing costs.** Add the [[spread]], [[fees-and-commissions|fees]] and [[liquidity|slippage]]. At $5 per round trip ($2.50 per order, as in [[planning-one-trade]]), the total falls to +$730, the expectancy to about $73 per trade, and the maximum drawdown grows to $140.
 
-If your account is in CZK or EUR, the result in your own money differs from the dollar result, because the exchange rate moves too: see [[currency-risk]]. Your broker also takes a [[fees-and-commissions|currency conversion fee]] each way, often 0.25% to 1.5%. On a position of about $1,050 that is about $5 to $32 per round trip, large next to the $73 expectancy left after commission.
+If your account is in CZK or EUR, the result in your own money differs from the dollar result, because the exchange rate moves too: see [[currency-risk]]. Your broker also takes a [[fees-and-commissions|currency conversion fee]] each way, often 0.25% to 1.5%. On a position of about $1,050 that is about $5 to $32 per round trip, large next to the $73 expectancy left after commission. [[what-your-first-order-costs]] adds up these costs for one order.
 
 ## Step 6: Does it work with real money?
 

@@ -2,8 +2,8 @@ A **REIT** (real estate investment trust) is a company that owns property or pro
 
 ## Two kinds
 
-- **Equity REITs** own buildings and collect rent. Most keep to one sector: offices, flats, warehouses, data centres or shopping centres.
-- **Mortgage REITs** own few or no buildings. They mostly lend money on property, or buy such loans, and earn interest.
+- **Equity REITs** own buildings and collect rent. Most keep to one sector, such as offices, flats, warehouses or data centres.
+- **Mortgage REITs** mostly lend money on property, or buy such loans, and earn interest.
 
 ## The payout rule
 
@@ -17,11 +17,11 @@ A company's profit subtracts **depreciation**: a yearly cost for the wear of its
 
 A REIT trades at $40 and pays 50 cents each quarter (every three months): $2 a year. Its dividend yield (the past year's dividends divided by the price) is $2 / $40 = 5%.
 
-Say rates rise and the price falls to $32; the dividend stays the same. The dividend yield is now $2 / $32 = 6.25%, but you lost $8 per share (20%), more than a year of dividends.
+Say rates rise and the price falls to $32; the dividend stays the same. The dividend yield is now $2 / $32 = 6.25%, but you lost $8 per share (20%), four years of dividends.
 
 ## Why rising interest rates hurt
 
-Income buyers compare a REIT's dividend yield with what new [[bond|bonds]] pay. When rates rise, new bonds pay more, so the REIT price falls until its dividend yield is attractive again. Its loan costs rise too. In 2022, US equity REITs lost about 25%.
+Income buyers compare a REIT's dividend yield with what new [[bond|bonds]] pay. When rates rise, new bonds pay more, so the REIT price falls until its dividend yield is attractive again. Loan costs rise too. In 2022, US equity REITs lost about 25%.
 
 ## Many REITs at once
 
@@ -29,8 +29,8 @@ A REIT [[etf]], a fund that holds many assets and trades like one stock, spreads
 
 ## Watch out
 
-- **US REIT dividends are taxed more for US holders.** Most of it is taxed like wages, not at the lower rate for most dividends, though many US holders can deduct 20% of it. As with other US dividends, holders elsewhere have 30% kept back, often 15% with a treaty and form W-8BEN (see [[taxes-on-trading]]).
-- **A high dividend yield can be a warning** (see [[dividend]]). For a REIT, the cause is often tenants leaving or debts growing.
+- **US REIT dividends are taxed more for US holders.** Most of it is taxed like wages, not at the lower dividend rate, though many can deduct 20% of it. Holders elsewhere have 30% kept back, often 15% with a treaty and form W-8BEN, as with other US [[dividend|dividends]]. In Czechia, they are taxed 15% like other dividends, with the US tax credited ([[taxes-on-trading]]).
+- **A high dividend yield can be a warning** (see [[dividend]]). For a REIT, the cause is often leaving tenants or growing debts.
 - **Borrowed money cuts both ways.** REITs buy much of their property with loans (like [[leverage]] for a trader), so falling property values hit shareholders harder.
 - **Unlisted REITs are hard to sell.** You may wait years; fees are often high.
 

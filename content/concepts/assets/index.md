@@ -42,7 +42,7 @@ The index provider checks the list at fixed times, often every three months. It 
 
 ## How people trade an index
 
-People trade products that follow an index: an [[etf]] that holds its stocks, index [[futures]] and [[option|options]], or [[cfd|CFDs]] (contracts with a [[broker]] that pay the change in a price; common in the EU and UK, not offered to private traders in the US). A product that follows a broad index spreads your money over many companies ([[diversification]]).
+People trade products that follow an index: an [[etf]] that holds its stocks, index [[futures]] and [[option|options]], or [[cfd|CFDs]] (contracts with a [[broker]] that pay the change in a price, common in the EU and UK but not offered to private traders in the US). A product that follows a broad index spreads your money over many companies ([[diversification]]).
 
 ## Watch out
 

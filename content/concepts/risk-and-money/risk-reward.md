@@ -16,7 +16,7 @@ You have a $10,000 account and risk 1%. You buy 25 shares of a [[stock]] at $42 
 - Reward: $54 − $42 = $12 per share, $300 for the 25 shares.
 - Ratio: $12 / $4 = **3 to 1**.
 
-The price passes $54 and still rises, so you decide to keep the shares and sell later at $64: a gain of $22 per share. After the fact, the trade made 5.5 times the risk (5.5 to 1). Keep the plan (3 to 1) and the result apart.
+Here $54 is only a check: no sell order waits there. So the trade stays open until the trend-following rule's [[entry-and-exit-rules|signal exit]] (a close below the 100-day average) sells at $64: a gain of $22 per share. The trade made 5.5 times the risk (5.5 to 1). Keep the plan (3 to 1) and the result apart.
 
 ## The win rate you need
 
@@ -39,7 +39,7 @@ At 2 to 1, one win pays for two losses, so winning more than a third of your tra
 ## Watch out
 
 - **A far target looks good but is seldom reached.** A target at $82 gives 10 to 1 on paper. If the price almost never gets there, the ratio is only a hope.
-- **Do not move the stop to make the ratio look better.** A stop at $40 instead of $38 turns the same target into 6 to 1. But the stop belongs where normal day-to-day wobbles do not reach it; too close, and a wobble triggers it and sells you out of a trade that would have worked.
+- **Do not move the stop to make the ratio look better.** A stop at $40 instead of $38 turns the same target into 6 to 1. But a stop that close is reached by normal day-to-day wobbles, which sell you out of trades that would have worked.
 - **The ratio means nothing alone.** Trades planned at 3 to 1 that win 20% of the time lose money.
 
 Next, see [[drawdown]], or try the lesson [[planning-one-trade]].

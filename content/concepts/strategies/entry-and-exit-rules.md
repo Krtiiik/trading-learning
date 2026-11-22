@@ -25,7 +25,7 @@ The vague idea "buy when the [[stock]] looks strong" is not a rule. The [[trend-
 - **Signal exit**: on the first day it is below the average, sell the same way.
 - **Stop loss exit**: a stop order $4 below entry.
 
-Near the close the stock is at $42, above its average: you buy. On a $10,000 account, [[position-sizing]] gives 25 shares, about 1% at risk, with the stop at $38. Months later it is below the average at $64, and you sell: a gain of $22 per share, before costs. With no target, the trade stays open while the trend lasts. In a slow fall, the signal exit usually comes before the stop.
+Near the close the stock is at $42, above its average: you buy. On a $10,000 account, [[position-sizing]] gives 25 shares, about 1% at risk, with the stop at $38. Months later it closes below the average at $64: you sell, a gain of $22 a share before costs. No target order waits, so the trade stays open with the trend. In a slow fall, the signal exit usually comes before the stop.
 
 ## Watch out
 
