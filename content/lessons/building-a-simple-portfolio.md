@@ -37,7 +37,7 @@ Tax rules differ by country. These are the simplified rules for a Czech resident
 
 ## Step 5: What do fees do over 30 years?
 
-[[buy-and-hold|Compounding]] means your gains also earn gains. Example, not a forecast: $10,000 that grows 7% a year becomes about $76,000 after 30 years. In koruna or euros, the result also moves with the exchange rate ([[currency-risk]]).
+[[compounding|Compounding]] means your gains also earn gains. Example, not a forecast: $10,000 that grows 7% a year becomes about $76,000 after 30 years. In koruna or euros, the result also moves with the exchange rate ([[currency-risk]]).
 
 The fund's fee comes off that return every year, and the loss compounds too:
 

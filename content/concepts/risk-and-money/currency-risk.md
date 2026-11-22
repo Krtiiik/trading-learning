@@ -23,7 +23,7 @@ Some ETFs have a **hedged** version, often marked "EUR Hedged", which uses contr
 
 ## Months and decades
 
-Over months, a currency move can match the stock move: in the first half of 2025, the dollar lost over 10% against the koruna and the euro. Over decades, stock growth is usually much larger: [[buy-and-hold|compounding]] at 7% a year makes $10,000 about $76,000 in 30 years, still about six times your money after a 20% dollar fall. Currency matters more for short trades, and for [[bond|bonds]] with their smaller returns.
+Over months, a currency move can match the stock move: in the first half of 2025, the dollar lost over 10% against the koruna and the euro. Over decades, stock growth is usually much larger: [[compounding|compounding]] at 7% a year makes $10,000 about $76,000 in 30 years, still about six times your money after a 20% dollar fall. Currency matters more for short trades, and for [[bond|bonds]] with their smaller returns.
 
 Holding assets in several currencies is part of [[diversification]], but even world stock funds are about two-thirds (with emerging markets) to three-quarters in dollars.
 
