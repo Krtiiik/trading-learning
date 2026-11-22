@@ -4,7 +4,7 @@
 {% block main %}
 <article class="article article--lesson is-{{ page.status }}">
   <div class="article__banner banner">{{ page.banner_svg | safe }}</div>
-  <a class="article__group" href="{{ root }}lessons/index.html">Lesson</a>
+  <a class="article__group" href="{{ root }}lessons/index.html">Lessons</a>
   <h1 class="article__title">{{ page.title }}</h1>
   <p class="article__summary">{{ page.summary }}</p>
   {{ page_list("Before you start", page.builds_on, site, root, "builds-on") }}
@@ -19,6 +19,8 @@
     </a>
   </section>
   {% endif %}
-  {{ page_list("Concepts used", page.links, site, root, "related") }}
+  {%- set lesson_links = page.links | select("in", site.lessons | map(attribute="slug") | list) | list %}
+  {{ page_list("Lessons used", lesson_links, site, root, "related") }}
+  {{ page_list("Concepts used", page.links | reject("in", lesson_links) | list, site, root, "related") }}
 </article>
 {% endblock %}

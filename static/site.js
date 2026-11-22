@@ -7,6 +7,11 @@
   var bySlug = {};
   data.pages.forEach(function (p) { bySlug[p.slug] = p; });
 
+  // The kicker over a page: its concept group, or "Lesson · Step N" as on the lesson cards.
+  function kindLabel(p) {
+    return p.group || ("Lesson" + (p.step ? " · Step " + p.step : ""));
+  }
+
   function el(tag, cls, text) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -30,10 +35,10 @@
       preview.appendChild(banner);
     }
     var text = el("div", "link-preview__text");
-    text.appendChild(el("span", "link-preview__group", p.group || "Lesson"));
+    text.appendChild(el("span", "link-preview__group", kindLabel(p)));
     text.appendChild(el("strong", "link-preview__title", p.title));
     text.appendChild(el("p", "link-preview__summary", p.summary));
-    if (p.status === "planned") text.appendChild(el("span", "link-preview__status", "Not written yet"));
+    if (p.status === "planned") text.appendChild(el("span", "link-preview__status", "Planned"));
     preview.appendChild(text);
     var r = link.getBoundingClientRect();
     preview.hidden = false;
@@ -70,7 +75,7 @@
         var a = el("a", "search__link");
         a.href = root + p.url;
         a.appendChild(el("strong", "search__title", p.title));
-        a.appendChild(el("span", "search__meta", (p.group || "Lesson") + (p.status === "planned" ? " · not written yet" : "")));
+        a.appendChild(el("span", "search__meta", kindLabel(p) + (p.status === "planned" ? " · Planned" : "")));
         li.appendChild(a);
         results.appendChild(li);
       });
@@ -130,7 +135,6 @@
 
   // Shelf arrows scroll the single card row by most of its visible width.
   // Arrows disable at either end; a shelf whose cards all fit gets .is-static (arrows hidden).
-  document.documentElement.classList.add("js");
   document.querySelectorAll(".shelf").forEach(function (shelf) {
     var row = shelf.querySelector(".shelf__row");
     var prev = shelf.querySelector(".shelf__arrow--prev");

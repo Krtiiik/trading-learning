@@ -20,7 +20,7 @@
   --banner-fg:     oklch(0.22 0.006 250);
   --banner-up:     oklch(0.56 0.13 150);
   --banner-down:   oklch(0.56 0.17 27);
-  --banner-accent: oklch(0.53 0.18 262);
+  --banner-accent: var(--hi);
 
   --sans: "Geist", "Segoe UI", system-ui, -apple-system, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -43,7 +43,6 @@
     --banner-fg:     oklch(0.92 0.003 250);
     --banner-up:     oklch(0.74 0.14 150);
     --banner-down:   oklch(0.70 0.16 27);
-    --banner-accent: oklch(0.74 0.15 262);
     color-scheme: dark;
   }
 }
@@ -62,7 +61,6 @@
   --banner-fg:     oklch(0.92 0.003 250);
   --banner-up:     oklch(0.74 0.14 150);
   --banner-down:   oklch(0.70 0.16 27);
-  --banner-accent: oklch(0.74 0.15 262);
   color-scheme: dark;
 }
 
@@ -85,7 +83,8 @@ button, input { font: inherit; color: inherit; }
 img, svg { max-width: 100%; }
 
 .label, .card__group, .card__status, .listing-header__count, .listing-header__kicker,
-.article__group, .search__meta, .link-preview__group, .link-preview__status, .site-footer {
+.article__group, .search__meta, .link-preview__group, .link-preview__status, .site-footer,
+.stats dt, .related h2, .backlinks h2, .builds-on h2, .next-lesson h2, .next-lesson__step, .prose th {
   font: 500 11px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
 }
 
@@ -120,6 +119,7 @@ img, svg { max-width: 100%; }
   color: var(--muted); text-decoration: none; white-space: nowrap; font-size: 14px;
 }
 .site-nav__link:hover { color: var(--fg); background: var(--panel); }
+.site-nav__link:focus-visible { outline-offset: -2px; }
 .site-nav__link[aria-current] { color: var(--fg); box-shadow: inset 0 -2px 0 var(--fg); }
 
 /* ---------- search ---------- */
@@ -180,10 +180,9 @@ html.js .theme { display: grid; }
 .ticker__down { fill: var(--banner-down); stroke: var(--banner-down); }
 .ticker__ma { fill: none; stroke: var(--banner-accent); stroke-width: 2; stroke-opacity: .7; }
 .ticker__last { stroke: var(--line-2); stroke-width: 1; stroke-dasharray: 4 4; }
-@media (prefers-reduced-motion: no-preference) {
-  .ticker__track { animation: ticker-scroll 48s linear infinite; }
-  .ticker__last { animation: ticker-last 6s ease-in-out infinite alternate; }
-}
+/* runs with reduced motion too: the owner chose to keep the chart moving */
+.ticker__track { animation: ticker-scroll 48s linear infinite; }
+.ticker__last { animation: ticker-last 6s ease-in-out infinite alternate; }
 @keyframes ticker-scroll { to { transform: translateX(-600px); } }
 @keyframes ticker-last { from { transform: translateY(-24px); } to { transform: translateY(24px); } }
 
@@ -207,7 +206,6 @@ html.js .theme { display: grid; }
 .stats::before { top: -5px; left: -5px; border-top-width: 1px; border-left-width: 1px; }
 .stats::after { bottom: -5px; right: -5px; border-bottom-width: 1px; border-right-width: 1px; }
 .stats div { background: var(--bg); padding: 10px 14px; display: grid; gap: 4px; align-content: start; min-width: 0; }
-.stats dt { font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .stats dd { margin: 0; font: 500 22px/1.1 var(--mono); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 
 /* ---------- shelves (home) ---------- */
@@ -219,7 +217,7 @@ html.js .theme { display: grid; }
 .shelf__title { grid-area: title; margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.2; }
 .shelf__title a { text-decoration: none; }
 .shelf__title a::after { content: " \2192"; font-family: var(--mono); font-weight: 400; color: var(--faint); }
-.shelf__title a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.shelf__title a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 .shelf__title a:hover::after { color: var(--fg); }
 .shelf__blurb { grid-area: blurb; margin: 0; color: var(--muted); font-size: 15px; max-width: 70ch; }
 .shelf__arrows { grid-area: arrows; align-self: end; display: none; }
@@ -280,12 +278,13 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
 /* ---------- article (concept, lesson) ---------- */
 .article { padding-bottom: 56px; }
 .article__banner { border-bottom: 1px solid var(--line); }
-.article.is-planned .article__banner { opacity: .6; filter: grayscale(1); }
+.article.is-planned .article__banner { opacity: .7; filter: grayscale(1); }
 /* one shared column: a fixed length, not ch, so every child lines up whatever its font size */
 .article > :not(.article__banner) { width: min(100% - 2 * var(--gutter), 700px); margin-inline: auto; }
 .article__group { display: block; margin-top: 36px; text-decoration: none; }
 .article__group:hover { color: var(--fg); }
-.article__group::before { content: "\2190  "; }
+.article__group::before { content: "\2190  "; color: var(--faint); }
+.article__group:hover::before { color: var(--fg); }
 .article__title { margin: 10px auto 0; font-size: clamp(32px, 5vw, 52px); line-height: 1.04; letter-spacing: -0.035em; font-weight: 600; text-wrap: balance; }
 .article__summary { margin: 16px auto 0; font-size: 19px; line-height: 1.5; color: var(--muted); text-wrap: pretty; }
 .article__planned {
@@ -298,9 +297,7 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
 /* link lists: Related, Used in, Before you start, Concepts used */
 .related, .backlinks, .builds-on { margin-top: 44px; }
 .builds-on { margin-top: 32px; }
-.related h2, .backlinks h2, .builds-on h2 {
-  margin: 0 0 10px; font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
-}
+.related h2, .backlinks h2, .builds-on h2 { margin: 0 0 10px; }
 .page-list {
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -313,24 +310,23 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
 }
 .page-list .concept-link::after { content: "\2192"; font-family: var(--mono); color: var(--faint); }
 .page-list .concept-link:hover { background: var(--panel); }
+.page-list .concept-link:focus-visible { outline-offset: -2px; }
 .page-list .concept-link:hover::after { color: var(--fg); }
 .page-list .concept-link.is-written { color: var(--fg); }
 .page-list .concept-link.is-planned { color: var(--muted); font-weight: 400; }
-.page-list .concept-link.is-planned::after { content: "Planned"; font: 500 10px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.page-list .concept-link.is-planned::after { content: "Planned"; font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 
 /* next lesson on the reading path */
 .next-lesson { margin-top: 44px; }
-.next-lesson h2 {
-  margin: 0 0 10px; font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
-}
+.next-lesson h2 { margin: 0 0 10px; }
 .next-lesson__link {
   display: grid; gap: 4px; padding: 14px 16px; border: 1px solid var(--line);
   text-decoration: none; color: var(--fg);
 }
 .next-lesson__link:hover { background: var(--panel); }
-.next-lesson__step { font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .next-lesson__title { font-size: 18px; font-weight: 600; }
 .next-lesson__title::after { content: " \2192"; font-family: var(--mono); color: var(--faint); }
+.next-lesson__link:hover .next-lesson__title::after { color: var(--fg); }
 .next-lesson__summary { color: var(--muted); font-size: 15px; }
 
 /* ---------- prose ---------- */
@@ -354,7 +350,7 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
 .prose blockquote { margin-left: 0; padding: 2px 0 2px 16px; border-left: 2px solid var(--fg); color: var(--muted); }
 .prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 15px; }
 .prose th, .prose td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; vertical-align: top; }
-.prose th { font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--panel); }
+.prose th { background: var(--panel); }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 
 /* concept links in text: written ones carry the highlight, planned ones stay quiet */
@@ -373,8 +369,10 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
 .link-preview.is-planned .link-preview__banner { opacity: .7; filter: grayscale(1); }
 .link-preview__text { display: grid; gap: 4px; padding: 12px 14px; }
 .link-preview__title { font-size: 15px; font-weight: 600; }
+.link-preview.is-planned .link-preview__title { color: var(--muted); font-weight: 500; }
 .link-preview__summary { margin: 0; color: var(--muted); line-height: 1.45; }
-.link-preview__status { color: var(--faint); }
+.link-preview__status { display: inline-flex; align-items: center; gap: 6px; color: var(--faint); }
+.link-preview__status::before { content: ""; width: 7px; height: 7px; border: 1px solid currentColor; }
 
 /* ---------- footer ---------- */
 .site-footer { display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; padding: 18px var(--gutter); border-top: 1px solid var(--line); }
@@ -392,8 +390,7 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
 }
 @media (max-width: 560px) {
   :root { --gutter: 16px; }
-  .site-brand { padding: 12px 14px; }
-  .site-brand { font-size: 15px; }
+  .site-brand { padding: 12px 14px; font-size: 15px; }
   .search__input { padding: 10px 12px; }
   .shelf__row { grid-auto-columns: calc(100% / 1.3); }
   .shelf__header { grid-template-areas: "title title" "blurb blurb" ". arrows"; row-gap: 8px; }
@@ -403,5 +400,7 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
   .prose { font-size: 16px; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .card, .site-nav__link, .shelf__arrow, .page-list .concept-link { transition: background-color .12s, color .12s; }
+  .card, .site-nav__link, .shelf__arrow, .page-list .concept-link, .search__link, .theme, .next-lesson__link,
+  .article__group, .article__group::before, .next-lesson__title::after, .page-list .concept-link::after,
+  .listing-header__kicker a, .site-footer a, .shelf__title a, .shelf__title a::after { transition: background-color .12s, color .12s; }
 }

@@ -147,7 +147,7 @@ def test_backlinks_collect_links_and_lesson_prerequisites(site_root):
     add_lesson(site_root, builds_on="[trend]", body="Look at a [[candle]].")
     site = build.load_site(site_root)
     assert site.pages["wick"].backlinks == ["candle"]
-    assert site.pages["trend"].backlinks == ["candle", "first-chart"]
+    assert site.pages["trend"].backlinks == ["first-chart", "candle"]  # lessons first
     assert site.pages["candle"].backlinks == ["first-chart"]
     assert site.pages["first-chart"].links == ["candle"]
 
@@ -176,6 +176,42 @@ def test_each_path_lesson_points_to_the_next_step(site_root):
     assert site.pages["first"].next_lesson == "second"
     assert site.pages["second"].next_lesson is None
     assert site.pages["side"].next_lesson is None
+
+
+def test_lesson_page_lists_linked_lessons_apart_from_concepts(site_root, tmp_path):
+    add_lesson(site_root, slug="first", step=1)
+    add_lesson(site_root, slug="second", step=2, body="After [[first]], look at a [[candle]].")
+    out = tmp_path / "dist"
+    build.build(site_root, out)
+    second = (out / "lessons" / "second.html").read_text(encoding="utf-8")
+    lessons_used = second[second.index("<h2>Lessons used</h2>"):second.index("<h2>Concepts used</h2>")]
+    concepts_used = second[second.index("<h2>Concepts used</h2>"):]
+    assert 'href="../lessons/first.html"' in lessons_used and "candle" not in lessons_used
+    assert 'href="../concepts/candle.html"' in concepts_used and "first.html" not in concepts_used
+    assert '<a class="article__group" href="../lessons/index.html">Lessons</a>' in second
+
+
+def test_nav_marks_the_current_page_and_the_section_of_a_child_page(site_root, tmp_path):
+    add_lesson(site_root)
+    out = tmp_path / "dist"
+    build.build(site_root, out)
+    def nav(rel):
+        page = (out / rel).read_text(encoding="utf-8")
+        return page[page.index('<nav class="site-nav"'):page.index("</nav>")]
+    assert 'lessons/index.html" aria-current="page"' in nav("lessons/index.html")
+    assert 'lessons/index.html" aria-current="true"' in nav("lessons/first-chart.html")
+    assert 'aria-current="page"' not in nav("lessons/first-chart.html")
+    assert 'aria-current="true"' in nav("concepts/candle.html") and 'aria-current="page"' not in nav("concepts/candle.html")
+
+
+def test_search_index_lists_lessons_first_with_their_step(site_root, tmp_path):
+    add_lesson(site_root, step=1)
+    out = tmp_path / "dist"
+    build.build(site_root, out)
+    index_js = (out / "static/index.js").read_text(encoding="utf-8")
+    data = json.loads(index_js.removeprefix("window.LEARNING_INDEX = ").rstrip(";\n"))
+    assert data["pages"][0]["kind"] == "lesson" and data["pages"][0]["step"] == 1
+    assert all("step" not in p for p in data["pages"] if p["kind"] == "concept")
 
 
 def test_lesson_steps_must_be_unique_positive_numbers(site_root):

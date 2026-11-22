@@ -151,7 +151,7 @@ Use mono text arrows, not icon fonts: `→` for "go to", `←` for "back", `←`
 
 ### 5.3 Split rows
 
-A hero or header row can split into cells with a vertical rule between them, for example a `1.35fr / 1fr` intro (copy | panel) or the header's top row (brand | search | theme). Each cell has its own `border-right`. Under 960px, cells stack and the vertical rule becomes a horizontal one.
+A hero or header row can split into cells with a vertical rule between them, for example a `1.35fr / 1fr` intro (copy | panel) or the header's top row (brand | search | theme). Each cell has its own `border-right`. Under 960px, content cells such as the intro stack and the vertical rule becomes a horizontal one; the header's top row stays one row at every width.
 
 ### 5.4 Tiling
 
@@ -190,7 +190,7 @@ Anything placed on it snaps to the grid: start on a crossing, span whole units, 
 
 - Sticky, `--bg`, bottom rule. Two rows of cells, each separated by a vertical rule: brand | search | theme switch on top, the nav alone below. On wide screens the search cell stays 200–300px and an empty cell fills the gap after the brand.
 - **Brand mark**: a 12px square outline with a 6px filled square inside, drawn in CSS, then the name in 600 weight with -0.01em tracking.
-- **Nav links**: 14px, `--muted`, padding 14px 16px, each with a right rule. Hover: `--fg` on `--panel`. Current page: `--fg` with a 2px inset bottom bar (`box-shadow: inset 0 -2px 0 var(--fg)`). Nav scrolls sideways with a hidden scrollbar when it does not fit.
+- **Nav links**: 14px, `--muted`, padding 14px 16px, each with a right rule. Hover: `--fg` on `--panel`. Current page or current section: `--fg` with a 2px inset bottom bar (`box-shadow: inset 0 -2px 0 var(--fg)`). Section links come first by importance (on the learning site: Lessons, then the concept groups). Nav scrolls sideways with a hidden scrollbar when it does not fit.
 - **Search**: a borderless input that fills its cell. Placeholder in `--faint` shows the shortcut (`Search  /`). Focus: `--panel` background plus the same 2px inset bottom bar, no outline. `/` focuses it from anywhere; `Escape` clears; `Enter` opens the first result.
 - Under 1120px, the search cell fills all the width between brand and theme switch.
 
@@ -286,7 +286,7 @@ Links inherit their colour (`a { color: inherit }`). Colour alone never marks a 
 | Focus | `outline: 2px solid var(--hi); outline-offset: 2px` (inset −2px inside tiles) |
 | Disabled | `--faint` text, `--line` border, default cursor |
 | Secondary / not ready | `--muted` text, weight 500 → 400 or 600 → 500, greyscale picture, dashed or dotted lines |
-| Status tag | label style in `--faint`, prefixed by a 7px outlined square (`::before` with `border: 1px solid currentColor`) |
+| Status tag | label style in `--faint`, prefixed by a 7px outlined square (`::before` with `border: 1px solid currentColor`). Use one word for one state everywhere (the learning site says "Planned") |
 | Empty | one muted line with gutter padding |
 
 ## 11. Motion
@@ -298,7 +298,7 @@ Links inherit their colour (`a { color: inherit }`). Colour alone never marks a 
 ```
 
 - Only colour and background change. No transforms, no fades on entry, no spinners for instant work.
-- One exception: the home panel chart scrolls left in a slow seamless loop (48 s), and its last-price line drifts. It is ambient decoration, never content, and it stays still with reduced motion.
+- One exception: the home panel chart scrolls left in a slow seamless loop (48 s), and its last-price line drifts. It is ambient decoration, never content. It also runs with reduced motion, by choice: the slow loop is part of the home page's look.
 - Scroll buttons animate the row in about 180 ms with an ease-out curve (native `behavior: "smooth"` is too slow and can't be tuned). Scroll snap is off while it runs. It also runs with reduced motion, because it is short.
 
 ## 12. Responsive
@@ -316,7 +316,7 @@ Links inherit their colour (`a { color: inherit }`). Colour alone never marks a 
 ## 13. Accessibility and robustness
 
 - Visible focus on every interactive element (`:focus-visible`).
-- `aria-current="page"` for the current nav item; `aria-label` on icon-only buttons and on search.
+- `aria-current="page"` on the nav item that is the current page, `aria-current="true"` on the item for the section a child page belongs to; `aria-label` on icon-only buttons and on search.
 - Core content works without JavaScript. Add `html.js` from the script and show JS-only controls under it.
 - `[hidden] { display: none !important; }` so the attribute always wins.
 - Check contrast: `--muted` on `--bg` must pass 4.5:1 in both themes; `--faint` is only for non-essential text.

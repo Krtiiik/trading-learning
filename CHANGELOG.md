@@ -11,12 +11,13 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Changed
 
-- Home page: the statistics box shows lessons, groups and concepts in one row, over a slowly scrolling candlestick chart (still when the system asks for reduced motion).
+- Home page: the statistics box shows lessons, groups and concepts in one row, over a slowly scrolling candlestick chart.
 - Lessons now come first everywhere: in the header navigation, the home statistics and the footer count, as on the home page shelves.
 - The site header now has two rows at every width: the title, search and theme switch on top, and the concept group navigation alone below.
 
 ### Fixed
 
+- Site-wide consistency pass: a page that is not written yet is called "Planned" everywhere; the hover preview and search show "Lesson · Step N" like the lesson cards; a lesson's back link reads "Lessons"; lessons linked from a lesson get their own "Lessons used" list instead of sitting under "Concepts used"; lessons come first in "Used in" lists, in search ties and in the search box label; the navigation marks the section of a concept or lesson page apart from the current page; back and next arrows turn dark on hover; tile links keep their keyboard focus ring inside the tile.
 - Shelf scroll arrows: when one arrow is disabled, the edge the two arrows share no longer looks thinner on the enabled arrow.
 
 ### Added

@@ -5,12 +5,11 @@
     {% if p.group %}<span class="card__group">{{ p.group.title }}</span>{% elif p.step %}<span class="card__group">Lesson &middot; Step {{ p.step }}</span>{% else %}<span class="card__group">Lesson</span>{% endif %}
     <h3 class="card__title">{{ p.title }}</h3>
     <p class="card__summary">{{ p.summary }}</p>
-    {% if not p.written %}<span class="card__status">Not written yet</span>{% endif %}
+    {% if not p.written %}<span class="card__status">Planned</span>{% endif %}
   </div>
 </a>
 {% endmacro %}
 
-{# One square per concept, filled when written. #}
 {% macro shelf(title, url, blurb, pages, root) %}
 <section class="shelf">
   <header class="shelf__header">

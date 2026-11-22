@@ -235,7 +235,7 @@ def load_site(root: Path, require_banners: bool = True) -> Site:
         for slug in page.builds_on:
             if pages.get(slug, None) is None or pages[slug].kind != "concept":
                 problems.append(f"{page.slug}: builds_on names unknown concept {slug}")
-    for page in pages.values():
+    for page in sorted(pages.values(), key=lambda p: p.kind != "lesson"):  # lessons first in "Used in"
         for slug in _ordered_unique([*page.builds_on, *page.links]):
             if slug in pages and slug != page.slug:
                 pages[slug].backlinks.append(page.slug)
@@ -296,13 +296,15 @@ def site_index(site: Site) -> dict:
     def entry(p: Page) -> dict:
         d = {"slug": p.slug, "kind": p.kind, "title": p.title, "summary": p.summary,
              "url": p.url, "status": p.status}
+        if p.step is not None:
+            d["step"] = p.step
         if p.group:
             d["group"] = p.group.title
         if p.banner_svg:
             d["banner"] = banners.setdefault(_compact_svg(p.banner_svg), len(banners))
         return d
 
-    pages = [entry(p) for p in site.pages.values()]
+    pages = [entry(p) for p in sorted(site.pages.values(), key=lambda p: p.kind != "lesson")]
     return {
         "groups": [{"slug": g.slug, "title": g.title, "url": g.url} for g in site.groups],
         "pages": pages,

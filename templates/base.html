@@ -27,13 +27,13 @@
 <header class="site-header">
   <a class="site-brand" href="{{ root }}index.html">Trading Learning</a>
   <nav class="site-nav" aria-label="Sections">
-    <a class="site-nav__link" href="{{ root }}lessons/index.html"{% if current.startswith("lessons/") %} aria-current="page"{% endif %}>Lessons</a>
+    <a class="site-nav__link" href="{{ root }}lessons/index.html"{% if current == "lessons/index.html" %} aria-current="page"{% elif current.startswith("lessons/") %} aria-current="true"{% endif %}>Lessons</a>
     {% for g in site.groups %}
-    <a class="site-nav__link" href="{{ root }}{{ g.url }}"{% if g.url == ns.group_url %} aria-current="page"{% endif %}>{{ g.title }}</a>
+    <a class="site-nav__link" href="{{ root }}{{ g.url }}"{% if g.url == current %} aria-current="page"{% elif g.url == ns.group_url %} aria-current="true"{% endif %}>{{ g.title }}</a>
     {% endfor %}
   </nav>
   <div class="search">
-    <input class="search__input" type="search" placeholder="Search  /" aria-label="Search concepts and lessons" autocomplete="off">
+    <input class="search__input" type="search" placeholder="Search  /" aria-label="Search lessons and concepts" autocomplete="off">
     <ol class="search__results" hidden></ol>
   </div>
   {# One button that cycles System > Light > Dark. site.js sets data-theme-current, the label and the title. #}
@@ -49,7 +49,7 @@
 {%- set fs = namespace(t=0) %}{% for g in site.groups %}{% set fs.t = fs.t + g.concepts|length %}{% endfor %}
 <footer class="site-footer">
   <a href="{{ root }}index.html">Trading Learning</a>
-  <span>{{ site.lessons|length }} lesson{{ "" if site.lessons|length == 1 else "s" }} · {{ fs.t }} concepts</span>
+  <span>{{ site.lessons|length }} lesson{{ "" if site.lessons|length == 1 else "s" }} · {{ fs.t }} concept{{ "" if fs.t == 1 else "s" }}</span>
 </footer>
 </div>
 <div class="link-preview" hidden></div>
