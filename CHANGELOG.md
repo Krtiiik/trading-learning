@@ -14,6 +14,10 @@ This changelog starts when the learning site got its own repository. Earlier cha
 - Home page: the statistics box shows groups, concepts and lessons in one row, over a slowly scrolling candlestick chart (still when the system asks for reduced motion).
 - The site header now has two rows at every width: the title, search and theme switch on top, and the concept group navigation alone below.
 
+### Fixed
+
+- Shelf scroll arrows: when one arrow is disabled, the edge the two arrows share no longer looks thinner on the enabled arrow.
+
 ### Added
 
 - Lesson: leverage, shorts and CFDs, step 6 of the reading path. It takes the planned $42 trade with 5:1 leverage and short, and shows what margin, overnight financing, gaps, the stop out and negative balance protection do to what you can lose, and how to size so leverage stays a tool.

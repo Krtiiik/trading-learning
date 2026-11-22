@@ -230,7 +230,9 @@ html.js .shelf.is-static .shelf__arrows { display: none; }
   font: 400 16px var(--mono); display: grid; place-items: center; padding: 0;
 }
 .shelf__arrow + .shelf__arrow { margin-left: -1px; }
-.shelf__arrow:hover:not(:disabled) { background: var(--fg); color: var(--bg); border-color: var(--fg); position: relative; }
+/* The arrows share one 1px edge. An enabled arrow paints above a disabled one, so its brighter border is not covered. */
+.shelf__arrow:not(:disabled) { position: relative; }
+.shelf__arrow:hover:not(:disabled) { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 .shelf__arrow:disabled { color: var(--faint); border-color: var(--line); cursor: default; }
 .shelf__row {
   display: grid; grid-auto-flow: column; grid-auto-columns: calc(100% / 4.25);

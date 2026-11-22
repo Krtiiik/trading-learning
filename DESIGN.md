@@ -214,7 +214,7 @@ Title (24px, links to the full list, followed by a faint mono `→`), blurb belo
 
 ### 6.5 Square buttons
 
-40px square (36px on phones), 1px `--line-2` border, `--bg` fill, mono glyph. Hover **inverts**: background `--fg`, text `--bg`. Disabled: `--faint` text and `--line` border. Inversion is the only "strong" hover in the system; keep it for small controls.
+40px square (36px on phones), 1px `--line-2` border, `--bg` fill, mono glyph. Hover **inverts**: background `--fg`, text `--bg`. Disabled: `--faint` text and `--line` border. Side-by-side buttons share one edge (`margin-left: -1px`); an enabled button stacks above a disabled one, so the shared edge keeps the brighter border. Inversion is the only "strong" hover in the system; keep it for small controls.
 
 ### 6.6 Stats block
 
