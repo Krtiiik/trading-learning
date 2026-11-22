@@ -31,8 +31,10 @@ groups:
       - {slug: volume, title: Volume, summary: How much of an asset changed hands during a period.}
       - {slug: trading-hours, title: Trading hours, summary: "When a market is open, and what happens around the open and close."}
       - {slug: fees-and-commissions, title: Fees and commissions, summary: "What you pay the broker, the market and the government to trade."}
+      - {slug: taxes-on-trading, title: Taxes on trading, summary: "How gains, dividends and interest are taxed, with US, UK and Czech examples."}
       - {slug: short-selling, title: Short selling, summary: "Selling something you borrowed, hoping to buy it back cheaper."}
       - {slug: leverage, title: Leverage, summary: "Trading with borrowed money, which enlarges both gains and losses."}
+      - {slug: cfd, title: CFD, summary: "A contract with a broker that pays the change in a price, without owning the asset."}
       - {slug: dividend, title: Dividend, summary: A share of company profit paid out to shareholders.}
 
   - slug: charts
@@ -88,5 +90,6 @@ groups:
       - {slug: stop-loss, title: Stop loss, summary: An order that sells automatically once the price falls to a level you chose.}
       - {slug: drawdown, title: Drawdown, summary: How far your account has fallen from its highest point.}
       - {slug: diversification, title: Diversification, summary: Spreading money across different assets so one loss hurts less.}
+      - {slug: currency-risk, title: Currency risk, summary: "The gain or loss from exchange rates when an asset is priced in a currency that is not your own."}
       - {slug: volatility, title: Volatility, summary: How much and how fast a price swings up and down.}
       - {slug: win-rate-and-expectancy, title: Win rate and expectancy, summary: "How often a strategy wins, and how much it makes on average per trade."}

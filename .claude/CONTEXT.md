@@ -12,6 +12,8 @@ Glossary for Claude: the terms and top-level concepts this project uses with a s
 **Learning site**: the static knowledge base this repository holds, deployed to GitHub Pages.
 _Avoid_: wiki, docs site.
 
+**Reader**: a beginner anywhere, written with EU and especially Czech private traders in mind. Examples stay in US dollars; where a rule, product, tax or cost differs, the page gives the EU (and where useful the Czech) version next to the US one.
+
 **Concept**: a short, standalone page explaining one idea in simple words.
 _Avoid_: term, entry, article.
 
@@ -53,7 +55,7 @@ _Avoid_: guide, tutorial, article.
 - **momentum** (learning site): on strategy pages, the strategy that ranks many assets by past return; on indicator pages, how strong one price's recent moves were (RSI, MACD). Write "momentum strategy" or "momentum indicator" where both could be meant.
 - **drift** (learning site): a target mix changing by itself as prices move (rebalancing). Do not use it for the daily-reset decay of leveraged ETFs.
 - **target / target mix** (learning site): a *target* is a planned sell price (risk-reward); a *target mix* is the planned share of each asset (rebalancing). Never write "target" alone for a mix.
-- **CFD** (learning site): a contract with a broker that pays the change in a price, without holding the asset. Not offered to private traders in the US. Broker owns the term.
+- **CFD** (learning site): a contract with a broker that pays the change in a price, without holding the asset. Common in the EU and UK; not offered to private traders in the US. The cfd page owns the term; broker keeps the one-line gloss.
 - **market maker / large trading firm** (learning site): write "large trading firm" in passing; write "market maker" only where the page explains it.
 - **stop loss** (learning site): two words, no hyphen, as in the catalog title.
 - **private traders** (learning site): the name for retail investors; use it instead of "retail" or "private clients", except when quoting a regulator's rule.

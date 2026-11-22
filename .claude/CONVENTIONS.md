@@ -48,6 +48,8 @@ Skip anything tooling already checks. Prefer a rule plus a one-line reason over 
 - In prose calculations, write division as "/", not "÷".
 - Write ratios as "3 to 1", reward first. Only leverage uses the "30:1" form.
 - Don't state market conventions as universal: some apps, especially in China and Japan, reverse the candle colours, so write "(usually green)" or "(usually red)" when a colour means up or down. Name the market when a rule is not universal (US, UK, EU).
+- Keep the shared examples in US dollars. When a page mentions tax, a regulator, a compensation scheme, a product's availability or trading hours, give the EU version too, and the Czech one where it differs (ČNB, the Czech tax rules). Give times in the exchange's local time, plus CET for exchanges outside Europe. The reader's money is often CZK or EUR, so where a dollar result would differ for them, say so and link currency-risk.
+- Describe CFDs as "common in the EU and UK; not offered to private traders in the US", not as "outside the US", so the EU is not framed as the exception.
 - Write cents as numerals: "1 cent", "40 cents", not "$0.10".
 - End a concept with a "Watch out" section and a linked "Next, see …" line. The Next line should name at least one written page, unless a planned page is clearly the right next step.
 - A concept body is usually 300–500 words (each link counted as its display text, tables left out, since they hold numbers the prose already walks through). 500 is a ceiling, to keep pages short; 300 is only a guide. A shorter page that explains its concept fully is fine, so never pad one to reach the count. Count with `uv run python scripts/build.py --words <slug>`; that count is the one that decides.
