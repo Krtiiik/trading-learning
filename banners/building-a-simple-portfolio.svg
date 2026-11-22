@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A 60/40 mix of stocks and bonds drifts to 66/34 and is rebalanced back to 60/40, above a long portfolio value line that compounds upward over the years with one deep fall">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the portfolio value over the years: slow at first, then faster, with one deep fall -->
+  <path d="M50 335 C250 327 450 302 600 262 L640 248 L700 228 L735 290 L765 305 L800 280 C900 230 1030 150 1150 60 L1150 350 L50 350 Z"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .1"/>
+  <line x1="50" y1="350" x2="1150" y2="350" stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <path d="M50 335 C250 327 450 302 600 262 L640 248 L700 228 M765 305 L800 280 C900 230 1030 150 1150 60"
+        fill="none" stroke-width="6" stroke-linejoin="miter" style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <path d="M700 228 L735 290 L765 305" fill="none" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"
+        style="stroke: var(--banner-down, #d0453a)"/>
+  <!-- the mix: bonds on top, stocks below; 1.5 px per 1% -->
+  <g stroke-width="5">
+    <rect x="60" y="70" width="80" height="60" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)"/>
+    <rect x="60" y="130" width="80" height="90" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .15; stroke: var(--banner-accent, #0b6bcb)"/>
+    <rect x="300" y="70" width="80" height="51" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)"/>
+    <rect x="300" y="121" width="80" height="99" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .15; stroke: var(--banner-accent, #0b6bcb)"/>
+    <rect x="600" y="70" width="80" height="60" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)"/>
+    <rect x="600" y="130" width="80" height="90" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .15; stroke: var(--banner-accent, #0b6bcb)"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" text-anchor="middle">
+    <text x="100" y="110" style="fill: var(--banner-fg, #1a1a1a)">40%</text>
+    <text x="100" y="184" style="fill: var(--banner-accent, #0b6bcb)">60%</text>
+    <text x="340" y="105" style="fill: var(--banner-fg, #1a1a1a)">34%</text>
+    <text x="340" y="180" style="fill: var(--banner-accent, #0b6bcb)">66%</text>
+    <text x="640" y="110" style="fill: var(--banner-fg, #1a1a1a)">40%</text>
+    <text x="640" y="184" style="fill: var(--banner-accent, #0b6bcb)">60%</text>
+  </g>
+  <!-- drift, then rebalance -->
+  <path d="M155 160 L285 160 M269 144 L285 160 L269 176" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <path d="M398 160 L582 160 M566 144 L582 160 L566 176" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="1" text-anchor="middle">
+    <text x="220" y="134" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">DRIFT</text>
+    <text x="490" y="134" style="fill: var(--banner-accent, #0b6bcb)">REBALANCE</text>
+  </g>
+  <!-- legend -->
+  <rect x="760" y="62" width="26" height="26" stroke-width="4" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .15; stroke: var(--banner-accent, #0b6bcb)"/>
+  <rect x="760" y="106" width="26" height="26" stroke-width="4" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .14; stroke: var(--banner-fg, #1a1a1a)"/>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2">
+    <text x="800" y="85" style="fill: var(--banner-accent, #0b6bcb)">STOCKS</text>
+    <text x="800" y="129" style="fill: var(--banner-fg, #1a1a1a)">BONDS</text>
+  </g>
+</svg>
