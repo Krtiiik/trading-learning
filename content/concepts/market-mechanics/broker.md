@@ -29,7 +29,7 @@ You hold 25 shares bought at $42 with a US broker that fails.
 
 ## How to check a broker
 
-Look the broker up in its regulator's list (in the US, FINRA BrokerCheck; in the UK, the FCA register; in the EU, ESMA's registers) and check that the website and contact details match. In Czechia, use the register of the ČNB (the Czech National Bank): a firm not in it has no licence; the ČNB also warns about some unlicensed firms.
+Look the broker up in its regulator's list (in the US, FINRA BrokerCheck; in the UK, the FCA register; in the EU, ESMA's registers) and check that the website and contact details match. In Czechia, use the register of the ČNB (the Czech National Bank): a firm not in it may not offer you investment services in Czechia, even with a licence elsewhere.
 
 ## Watch out
 
