@@ -19,7 +19,7 @@ Check the page as a whole and then every paragraph against each of these:
 
 - **Hard to read**: a sentence the beginner must read twice; a term used before it is explained; a paragraph that does two jobs; jargon where a plain word works; a step that is missing between two ideas.
 - **Inconsistent**: a term, number, colour or definition that differs from another page; a different name for the same idea; an example that contradicts another page's example.
-- **Standalone**: the page needs a click away to make sense. A link should be for going deeper.
+- **Standalone**: the page needs a click away to make sense. A link should be for going deeper. A link's hover preview (its catalog summary) counts as explaining the term, so a parenthesis right after a link that only restates that summary is a finding: ask to remove it.
 - **Conventions**: first mention not linked, wrong link text, no concrete example with numbers, wrong length, lesson frontmatter incomplete, `builds_on` missing a concept the lesson depends on. Length is what `uv run python scripts/build.py --words <slug>` prints (it counts headings, each link as its display text, and leaves tables out): concepts at most 500. Your task gives you that number; do not count by hand. Under 300 is a finding only when something the beginner needs is missing; never ask for text just to reach a count.
 - **Shape**: the opening does not say what the thing is; headings do not match their sections; the page ends without telling the reader where to go next.
 
