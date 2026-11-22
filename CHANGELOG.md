@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: valuation, market value and earnings, the P/E ratio with a worked example, why a high P/E can be fair or risky, index P/E, earnings reports and gaps, and why a low P/E is not a buy signal.
 - Concept page: compounding, gains that earn gains with the $10,000 at 7% example, the rule of 72, reinvested dividends and accumulating funds, how fees and losses compound, and inflation.
 - Lesson: planning one trade, from the written rule through an ATR-based stop, position size, target and costs to a look back at the result.
 - Lesson: does this rule work, turning an idea into exact rules, running the 10-trade backtest, reading win rate, expectancy and drawdown, checking for overfitting, look-ahead bias and missing costs, and testing live with small risk.

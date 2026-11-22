@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A short bar of yearly profit, $3 a share, beside a tall price bar of $42 cut into 14 slices of that profit: the price is 14 times the profit, a P/E ratio of 14">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the yearly profit per share -->
+  <rect x="120" y="310" width="160" height="20" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <!-- one profit is one slice of the price -->
+  <line x1="280" y1="310" x2="440" y2="310" stroke-width="3" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35"/>
+  <!-- the share price, made of 14 profits -->
+  <rect x="440" y="50" width="160" height="280" stroke-width="5"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .18; stroke: var(--banner-accent, #0b6bcb)"/>
+  <rect x="440" y="310" width="160" height="20" style="fill: var(--banner-accent, #0b6bcb)"/>
+  <g stroke-width="2" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .5">
+    <line x1="440" y1="70" x2="600" y2="70"/>
+    <line x1="440" y1="90" x2="600" y2="90"/>
+    <line x1="440" y1="110" x2="600" y2="110"/>
+    <line x1="440" y1="130" x2="600" y2="130"/>
+    <line x1="440" y1="150" x2="600" y2="150"/>
+    <line x1="440" y1="170" x2="600" y2="170"/>
+    <line x1="440" y1="190" x2="600" y2="190"/>
+    <line x1="440" y1="210" x2="600" y2="210"/>
+    <line x1="440" y1="230" x2="600" y2="230"/>
+    <line x1="440" y1="250" x2="600" y2="250"/>
+    <line x1="440" y1="270" x2="600" y2="270"/>
+    <line x1="440" y1="290" x2="600" y2="290"/>
+  </g>
+  <!-- the ground line -->
+  <line x1="60" y1="330" x2="660" y2="330" stroke-width="4" style="stroke: var(--banner-fg, #1a1a1a)"/>
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="2" text-anchor="middle" style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="200" y="372">PROFIT $3 A YEAR</text>
+    <text x="520" y="372">PRICE $42</text>
+  </g>
+  <text x="620" y="205" font-family="system-ui, sans-serif" font-size="40" font-weight="700" style="fill: var(--banner-accent, #0b6bcb)">14×</text>
+  <!-- the ratio -->
+  <g font-family="system-ui, sans-serif" font-weight="700" text-anchor="middle">
+    <text x="940" y="150" font-size="30" letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">PRICE / PROFIT</text>
+    <text x="940" y="270" font-size="110" style="fill: var(--banner-accent, #0b6bcb)">P/E 14</text>
+  </g>
+</svg>

@@ -38,6 +38,6 @@ Expect many small wins and a few large losses, the reverse of trend following. L
 
 - **The price can stay far away longer than you can wait.**
 - **Always use a stop.** Without one, a new downtrend can take away months of small gains.
-- **News can change the usual level.** After a bad profit report, a $50 stock may now be worth $40, and the old average is out of date.
+- **News can change the usual level.** After a bad earnings report, the company's [[valuation|value]] changes: a $50 stock may now be worth $40, and the old average is out of date.
 
 Next, see [[entry-and-exit-rules]], or [[trend-following]] for the opposite approach.

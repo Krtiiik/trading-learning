@@ -24,7 +24,7 @@ Many people buy a basket of companies instead of picking single ones. An [[index
 
 ## Watch out
 
-- **A high share price does not mean a big company or a bad deal.** The company's value is price times shares. A company with 1,000,000 shares at $500 is worth $500 million; one with 1,000,000,000 shares at $5 is worth $5 billion. To judge a price, people compare the company's value with its profit.
+- **A high share price does not mean a big company or a bad deal.** The company's value is price times shares. A company with 1,000,000 shares at $500 is worth $500 million; one with 1,000,000,000 shares at $5 is worth $5 billion. To judge a price, people compare the company's value with its profit: see [[valuation]].
 - **A stock can fall to zero.** If the company fails, you can lose all you paid.
 - **A US stock's result also depends on the dollar.** If your money is in CZK or EUR, the exchange rate changes your gain or loss (see [[currency-risk]]).
 
