@@ -42,12 +42,12 @@ A 50% fall needs a 100% gain: $10,000 falls to $5,000, and $5,000 must double.
 
 ## Risk per trade sets the depth
 
-The example in [[position-sizing]] has 10 losses in a row on a $10,000 account. If each loss takes the full 1% of the current balance, $9,044 is left: a drawdown of 9.56%, which needs a gain of about 11% to recover. Risking 10% leaves $3,487: a drawdown of 65.13%, which needs about 187%. The streak is the same; the risk per trade sets the depth.
+The example in [[position-sizing]] has 10 losses in a row on a $10,000 account. If each loss takes the full 1% of the current balance, $9,044 is left: a drawdown of 9.56%, which needs a gain of about 11% to recover. Risking 10% leaves $3,487: a drawdown of 65.13%, which needs about 187%.
 
 ## Watch out
 
 - **A backtest's maximum drawdown is not the worst you will see.** It is only the worst in that piece of the past. Expect a larger one in real trading.
-- **You must be able to keep following the rules through it.** Before you start, ask if you could accept that fall and that time under water without giving up on the strategy at its lowest point.
+- **You must be able to keep following the rules through it.** Before you start, ask if you could accept that fall and that time under water without giving up at its lowest point.
 - **Do not raise your risk after losses to win the money back.** Bigger positions make the next losses bigger too, so the drawdown gets deeper faster.
 
-Next, see [[diversification]], or [[position-sizing]] to limit it.
+Next, see [[diversification]], [[position-sizing]] to limit it, or try the lesson [[testing-a-trading-rule]].

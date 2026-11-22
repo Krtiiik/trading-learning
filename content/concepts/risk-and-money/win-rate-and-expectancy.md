@@ -45,8 +45,8 @@ The [[spread]] (the gap between the best price buyers offer and the best price s
 
 ## Watch out
 
-- **Ten trades is few.** One more big win or loss would change them a lot. Expectancy from a few trades is a rough guess, not a measurement.
-- **Positive expectancy still has losing streaks.** In the backtest behind this example, trades 2 to 5 were four losses in a row. Such runs pull the account down from its high, its [[drawdown]]. A small risk per trade, set with [[position-sizing]], helps you survive them.
-- **The past is not a promise.** Past expectancy shows how the rules did then, not what they will do next.
+- **Ten trades is few.** One more big win or loss would change them a lot: the expectancy is a rough guess.
+- **Positive expectancy still has losing streaks.** In this backtest, trades 2 to 5 were four losses in a row. Such runs pull the account down from its high, its [[drawdown]]. A small risk per trade, set with [[position-sizing]], helps you survive them.
+- **The past is not a promise.** It shows how the rules did then, not what they will do next.
 
-Next, see [[risk-reward]], then [[drawdown]].
+Next, see [[risk-reward]], then [[drawdown]], or try the lesson [[testing-a-trading-rule]].

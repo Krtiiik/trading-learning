@@ -47,4 +47,4 @@ A limit order trades only at your price or better. A buy limit at $49.98 waits a
 
 The spread comes on top of any [[fees-and-commissions]]. "No commission" is not "no cost": some brokers, mostly [[forex-pair|forex]] ones, earn by widening the spread. Zero-commission stock brokers usually fill at the market's best price, but earn in other ways, such as (in the US) [[fees-and-commissions|payment for order flow]].
 
-Next, see [[liquidity]] for what keeps spreads narrow, or [[fees-and-commissions]] for other costs.
+Next, see [[liquidity]] for what keeps spreads narrow, or [[fees-and-commissions]] for other costs, or try the lesson [[what-your-first-order-costs]].

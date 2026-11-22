@@ -2,7 +2,7 @@ A wick is a thin line above or below the body (the thick part) of a [[candle]]. 
 
 ## Where the wicks start and end
 
-The body is the thick part of the candle. It spans from the open (the first price of the period) to the close (the last price). See [[ohlc]] for all four prices.
+The body spans from the open (the first price of the period) to the close (the last price). See [[ohlc]] for all four prices.
 
 Which end of the body is the open depends on the direction. On an up candle (usually green), the price closed higher than it opened, so the close is at the top and the open at the bottom. On a down candle (usually red), it is the other way round. So:
 
@@ -34,4 +34,4 @@ The price swung $11 from low to high, but only $5 stayed in the body. The wicks 
 - **Two wicks do not show which came first.** OHLC loses the order. In the example, you do not know if the price reached $108 or $97 first.
 - **A wick can still grow until the period ends.** On the newest candle, the high and low are not final yet.
 
-Next, see [[candlestick-pattern|candlestick patterns]] for shapes built from wicks and bodies.
+Next, see [[candlestick-pattern|candlestick patterns]] for shapes built from wicks and bodies, or try the lesson [[reading-your-first-candle-chart]].

@@ -1,4 +1,4 @@
-Rebalancing means trading back to the mix of assets you chose, after price moves have changed it. You sell some of what grew too large and buy what became too small.
+Rebalancing means trading back to the mix of assets you chose, after prices have changed it. You sell some of what grew too large and buy what became too small.
 
 ## Target mix and drift
 
@@ -23,18 +23,18 @@ Stocks rise 30%; bonds stay flat. Stocks are now $7,800, bonds $4,000, the total
 
 ## With new money instead of selling
 
-Put regular new money into the part that is too small. In the example, $7,800 of stocks is 60% of $13,000, so bonds need $5,200: $1,200 of new money, all into bonds, gives 60/40 again with no sale.
+Put regular new money into the part that is too small. In the example, $7,800 of stocks is 60% of $13,000, so bonds need $5,200: $1,200 of new money gives 60/40 again with no sale.
 
 ## What it does
 
 - **It keeps the mix, and so roughly the risk, that you chose.** Without it, a 60/40 mix usually drifts toward stocks, because they tend to rise more, and the next crash hits harder (see [[drawdown]]).
-- **It makes you sell what rose the most and buy what fell behind.** A fixed rule means fear and hope do not decide.
+- **It sells what rose most and buys what fell behind.** A fixed rule means fear and hope do not decide.
 
 ## Watch out
 
-- **Each sale can cost money.** You pay [[fees-and-commissions|fees]] and the [[spread]] (the gap between the best price buyers offer and the best price sellers want). A sale at a gain can also mean tax. New money avoids this, and so do tax-advantaged accounts such as the US IRA: sales inside them are not taxed then. In Czechia, the DIP (a retirement investment account) gives its tax break on what you pay in, not on sales. But a sale of shares, funds or bonds held more than 3 years is tax-free, and so are such sales that total no more than 100,000 CZK a year (see [[taxes-on-trading]]).
+- **Each sale can cost money.** You pay [[fees-and-commissions|fees]] and the [[spread]] (the gap between the best price buyers offer and the best price sellers want). A sale at a gain can also mean tax. New money avoids this, and so do tax-advantaged accounts such as the US IRA, where sales are not taxed then. In Czechia, the DIP (a retirement investment account) gives its tax break on what you pay in, not on sales. But a sale of shares, funds or bonds held more than 3 years is tax-free, and so are such sales that total no more than 100,000 CZK a year (see [[taxes-on-trading]]).
 - **Do not rebalance too often.** Small drifts often reverse; trading on each one adds costs.
 - **It does not promise a higher return.** In a long rise in stocks, it keeps selling the winner, so a mix you never rebalance can end higher.
 - **It means buying what is falling.** In a crash, the rule buys more stocks while they drop, and they can keep falling.
 
-Next, see [[diversification]] for why a mix helps, or [[buy-and-hold]].
+Next, see [[diversification]] for why a mix helps, [[buy-and-hold]], or try the lesson [[building-a-simple-portfolio]].

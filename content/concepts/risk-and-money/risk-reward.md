@@ -30,7 +30,7 @@ Your [[win-rate-and-expectancy|win rate]] is the share of your trades that end i
 | 2 to 1 | 33% |
 | 3 to 1 | 25% |
 
-At 2 to 1, one win pays for two losses, so winning more than a third of your trades makes money. Real exits often differ from the plan, as the $64 sale shows. For what a [[strategy]] makes per trade, see win rate and expectancy.
+At 2 to 1, one win pays for two losses, so winning more than a third of your trades makes money. For what a [[strategy]] makes per trade, see win rate and expectancy.
 
 ## Costs make the ratio smaller
 
@@ -42,4 +42,4 @@ At 2 to 1, one win pays for two losses, so winning more than a third of your tra
 - **Do not move the stop to make the ratio look better.** A stop at $40 instead of $38 turns the same target into 6 to 1. But the stop belongs where normal day-to-day wobbles do not reach it; too close, and a wobble triggers it and sells you out of a trade that would have worked.
 - **The ratio means nothing alone.** Trades planned at 3 to 1 that win 20% of the time lose money.
 
-Next, see [[drawdown]].
+Next, see [[drawdown]], or try the lesson [[planning-one-trade]].

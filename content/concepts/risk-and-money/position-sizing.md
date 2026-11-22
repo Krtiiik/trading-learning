@@ -41,4 +41,4 @@ A very tight stop gives a very large position size. With a stop at $41.90, the r
 - **Costs come on top.** [[fees-and-commissions|Fees]] and the [[spread]] (the gap between the best price buyers offer and the best price sellers want) add to each loss.
 - **Size does not fix a bad trade.** It controls how much a loss hurts, not how often you lose.
 
-Next, see [[risk-reward]], then [[drawdown]].
+Next, see [[risk-reward]], then [[drawdown]], or try the lesson [[planning-one-trade]].

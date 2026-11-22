@@ -26,4 +26,4 @@ The stop also tells you the possible loss to compare with the possible gain: the
 
 A stop loss usually keeps your loss close to what you planned, but it does not guarantee the exact price. If the price jumps past your stop, for example in a [[gap]] overnight, the stop sells at the first price after the jump, which can be well below the stop. If the stock closes at $40 and opens the next morning at $35, the stop sells around $35: a loss of about $7 per share, not $4. With the 25 shares from above, that is about $175 instead of the planned $100.
 
-Next, see [[position-sizing]], then [[risk-reward]].
+Next, see [[position-sizing]], then [[risk-reward]], or try the lesson [[planning-one-trade]].

@@ -38,4 +38,4 @@ Many traders first check a longer timeframe for the [[trend]], then a shorter on
 - **Short timeframes show more noise and cost more.** They usually mean more trades: you pay part of the [[spread]] on most trades, and [[fees-and-commissions|fees]] too if your broker charges them.
 - **The newest candle is not finished.** On a weekly chart, its close is not final for days.
 
-Next, see [[candle]] to read each period, or [[trend]] for the bigger direction.
+Next, see [[candle]] to read each period, or [[trend]] for the bigger direction, or try the lesson [[reading-your-first-candle-chart]].
