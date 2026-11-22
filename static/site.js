@@ -142,10 +142,40 @@
       if (next) next.disabled = row.scrollLeft >= max - 2;
       shelf.classList.toggle("is-static", max <= 2);
     }
+    // Native smooth scrolling is slow and its speed can't be set, so animate scrollLeft ourselves.
+    // Scroll snap is off during the animation, or it would pull back every frame.
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var frame = 0;
+    function scrollRowTo(target) {
+      var max = row.scrollWidth - row.clientWidth;
+      target = Math.max(0, Math.min(max, target));
+      cancelAnimationFrame(frame);
+      if (reduceMotion.matches) {
+        row.scrollLeft = target;
+        return;
+      }
+      var start = row.scrollLeft;
+      var distance = target - start;
+      var duration = 180;
+      var t0 = null;
+      row.style.scrollSnapType = "none";
+      function step(now) {
+        if (t0 === null) t0 = now;
+        var p = Math.min(1, (now - t0) / duration);
+        var eased = 1 - Math.pow(1 - p, 3);
+        row.scrollLeft = start + distance * eased;
+        if (p < 1) {
+          frame = requestAnimationFrame(step);
+        } else {
+          row.style.scrollSnapType = "";
+        }
+      }
+      frame = requestAnimationFrame(step);
+    }
     shelf.querySelectorAll(".shelf__arrow").forEach(function (btn) {
       var dir = btn.classList.contains("shelf__arrow--prev") ? -1 : 1;
       btn.addEventListener("click", function () {
-        row.scrollBy({ left: dir * row.clientWidth * 0.9, behavior: "smooth" });
+        scrollRowTo(row.scrollLeft + dir * row.clientWidth * 0.9);
       });
     });
     row.addEventListener("scroll", update, { passive: true });
