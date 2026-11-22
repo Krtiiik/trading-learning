@@ -11,6 +11,8 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: CFD, how a contract for difference works, the broker as the other side, a worked 5:1 stock CFD, going short, costs, the EU (ESMA and ČNB) protections, the appropriateness test, and the "professional client" trap.
+- Concept page: currency risk, what a dollar result means for a reader whose money is in koruna or euros, why a fund's holdings and not its listing currency decide the risk, currency-hedged funds, and months versus decades.
 - Concept page: rebalancing, target mix and drift, calendar and threshold rebalancing, rebalancing with new money, a worked 60/40 example, and its costs.
 - Concept page: volume profile, volume at each price, the point of control, the value area, high- and low-volume nodes, and a worked profile of the $45–$55 stock.
 - Concept page: REIT (real estate investment trust), equity and mortgage REITs, the payout rule, FFO, a worked dividend yield example, why rising rates hurt REIT prices, and US tax on REIT dividends. The REIT summary now covers property loans too.

@@ -90,6 +90,6 @@ groups:
       - {slug: stop-loss, title: Stop loss, summary: An order that sells automatically once the price falls to a level you chose.}
       - {slug: drawdown, title: Drawdown, summary: How far your account has fallen from its highest point.}
       - {slug: diversification, title: Diversification, summary: Spreading money across different assets so one loss hurts less.}
-      - {slug: currency-risk, title: Currency risk, summary: "The gain or loss from exchange rates when an asset is priced in a currency that is not your own."}
+      - {slug: currency-risk, title: Currency risk, summary: "The gain or loss from exchange rates when an asset's value depends on a currency that is not your own."}
       - {slug: volatility, title: Volatility, summary: How much and how fast a price swings up and down.}
       - {slug: win-rate-and-expectancy, title: Win rate and expectancy, summary: "How often a strategy wins, and how much it makes on average per trade."}

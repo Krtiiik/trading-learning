@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A CFD contract between you and your broker: when the price goes up the broker pays you the change, when it goes down you pay the broker; the asset itself is crossed out, because nobody hands it over">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the contract -->
+  <path d="M380 40 L524 40 L560 76 L560 200 L380 200 Z" stroke-width="4" stroke-linejoin="round"
+        style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .1; stroke: var(--banner-accent, #0b6bcb)"/>
+  <path d="M524 40 L524 76 L560 76" fill="none" stroke-width="4" stroke-linejoin="round"
+        style="stroke: var(--banner-accent, #0b6bcb)"/>
+  <text x="470" y="136" text-anchor="middle" font-family="system-ui, sans-serif" font-size="52" font-weight="700"
+        letter-spacing="4" style="fill: var(--banner-accent, #0b6bcb)">CFD</text>
+  <g fill="none" stroke-width="4" stroke-linecap="round" style="stroke: var(--banner-accent, #0b6bcb); stroke-opacity: .5">
+    <path d="M410 164 L530 164"/>
+    <path d="M410 182 L490 182"/>
+  </g>
+  <!-- the asset: not handed over -->
+  <rect x="690" y="44" width="140" height="120" rx="10" fill="none" stroke-width="3" stroke-dasharray="10 8"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .4"/>
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .25">
+    <rect x="722" y="66" width="34" height="34"/><rect x="764" y="66" width="34" height="34"/>
+    <rect x="722" y="108" width="34" height="34"/><rect x="764" y="108" width="34" height="34"/>
+  </g>
+  <path d="M700 54 L820 154 M820 54 L700 154" fill="none" stroke-width="6" stroke-linecap="round"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .75"/>
+  <text x="760" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700"
+        letter-spacing="3" style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .7">NO ASSET</text>
+  <!-- you: one person -->
+  <g style="fill: var(--banner-fg, #1a1a1a)">
+    <circle cx="120" cy="262" r="24"/><rect x="82" y="292" width="76" height="46" rx="20"/>
+  </g>
+  <!-- the broker -->
+  <rect x="950" y="230" width="210" height="112" rx="16" stroke-width="4"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .06; stroke: var(--banner-fg, #1a1a1a)"/>
+  <!-- price up: the broker pays you -->
+  <path d="M938 254 L204 254" fill="none" stroke-width="6" stroke-linecap="round"
+        style="stroke: var(--banner-up, #1a9b5b)"/>
+  <polygon points="206,238 176,254 206,270" style="fill: var(--banner-up, #1a9b5b)"/>
+  <!-- price down: you pay the broker -->
+  <path d="M190 326 L912 326" fill="none" stroke-width="6" stroke-linecap="round"
+        style="stroke: var(--banner-down, #d0453a)"/>
+  <polygon points="910,310 940,326 910,342" style="fill: var(--banner-down, #d0453a)"/>
+  <!-- labels -->
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="3" text-anchor="middle">
+    <text x="120" y="222" style="fill: var(--banner-fg, #1a1a1a)">YOU</text>
+    <text x="1055" y="296" style="fill: var(--banner-fg, #1a1a1a)">BROKER</text>
+    <text x="565" y="240" style="fill: var(--banner-up, #1a9b5b)">PRICE UP</text>
+    <text x="565" y="312" style="fill: var(--banner-down, #d0453a)">PRICE DOWN</text>
+  </g>
+</svg>
