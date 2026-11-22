@@ -54,6 +54,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Changed
 
+- Lessons now follow a reading path: the four beginner lessons have a step number, show first on the home page and the Lessons page, and each one ends with a link to the next lesson. The Lessons shelf moved to the top of the home page. The portfolio lesson stays separate, for long-term investors.
 - Catalog: put Risk and money in teaching order (volatility, stop loss, position sizing, risk/reward, then results), put entry and exit rules right after strategy, and move CFD and dividend to Assets.
 - Catalog: plan five new concepts: valuation, slippage, trading journal, compounding and trading psychology.
 - The stop loss summary now fits short positions too: it closes a position once the price reaches your level.

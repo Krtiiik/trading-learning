@@ -32,7 +32,7 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined
 HERE = Path(__file__).resolve().parents[1]  # repository root
 LINK = re.compile(r"\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]")
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-LESSON_KEYS = {"title", "summary", "added", "builds_on"}
+LESSON_KEYS = {"title", "summary", "added", "builds_on", "step"}
 PLANNED_BANNER = "_planned"
 CONCEPT_MAX_WORDS = 500
 WORD = re.compile(r"[A-Za-z0-9]")
@@ -58,6 +58,8 @@ class Page:
     banner_svg: str = ""
     group: Group | None = None
     added: dt.date | None = None
+    step: int | None = None  # lessons only: place on the reading path, 1 first
+    next_lesson: str | None = None  # lessons only: slug of the next step on the path
     builds_on: list[str] = field(default_factory=list)
     links: list[str] = field(default_factory=list)  # slugs linked from the body, in order, unique
     backlinks: list[str] = field(default_factory=list)  # slugs of pages linking here
@@ -83,7 +85,7 @@ class Group:
 @dataclass
 class Site:
     groups: list[Group]
-    lessons: list[Page]  # newest first
+    lessons: list[Page]  # the reading path in step order, then the other lessons newest first
     pages: dict[str, Page]  # every concept and lesson by slug
 
 
@@ -194,6 +196,10 @@ def load_site(root: Path, require_banners: bool = True) -> Site:
         if not isinstance(added, dt.date):
             problems.append(f"{where}: added must be a date like 2026-11-20")
             continue
+        step = meta.get("step")
+        if step is not None and (type(step) is not int or step < 1):
+            problems.append(f"{where}: step must be a whole number from 1")
+            continue
         page = Page(
             kind="lesson",
             slug=slug,
@@ -204,11 +210,22 @@ def load_site(root: Path, require_banners: bool = True) -> Site:
             body_md=body,
             added=added,
             builds_on=list(meta.get("builds_on") or []),
+            step=step,
         )
         page.banner_svg = banner_for(slug, True)
         pages[slug] = page
         lessons.append(page)
     lessons.sort(key=lambda p: (p.added, p.slug), reverse=True)
+    by_step: dict[int, Page] = {}
+    for page in sorted((p for p in lessons if p.step is not None), key=lambda p: p.slug):
+        if page.step in by_step:
+            problems.append(f"{page.slug}: step {page.step} is already used by {by_step[page.step].slug}")
+        else:
+            by_step[page.step] = page
+    path = [by_step[n] for n in sorted(by_step)]
+    for page, following in zip(path, path[1:]):
+        page.next_lesson = following.slug
+    lessons = path + [p for p in lessons if p.step is None]
 
     for page in pages.values():
         page.links = _ordered_unique(m.group(1).strip() for m in LINK.finditer(page.body_md))

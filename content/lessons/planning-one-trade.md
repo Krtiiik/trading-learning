@@ -2,6 +2,7 @@
 title: "Planning one trade, from entry to exit"
 summary: "Take one trade from the written rule to the sale: stop, size, target, costs, and a look back at what happened."
 added: 2026-11-22
+step: 3
 builds_on: [entry-and-exit-rules, trend-following, moving-average, order-types, stop-loss, volatility, atr, position-sizing, risk-reward, spread, fees-and-commissions]
 ---
 This lesson follows one trade from the first idea to the sale. Here a trade means one position: a buy and the later sale that closes it. It links the eleven ideas listed above rather than explaining them again.

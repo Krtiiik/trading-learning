@@ -2,6 +2,7 @@
 title: "Does this rule work? From idea to tested strategy"
 summary: Turn a vague idea into exact rules, backtest them, and read the results without fooling yourself.
 added: 2026-11-22
+step: 4
 builds_on: [strategy, entry-and-exit-rules, moving-average, trend-following, stop-loss, position-sizing, backtest, win-rate-and-expectancy, drawdown, fees-and-commissions]
 ---
 This lesson takes one trading idea from a vague hunch to a tested [[strategy]]. Each step answers one question. The ten ideas listed above each have their own short page; this lesson links them instead of explaining them again. Here a trade means one position: a buy and the later sale that closes it.

@@ -29,9 +29,9 @@ All URLs are relative. Every template gets `root` (`""` on the home page, `"../"
 
 | Page | URL | Template | Purpose |
 |---|---|---|---|
-| Home | `index.html` | `home.html` | Intro, then one **shelf** per concept group, then a Lessons shelf |
+| Home | `index.html` | `home.html` | Intro, then a Lessons shelf, then one **shelf** per concept group |
 | Group | `groups/<group>.html` | `group.html` | Full grid of cards for every concept in the group |
-| Lessons | `lessons/index.html` | `lessons.html` | Full grid of lesson cards, newest first |
+| Lessons | `lessons/index.html` | `lessons.html` | Full grid of lesson cards, reading path first |
 | Concept | `concepts/<slug>.html` | `concept.html` | One concept, written or planned |
 | Lesson | `lessons/<slug>.html` | `lesson.html` | One lesson |
 
@@ -39,12 +39,12 @@ All URLs are relative. Every template gets `root` (`""` on the home page, `"../"
 
 - A short intro at the top.
 - One section per concept group: the group title as a heading, which links to the group page, plus blurb. Under it is **a single row of cards** that scrolls sideways, with left/right arrow buttons. It never wraps to a second row.
-- Then a **Lessons** section in the same style: the heading links to `lessons/index.html`, with one row of lesson cards.
+- The **Lessons** section comes right after the intro, in the same style: the heading links to `lessons/index.html`, with one row of lesson cards. It comes first so a beginner meets the reading path before the concept groups.
 - Group and lessons pages show the same cards in a **full grid**.
 
 ### Card
 
-Used in shelves and grids, for concepts and lessons alike: banner (scaled down), group name (concepts only), title, one-line summary. Planned concepts also show "Not written yet". Order: written concepts first, then planned ones, each in catalog order. Lessons are ordered newest first.
+Used in shelves and grids, for concepts and lessons alike: banner (scaled down), group name (concepts only), title, one-line summary. Planned concepts also show "Not written yet". Order: written concepts first, then planned ones, each in catalog order. Lessons are ordered as the **reading path** first (lessons with a `step`, in step order, their card label reads "Lesson · Step N"), then the other lessons newest first.
 
 ### Concept page
 
@@ -52,7 +52,9 @@ Banner (full width at the top, the main visual identity of the page) → group l
 
 ### Lesson page
 
-Banner → "Lesson" label → title → summary → **Before you start** (prerequisite concepts) → body → **Concepts used**.
+Banner → "Lesson" label → title → summary → **Before you start** (prerequisite concepts) → body → **Next lesson** (only on the reading path, when a next step exists) → **Concepts used**.
+
+A lesson joins the reading path with an optional `step: <n>` in its frontmatter (a whole number from 1, unique). Lessons without a step stand alone, such as one for long-term investors.
 
 ### Body content
 
@@ -65,14 +67,14 @@ Templates are Jinja2 (`StrictUndefined`, autoescape on). Every template receives
 | Name | What |
 |---|---|
 | `site.groups` | list of groups: `slug`, `title`, `blurb`, `url`, `concepts` (list of pages), `written_count` |
-| `site.lessons` | list of lesson pages, newest first |
+| `site.lessons` | list of lesson pages: the reading path in step order, then the rest newest first |
 | `site.pages` | dict slug → page, every concept and lesson |
 | `root` | relative prefix to the site root |
 | `current` | this page's URL relative to the root |
 | `title` | page title text for `<title>` |
 | `cards(pages)` | orders pages for display: written first, then planned |
 
-A **page** has `kind` (`concept`/`lesson`), `slug`, `title`, `summary`, `url`, `written`, `status` (`written`/`planned`), `banner_svg` (inline SVG markup, output with `| safe`), `group` (concepts only), `added` (lessons only), `builds_on` (slugs), `links` (slugs linked from the body), `backlinks` (slugs linking here).
+A **page** has `kind` (`concept`/`lesson`), `slug`, `title`, `summary`, `url`, `written`, `status` (`written`/`planned`), `banner_svg` (inline SVG markup, output with `| safe`), `group` (concepts only), `added`, `step` and `next_lesson` (slug or none; lessons only), `builds_on` (slugs), `links` (slugs linked from the body), `backlinks` (slugs linking here).
 
 Page templates also receive: `group.html` → `group`; `concept.html` and `lesson.html` → `page` and `body` (rendered HTML, output with `| safe`).
 

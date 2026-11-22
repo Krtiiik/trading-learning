@@ -46,8 +46,11 @@ def site_root(tmp_path: Path) -> Path:
     return tmp_path
 
 
-def add_lesson(root: Path, slug="first-chart", added="2026-11-20", builds_on="[candle]", body="Look at a [[candle]].") -> None:
+def add_lesson(
+    root: Path, slug="first-chart", added="2026-11-20", builds_on="[candle]", body="Look at a [[candle]].", step=None
+) -> None:
     write(root, f"banners/{slug}.svg", SVG)
+    step_line = "" if step is None else f"step: {step}"
     write(
         root,
         f"content/lessons/{slug}.md",
@@ -57,6 +60,7 @@ def add_lesson(root: Path, slug="first-chart", added="2026-11-20", builds_on="[c
         summary: Reading a chart.
         added: {added}
         builds_on: {builds_on}
+        {step_line}
         ---
         {body}
         """,
@@ -152,6 +156,46 @@ def test_lessons_are_sorted_newest_first(site_root):
     add_lesson(site_root, slug="newer", added="2026-06-01")
     site = build.load_site(site_root)
     assert [p.slug for p in site.lessons] == ["newer", "older"]
+
+
+def test_path_lessons_come_first_in_step_order_then_the_rest_newest_first(site_root):
+    add_lesson(site_root, slug="side-old", added="2026-01-01")
+    add_lesson(site_root, slug="side-new", added="2026-06-01")
+    add_lesson(site_root, slug="second", added="2026-09-01", step=2)
+    add_lesson(site_root, slug="first", added="2026-02-01", step=1)
+    site = build.load_site(site_root)
+    assert [p.slug for p in site.lessons] == ["first", "second", "side-new", "side-old"]
+
+
+def test_each_path_lesson_points_to_the_next_step(site_root):
+    add_lesson(site_root, slug="first", step=1)
+    add_lesson(site_root, slug="second", step=2)
+    add_lesson(site_root, slug="side")
+    site = build.load_site(site_root)
+    assert site.pages["first"].next_lesson == "second"
+    assert site.pages["second"].next_lesson is None
+    assert site.pages["side"].next_lesson is None
+
+
+def test_lesson_steps_must_be_unique_positive_numbers(site_root):
+    add_lesson(site_root, slug="one", step=1)
+    add_lesson(site_root, slug="also-one", step=1)
+    add_lesson(site_root, slug="zero", step=0)
+    with pytest.raises(build.BuildError) as e:
+        build.load_site(site_root)
+    assert any("one: step 1 is already used by also-one" in p for p in e.value.problems)
+    assert any("zero.md: step must be a whole number from 1" in p for p in e.value.problems)
+
+
+def test_lesson_page_links_to_the_next_lesson(site_root, tmp_path):
+    add_lesson(site_root, slug="first", step=1)
+    add_lesson(site_root, slug="second", step=2)
+    out = tmp_path / "dist"
+    build.build(site_root, out)
+    first = (out / "lessons" / "first.html").read_text(encoding="utf-8")
+    second = (out / "lessons" / "second.html").read_text(encoding="utf-8")
+    assert 'class="next-lesson"' in first and 'href="../lessons/second.html"' in first
+    assert 'class="next-lesson"' not in second
 
 
 def test_lesson_needs_frontmatter_and_known_prerequisites(site_root):

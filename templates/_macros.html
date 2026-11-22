@@ -2,7 +2,7 @@
 <a class="card card--{{ p.kind }} is-{{ p.status }}" href="{{ root }}{{ p.url }}" data-slug="{{ p.slug }}" title="{{ p.title }}">
   <div class="card__banner banner">{{ p.banner_svg | safe }}</div>
   <div class="card__text">
-    {% if p.group %}<span class="card__group">{{ p.group.title }}</span>{% else %}<span class="card__group">Lesson</span>{% endif %}
+    {% if p.group %}<span class="card__group">{{ p.group.title }}</span>{% elif p.step %}<span class="card__group">Lesson &middot; Step {{ p.step }}</span>{% else %}<span class="card__group">Lesson</span>{% endif %}
     <h3 class="card__title">{{ p.title }}</h3>
     <p class="card__summary">{{ p.summary }}</p>
     {% if not p.written %}<span class="card__status">Not written yet</span>{% endif %}

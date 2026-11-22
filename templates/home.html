@@ -18,8 +18,8 @@
     </dl>
   </div>
 </section>
+{{ shelf("Lessons", "lessons/index.html", "Start here: guided pages that put several concepts together, in reading order.", site.lessons, root) }}
 {% for g in site.groups %}
 {{ shelf(g.title, g.url, g.blurb, cards(g.concepts), root) }}
 {% endfor %}
-{{ shelf("Lessons", "lessons/index.html", "Guided pages that put several concepts together.", site.lessons, root) }}
 {% endblock %}

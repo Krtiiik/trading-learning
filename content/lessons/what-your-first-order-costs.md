@@ -2,6 +2,7 @@
 title: What your first order really costs
 summary: Follow one buy order from your app to the market and back, and add up every cost on the way.
 added: 2026-11-22
+step: 2
 builds_on: [stock, broker, exchange, order-types, bid-and-ask, spread, liquidity, volume, trading-hours, fees-and-commissions, currency-risk]
 ---
 This lesson follows one order: you buy 100 shares of a US [[stock]] priced near $50, and later sell them again. Each step answers one question, and at the end you add up what the round trip (buying, then selling) cost. Each idea has its own short page if you want to look it up.

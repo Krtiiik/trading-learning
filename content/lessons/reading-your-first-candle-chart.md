@@ -2,6 +2,7 @@
 title: Reading your first candle chart
 summary: Look at a real-style daily chart and answer three questions about it, step by step.
 added: 2026-11-20
+step: 1
 builds_on: [price-chart, ohlc, candle, wick, timeframe, trend, peak-and-trough, moving-average]
 ---
 This lesson walks through a chart the way you would read one for the first time. You need only eight ideas, listed above. Each one has its own short page if you want to look it up.
