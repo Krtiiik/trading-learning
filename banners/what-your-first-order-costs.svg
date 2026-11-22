@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A buy order travels as a band from a phone app to the broker and on to the exchange order book, getting thinner as currency conversion, commission and spread peel off it; the shares come back along a dashed line">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- the app -->
+  <rect x="60" y="100" width="100" height="190" rx="16" stroke-width="5"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .04; stroke: var(--banner-fg, #1a1a1a)"/>
+  <line x1="95" y1="118" x2="125" y2="118" stroke-width="4" stroke-linecap="round" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .5"/>
+  <rect x="72" y="226" width="76" height="40" rx="8" style="fill: var(--banner-up, #1a9b5b)"/>
+  <text x="110" y="256" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="800"
+        style="fill: var(--banner-bg, #f2f4f7)">BUY</text>
+  <!-- the broker -->
+  <rect x="520" y="120" width="160" height="170" rx="12" stroke-width="5"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .04; stroke: var(--banner-fg, #1a1a1a)"/>
+  <g style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .5">
+    <path d="M550 184 L600 156 L650 184 Z"/>
+    <rect x="560" y="194" width="16" height="50"/><rect x="592" y="194" width="16" height="50"/><rect x="624" y="194" width="16" height="50"/>
+    <rect x="550" y="250" width="100" height="10"/>
+  </g>
+  <!-- the exchange order book: asks above, bids below -->
+  <rect x="1000" y="110" width="150" height="180" rx="12" stroke-width="5"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .04; stroke: var(--banner-fg, #1a1a1a)"/>
+  <g style="fill: var(--banner-down, #d0453a); fill-opacity: .8">
+    <rect x="1020" y="126" width="70" height="18"/><rect x="1020" y="152" width="105" height="18"/><rect x="1020" y="178" width="85" height="18"/>
+  </g>
+  <g style="fill: var(--banner-up, #1a9b5b); fill-opacity: .8">
+    <rect x="1020" y="210" width="95" height="18"/><rect x="1020" y="236" width="60" height="18"/><rect x="1020" y="262" width="110" height="18"/>
+  </g>
+  <!-- the order: a band that gets thinner at each cost -->
+  <g style="fill: var(--banner-accent, #0b6bcb)">
+    <rect x="170" y="130" width="165" height="40"/>
+    <rect x="335" y="136" width="175" height="28"/>
+    <rect x="690" y="140" width="150" height="20"/>
+    <path d="M840 144 L970 144 L970 128 L994 150 L970 172 L970 156 L840 156 Z"/>
+  </g>
+  <!-- the costs that peel off -->
+  <g stroke-width="3" stroke-dasharray="6 5" style="stroke: var(--banner-down, #d0453a)">
+    <line x1="335" y1="130" x2="335" y2="110"/>
+    <line x1="600" y1="120" x2="600" y2="106"/>
+    <line x1="840" y1="140" x2="840" y2="114"/>
+  </g>
+  <g style="fill: var(--banner-down, #d0453a)">
+    <circle cx="335" cy="96" r="14"/><circle cx="600" cy="92" r="14"/><circle cx="840" cy="100" r="14"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2" text-anchor="middle"
+     style="fill: var(--banner-down, #d0453a)">
+    <text x="335" y="62">CURRENCY</text>
+    <text x="600" y="58">COMMISSION</text>
+    <text x="840" y="66">SPREAD</text>
+  </g>
+  <!-- the shares come back -->
+  <g fill="none" stroke-width="4" stroke-dasharray="10 8" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6">
+    <line x1="1000" y1="268" x2="684" y2="268"/>
+    <line x1="516" y1="268" x2="176" y2="268"/>
+  </g>
+  <path d="M190 254 L172 268 L190 282" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .6"/>
+  <text x="840" y="252" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="2"
+        style="fill: var(--banner-fg, #1a1a1a); fill-opacity: .6">SHARES</text>
+  <!-- the three stops -->
+  <g font-family="system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="2" text-anchor="middle"
+     style="fill: var(--banner-fg, #1a1a1a)">
+    <text x="110" y="340">APP</text>
+    <text x="600" y="340">BROKER</text>
+    <text x="1075" y="340">EXCHANGE</text>
+  </g>
+</svg>

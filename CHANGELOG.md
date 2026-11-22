@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Lesson: what your first order really costs, checking the broker in the ČNB register, where an EU broker sends the order, reading the order book, market and limit orders, why evening trading on a German venue costs more, and a worked round trip for a CZK account.
 - Lesson: building a simple long-term portfolio, why one broad fund, a 60/40 target mix, choosing a UCITS fund as an EU buyer (TER, accumulating or distributing, domicile, currency), Czech tax on funds, what fees do over 30 years, rebalancing, and living through a 50% fall.
 - Concept page: taxes on trading, realised gains, holding periods, allowances, dividend and interest tax, tax-advantaged accounts, a US, UK and Czech comparison (including the 2026 Czech 3-year test and 100,000 CZK limit), and a worked example for each country.
 - Concept page: CFD, how a contract for difference works, the broker as the other side, a worked 5:1 stock CFD, going short, costs, the EU (ESMA and ČNB) protections, the appropriateness test, and the "professional client" trap.
