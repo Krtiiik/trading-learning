@@ -144,16 +144,11 @@
     }
     // Native smooth scrolling is slow and its speed can't be set, so animate scrollLeft ourselves.
     // Scroll snap is off during the animation, or it would pull back every frame.
-    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     var frame = 0;
     function scrollRowTo(target) {
       var max = row.scrollWidth - row.clientWidth;
       target = Math.max(0, Math.min(max, target));
       cancelAnimationFrame(frame);
-      if (reduceMotion.matches) {
-        row.scrollLeft = target;
-        return;
-      }
       var start = row.scrollLeft;
       var distance = target - start;
       var duration = 180;

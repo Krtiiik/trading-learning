@@ -296,7 +296,7 @@ Links inherit their colour (`a { color: inherit }`). Colour alone never marks a 
 ```
 
 - Only colour and background change. No transforms, no fades on entry, no spinners for instant work.
-- Scroll buttons animate the row in about 180 ms with an ease-out curve (native `behavior: "smooth"` is too slow and can't be tuned). Scroll snap is off while it runs. With reduced motion, the row jumps.
+- Scroll buttons animate the row in about 180 ms with an ease-out curve (native `behavior: "smooth"` is too slow and can't be tuned). Scroll snap is off while it runs. It also runs with reduced motion, because it is short.
 
 ## 12. Responsive
 
