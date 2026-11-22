@@ -12,7 +12,7 @@ A stock or crypto [[exchange]] keeps an order book, the list of waiting orders, 
 
 ## Example
 
-Two [[stock|stocks]], both with a mid price (halfway between bid and ask) of $50.00. You buy 300 shares of each with a market order. It takes all the shares at the best price, then fills the rest at the next, worse price. This is called **slippage**: a worse price than you expected.
+Two [[stock|stocks]], both with a mid price (halfway between bid and ask) of $50.00. You buy 300 shares of each with a market order. It takes all the shares at the best price, then fills the rest at the next, worse price. This is [[slippage]]: a worse price than you expected.
 
 **Stock A** has the [[bid-and-ask]] order book (bid $49.98), plus 500 shares at $50.04:
 
@@ -44,7 +44,7 @@ A large company's stock trades millions of shares a day, often with a 1-cent spr
 
 ## Watch out
 
-- **Liquidity can disappear when you need it most.** In a crash, a market sell or a plain [[stop-loss]] order fills much lower than you planned, with heavy slippage.
+- **Liquidity can disappear when you need it most.** In a crash, a market sell or a plain [[stop-loss]] order fills much lower than you planned, with heavy [[slippage]].
 - **Size matters.** A book that is liquid for 10 shares can be thin for 10,000.
 - **Use limit orders in thin markets.** A limit order sets the worst price you accept, but it may not fill.
 

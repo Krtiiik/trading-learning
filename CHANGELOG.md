@@ -11,6 +11,7 @@ This changelog starts when the learning site got its own repository. Earlier cha
 
 ### Added
 
+- Concept page: slippage, where it comes from (a big order, a moving price, a gap past a stop), a worked order-book and gap example, how it differs from the spread, and how to limit it.
 - Concept page: trading psychology, loss aversion, the disposition effect, selling winners early, holding losers, moving the stop, revenge trading and overconfidence, with the studies behind them and defences decided while calm.
 - Lesson: same chart, three strategies, step 5 of the reading path. It reads one chart as a trend follower, a mean-reversion trader (RSI and Bollinger bands) and a breakout trader, and shows why each wins and loses in a different way.
 - Concept page: trading journal, what to record before and after each trade, results in R, a worked entry for the $42 trade, paper trading, reviewing the journal against the backtest, and records for Czech tax.

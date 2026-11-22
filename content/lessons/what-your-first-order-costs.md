@@ -37,7 +37,7 @@ Read three things from it:
 The [[order-types]] page explains both. On this book:
 
 - **A market buy for 100 shares** fills at once: 100 × $50.02 = $5,002. That is $2 more than the value at the mid price ($5,000): half the spread, 2 cents, on each of the 100 shares.
-- **A market buy for 150 shares** takes the 100 shares at $50.02 and 50 at $50.03. Paying more than the best price is slippage (see [[liquidity]]).
+- **A market buy for 150 shares** takes the 100 shares at $50.02 and 50 at $50.03. Paying more than the best price is [[slippage]].
 - **A buy limit at $49.98** pays no spread if it fills. But it waits behind the 400 shares already at the bid, and if the price rises, it may never fill.
 
 For a first order in a large, busy stock, a market order is simple. A limit order at the ask, $50.02, gives the same fill and protects you if the price jumps just before your order arrives.

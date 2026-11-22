@@ -39,7 +39,7 @@ Turning points from the [[trend]] page: $40 (low), $48 (high), $44, $53, $49, $5
 ## Watch out
 
 - **You see levels clearly only afterwards.** A trough is known only after the price has turned away from it (see [[peak-and-trough]]).
-- **Stops collect just beyond levels.** Many traders put their stops in the same place. When they trigger together, the fall can speed up, and stop orders can sell lower than planned: [[liquidity|slippage]].
+- **Stops collect just beyond levels.** Many traders put their stops in the same place. When they trigger together, the fall can speed up, and stop orders can sell lower than planned: [[slippage]].
 - **Levels depend on the [[timeframe]].** More traders watch daily levels than 5-minute ones.
 
 Next, see [[peak-and-trough|peaks and troughs]] to find the turning points, then [[breakout]].

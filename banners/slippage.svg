@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A stock bought at $42 with a stop at $38 gaps down overnight and opens at $35; the stop sells at about $35, and the $3 between the stop price and the fill is shaded and marked as slippage">
+  <rect width="1200" height="400" style="fill: var(--banner-bg, #f2f4f7)"/>
+  <!-- 30 px per dollar: $42 at y=90, $40 at y=150, $38 at y=210, $35 at y=300 -->
+  <!-- the gap between the stop price and the fill -->
+  <rect x="660" y="210" width="480" height="90" style="fill: var(--banner-accent, #0b6bcb); fill-opacity: .14"/>
+  <!-- entry price -->
+  <line x1="60" y1="90" x2="520" y2="90" stroke-width="3" stroke-dasharray="10 10"
+        style="stroke: var(--banner-up, #1a9b5b); stroke-opacity: .8"/>
+  <!-- stop price: the expected sell price -->
+  <line x1="60" y1="210" x2="1140" y2="210" stroke-width="4" stroke-dasharray="18 10"
+        style="stroke: var(--banner-down, #d0453a)"/>
+  <!-- actual fill -->
+  <line x1="620" y1="300" x2="1140" y2="300" stroke-width="4"
+        style="stroke: var(--banner-down, #d0453a)"/>
+  <!-- wicks -->
+  <g stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .35">
+    <line x1="130" y1="95" x2="130" y2="150"/><line x1="240" y1="85" x2="240" y2="140"/>
+    <line x1="350" y1="95" x2="350" y2="155"/>
+  </g>
+  <g stroke-width="3" style="stroke: var(--banner-fg, #1a1a1a)">
+    <line x1="460" y1="95" x2="460" y2="160"/><line x1="620" y1="290" x2="620" y2="345"/>
+  </g>
+  <!-- earlier days, muted -->
+  <g style="fill: var(--banner-up, #1a9b5b); fill-opacity: .55">
+    <rect x="105" y="105" width="50" height="35"/><rect x="325" y="105" width="50" height="35"/>
+  </g>
+  <rect x="215" y="95" width="50" height="35" style="fill: var(--banner-down, #d0453a); fill-opacity: .55"/>
+  <!-- close at $40, then the open at $35 the next morning -->
+  <g style="fill: var(--banner-down, #d0453a)">
+    <rect x="435" y="110" width="50" height="40"/><rect x="595" y="300" width="50" height="30"/>
+  </g>
+  <!-- the overnight jump past the stop -->
+  <path d="M540 150 L540 280 M524 262 L540 280 L556 262" fill="none" stroke-width="4" stroke-linejoin="round"
+        style="stroke: var(--banner-fg, #1a1a1a); stroke-opacity: .55"/>
+  <circle cx="620" cy="300" r="13" style="fill: var(--banner-down, #d0453a)"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" letter-spacing="3">
+    <text x="60" y="68" font-size="28" style="fill: var(--banner-up, #1a9b5b)">BUY $42</text>
+    <text x="1140" y="196" text-anchor="end" font-size="28" style="fill: var(--banner-down, #d0453a)">STOP $38</text>
+    <text x="1140" y="338" text-anchor="end" font-size="28" style="fill: var(--banner-down, #d0453a)">FILL $35</text>
+    <text x="880" y="268" text-anchor="middle" font-size="34" style="fill: var(--banner-accent, #0b6bcb)">SLIPPAGE $3</text>
+  </g>
+</svg>
