@@ -256,15 +256,26 @@ def test_pages_use_root_relative_prefixes(site_root, tmp_path):
     assert 'data-root="../"' in concept and 'href="../static/site.css"' in concept
 
 
-def test_home_shows_groups_concepts_and_lessons_in_one_row_over_a_hidden_chart(site_root, tmp_path):
+def test_home_shows_lessons_groups_and_concepts_in_one_row_over_a_hidden_chart(site_root, tmp_path):
     out = tmp_path / "dist"
     build.build(site_root, out)
     home = (out / "index.html").read_text(encoding="utf-8")
     stats = home[home.index('<dl class="stats">'):home.index("</dl>")]
-    assert re.findall(r"<dt>([^<]+)</dt>", stats) == ["Groups", "Concepts", "Lessons"]
+    assert re.findall(r"<dt>([^<]+)</dt>", stats) == ["Lessons", "Groups", "Concepts"]
     assert 'class="wide"' not in stats
     panel = home[home.index('<div class="intro__panel">'):home.index('<dl class="stats">')]
     assert '<svg class="ticker"' in panel and 'aria-hidden="true"' in panel
+
+
+def test_lessons_come_first_in_the_nav_and_footer(site_root, tmp_path):
+    out = tmp_path / "dist"
+    build.build(site_root, out)
+    for rel in ["index.html", "concepts/candle.html", "lessons/index.html"]:
+        page = (out / rel).read_text(encoding="utf-8")
+        nav = page[page.index('<nav class="site-nav"'):page.index("</nav>")]
+        assert re.findall(r">([^<]+)</a>", nav)[0] == "Lessons", rel
+        footer = page[page.index('<footer class="site-footer">'):page.index("</footer>")]
+        assert re.search(r"<span>\d+ lessons? · \d+ concepts</span>", footer), rel
 
 
 def test_every_page_has_the_theme_switch_and_applies_the_saved_theme_early(site_root, tmp_path):

@@ -26,11 +26,11 @@
 <div class="frame">
 <header class="site-header">
   <a class="site-brand" href="{{ root }}index.html">Trading Learning</a>
-  <nav class="site-nav" aria-label="Concept groups">
+  <nav class="site-nav" aria-label="Sections">
+    <a class="site-nav__link" href="{{ root }}lessons/index.html"{% if current.startswith("lessons/") %} aria-current="page"{% endif %}>Lessons</a>
     {% for g in site.groups %}
     <a class="site-nav__link" href="{{ root }}{{ g.url }}"{% if g.url == ns.group_url %} aria-current="page"{% endif %}>{{ g.title }}</a>
     {% endfor %}
-    <a class="site-nav__link" href="{{ root }}lessons/index.html"{% if current.startswith("lessons/") %} aria-current="page"{% endif %}>Lessons</a>
   </nav>
   <div class="search">
     <input class="search__input" type="search" placeholder="Search  /" aria-label="Search concepts and lessons" autocomplete="off">
@@ -49,7 +49,7 @@
 {%- set fs = namespace(t=0) %}{% for g in site.groups %}{% set fs.t = fs.t + g.concepts|length %}{% endfor %}
 <footer class="site-footer">
   <a href="{{ root }}index.html">Trading Learning</a>
-  <span>{{ fs.t }} concepts · {{ site.lessons|length }} lesson{{ "" if site.lessons|length == 1 else "s" }}</span>
+  <span>{{ site.lessons|length }} lesson{{ "" if site.lessons|length == 1 else "s" }} · {{ fs.t }} concepts</span>
 </footer>
 </div>
 <div class="link-preview" hidden></div>
